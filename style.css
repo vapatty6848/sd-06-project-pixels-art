@@ -18,7 +18,10 @@ h1 {
     margin: 0;
 }
 
-ul {
+section {
     text-align: center;
+}
+
+ul {
     padding: 0;
 }
