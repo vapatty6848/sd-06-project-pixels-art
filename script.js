@@ -36,3 +36,7 @@ for (let row = 0; row < 5; row += 1) {
         tablePixel.style.height = '40px';
     }
 }
+
+//Selected Color
+document.querySelectorAll('li')[0].className = document.querySelectorAll('li')[0].className.concat(' selected');
+
