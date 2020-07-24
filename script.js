@@ -34,6 +34,8 @@ for (let row = 0; row < 5; row += 1) {
         tableRow.appendChild(tablePixel);
         tablePixel.style.width = '40px';
         tablePixel.style.height = '40px';
+        //Adding event for Task 8
+        tablePixel.addEventListener('click', (event) => putColor(tablePixel));
     }
 }
 
@@ -53,4 +55,11 @@ function changeClass(indiceOfElement){
             colorsOnPalette[i].className = 'color';
         }
     }
+}
+
+
+//Putting color on pixels
+function putColor(clickedPixel) {
+    let activeColorOfPalette = document.querySelector('.selected').style.background;
+    clickedPixel.style.background = activeColorOfPalette;
 }
