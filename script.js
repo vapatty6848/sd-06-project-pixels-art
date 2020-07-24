@@ -32,5 +32,7 @@ for (let row = 0; row < 5; row += 1) {
         tablePixel.style.border = 'solid black 1px';
         tablePixel.style.background = 'white';
         tableRow.appendChild(tablePixel);
+        tablePixel.style.width = '40px';
+        tablePixel.style.height = '40px';
     }
 }
