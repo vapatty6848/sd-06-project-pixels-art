@@ -63,3 +63,24 @@ function putColor(clickedPixel) {
     let activeColorOfPalette = document.querySelector('.selected').style.background;
     clickedPixel.style.background = activeColorOfPalette;
 }
+
+//Clear all pixels
+let clearButton = document.createElement('button');
+clearButton.id = 'clear-board';
+clearButton.innerText = 'Limpar';
+clearButton.style.background = 'red';
+clearButton.style.display = 'inline-block';
+clearButton.style.padding = '2%';
+clearButton.style.margin = '2%';
+clearButton.style.border = 'solid white 3px';
+clearButton.style.borderRadius = '20%';
+clearButton.addEventListener('click', clearAllPixels);
+document.querySelector('section').appendChild(clearButton);
+//console.log(document.querySelector('section'));
+
+function clearAllPixels() {
+    arrayOfPixels = document.querySelectorAll('td');
+    for (let i = 0; i < arrayOfPixels.length; i += 1) {
+        arrayOfPixels[i].style.background = 'white';
+    }
+}
