@@ -1,5 +1,5 @@
 let colorPalette = document.querySelector('#color-palette');
-let colorsArray = ['red', 'blue', 'green', 'yellow'];
+let colorsArray = ['black', 'blue', 'red' , 'green'];
 for (let i = 0; i < 4; i += 1) {
     let colorItem = document.createElement('li');
     colorItem.className = 'color';
