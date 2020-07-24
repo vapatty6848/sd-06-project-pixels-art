@@ -38,5 +38,19 @@ for (let row = 0; row < 5; row += 1) {
 }
 
 //Selected Color
-document.querySelectorAll('li')[0].className = document.querySelectorAll('li')[0].className.concat(' selected');
+let colorsOnPalette = document.querySelectorAll('li');
+colorsOnPalette[0].className = colorsOnPalette[0].className.concat(' selected');
 
+for (let i = 0; i < colorsOnPalette.length; i += 1) {
+    colorsOnPalette[i].addEventListener('click', (event) => changeClass(i));
+}
+
+function changeClass(indiceOfElement){
+    for (let i = 0; i < colorsOnPalette.length; i += 1) {
+        if (i == indiceOfElement) {
+            colorsOnPalette[i].className = colorsOnPalette[i].className.concat(' selected');
+        } else {
+            colorsOnPalette[i].className = 'color';
+        }
+    }
+}
