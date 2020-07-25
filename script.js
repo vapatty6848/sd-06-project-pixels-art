@@ -54,22 +54,38 @@ window.onload = function () {
   // global variables
   // selected = 'black';
   // calls
-
   colorPalete();
   createPixelBoard(5);
   clearButton();
 };
 
 
-function getColor() {
+function selectColor () {
   // pegando o ID de quem esta com a classe .selected
-  let selectedColor = document.querySelector('.selected');
-  selectedColorId = selectedColor.id;
+  let selectedColorId = document.querySelector('.selected').id;
   return selectedColorId;
 }
-function giveColor() {
-  let selected = getColor();
+function giveColor () {
+  let color = selectColor();
   let clickedPixel = document.getElementById(this.id);
-  clickedPixel.style.backgroundColor = selected;
-  
+  clickedPixel.style.backgroundColor = color;
+}
+
+function getColor () {
+  let clickColor = document.getElementById(this.id).id;
+  let alreadyColor = selectColor();
+  if (clickColor != alreadyColor) {
+    removeClass(alreadyColor);
+    assignClass(clickColor);
+  }
+}
+
+
+function removeClass (colorId) {
+  let removeClass = document.getElementById(colorId);
+  removeClass.classList.remove('selected');  
+}
+function assignClass (colorId) {
+  let assignClass = document.getElementById(colorId);
+  assignClass.classList.add('selected');  
 }
