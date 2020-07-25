@@ -1,5 +1,9 @@
 .color {
   border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin: 0 20px;
 }
 
 .color:nth-child(1) {
