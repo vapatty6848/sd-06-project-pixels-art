@@ -22,15 +22,17 @@ function colorPalete() {
     const color = colors[i];
     createColorButton(color);
   }
+  let selected = 'black';
+  return selected;
 }
 function getColor() {
   selected = this.id;
 }
 function createPixelBoard(size) {
   const totalSize = size * size;
-	let name = 1;
+  let name = 1;
   const boardWidth = (size * 40) + (size * 2);
-	const pixelBoard = document.getElementById('pixel-board');
+  const pixelBoard = document.getElementById('pixel-board');
   pixelBoard.style.borderStyle = 'solid';
   pixelBoard.style.borderWidth = '2px';
   pixelBoard.style.width = `${boardWidth}px`;
