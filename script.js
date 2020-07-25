@@ -1,10 +1,6 @@
-window.onload = function() {
-  let colorPalette = document.querySelector("#color-palette");
-  colorPalette.addEventListener("click", function (event) {
-    console.log(event.target.id)
+window.onload = function () {
+  const colorPalette = document.querySelector('#color-palette');
+  colorPalette.addEventListener('click', function (event) {
+    console.log(event.target.id);
   });
-
-
-
-
 }

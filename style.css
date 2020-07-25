@@ -7,7 +7,7 @@
 .pixel {
   background-color: rgb(255, 255, 255);
   border: 1px solid black;
-  float:left;
+  float: left;
   height: 40px;
   width: 40px;
 }
@@ -16,7 +16,7 @@
   border: 1px solid black;
   height: 210px;
   width: 210px;
- }
+}
 
 #color-palette {
   height: 70px;
@@ -29,6 +29,7 @@
   float: left;
   margin: 5px;
 }
+
 #red {
   background-color: red;
   float: left;
