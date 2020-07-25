@@ -11,19 +11,19 @@ body {
   width: 45px;
 }
 
-.black {
+#black {
   background-color: black;
 }
 
-.red {
+#red {
   background-color: red;
 }
 
-.blue {
+#blue {
   background-color: blue;
 }
 
-.yellow {
+#yellow {
   background-color: yellow;
 }
 
