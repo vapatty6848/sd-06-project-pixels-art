@@ -1,6 +1,15 @@
+body{
+    text-align: center;
+}
 .color {
     border: 1px solid black;
     display: inline-block;
+}
+
+#blackPalette {
+    background-color: black;
+    padding: 2em;
+    color: whitesmoke;
 }
 
 #pinkPalette {
