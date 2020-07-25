@@ -17,7 +17,7 @@ function colorPalete() {
     }
 }
 function createColorButton(color) {
-    let colorContainer = document.getElementById('color-palete');
+    let colorContainer = document.getElementById('color-palette');
     let colorBtn = document.createElement('button');
     colorBtn.classList.add('color');
     colorBtn.id = color;
