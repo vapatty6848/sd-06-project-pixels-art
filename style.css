@@ -29,3 +29,18 @@ body {
     border: black solid 1px;
 }
 
+.line{
+    height: 40px;
+    border: 40px;
+    /*display: table;*/
+}
+
+.pixel{
+    background-color: white;
+    width: 38px;
+    height: 38px;
+    border: black solid 1px;
+}
+
+
+
