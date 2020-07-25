@@ -9,7 +9,7 @@ window.onload = function() {
 
     colorPalete();
     createPixelBoard(5);
-    
+    clearButton();
 }
 
 
@@ -52,5 +52,15 @@ function giveColor() {
     let clickedPixel = document.getElementById(this.id);
     clickedPixel.style.backgroundColor = selected;
 }
-
+function clearButton() {
+    let clearButon = document.getElementById('clear-board');
+    clearButon.addEventListener('click', clearBoard);
+}
+function clearBoard() {
+    let pixels = document.querySelectorAll('.pixel');
+    pixels.forEach(function(pixel) {
+        pixel.style.backgroundColor = 'white';
+    })
+    
+}
 
