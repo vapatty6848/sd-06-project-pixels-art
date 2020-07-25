@@ -9,3 +9,15 @@
 .color:nth-child(1) {
   background-color: black;
 }
+
+.color:nth-child(2) {
+  background-color: purple;
+}
+
+.color:nth-child(3) {
+  background-color: blue;
+}
+
+.color:nth-child(4) {
+  background-color: green;
+}
