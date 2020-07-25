@@ -1,9 +1,6 @@
 // Scriptlist
 
-function giveColor() {
-  const clickedPixel = document.getElementById(this.id);
-  clickedPixel.style.backgroundColor = selected;
-}
+
 function createColorButton(color) {
   const colorContainer = document.getElementById('color-palette');
   const colorBtn = document.createElement('button');
@@ -22,12 +19,9 @@ function colorPalete() {
     const color = colors[i];
     createColorButton(color);
   }
-  let selected = 'black';
-  return selected;
+
 }
-function getColor() {
-  selected = this.id;
-}
+
 function createPixelBoard(size) {
   const totalSize = size * size;
   let name = 1;
@@ -60,12 +54,22 @@ window.onload = function () {
   // global variables
   // selected = 'black';
   // calls
-  getColor();
-  clearBoard();
+
   colorPalete();
   createPixelBoard(5);
   clearButton();
-  getColor();
-  clearBoard();
-  selected = 'black';
 };
+
+
+function getColor() {
+  // pegando o ID de quem esta com a classe .selected
+  let selectedColor = document.querySelector('.selected');
+  selectedColorId = selectedColor.id;
+  return selectedColorId;
+}
+function giveColor() {
+  let selected = getColor();
+  let clickedPixel = document.getElementById(this.id);
+  clickedPixel.style.backgroundColor = selected;
+  
+}
