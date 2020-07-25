@@ -1,5 +1,35 @@
 // Scriptlist
 
+function selectColor() {
+  // pegando o ID de quem esta com a classe .selected
+  const selectedColorId = document.querySelector('.selected').id;
+  return selectedColorId;
+}
+
+function giveColor() {
+  const color = selectColor();
+  const clickedPixel = document.getElementById(this.id);
+  clickedPixel.style.backgroundColor = color;
+}
+
+function getColor() {
+  const clickColor = document.getElementById(this.id).id;
+  const alreadyColor = selectColor();
+  if (clickColor !== alreadyColor) {
+    removeClass(alreadyColor);
+    assignClass(clickColor);
+  }
+}
+
+function removeClass(colorId) {
+  const removeClass = document.getElementById(colorId);
+  removeClass.classList.remove('selected');
+}
+
+function assignClass(colorId) {
+  const assignClassId = document.getElementById(colorId);
+  assignClassId.classList.add('selected');
+}
 
 function createColorButton(color) {
   const colorContainer = document.getElementById('color-palette');
@@ -61,34 +91,3 @@ window.onload = function () {
   createPixelBoard(5);
   clearButton();
 };
-
-function selectColor() {
-  // pegando o ID de quem esta com a classe .selected
-  const selectedColorId = document.querySelector('.selected').id;
-  return selectedColorId;
-}
-
-function giveColor() {
-  const color = selectColor();
-  const clickedPixel = document.getElementById(this.id);
-  clickedPixel.style.backgroundColor = color;
-}
-
-function getColor() {
-  const clickColor = document.getElementById(this.id).id;
-  const alreadyColor = selectColor();
-  if (clickColor !== alreadyColor) {
-    removeClass(alreadyColor);
-    assignClass(clickColor);
-  }
-}
-
-function removeClass(colorId) {
-  const removeClass = document.getElementById(colorId);
-  removeClass.classList.remove('selected');
-}
-
-function assignClass(colorId) {
-  const assignClassId = document.getElementById(colorId);
-  assignClassId.classList.add('selected');
-}
