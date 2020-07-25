@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  font-family: sans-serif;
 }
 
 .color {
@@ -33,8 +34,14 @@ display: inline-block;
 
 .line {
   margin: 0;
- 
+}
 
+#clear-board {
+  margin-top: 20px;
+  background-color: blueviolet;
+  color: antiquewhite;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .pixel {
