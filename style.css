@@ -1,0 +1,47 @@
+.color {
+  border: 1px solid black;
+  height: 60px;
+  width: 60px;
+}
+
+.pixel {
+  border: 1px solid black;
+  float:left;
+  height: 40px;
+  width: 40px;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  height: 210px;
+  width: 210px;
+ }
+
+#color-palette {
+  height: 70px;
+  width: 290px;
+  border: 1px solid black;
+}
+
+#black {
+  background-color: black;
+  float: left;
+  margin: 5px;
+}
+#red {
+  background-color: red;
+  float: left;
+  margin: 5px;
+}
+
+#blue {
+  background-color: blue;
+  float: left;
+  margin: 5px;
+}
+#green {
+  background-color: green;
+  float: left;
+  margin: 5px;
+}
+
