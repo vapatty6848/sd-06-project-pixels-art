@@ -5,6 +5,7 @@
 }
 
 .pixel {
+  background-color: rgb(255, 255, 255);
   border: 1px solid black;
   float:left;
   height: 40px;
