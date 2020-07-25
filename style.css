@@ -1,15 +1,19 @@
 body {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .color {
-    border-style: solid;
-    border-width: 1px;
-    width: 60px;
-    height: 60px;
-    display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
 }
 
-.color-palete {
+#color-palete {
+
+}
+
+#pixel-board {
 
 }
