@@ -2,6 +2,7 @@ let pixelBoard = document.querySelector('#pixel-board');
 let selectedColor = document.querySelector('.color');
 let onClickColor = window.getComputedStyle(selectedColor, null).getPropertyValue("background-color");
 const selectedClass = 'selected';
+const clearButton = document.querySelector('button');
 
 for (let i = 0; i < 25; i++) {
   const div = document.createElement('div');
@@ -33,3 +34,10 @@ for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
     currentPixel.style.backgroundColor = `${onClickColor}`;
   })
 }
+
+clearButton.addEventListener('click', function () {
+  for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
+    const currentPixel = document.querySelectorAll('.pixel')[i];
+    currentPixel.style.backgroundColor = 'white';
+  }
+})
