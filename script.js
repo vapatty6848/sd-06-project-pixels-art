@@ -1,18 +1,13 @@
 
 window.onload = function() {
     //console.log('page loaded')
-    
     //global variables
     selected = 'black';
-
     //calls
-
     colorPalete();
     createPixelBoard(5);
     clearButton();
 }
-
-
 function colorPalete() {
     let colors = ['black', 'green', 'blue', 'purple']
     for (let i = 0; i < colors.length; i += 1) {
@@ -24,10 +19,14 @@ function createColorButton(color) {
     let colorContainer = document.getElementById('color-palette');
     let colorBtn = document.createElement('button');
     colorBtn.classList.add('color');
+    if (color === 'black') {
+        colorBtn.classList.add('selected');
+    }
     colorBtn.id = color;
     colorBtn.style.backgroundColor = color;
     colorBtn.addEventListener('click', getColor)
     colorContainer.appendChild(colorBtn);
+    
 }
 function getColor() {
     selected = this.id;
@@ -61,6 +60,5 @@ function clearBoard() {
     pixels.forEach(function(pixel) {
         pixel.style.backgroundColor = 'white';
     })
-    
 }
 
