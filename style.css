@@ -1,6 +1,6 @@
 body {
   font-size: 50%;
-  margin: 30px; 
+  margin: 30px;
 }
 
 .color {
@@ -27,7 +27,7 @@ body {
   background-color: yellow;
 }
 
-#pixel-board {
+.board {
   height: fit-content;
 }
 
@@ -45,10 +45,10 @@ body {
   height: 40px;
   margin: 0;
   padding: 0;
-  width: 39px;
+  width: 40px;
 }
 
-#fifth-line {
+.fifth {
   border-bottom: 1px solid black;
   height: 40px;
   padding-bottom: -1px;
