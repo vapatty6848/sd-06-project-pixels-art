@@ -3,33 +3,25 @@ body {
 }
 
 .color {
+  display: inline-block;
+  border-color: black;
   border-style: solid;
   border-width: 1px;
-  border-color: black;
-  width: 60px;
   height: 60px;
-  display: inline-block;
+  width: 60px;
 }
 
 .pixel {
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    border-style: solid;
-    border-width: 1px;
-    display: inline-block;
-}
-
-#color-palete {
-
-}
-
-#clear-board {
-
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
 }
 
 #pixel-board {
-    padding: 0px;
-    margin: 0px;
-    line-height: 0px;
+  line-height: 0px;  
+  margin: 0px;
+  padding: 0px;
 }
