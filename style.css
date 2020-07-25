@@ -4,10 +4,10 @@
 }
 
 .black , .blue , .green , .red {
-  display: inline-block;
   border: 1px solid black;
-  width: 100px;
+  display: inline-block;
   height: 100px;
+  width: 100px;
 }
 
 .black {
