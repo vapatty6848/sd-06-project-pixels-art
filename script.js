@@ -3,7 +3,7 @@ window.onload = function() {
     //console.log('page loaded')
     
     //global variables
-    pickedColor = 'black';
+    selected = 'black';
 
     //calls
 
@@ -30,7 +30,7 @@ function createColorButton(color) {
     colorContainer.appendChild(colorBtn);
 }
 function getColor() {
-    pickedColor = this.id;
+    selected = this.id;
 }
 function createPixelBoard(size) {
     let name = 1;
@@ -50,7 +50,7 @@ function createPixelBoard(size) {
 }
 function giveColor() {
     let clickedPixel = document.getElementById(this.id);
-    clickedPixel.style.backgroundColor = pickedColor;
+    clickedPixel.style.backgroundColor = selected;
 }
 
 
