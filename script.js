@@ -4,7 +4,7 @@ window.onload = function () {
   itemSel.className += ' selected'
 }
 
-let colorPalette = document.querySelector('#color-palette')
+let colorPalette = document.querySelector('#color-palette');
 
 colorPalette.addEventListener('click', function(event) {
   let selectedColor = event.target.id;
@@ -13,9 +13,16 @@ colorPalette.addEventListener('click', function(event) {
   selectedDiv.className = 'color selected'
   previousDiv.className = 'color'
   currentColor = selectedColor;
-  console.log(previousDiv);
-  console.log(selectedDiv);
-  console.log(selectedColor);
+  //console.log(previousDiv);
+  //console.log(selectedDiv);
+  //console.log(selectedColor);
+});
 
+let pixelBoard = document.querySelector('#pixel-board');
+
+pixelBoard.addEventListener('click', function(event){
+  let selectedPixel = event.target;
+  selectedPixel.style.backgroundColor = currentColor;
+  //console.log(selectedPixel);
 
 });
