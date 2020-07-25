@@ -13,13 +13,13 @@ function createColorButton(color) {
   colorBtn.addEventListener('click', getColor);
   colorContainer.appendChild(colorBtn);
 }
+
 function colorPalete() {
   const colors = ['black', 'green', 'blue', 'purple'];
   for (let i = 0; i < colors.length; i += 1) {
     const color = colors[i];
     createColorButton(color);
   }
-
 }
 
 function createPixelBoard(size) {
@@ -39,16 +39,19 @@ function createPixelBoard(size) {
     name += 1;
   }
 }
+
 function clearButton() {
   const clearButon = document.getElementById('clear-board');
   clearButon.addEventListener('click', clearBoard);
 }
+
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
   pixels.forEach(function (pixel) {
     pixel.style.backgroundColor = 'white';
   });
 }
+
 window.onload = function () {
   // console.log('page loaded')
   // global variables
@@ -59,33 +62,33 @@ window.onload = function () {
   clearButton();
 };
 
-
-function selectColor () {
+function selectColor() {
   // pegando o ID de quem esta com a classe .selected
-  let selectedColorId = document.querySelector('.selected').id;
+  const selectedColorId = document.querySelector('.selected').id;
   return selectedColorId;
 }
-function giveColor () {
-  let color = selectColor();
-  let clickedPixel = document.getElementById(this.id);
+
+function giveColor() {
+  const color = selectColor();
+  const clickedPixel = document.getElementById(this.id);
   clickedPixel.style.backgroundColor = color;
 }
 
-function getColor () {
-  let clickColor = document.getElementById(this.id).id;
-  let alreadyColor = selectColor();
-  if (clickColor != alreadyColor) {
+function getColor() {
+  const clickColor = document.getElementById(this.id).id;
+  const alreadyColor = selectColor();
+  if (clickColor !== alreadyColor) {
     removeClass(alreadyColor);
     assignClass(clickColor);
   }
 }
 
-
-function removeClass (colorId) {
-  let removeClass = document.getElementById(colorId);
-  removeClass.classList.remove('selected');  
+function removeClass(colorId) {
+  const removeClass = document.getElementById(colorId);
+  removeClass.classList.remove('selected');
 }
-function assignClass (colorId) {
-  let assignClass = document.getElementById(colorId);
-  assignClass.classList.add('selected');  
+
+function assignClass(colorId) {
+  const assignClassId = document.getElementById(colorId);
+  assignClassId.classList.add('selected');
 }
