@@ -1,0 +1,15 @@
+body {
+    background-color: whitesmoke;
+}
+
+.color {
+    border-style: solid;
+    border-width: 1px;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+.color-palete {
+
+}
