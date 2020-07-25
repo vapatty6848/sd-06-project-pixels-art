@@ -1,5 +1,22 @@
 // Scriptlist
 
+function removeClass(colorId) {
+  const removeClassColor = document.getElementById(colorId);
+  removeClassColor.classList.remove('selected');
+}
+
+function assignClass(colorId) {
+  const assignClassId = document.getElementById(colorId);
+  assignClassId.classList.add('selected');
+}
+
+function clearBoard() {
+  const pixels = document.querySelectorAll('.pixel');
+  pixels.forEach(function (pixel) {
+    pixel.style.backgroundColor = 'white';
+  });
+}
+
 function selectColor() {
   // pegando o ID de quem esta com a classe .selected
   const selectedColorId = document.querySelector('.selected').id;
@@ -19,16 +36,6 @@ function getColor() {
     removeClass(alreadyColor);
     assignClass(clickColor);
   }
-}
-
-function removeClass(colorId) {
-  const removeClass = document.getElementById(colorId);
-  removeClass.classList.remove('selected');
-}
-
-function assignClass(colorId) {
-  const assignClassId = document.getElementById(colorId);
-  assignClassId.classList.add('selected');
 }
 
 function createColorButton(color) {
@@ -73,13 +80,6 @@ function createPixelBoard(size) {
 function clearButton() {
   const clearButon = document.getElementById('clear-board');
   clearButon.addEventListener('click', clearBoard);
-}
-
-function clearBoard() {
-  const pixels = document.querySelectorAll('.pixel');
-  pixels.forEach(function (pixel) {
-    pixel.style.backgroundColor = 'white';
-  });
 }
 
 window.onload = function () {
