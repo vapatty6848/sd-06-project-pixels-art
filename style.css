@@ -1,0 +1,22 @@
+.color {
+    border: 1px solid black;
+    display: inline-block;
+}
+
+#pinkPalette {
+    background-color: pink;
+    padding: 2em;
+}
+#greenPalette {
+    background-color: lightseagreen;
+    padding: 2em;
+}
+#bluePalette {
+    background-color: aquamarine;
+    padding: 2em;
+}
+#yellowPalette {
+    background-color: lightyellow;
+    padding: 2em;
+}
+
