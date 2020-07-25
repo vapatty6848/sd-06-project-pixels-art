@@ -1,5 +1,12 @@
-.color {
+.color , .pixel {
   border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+.color {
+  margin: 0 20px;
 }
 
 .color:nth-child(1) {
@@ -18,17 +25,12 @@
   background-color: green;
 }
 
-.color , .pixel {
-  height: 40px;
-  width: 40px;
-  float: left;
-  margin: 0 20px;
-}
-
 .pixel {
   background-color: white;
 }
 
 section:nth-of-type(2) {
   clear: both;
+  width: 220px;
+  height: 220px;
 }
