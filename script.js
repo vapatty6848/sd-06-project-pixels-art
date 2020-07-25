@@ -1,6 +1,6 @@
 let pixelBoard = document.querySelector('#pixel-board');
 let selectedColor = document.querySelector('.color');
-let onClickColor = {};
+let onClickColor = window.getComputedStyle(selectedColor, null).getPropertyValue("background-color");
 const selectedClass = 'selected';
 
 for (let i = 0; i < 25; i++) {
@@ -26,3 +26,10 @@ for (let i = 0; i < document.querySelectorAll('.color').length; i++) {
   })
 }
 
+for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
+  const currentPixel = document.querySelectorAll('.pixel')[i];
+  
+  currentPixel.addEventListener('click', function () {
+    currentPixel.style.backgroundColor = `${onClickColor}`;
+  })
+}
