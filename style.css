@@ -28,9 +28,7 @@ body {
 }
 
 .board {
-  border-collapse: collapse;
-  height: fit-content;
-  padding: 0px;
+  padding: 0;
   width: fit-content;
 }
 
