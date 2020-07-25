@@ -1,10 +1,8 @@
 // Scriptlist
-function colorPalete() {
-  const colors = ['black', 'green', 'blue', 'purple'];
-  for (let i = 0; i < colors.length; i += 1) {
-    const color = colors[i];
-    createColorButton(color);
-  }
+
+function giveColor() {
+  const clickedPixel = document.getElementById(this.id);
+  clickedPixel.style.backgroundColor = selected;
 }
 function createColorButton(color) {
   const colorContainer = document.getElementById('color-palette');
@@ -17,6 +15,13 @@ function createColorButton(color) {
   colorBtn.style.backgroundColor = color;
   colorBtn.addEventListener('click', getColor);
   colorContainer.appendChild(colorBtn);
+}
+function colorPalete() {
+  const colors = ['black', 'green', 'blue', 'purple'];
+  for (let i = 0; i < colors.length; i += 1) {
+    const color = colors[i];
+    createColorButton(color);
+  }
 }
 function getColor() {
   selected = this.id;
@@ -38,10 +43,6 @@ function createPixelBoard(size) {
     name += 1;
   }
 }
-function giveColor() {
-  const clickedPixel = document.getElementById(this.id);
-  clickedPixel.style.backgroundColor = selected;
-}
 function clearButton() {
   const clearButon = document.getElementById('clear-board');
   clearButon.addEventListener('click', clearBoard);
@@ -61,6 +62,8 @@ window.onload = function () {
 	colorPalete();
 	createPixelBoard(5);
 	clearButton();
+	getColor();
+	clearBoard();
 	selected = 'black';
 };
 
