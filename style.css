@@ -26,11 +26,14 @@
   background-color: green;
 }
 
-/* .pixel {
-  display: inline-block;
-  width: 100%;
-  border: 1px solid black;
-  height: 100px;
-  width: 100px;
+.pixel-board {
+  width: 520px;
 }
-} */
+
+.pixel {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin: -2px;
+}
