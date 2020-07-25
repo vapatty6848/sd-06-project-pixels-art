@@ -2,12 +2,15 @@
 window.onload = function () {
     // console.log('page loaded')
     // global variables
-  selected = 'black';
+  //selected = 'black';
     // calls
+
   colorPalete();
   createPixelBoard(5);
   clearButton();
+  selected = 'black';
 };
+
 function colorPalete() {
   let colors = ['black', 'green', 'blue', 'purple']
   for (let i = 0; i < colors.length; i += 1) {
@@ -29,7 +32,7 @@ function createColorButton(color) {
     
 }
 function getColor() {
-  elected = this.id;
+  selected = this.id;
 }
 function createPixelBoard(size) {
   let name = 1;
