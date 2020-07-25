@@ -8,19 +8,19 @@ body {
 }
 
 #black{
-    background-color: rgb(0, 0, 0);
+    background-color: black;
 }
 
 #red{   
-    background-color: rgb(180, 12, 12);
+    background-color: crimson;
 }
 
 #blue{
-    background-color: rgb(24, 24, 230);
+    background-color: dodgerblue;
 }
 
 #green{
-    background-color: rgb(96, 179, 14);
+    background-color: forestgreen; 
 }
 
 .color{
