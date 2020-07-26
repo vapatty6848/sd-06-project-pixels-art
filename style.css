@@ -6,16 +6,16 @@
 
 #color-palette {
     align-content: center;
+    text-align: center;
 }
 
 .color {
     width: 60px;
     height: 60px;
     border: 1px solid;
-    /* As 4 bordas sólidas com 25px de espessura */
     border-color: black;
-    /* cores: topo, direita, inferior, esquerda */
     display: inline-block;
+    margin-right: 1rem;
 }
 
 #black {
@@ -34,10 +34,22 @@
     background-color: yellow;
 }
 
-.framePixels {
-    width: 25px;
-    height: 25px;
-    border: 1px solid;
+.FramePixels {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#pixel-board {
+    border-collapse: collapse;
+    border: 1px;
+    text-align: center;
+}
+
+.pixel {
     border-color: black;
-    /* cores: topo, direita, inferior, esquerda */
+    border-style: solid;
+    border-width: 1px;
+    width: 40px;
+    height: 40px;
 }
