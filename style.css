@@ -7,24 +7,22 @@ body {
   border: 1px solid black;
   display: inline-block;
   height: 45px;
-  margin: 10px 1px;
+  margin: 0 1px;
   width: 45px;
 }
 
-#black {
-  background-color: black;
+.reset {
+  margin: 15px 70px;
+  width: fit-content;
 }
 
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#yellow {
-  background-color: yellow;
+.btn-reset {
+  background-color: rgba(224 , 224 , 224 , 0.87);
+  border-radius: 2px;
+  border-style: unset;
+  font-size: 150%;
+  height: 20px;
+  width: 60px;
 }
 
 .board {
@@ -33,13 +31,13 @@ body {
 }
 
 .line {
-  display: table-row;
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
-  display: table-cell;
   height: 40px;
   width: 40px;
 }

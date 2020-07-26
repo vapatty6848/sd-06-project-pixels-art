@@ -1,31 +1,35 @@
-const DQSEL = (e) => {
-  return document.querySelector(e);
-};
+let DQSEL = (params) => { return document.querySelector(params); };
 
-let divBoard = DQSEL('.board');
-let divWithSelection = {};
-let divPalette = DQSEL('#color-palette');
-
-function makeSelection() {
+window.onload = () => {
   divWithSelection = DQSEL('#black');
   divWithSelection.classList.add('selected');
-}
+};
+
+const divBoard = DQSEL('.board');
+const divPalette = DQSEL('#color-palette');
+const btnReset = DQSEL('.btn-reset');
+let divWithSelection = {};
 
 function getCurrentColor() {
   return divWithSelection.style.backgroundColor;
 }
 
-function changeClassName(event) {  
-  divName = event.target;
-  divName.classList.add('selected');
+divPalette.addEventListener('click', (e) => {
+  divName = e.target;
   divWithSelection.classList.remove('selected');
+  divName.classList.add('selected');
   divWithSelection = divName;
-}
-divPalette.addEventListener('click', changeClassName);
+});
 
-function paintElement(event) {
-  let color = getCurrentColor();
-  let clicked = event.target;
-  clicked.style.backgroundColor = color;
-}
-divBoard.addEventListener('click', paintElement);
+divBoard.addEventListener('click', (e) => {
+  let clicked = e.target;
+  clicked.style.backgroundColor = getCurrentColor();
+});
+
+btnReset.addEventListener('click', () => {
+  let pixel = document.querySelectorAll('.pixel');
+
+  for (p in pixel) {
+    pixel[p].style.backgroundColor = 'white';
+  }
+});
