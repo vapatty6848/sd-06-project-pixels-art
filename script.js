@@ -1,10 +1,11 @@
 // Starting Pixel Art
 function addColorSelected(color) {
   const point = '.';
-  let element = document.querySelector('.selected');
-  element.classList.remove('selected');
-  let element = document.querySelector(point + color);
-  element.className = 'color ' + color + ' selected';
+  const selected = 'selected';
+  let elementToRemove = document.querySelector('.selected');
+  elementToRemove.classList.remove('selected');
+  let elementToAdd = document.querySelector(point + color);
+  elementToAdd.classList.add(selected);
 }
 
 const btnColorBlack = document.querySelector('.black');
