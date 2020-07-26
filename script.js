@@ -10,7 +10,7 @@ function setColor(event,  elementToChange) {
   return colorStoraged
 }
 
-function PalleteEvents() {
+function PalleteEvents(classColors) {
   for(let i in classColors) {
     if(classColors[i].className !== undefined)
       add(classColors[i],'click',getColor,classColors[i]);
@@ -18,15 +18,13 @@ function PalleteEvents() {
   }
 }
 
-function BoardEvents() {
+function BoardEvents(classPixels) {
   for(let i in classPixels) {
     if(classPixels[i].className !== undefined)
       add(classPixels[i],'click',setColor,classPixels[i]);
   }
 }
 
-PalleteEvents();
-BoardEvents();
 
 
 // for(let i in classPixel)

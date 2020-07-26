@@ -1,6 +1,3 @@
-let classColors = $a('.color');
-let classPixels = $a('.pixel');
-
 function generateRandomColor() {
   let parameters = []
   for(let i = 0 ; i < 3 ; i+=1) {
@@ -42,6 +39,13 @@ function initPalleteColor(classColors) {
 }
 
 window.onload = function() {
+
+  let classColors = $a('.color');
+  let classPixels = $a('.pixel');
+
   initPalleteColor(classColors);
   initPixelColor(classPixels);
+  PalleteEvents(classColors);
+  BoardEvents(classPixels);
+
 }
