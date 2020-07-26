@@ -41,3 +41,9 @@ body {
   height: 40px;
   width: 40px;
 }
+
+.input-text {
+  width: 0;
+  height: 0;
+  padding: 0;
+}

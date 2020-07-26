@@ -7,10 +7,6 @@ let divWithSelection = DQSEL('#black');
 const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua',
   'turquoise', 'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
 
-window.onload = () => {
-  changeColorToRandom();
-};
-
 function getCurrentColor() {
   return divWithSelection.style.backgroundColor;
 }
@@ -43,8 +39,19 @@ function getRandomColor() {
 
 function changeColorToRandom() {
   const divColor = document.querySelectorAll('.random');
+  let repeated = [getRandomColor(), getRandomColor(), getRandomColor()];
 
-  divColor.forEach((c) => {
-    c.style.backgroundColor = getRandomColor();
+  if (repeated[0] === repeated[1]) {
+    repeated[i] = getRandomColor();
+  } else if (repeated[1] === repeated[2]) {
+    repeated[i + 1] = getRandomColor();
+  }
+
+  divColor.forEach((item, index) => {
+    item.style.backgroundColor = repeated[index];
   });
 }
+
+window.onload = () => {
+  changeColorToRandom();
+};
