@@ -1,4 +1,4 @@
-let corSelecionada = '';
+let corSelecionada = 'black';
 
 const idBlack = document.getElementById('black');
 idBlack.addEventListener('click', function () {
