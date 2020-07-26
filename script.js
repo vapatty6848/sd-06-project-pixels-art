@@ -1,7 +1,10 @@
-const selectColor = document.getElementById('black');
-const selectColor = document.getElementById('red');
-const selectColor = document.getElementById('blue');
-const selectColor = document.getElementById('green');
+  const divPallet = document.querySelector('#color-palette');
+  divPallet.addEventListener('click'), function(event) {
+    const divSelector = document.querySelector('#red').style.backgroundColor;
+    console.log(event.target);
+    console.log(divSelector);
+
+  }
   selectColor.addEventListener('click', function() {
       optColor(selectColor)
 
