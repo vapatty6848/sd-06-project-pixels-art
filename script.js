@@ -20,11 +20,15 @@ idGreen.addEventListener('click', function () {
   corSelecionada = 'green';
 });
 
+function corDefinida(pixel) {
+  pixel.addEventListener('click', function () {
+    pixel.style.backgroundColor = corSelecionada;
+  });
+}
+
 const arrayPixel = document.getElementsByClassName('pixel');
 for (let i = 0; i < arrayPixel.length; i += 1) {
-  arrayPixel[i].addEventListener('click', function () {
-    arrayPixel[i].style.backgroundColor = corSelecionada;
-  });
+  corDefinida(arrayPixel[i]);
 }
 
 const clearBoard = document.getElementById('clear-board');
