@@ -14,19 +14,19 @@ header {
 
 }
 
-.row-header {
+.color-pallete {
   margin-left: 10px;
 }
 
-.box {
+.pixel,.color {
   height: 40px;
   width: 40px;
   border: 1px solid black;
   display: inline-block;
-  padding: 0;
+  z-index: 1000;
 }
 
-.header {
+.color {
   text-align: center;
   margin-right: 10px;
 }
@@ -36,3 +36,18 @@ header {
 }
 
 
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
