@@ -8,7 +8,7 @@ window.onload = function(){
         
         arrayOfPixels = document.querySelectorAll('.pixel');
         for (let i = 0; i < arrayOfPixels.length; i += 1) {
-        arrayOfPixels[i].style.background = 'white';
+        arrayOfPixels[i].style.background = "rgb(255,255,255)";
     }
     
         
