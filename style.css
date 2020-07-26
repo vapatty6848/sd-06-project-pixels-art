@@ -1,0 +1,42 @@
+.black {
+    background-color: black;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    border-style: solid;
+    border: 1px 1px 1px 1px;
+    border-color: black;
+    
+}
+.blue {
+    background-color: blue;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    border-style: solid;
+    border: 1px 1px 1px 1px;;
+    border-color: black;
+}
+.green {
+    background-color: green;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    border-style: solid;
+    border: 1px 1px 1px 1px;;
+    border-color: black;
+}
+.red {
+    background-color: red;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    border-style: solid;
+    border: 1px 1px 1px 1px;;
+    border-color: black;
+    
+}
+#color-palette {
+    width: 400px;
+    height: 90px;
+}
