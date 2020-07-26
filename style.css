@@ -1,4 +1,4 @@
-.black {
+#black {
     background-color: black;
     width: 90px;
     height: 90px;
@@ -8,7 +8,7 @@
     border-color: black;
     
 }
-.blue {
+#blue {
     background-color: blue;
     width: 90px;
     height: 90px;
@@ -17,7 +17,7 @@
     border: 1px 1px 1px 1px;;
     border-color: black;
 }
-.green {
+#green {
     background-color: green;
     width: 90px;
     height: 90px;
@@ -26,7 +26,7 @@
     border: 1px 1px 1px 1px;;
     border-color: black;
 }
-.red {
+#red {
     background-color: red;
     width: 90px;
     height: 90px;
@@ -40,3 +40,24 @@
     width: 400px;
     height: 90px;
 }
+
+.pixel { 
+    border-right: 1px solid #000000;
+     border-bottom: 1px solid #000000; 
+     float: left;
+      width: 30px; 
+      height: 30px; 
+     background-color: white;
+    }
+
+.row {
+     clear: both; 
+     overflow: hidden; }
+
+#pixel-board { 
+    border-left: 1px solid #000000; 
+}
+#topo {
+    border-top: 1px solid #000000; 
+}
+    
