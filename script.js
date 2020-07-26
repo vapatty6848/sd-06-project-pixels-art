@@ -2,11 +2,13 @@ const DQSEL = function (params) { return document.querySelector(params); };
 const divBoard = DQSEL('.board');
 const divPalette = DQSEL('#color-palette');
 const btnReset = DQSEL('.btn-reset');
-let divWithSelection = {};
+let divWithSelection = DQSEL('#black');
+
+const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua',
+  'turquoise', 'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
 
 window.onload = () => {
-  divWithSelection = DQSEL('#black');
-  divWithSelection.classList.add('selected');
+  changeColorToRandom();
 };
 
 function getCurrentColor() {
@@ -14,10 +16,9 @@ function getCurrentColor() {
 }
 
 divPalette.addEventListener('click', (e) => {
-  let divName = e.target;
   divWithSelection.classList.remove('selected');
-  divName.classList.add('selected');
-  divWithSelection = divName;
+  e.target.classList.add('selected');
+  divWithSelection = e.target;
 });
 
 divBoard.addEventListener('click', (e) => {
@@ -31,3 +32,19 @@ btnReset.addEventListener('click', () => {
     p.style.backgroundColor = 'white';
   });
 });
+
+function getRandomNumber() {
+  return Math.round(Math.random() * 10);
+}
+
+function getRandomColor() {
+  return COLORS[getRandomNumber()];
+}
+
+function changeColorToRandom() {
+  const divColor = document.querySelectorAll('.random');
+
+  divColor.forEach((c) => {
+    c.style.backgroundColor = getRandomColor();
+  });
+}
