@@ -6,10 +6,16 @@ const selectColor =document.getElementById("green");
      optColor(selectColor)
 
  })
+ function defineColor(pixel) {
+    pixel.addEventListener("click", function () {
+      pixel.style.backgroundColor = selectColor;
+    });
+  }
 
  function optColor() {
-    const selectorDiv = document.getElementsByClassName('selected')[0];
-    selectorDiv.classList.remove('selected');
-    div.classList.add('selected');
+    const selectorDiv = document.getElementsByTagName(".selected")[0];
+    selectorDiv.classList.remove("selected");
+    div.classList.add("selected");
 
  }
+ 
