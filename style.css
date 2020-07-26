@@ -19,3 +19,10 @@
 #green {
   background-color: green;
 }
+
+.pixel {
+  border: 1px black solid;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+}
