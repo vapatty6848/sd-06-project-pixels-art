@@ -8,6 +8,7 @@
   display: inline-block;
   height: 40px;
   width: 40px;
+  margin: 4px;
 }
 
 .black {
@@ -29,6 +30,13 @@
 .pixel-board {
   background-color: white;
   width: 210px;
+}
+
+.clear-board {
+  background-color: gray;
+  height: 20px;
+  width: 190px;
+  margin: 10px;
 }
 
 .pixel {
