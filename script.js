@@ -19,8 +19,7 @@ function add(triggerObj,triggerType,action,obj){
 function getColor(event,  elementToCopy) {
   let storage;
   let elemento = event.target;
-  console.log(elemento.style.backgroundColor);
-
+   elemento.className += ``
    storage = elemento.style.backgroundColor;
 
   return  storage

@@ -33,12 +33,10 @@ function generator256Bits(){
 let classColors = $a('.color');
 window.onload = function() {
 
-
+  classColors[0].style.backgroundColor = 'black';
   for(let i in classColors){
     if(classColors[i]!== undefined && i > 0){
       classColors[i].style.backgroundColor = generateRandomColor();
     }
   }
-
-
 }
