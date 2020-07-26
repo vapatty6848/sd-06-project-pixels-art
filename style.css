@@ -11,17 +11,13 @@ body {
   width: 45px;
 }
 
-.reset {
-  margin: 15px 70px;
-  width: fit-content;
-}
-
 .btn-reset {
   background-color: lightgrey;
   border-radius: 2px;
   border-style: unset;
   font-size: 150%;
   height: 20px;
+  margin: 15px 70px;
   width: 60px;
 }
 
@@ -43,7 +39,7 @@ body {
 }
 
 .input-text {
-  width: 0;
   height: 0;
   padding: 0;
+  width: 0;
 }

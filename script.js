@@ -39,12 +39,12 @@ function getRandomColor() {
 
 function changeColorToRandom() {
   const divColor = document.querySelectorAll('.random');
-  let repeated = [getRandomColor(), getRandomColor(), getRandomColor()];
+  const repeated = [getRandomColor(), getRandomColor(), getRandomColor()];
 
   if (repeated[0] === repeated[1]) {
-    repeated[i] = getRandomColor();
+    repeated[1] = getRandomColor();
   } else if (repeated[1] === repeated[2]) {
-    repeated[i + 1] = getRandomColor();
+    repeated[2] = getRandomColor();
   }
 
   divColor.forEach((item, index) => {
