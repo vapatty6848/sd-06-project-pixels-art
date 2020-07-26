@@ -43,11 +43,10 @@ let button = document.querySelector('#clear-board');
 function buttonClear() {
     button.addEventListener('click', function() {
         for(let i = 0; i < pixel.length; i++) {
-            pixel[i].style.backgroundColor = 'white';
+            pixel[i].style.backgroundColor = '#ffffff';
         }
     })
 }
-
 /////
 
 buttonClear();
