@@ -1,4 +1,5 @@
   const divPallet = document.querySelector('#color-palette');
+  const clearButton = document.querySelector('button');
   divPallet.addEventListener('click'), function(event) {
     const divSelector = document.querySelector('#red').style.backgroundColor;
     console.log(event.target);
@@ -21,3 +22,11 @@
     div.classList.add('selected');
 
   }
+
+  clearButton.addEventListener('click', function () {
+    for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
+      const currentPixel = document.querySelectorAll('.pixel')[i];
+      currentPixel.style.backgroundColor = 'white';
+    }
+  })
+
