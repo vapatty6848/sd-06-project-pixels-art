@@ -26,6 +26,10 @@ header {
   z-index: 1000;
 }
 
+.pixel {
+  background-color: white;
+}
+
 
 
 .color {
@@ -37,11 +41,11 @@ header {
   margin: 10px 0;
 }
 
-.row {
+.brush-body {
   margin-bottom: 0;
   margin-top: 0;
-  height: 40px;
-  width: 230px;
+  max-height: 230px;
+  max-width: 230px;
 }
 
 
