@@ -1,18 +1,21 @@
 h1 {
     clear: both;
 }
-.color {
+    .color {
     border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+    display: inline;
 }
-#preto-palette {
+    #black-palette {
     background-color: black;
 }
-#vermelho-palette {
+    #red-palette {
     background-color: red;
 }
-#azul-palette {
+    #blue-palette {
     background-color: blue;
 }
-#verde-palette {
+    #green-palette {
     background-color: green;
 }
