@@ -1,0 +1,18 @@
+h1 {
+    clear: both;
+}
+.color {
+    border: 1px solid black;
+}
+#preto-palette {
+    background-color: black;
+}
+#vermelho-palette {
+    background-color: red;
+}
+#azul-palette {
+    background-color: blue;
+}
+#verde-palette {
+    background-color: green;
+}
