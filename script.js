@@ -1,23 +1,30 @@
 let corSelecionada = 'black';
 
+function divSelected(cor, div) {
+  corSelecionada = cor;
+  const divSelecionada = document.getElementsByClassName('selected')[0];
+  divSelecionada.classList.remove('selected');
+  div.classList.add('selected');
+}
+
 const idBlack = document.getElementById('black');
 idBlack.addEventListener('click', function () {
-  corSelecionada = 'black';
+  divSelected('black', idBlack);
 });
 
 const idRed = document.getElementById('red');
 idRed.addEventListener('click', function () {
-  corSelecionada = 'red';
+  divSelected('red', idRed);
 });
 
 const idBlue = document.getElementById('blue');
 idBlue.addEventListener('click', function () {
-  corSelecionada = 'blue';
+  divSelected('blue', idBlue);
 });
 
 const idGreen = document.getElementById('green');
 idGreen.addEventListener('click', function () {
-  corSelecionada = 'green';
+  divSelected('green', idGreen);
 });
 
 function corDefinida(pixel) {
