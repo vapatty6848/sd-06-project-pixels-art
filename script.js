@@ -2,9 +2,9 @@
 function addColorSelected(color) {
   const point = '.';
   const selected = 'selected';
-  let elementToRemove = document.querySelector('.selected');
+  const elementToRemove = document.querySelector('.selected');
   elementToRemove.classList.remove('selected');
-  let elementToAdd = document.querySelector(point + color);
+  const elementToAdd = document.querySelector(point + color);
   elementToAdd.classList.add(selected);
 }
 

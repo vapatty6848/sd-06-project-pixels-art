@@ -1,13 +1,8 @@
 .color {
   border: solid 1px black;
-  border-radius: 50%;
   display: inline-block;
   height: 38px;
   width: 38px;
-}
-
-.selected {
-  border: solid 1px red;
 }
 
 .black {
