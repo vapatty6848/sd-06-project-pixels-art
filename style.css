@@ -17,7 +17,7 @@ body {
 }
 
 .btn-reset {
-  background-color: rgba(224 , 224 , 224 , 0.87);
+  background-color: lightgrey;
   border-radius: 2px;
   border-style: unset;
   font-size: 150%;
