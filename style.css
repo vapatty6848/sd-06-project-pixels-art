@@ -20,16 +20,17 @@
 .blue {
   background-color: rgb(73, 123, 156);
 }
+
 .row {
   display: inline-block;
   height: 36px;
   width: 200px;
 }
+
 .pixel {
   background-color: white;
   border: solid 1px black;
   display: inline-block;
-  float: left;
   height: 38px;
   width: 38px;
 }
