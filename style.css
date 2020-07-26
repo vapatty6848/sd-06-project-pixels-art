@@ -7,8 +7,8 @@
   border: 1px solid black;
   display: inline-block;
   height: 40px;
-  width: 40px;
   margin: 4px;
+  width: 40px;
 }
 
 .black {
@@ -32,11 +32,11 @@
   width: 210px;
 }
 
-.clear-board {
+#clear-board {
   background-color: gray;
   height: 20px;
+  mar gin: 10px;
   width: 190px;
-  margin: 10px;
 }
 
 .pixel {

@@ -28,6 +28,6 @@ for (let i = 0; i < arrayPixel.length; i += 1) {
 }
 
 const clearBoard = document.getElementById('clear-board');
-clearBoard.addEventListener('click', function() {
+clearBoard.addEventListener('click', function () {
   arrayPixel.style.backgroundColor = 'white';
 });
