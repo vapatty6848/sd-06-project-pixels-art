@@ -14,7 +14,7 @@ header {
 
 }
 
-.color-pallete {
+.pallete {
   margin-left: 10px;
 }
 
@@ -26,9 +26,7 @@ header {
   z-index: 1000;
 }
 
-.pixel{
-  background-color: white;
-}
+
 
 .color {
   text-align: center;
