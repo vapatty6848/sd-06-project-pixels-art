@@ -1,0 +1,42 @@
+.table {
+  display: table;
+}
+
+.tr {
+  display: table-row;
+}
+
+.td {
+  display: table-cell;
+}
+
+.spacing {
+    width: 20px;
+}
+.color {
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+}
+
+.pixel {
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
