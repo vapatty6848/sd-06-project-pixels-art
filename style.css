@@ -1,0 +1,23 @@
+.color-palette {
+    display: flex;
+}
+
+.color {
+    background-color: black;
+    border: 1px solid black;
+    height: 50px;
+    margin: 10px;
+    width: 50px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
