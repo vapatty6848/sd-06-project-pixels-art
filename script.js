@@ -14,18 +14,7 @@
   colorBlue.style.backgroundColor = 'blue';
   let colorRed = selectColor[7];
   colorRed.style.backgroundColor = 'red';
-
-  let corClasse = document.querySelectorAll('.color')
-let selectedColor = document.querySelector(".selected")
-
-  document.querySelectorAll('.color').forEach(item => {
-    item.addEventListener('click',function (){
-      corClasse.add.classList("selected")
-      document.querySelectorAll(".selected").remove.classList("selected")
-    })
-  })
-  
-  
+ 
   if (aux==='x'){
     boardClickedPixel.addEventListener('click', function (event) {
       const clickedPixel = event.target;
@@ -48,7 +37,19 @@ let selectedColor = document.querySelector(".selected")
 
   })
   
-  
+  let selected = document.getElementsByClassName('selected');
+  document.querySelector('div').classList.add('selected');
+
+  document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('color')) {
+      selected[0].className = 'color';
+      event.target.classList.add('selected');
+      event.target.backgroundColor = event.target.style.backgroundColor;
+      console.log(selected.length)
+    } else if (event.target.classList.contains('pixel')) {
+      event.target.style.backgroundColor = selected[0].style.backgroundColor ;
+    }
+  });
 
   clearButton.addEventListener('click', function () {
     const clearPixel = document.querySelectorAll('.pixel');
