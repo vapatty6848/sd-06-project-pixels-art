@@ -16,9 +16,6 @@ window.onload = function () {
   let colorRed = colors[7];
   colorRed.style.backgroundColor = 'red';
 
-  let colorYellow = colors[9];
-  colorYellow.style.backgroundColor = 'yellow';
-
   let selected = document.getElementsByClassName('selected');
 
   console.log(selected.length)
