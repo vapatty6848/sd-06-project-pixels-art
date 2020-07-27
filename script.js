@@ -53,7 +53,11 @@ clearBoard.addEventListener('click', function () {
 const btnMakePixel = document.querySelector('#generate-board');
 btnMakePixel.addEventListener('click', function () {
   const inputMakePixel = document.getElementById('board-size');
-  const gridPixel = inputMakePixel.value * inputMakePixel.value;
+  if (inputMakePixel.value < 5 || inputMakePixel.value > 50) {
+    inputMakePixel.value = 5;
+    alert('Board inválido!');
+  }
+  let gridPixel = inputMakePixel.value * inputMakePixel.value;
   const pixels = document.getElementById('pixel-board');
   pixels.querySelectorAll('*').forEach((n) => n.remove());
   for (let index = 0; index < gridPixel; index += 1) {
