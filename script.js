@@ -35,7 +35,7 @@ function selectedColor() {
                 if (color[index].classList.contains('selected')) {
                     color[index].classList.remove('selected')
                 } else {
-                    color[i].className = 'color color4 selected'
+                    color[i].classList.add('selected')
                 }
 
                 for (let i = 0; i < pixel.length; i++) {
