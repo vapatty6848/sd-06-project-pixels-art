@@ -6,7 +6,6 @@
     width: 40px;   
 }
 .pixel {
-  background-color: white;
   border: 1px solid black;
   display: inline-block;
   height: 40px;
@@ -15,3 +14,6 @@
 .button {
   display: block;
 } 
+#clear-board {
+  background-color: white;
+}

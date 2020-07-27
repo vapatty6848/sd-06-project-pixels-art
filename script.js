@@ -1,5 +1,6 @@
   const divPallet = document.querySelector('#color-palette');
-  const clearButton = document.querySelector('button');
+  const clearButton = document.getElementById('clear-board');
+
   divPallet.addEventListener('click'), function(event) {
     const divSelector = document.querySelector('#red').style.backgroundColor;
     console.log(event.target);
