@@ -2,8 +2,8 @@
 let currentSelectedColor = 'black';
 
 function clearBoard() {
-  const clearBoard = document.querySelector('#clear-board');
-  clearBoard.addEventListener('click', function () {
+  const elementClearBoard = document.querySelector('#clear-board');
+  elementClearBoard.addEventListener('click', function () {
     const clearPixel = document.querySelectorAll('.pixel');
     for (let index = 0; index < clearPixel.length; index += 1) {
       clearPixel[index].style.backgroundColor = 'white';
@@ -24,8 +24,8 @@ function generateRandomColor() {
 }
 
 function handlePaletteItemEvent(event) {
-  let oldSelectedDiv = document.querySelector('.selected');
-  let currentSelectedDiv = event.target;
+  const oldSelectedDiv = document.querySelector('.selected');
+  const currentSelectedDiv = event.target;
 
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
@@ -36,7 +36,7 @@ function handlePaletteItemEvent(event) {
 }
 
 function createPaletteItem(color) {
-  let paletteItemDiv = document.createElement('div');
+  const paletteItemDiv = document.createElement('div');
   paletteItemDiv.style.backgroundColor = color;
   paletteItemDiv.className = 'color';
   paletteItemDiv.addEventListener('click', handlePaletteItemEvent);
@@ -48,16 +48,16 @@ function createPaletteItem(color) {
 }
 
 function createColorPalette(colors) {
-  let colorPaletteContainer = document.getElementById('color-palette');
+  const colorPaletteContainer = document.getElementById('color-palette');
 
-  for (let index in colors) {
-    let paletteItemDiv = createPaletteItem(colors[index]);
+  for (const index in colors) {
+    const paletteItemDiv = createPaletteItem(colors[index]);
     colorPaletteContainer.appendChild(paletteItemDiv);
   }
 }
 
 function handlePixelEvent(event) {
-  let divColorized = event.target;
+  const divColorized = event.target;
   divColorized.style.backgroundColor = currentSelectedColor;
 }
 
@@ -69,16 +69,19 @@ function createPixelsDiv(divClassName) {
 }
 
 function createPixelsBoard() {
-  const createBoard = document.querySelector('#pixel-board');
+  const elementCreateBoard = document.querySelector('#pixel-board');
   let inputCreateBoard = document.getElementById('board-size').value;
-  if (inputCreateBoard < 5 || inputCreateBoard > 50) {
+  if (inputCreateBoard < 5) {
     inputCreateBoard = 5;
+    alert('Board inválido!');
+  } else if (inputCreateBoard > 50) {
+    inputCreateBoard = 50;
     alert('Board inválido!');
   }
   const gridPixel = inputCreateBoard * inputCreateBoard;
-  createBoard.querySelectorAll('*').forEach((n) => n.remove());
+  elementCreateBoard.querySelectorAll('*').forEach((n) => n.remove());
   for (let index = 0; index < gridPixel; index += 1) {
-    createBoard.appendChild(createPixelsDiv('pixel'));
+    elementCreateBoard.appendChild(createPixelsDiv('pixel'));
   }
 }
 
