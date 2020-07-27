@@ -20,12 +20,13 @@
 }
 #pixel-board{
     width: 390px;
-    
+    background-color: white;
 }
 .pixel{
     border: 1px solid black;
     margin: -2px;
     padding: 40px;
     display: inline-block;
+    
     
 }
