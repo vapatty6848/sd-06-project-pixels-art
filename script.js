@@ -10,4 +10,12 @@ window.onload = function () {
 
   const color4 = document.getElementsByClassName('color')[3];
   color4.style.backgroundColor = 'blue';
+
+  const clearBoard = document.getElementById('clear-board');
+  clearBoard.addEventListener('change', clear);
 };
+
+function clear() {
+  const pixel = document.querySelectorAll('.pixel');
+  pixel.style.backgroundColor = 'rgb(255, 255, 255)';
+}
