@@ -2,3 +2,26 @@
   margin: 0;
   padding: 0;
 }
+
+.color {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.one {
+  background-color: black;
+}
+
+.two {
+  background-color: rgb(67, 170, 139);
+}
+
+.three {
+  background-color: rgb(249, 65, 68);
+}
+
+.four {
+  background-color: rgb(243, 114, 44);
+}
