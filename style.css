@@ -7,7 +7,7 @@
   border: solid 1px black;
   display: inline-block;
   height: 40px;
-  margin: 3px;
+  margin: 2px;
   width: 40px;
 }
 
@@ -27,6 +27,16 @@
   background-color: blue;
 }
 
+.clear {
+  padding: 10px;
+  width: 208px;
+}
+
+.btn-clear {
+  width: 170px;
+  margin-bottom: 10px;
+}
+
 .board {
   display: inline-block;
   height: 208px;
@@ -39,6 +49,6 @@
   border: solid 1px black;
   display: inline-block;
   height: 40px;
-  margin: -2px;
+  margin: -3px;
   width: 40px;
 }

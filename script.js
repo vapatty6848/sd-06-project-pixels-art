@@ -35,3 +35,11 @@ boardClickedPixel.addEventListener('click', function (event) {
   const clickedPixel = event.target;
   clickedPixel.style.backgroundColor = colorSelected;
 });
+
+const clearBoard = document.querySelector('#clear-board');
+clearBoard.addEventListener('click', function (event) {
+  const clearPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < clearPixel.length; index++) {
+    clearPixel[index].style.backgroundColor = 'white';
+  }
+});
