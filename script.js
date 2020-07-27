@@ -10,11 +10,13 @@ window.onload = function () {
     }
     paletteItem[index].addEventListener("click", changeSelected);
   }
+
+  createPixelBoard();
 }
 
 let table = document.getElementById("pixel-board");
-let height = parseInt(5);
-let width = parseInt(5);
+
+document.querySelector('#generate-board').addEventListener('click', createPixelBoard);
 
 document.getElementById('clear-board').addEventListener('click', function() {
   let objPixels = document.querySelectorAll('.pixel'); // [0]
@@ -33,9 +35,12 @@ function randomColor() {
 }
 
 function createPixelBoard() {
-  for (let countLines = 0; countLines < height; countLines += 1) {
+  let boardSize = parseInt(document.querySelector('#board-size').value);
+  deletePixel();
+
+  for (let countLines = 0; countLines < boardSize; countLines += 1) {
     const row = table.insertRow(countLines);
-    for (let countCell = 0; countCell < width; countCell += 1) {
+    for (let countCell = 0; countCell < boardSize; countCell += 1) {
         const cell = row.insertCell(countCell);
         cell.className = 'pixel';
         cell.addEventListener("click", fillPixel);
@@ -56,4 +61,9 @@ function changeSelected() {
   newSelected.classList.add('selected');
 }
 
-createPixelBoard();
+function deletePixel(){
+  while (table.firstChild){
+    table.removeChild(table.firstChild);
+  }
+}
+
