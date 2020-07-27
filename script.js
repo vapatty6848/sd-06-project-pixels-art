@@ -50,7 +50,7 @@ function createPaletteItem(color) {
 function createColorPalette(colors) {
   const colorPaletteContainer = document.getElementById('color-palette');
 
-  for (const index in colors) {
+  for (let index = 0; index < colors.length; index += 1) {
     const paletteItemDiv = createPaletteItem(colors[index]);
     colorPaletteContainer.appendChild(paletteItemDiv);
   }
@@ -71,7 +71,11 @@ function createPixelsDiv(divClassName) {
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
   let inputCreateBoard = document.getElementById('board-size').value;
-  if (inputCreateBoard < 5) {
+  if (
+    inputCreateBoard < 5 ||
+    inputCreateBoard === undefined ||
+    inputCreateBoard === null
+  ) {
     inputCreateBoard = 5;
     alert('Board inválido!');
   } else if (inputCreateBoard > 50) {
