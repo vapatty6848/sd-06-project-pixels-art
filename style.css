@@ -1,77 +1,21 @@
-.select {
-    background-color: black;
-}
-
-.color {
-    border: 1px solid black
-}
-
-#black {
-    background-color: black;
-    width: 90px;
-    height: 90px;
-    display: inline-block;
-    /* border-style: solid;
+.pallet-item {
+    height: 40px;
+    width: 40px;
+    border-style: solid;
     border-width: 1px;
-    border-color: black; */
-    border: 1px solid black
-    
-}
-#blue {
-    background-color: blue;
-    width: 90px;
-    height: 90px;
+    border-color: black;
     display: inline-block;
-    /* border-style: solid;
-    border-width: 1px;
-    border-color: black; */
-    border: 1px solid black
-}
-#green {
-    background-color: green;
-    width: 90px;
-    height: 90px;
-    display: inline-block;
-    /* border-style: solid;
-    border-width: 1px;
-    border-color: black; */
-    border: 1px solid black
-}
-#red {
-    background-color: red;
-    width: 90px;
-    height: 90px;
-    display: inline-block;
-    /* border-style: solid;
-    border-width: 1px;
-    border-color: black; */
-    border: 1px solid black
-    
-}
-#color-palette {
-    width: 400px;
-    height: 90px;
 }
 
-.pixel { 
-    border-right: 1px solid #000000;
-     border-bottom: 1px solid #000000; 
-     float: left;
-      width: 40px; 
-      height: 40px; 
-     border-width: 1px;
-     border-color: black;
-     border-style: solid;
-    }
-
-.row {
-     clear: both; 
-     overflow: hidden; }
-
-#pixel-board { 
-    border-left: 1px solid #000000; 
+.pixel {
+    height: 40px;
+    width: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    display: inline-block;
 }
-#topo {
-    border-top: 1px solid #000000; 
+
+.selected {
+
 }
-    
