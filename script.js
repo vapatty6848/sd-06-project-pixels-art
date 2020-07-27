@@ -14,7 +14,7 @@ function setClass(event) {
   $('.selected').classList.remove('selected');
   event.currentTarget.classList = `${event.currentTarget.className} selected`;
 }
-//events
+//init events
 function PalleteEvents(colors) {
   for(let i in colors) {
     let color = colors[i];
@@ -32,6 +32,10 @@ function BoardEvents(pixels) {
     if(pixels[i].className !== undefined)
       add(pixel,'click',setColor,pixel);
   }
+}
+
+function buttonEvents(buttons) {
+
 }
 
 //initiate palette and pixels

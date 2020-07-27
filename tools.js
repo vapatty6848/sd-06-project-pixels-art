@@ -22,6 +22,12 @@ function addClassEvent(triggerObj,triggerType,action) {
   })
 }
 
+function addButtonEvent(triggerObj,triggerType,action) {
+  triggerObj.addEventListener(triggerType, function(event){
+    action(event);
+  })
+}
+
 function generateRandomColor() {
   let parameters = []
   for(let i = 0 ; i < 3 ; i += 1) {
