@@ -1,6 +1,5 @@
 .palette {
   display: block;
-  width: 208px;
 }
 
 .color {
@@ -29,7 +28,6 @@
 
 .clear {
   padding: 10px;
-  width: 208px;
 }
 
 .btn-clear {
@@ -39,9 +37,8 @@
 
 .board {
   display: inline-block;
-  height: 208px;
+  width: 200px;
   margin: 0;
-  width: 208px;
 }
 
 .pixel {
