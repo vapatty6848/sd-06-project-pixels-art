@@ -9,16 +9,16 @@
     background-color: #000;
     border: 1px solid #000;
 }
-#color-palette .color:nth-child(1) {
+.color1{
     background-color: #000;
 }
-#color-palette .color:nth-child(2) {
+.color2 {
     background-color: red;
 }
-#color-palette .color:nth-child(3) {
+.color3 {
     background-color: blue;
 }
-#color-palette .color:nth-child(4) {
+.color4{
     background-color: green;
 }
 
@@ -32,7 +32,6 @@
 }
 
 .pixel {
-    background-color: #fff;
     border: 1px solid #000;
     width: 40px;
     height: 40px;
@@ -42,5 +41,7 @@
     margin-top: 25px;
     width: 100px;
 }
+
+
 
 
