@@ -1,38 +1,29 @@
 window.onload = function(){
     //catchCorPaleta
-    const catchCorPaletaColor1 = document.querySelector("#color-1");
-    const catchCorPaletaColor2 = document.querySelector("#color-2");
-    const catchCorPaletaColor3 = document.querySelector("#color-3");
-    const catchCorPaletaColor4 = document.querySelector("#color-4");
-    const catchButton = document.querySelector("#clear-board");
-    const catchPixel = document.querySelector(".pixel");
+  const CorPaletaColor1 = document.querySelector('#color-1');
+  const CorPaletaColor2 = document.querySelector('#color-2');
+  const CorPaletaColor3 = document.querySelector('#color-3');
+  const CorPaletaColor4 = document.querySelector('#color-4');
+  const Button = document.querySelector('#clear-board');
+  const Pixel = document.querySelector('.pixel');
 
-    catchCorPaletaColor1.addEventListener('click', function(){
-        catchPixel.style.backgroundColor = "black";
-    });
-    catchCorPaletaColor2.addEventListener('click', function(){
-        catchPixel.style.backgroundColor = "blueviolet";
-    });
-    catchCorPaletaColor3.addEventListener('click', function(){
-        catchPixel.style.backgroundColor = "chartreuse";
-    });
-    catchCorPaletaColor4.addEventListener('click', function(){
-        catchPixel.style.backgroundColor = "darkgoldenrod";
-    });
-    catchButton.addEventListener('click', function(){
-        catchPixel.style.backgroundColor = "white";
-    });
+  CorPaletaColor1.addEventListener('click', function(){
+    Pixel.style.backgroundColor = 'black';
+  });
+  CorPaletaColor2.addEventListener('click', function(){
+    Pixel.style.backgroundColor = 'blueviolet';
+  });
+  CorPaletaColor3.addEventListener('click', function(){
+    Pixel.style.backgroundColor = 'chartreuse';
+  });
+  CorPaletaColor4.addEventListener('click', function(){
+    Pixel.style.backgroundColor = 'darkgoldenrod';
+  });
+  Button.addEventListener('click', function(){
+    Pixel.style.backgroundColor = 'white';
+  });
 
-
-    capturaClique.addEventListener('click', function(){
-        catchCorPaletaColor1.nodeValue
-    })
-    catchCorPaletaColor1.addEventListener('click', function(){
-        catchPixel.style.backgroundColor = "black";
-    });
 
     
-
-
 
 }
