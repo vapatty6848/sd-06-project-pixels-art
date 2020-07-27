@@ -6,6 +6,7 @@ body {
 div {
   width: 20px;
   height: 20px;
+  cursor: pointer;
   border: 1px solid black;
 }
 
@@ -24,6 +25,7 @@ tr {
 
 td {
   width: 40px;
+  cursor: pointer;
 }
 
 #color-palette {

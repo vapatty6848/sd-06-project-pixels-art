@@ -1,12 +1,16 @@
-const colorBlock1 = '#000';
-const colorBlock2 = randomColor();
-const colorBlock3 = randomColor();
-const colorBlock4 = randomColor();
+window.onload = function () {  
+  let paletteItem = document.querySelectorAll('.color');
 
-document.getElementById('colorOption1').style.backgroundColor = colorBlock1;
-document.getElementById('colorOption2').style.backgroundColor = colorBlock2;
-document.getElementById('colorOption3').style.backgroundColor = colorBlock3;
-document.getElementById('colorOption4').style.backgroundColor = colorBlock4;
+  for (let index = 0; index < paletteItem.length; index += 1) {
+    if (index == 0) {
+      paletteItem[index].style.backgroundColor = '#000';
+      paletteItem[index].classList.add('selected');
+    } else {
+      paletteItem[index].style.backgroundColor = randomColor();
+    }
+    paletteItem[index].addEventListener("click", changeSelected);
+  }
+}
 
 let table = document.getElementById("pixel-board");
 let height = parseInt(5);
@@ -41,6 +45,14 @@ function createPixelBoard() {
 
 function fillPixel() {
   this.setAttribute("style", 'background-color: #000');
+}
+
+function changeSelected() {
+  let oldSelected = document.querySelector('.selected');
+  let newSelected = event.target;
+
+  oldSelected.classList.remove('selected');
+  newSelected.classList.add('selected');
 }
 
 createPixelBoard();
