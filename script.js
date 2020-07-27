@@ -10,6 +10,12 @@ function addColorSelected(color) {
   elementToAdd.classList.add(selected);
 }
 
+function createDivPixel() {
+  const div = document.createElement('div');
+  div.className = 'pixel';
+  return div;
+}
+
 const btnColorBlack = document.querySelector('.black');
 btnColorBlack.addEventListener('click', function () {
   addColorSelected('black');
@@ -47,18 +53,13 @@ clearBoard.addEventListener('click', function () {
 const btnMakePixel = document.querySelector('#generate-board');
 btnMakePixel.addEventListener('click', function () {
   const inputMakePixel = document.getElementById('board-size');
-  let gridPixel = inputMakePixel.value * inputMakePixel.value;
+  const gridPixel = inputMakePixel.value * inputMakePixel.value;
   const pixels = document.getElementById('pixel-board');
   pixels.querySelectorAll('*').forEach((n) => n.remove());
   for (let index = 0; index < gridPixel; index += 1) {
     pixels.appendChild(createDivPixel());
   }
   const board = document.getElementsByClassName('board')[0];
-  board.style.width = 36 * inputMakePixel.value + 'px';
+  const boardSize = (36 * inputMakePixel.value).toString + 'px';
+  board.style.width = boardSize;
 });
-
-function createDivPixel() {
-  const div = document.createElement('div');
-  div.className = 'pixel';
-  return div;
-}
