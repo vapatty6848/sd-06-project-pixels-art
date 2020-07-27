@@ -31,19 +31,20 @@ html, body{
     background-color: darkgoldenrod;
 }
   
+/*
 .pixel-board {
-    display:grid;
-    grid-template-columns: auto auto auto auto auto;
+    display: grid;
     background-color: black;
-    padding: 10px;
 }
+*/
 
 .pixel{
     background-color: white;
-    padding: 20px 0;
     border: 1px;
     border-color: black;
+    border-collapse: collapse;
     border-style: solid;
     height: 40px;
+    width: 40px;
 }
 
