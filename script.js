@@ -34,20 +34,13 @@ function selectedColor() {
                 pixel[i].className = 'pixel color1'
             })
         };
-
-    
         color[i].addEventListener('click', function() {
             for (let index = 0; index < color.length; index++) {
                 if (color[index].classList.contains('selected')) {
                     color[index].classList.remove('selected')
                 } else {
-                    color[i].addEventListener('click', function() {
-                        for(let j = 0; j < color.length; j++) {
-                            color[i].classList.add('selected')
-                        }
-                    })
+                    color[i].className = 'color color4 selected'                    
                 }
-        
 
                 for (let i = 0; i < pixel.length; i++) {
                     pixel[i].addEventListener('click', function () {
