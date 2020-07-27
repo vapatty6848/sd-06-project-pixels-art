@@ -15,11 +15,11 @@ function selectedColor() {
                 }
                 for (let i = 0; i < pixel.length; i ++) {
                     pixel[i].addEventListener('click', function() {
-                        if(color[0]) {
+                        if(color[0].classList.contains('selected')) {
                             pixel[i].classList.add('color1')
-                        }else if (color[1]) {
+                        }else if (color[1].classList.contains('selected')) {
                             pixel[i].classList.add('color2')
-                        } else if(color[3]){
+                        } else if(color[2].classList.contains('selected')){
                             pixel[i].classList.add('color3')
                         } else {
                             pixel[i].classList.add('color4')
@@ -57,7 +57,7 @@ let button = document.querySelector('#clear-board');
 function buttonClear() {
     button.addEventListener('click', function () {
         for (let i = 0; i < pixel.length; i++) {
-            pixel[i].style.backgroundColor = '#ffffff';
+            pixel[i].className = 'pixel';
         }
     })
 }
