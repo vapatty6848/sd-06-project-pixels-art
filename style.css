@@ -35,7 +35,7 @@ html, body{
     margin-top: 50px;
 }
 
-.pixel-board {
+#pixel-board {
     display: grid;
     width: 200px;
     margin-top: 50px;
