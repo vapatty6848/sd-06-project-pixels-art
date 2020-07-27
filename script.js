@@ -8,7 +8,7 @@ document.getElementById('colorOption2').style.backgroundColor = colorBlock2;
 document.getElementById('colorOption3').style.backgroundColor = colorBlock3;
 document.getElementById('colorOption4').style.backgroundColor = colorBlock4;
 
-let table = document.getElementById("pixel_canvas");
+let table = document.getElementById("pixel-board");
 let height = parseInt(5);
 let width = parseInt(5);
 
