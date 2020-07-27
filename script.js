@@ -10,17 +10,19 @@ function setColor(event,  elementToChange) {
   return colorStoraged
 }
 
-function setClass(event,elementToChange) {
-  $('.selected').classList.remove("selected");
-  event.Target.classList = `${event.Target.className} + selected`
+function setClass(event) {
+  $('.selected').classList.remove('selected');
+  event.currentTarget.classList = `${event.currentTarget.className} selected`;
 }
 //events
 function PalleteEvents(colors) {
   for(let i in colors) {
     let color = colors[i];
-    if(color.className !== undefined)
+    if(color.className !== undefined){
       add(color,'click',getColor,color);
+      addClassEvent(color,'click',setClass);
 
+    }
   }
 }
 
@@ -32,11 +34,11 @@ function BoardEvents(pixels) {
   }
 }
 
-//initiate pixel and colors
+//initiate palette and pixels
 
 function initPixelColor(pixelsColors) {
   colors = pixelsColors;
-  for(let i = 0;i < colors.length;i+=1) {
+  for(let i = 0;i < colors.length;i += 1) {
     let color = colors[i];
     if(color.style.backgroundColor !== undefined) {
       color.style.backgroundColor = 'white';
@@ -48,7 +50,7 @@ function initPalleteColor(paletteColors) {
 
   paletteColors[0].style.backgroundColor = 'black';
   colorStoraged = 'black';
-  for(let i = 1 ; i < paletteColors.length; i+=1) {
+  for(let i = 1 ; i < paletteColors.length; i += 1) {
     let paletteColor = paletteColors[i];
     if(paletteColor.style.backgroundColor !== undefined){
       paletteColor.style.backgroundColor = generateRandomColor();

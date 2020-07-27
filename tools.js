@@ -16,25 +16,25 @@ function add(triggerObj,triggerType,action,obj) {
   }}})
 }
 
-function addClass(triggerObj,triggerType,action) {
+function addClassEvent(triggerObj,triggerType,action) {
   triggerObj.addEventListener(triggerType, function(event){
-    setclass(event);
+    action(event);
   })
 }
 
 function generateRandomColor() {
   let parameters = []
-  for(let i = 0 ; i < 3 ; i+=1) {
-    parameters.push(generator256Bits())
+  for(let i = 0 ; i < 3 ; i += 1) {
+    parameters.push(RandomGenerator256Bits())
   }
    let numero =parameters.join(',');
    return `rgb(${numero})`
 }
 
-function generator256Bits() {
+function RandomGenerator256Bits() {
   let valores = []
   let primeiroValor  = Math.ceil(Math.random()*2);
-  for(let i = 0; i < 3; i+=1) {
+  for(let i = 0; i < 3; i += 1) {
     if(i === 0) {
       valores.push(primeiroValor);
     }
