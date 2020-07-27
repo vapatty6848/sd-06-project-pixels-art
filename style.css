@@ -3,9 +3,10 @@ body {
   padding: 0;
 }
 
-.colorOption {
+.color {
   height: 40px;
   width: 40px;
-  margin: 0px 5px;
+  margin: 0px 2px;
   float: left;
+  border: 1px solid #000;
 }
