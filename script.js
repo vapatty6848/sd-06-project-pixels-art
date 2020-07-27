@@ -2,11 +2,9 @@ let pixel = document.querySelectorAll('.pixel');
 let color = document.querySelectorAll('.color');
 let selected = document.querySelector('selected');
 let colorPallete = document.querySelector('#color-palette')
-
 let color2 = document.querySelector('.color2');
 let color3 = document.querySelector('.color3');
 let color4 = document.querySelector('.color4');
-
 
 
 function generateAleatoryColor() {
@@ -16,7 +14,6 @@ function generateAleatoryColor() {
         let sub = Math.floor(Math.random() * 256).toString(16);
         color += (sub.length == 1 ? '0' + sub : sub);
     }
-    console.log(color)
     return color
 }
 
@@ -24,7 +21,6 @@ for(let i = 0; i < color.length; i ++) {
     color[0].style.backgroundColor = "#000"
     color[i].style.backgroundColor = generateAleatoryColor();
 }
-
 
 function selectedColor() {
     for (let i = 0; i < color.length; i++) {
@@ -67,9 +63,6 @@ function selectedColor() {
 
 };
 
-
-
-
 // Criando botao ClearBoard
 
 let button = document.querySelector('#clear-board');
@@ -86,6 +79,34 @@ function buttonClear() {
 }
 /////
 
+// Limitando quadros de pixels
+let inputSize = document.querySelector('#board-size');
+let buttonInputSize = document.querySelector('#generate-board')
+let valueSize = 0;
+
+
+function checkNumber() {
+    buttonInputSize.addEventListener('click', function() {
+        if(inputSize.value === '') {
+            alert ("Board Inválido")
+        } else  {
+            valueSize = Number(inputSize.value)
+        }
+    })
+    
+}
+
+console.log(valueSize)
+
+
+
+
+
+
+
+
+///
+checkNumber()
 generateAleatoryColor()
 buttonClear();
 selectedColor();

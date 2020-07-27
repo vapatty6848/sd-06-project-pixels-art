@@ -45,6 +45,13 @@
     width: 100px;
 }
 
+.size-controller {
+    margin-top: 15px;
+}
+
+.size-controller input {
+    width: 30px;
+}
 
 
 
