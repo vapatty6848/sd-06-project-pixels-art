@@ -10,10 +10,9 @@ window.onload = function () {
   }
   colorPalette.addEventListener('click', changeClass);
 
-  function pixelColoring (event) {
+  function pixelColoring(event) {
     const selectedColor = document.querySelector('.selected').style.backgroundColor;
     event.target.style.backgroundColor = selectedColor;
-    console.log("teste")
   }
   pixelsBoard.addEventListener('click', pixelColoring);
 
@@ -24,15 +23,14 @@ window.onload = function () {
     }
   }
   clearButton.addEventListener('click', clearBoard);
-    
-  /********Tentativa usando o webstorage******************
-  //localStorage.setItem("chosenColor", "black"); // selecionando a cor preta ao carregar a página
-  //localStorage.setItem("chosenColor", "black"); // selecionando a cor preta ao carregar a página
-  // colorPalette.addEventListener('click', function (event) {
-  //   localStorage.setItem("chosenColor", event.target.id);
-  //   let chosenColor = localStorage.getItem("chosenColor");
-  //   return chosenColor;
-  // });
-  /****************************************************** */
 
+    /********Tentativa usando o webstorage******************
+    //localStorage.setItem("chosenColor", "black"); // selecionando a cor preta ao carregar a página
+    //localStorage.setItem("chosenColor", "black"); // selecionando a cor preta ao carregar a página
+    // colorPalette.addEventListener('click', function (event) {
+    //   localStorage.setItem("chosenColor", event.target.id);
+    //   let chosenColor = localStorage.getItem("chosenColor");
+    //   return chosenColor;
+    // });
+    /****************************************************** */
 }

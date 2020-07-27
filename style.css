@@ -5,7 +5,7 @@
 }
 
 .pixel {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: 1px solid black;
   float: left;
   height: 40px;
@@ -20,9 +20,9 @@
 }
 
 #color-palette {
+  border: 1px solid black;
   height: 70px;
   width: 290px;
-  border: 1px solid black;
 }
 
 #black {
@@ -42,9 +42,9 @@
   float: left;
   margin: 5px;
 }
+
 #green {
   background-color: green;
   float: left;
   margin: 5px;
 }
-
