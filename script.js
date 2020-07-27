@@ -3,13 +3,10 @@ window.onload = function () {
 let corBlack = document.getElementById("black")
 corBlack.classList.add("selected")
 const cores = document.querySelectorAll(".color")
+const pixel = document.querySelectorAll(".pixel")
+let botaoApagar = document.querySelector("#clear-board")
 
-function addSelectedClass(cor, div) {
-  corBlack = cor;
-  const selecionado = document.getElementsByClassName('selected')[0];
-  selecionado.classList.remove('selected');
-  div.classList.add('selected');
-
-}
-return addSelectedClass;
+botaoApagar.addEventListener("click", function () {
+  pixel.style.backgroundColor = "white";
+})
 }
