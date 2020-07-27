@@ -3,11 +3,14 @@
 }
 
 .color {
-  background-color: black;
   border: 1px solid black;
   height: 45px;
   margin: 1px;
   width: 45px;
+}
+
+.black {
+    background-color: black;
 }
 
 .red {
@@ -22,7 +25,9 @@
   background-color: green;
 }
 
-
+.clear-board {
+    width: 195px;
+}
 
 .table {
   border-collapse: collapse;
