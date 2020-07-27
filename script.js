@@ -4,7 +4,7 @@ createColorPallet(['black', 'red', 'blue', 'green']);
 
 function createColorPallet(colors){
     //recupera a pallet
-    let colorPaletContainer = document.getElementById("color-palet")
+    let colorPaletContainer = document.getElementById("color-palette")
     //add as cores
     for (let index in colors){
         let palletItemDiv = createPalletItem(colors[index]);
@@ -18,6 +18,7 @@ function createPalletItem(color){
     let palletItemDiv = document.createElement('div');
     palletItemDiv.style.backgroundColor = color;
     palletItemDiv.className = "pallet-item";
+    palletItemDiv.classList.add("color")
     palletItemDiv.addEventListener("click", handlePalletItemEvent);
 
     // palletItemDiv.addEventListener("click", function(event){
