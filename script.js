@@ -34,6 +34,14 @@ function randomColor() {
   return color;
 }
 
+function changeSelected() {
+  let oldSelected = document.querySelector('.selected');
+  let newSelected = event.target;
+
+  oldSelected.classList.remove('selected');
+  newSelected.classList.add('selected');
+}
+
 function createPixelBoard() {
   let boardSize = document.querySelector('#board-size').value;
   
@@ -41,7 +49,15 @@ function createPixelBoard() {
     alert('Board inválido!');
     return false;
   }
-  
+
+  if (boardSize < 5) {
+    boardSize = 5;
+  }
+
+  if (boardSize > 50) {
+    boardSize = 50;
+  }
+
   deletePixel();
 
   for (let countLines = 0; countLines < boardSize; countLines += 1) {
@@ -57,14 +73,6 @@ function createPixelBoard() {
 function fillPixel() {
   let colorSelectedItem = document.querySelector('.selected').style.backgroundColor;
   this.setAttribute("style", 'background-color: ' + colorSelectedItem);
-}
-
-function changeSelected() {
-  let oldSelected = document.querySelector('.selected');
-  let newSelected = event.target;
-
-  oldSelected.classList.remove('selected');
-  newSelected.classList.add('selected');
 }
 
 function deletePixel(){
