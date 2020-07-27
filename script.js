@@ -2,14 +2,13 @@ window.onload = function () {
 
 let varPixel = document.querySelector("#table")
 let colorBlack = document.querySelector(".selected")
+let cadaPixel = document.querySelectorAll(".pixel")
 
-varPixel.addEventListener("click", function () {
-  varPixel.style.backgroundColor = colorBlack
-
+cadaPixel.forEach(cadaPixel => { 
+  cadaPixel.addEventListener('click', function () {
+    cadaPixel.style.backgroundColor = colorBlack => {
+    //handle click
+  }
+  })
 })
-
-// function btnClick()     
-//   var x = document.getElementById("mytable").getElementsByTagName("td");
-//   x[0].innerHTML = "i want to change my cell color";
-//   x[0].style.backgroundColor = "yellow";
 }
