@@ -4,6 +4,7 @@ window.onload = function () {
 
   let colorBlack = colors[1]
   colorBlack.style.backgroundColor = "black";
+  colorBlack.className = "selected"
 
   let getColorRGB = colorBlack.style.backgroundColor
 
@@ -19,20 +20,16 @@ window.onload = function () {
   let selected = document.getElementsByClassName("selected")
 
   document.addEventListener('click', function (event) {
-    if (event.target.classList.contains ('color') && selected.length < 1) {
-      getColorRGB = event.target.style.backgroundColor;
-      event.target.className = "selected";
-      console.log(selected.length);
-    } else if (event.target.classList.contains ('color') && selected.length >= 1) {
+    if (event.target.classList.contains ('color') && selected.length >= 1) {
       console.log(selected);
       selected[0].className = "color";
       getColorRGB = event.target.style.backgroundColor;
       event.target.className = "selected";
       console.log(selected.length);
-      console.log(getColorRGB);
+      //console.log(getColorRGB);
     } else if (event.target.classList.contains ('pixel') && selected.length === 1) {
       event.target.style.backgroundColor = getColorRGB;
-      console.log(event.target)
+      //console.log(event.target)
     } else if (event.target.classList.contains ('pixel') && selected.length === 0) {
       event.target.style.backgroundColor = "black";
     };

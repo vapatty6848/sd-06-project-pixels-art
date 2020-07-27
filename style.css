@@ -32,8 +32,8 @@ nav {
 
 .board {
   display: table;
-  border: 1px black solid;
-  border-width: 1px 1px 0 0;
+  /*border: 1px black solid;
+  border-width: 1px 1px 1px 1px;*/
   margin: auto;
 }
 
@@ -44,7 +44,6 @@ nav {
 .pixel {
   background-color: white;
   border: 1px black solid;
-  border-width: 0px 0px 1px 1px;
   display: table-cell;
   height: 40px;
   width: 40px;
