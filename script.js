@@ -1,5 +1,7 @@
 // Starting Pixel Art
+let colorSelected = 'black';
 function addColorSelected(color) {
+  colorSelected = color;
   const point = '.';
   const selected = 'selected';
   const elementToRemove = document.querySelector('.selected');
@@ -26,4 +28,10 @@ btnColorGreen.addEventListener('click', function () {
 const btnColorBlue = document.querySelector('.blue');
 btnColorBlue.addEventListener('click', function () {
   addColorSelected('blue');
+});
+
+const boardClickedPixel = document.querySelector('#pixel-board');
+boardClickedPixel.addEventListener('click', function (event) {
+  let clickedPixel = event.target;
+  clickedPixel.style.backgroundColor = colorSelected;
 });

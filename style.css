@@ -21,10 +21,19 @@
   background-color: rgb(73, 123, 156);
 }
 
+.table {
+  display: table;
+  width: 200px;
+}
+
+.row {
+  display: table-row;
+}
+
 .pixel {
   background-color: white;
   border: solid 1px black;
-  display: inline-block;
-  height: 38px;
-  width: 38px;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
 }
