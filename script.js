@@ -4,7 +4,7 @@ window.onload = function () {
   let colorBlack = colors[1];
   colorBlack.style.backgroundColor = 'rgb(0, 0,0)';
 
-  let getColorRGB = colorBlack.style.backgroundColor;
+  let getColorRGB;
 
   let colorGreen = colors[3];
   colorGreen.style.backgroundColor = 'green';
@@ -24,10 +24,11 @@ window.onload = function () {
     if (event.target.classList.contains('color')) {
       selected[0].className = 'color';
       getColorRGB = event.target.style.backgroundColor;
+      event.target.backgroundColor = getColorRGB;
       event.target.className = 'selected';
     } else if (event.target.classList.contains('pixel')) {
-      event.target.style.backgroundColor = getColorRGB;
-    };
+      event.target.style.backgroundColor = selected[0].style.backgroundColor ;
+    }
   });
 
   let clearButton = document.querySelector('#clear-board');
@@ -37,7 +38,7 @@ window.onload = function () {
   clearButton.addEventListener('click', function () {
     for (let i = 0; i < pixel.length; i += 1) {
       pixel[i].style.backgroundColor = 'white';
-    };
+    }
   });
 };
 
