@@ -36,20 +36,17 @@
   });
 
   })
+  function handlePaletteItemEvent(event) {
+    let oldSelectedDiv = document.querySelector('.selected');
+    let currentSelectedDiv = event.target;
   
-  let selected = document.getElementsByClassName('selected');
-  document.querySelector('div').classList.add('selected');
-
-  document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('color')) {
-      selected[0].className = 'color';
-      event.target.classList.add('selected');
-      event.target.backgroundColor = event.target.style.backgroundColor;
-      console.log(selected.length)
-    } else if (event.target.classList.contains('pixel')) {
-      event.target.style.backgroundColor = selected[0].style.backgroundColor ;
-    }
-  });
+    oldSelectedDiv.classList.remove('selected');
+    currentSelectedDiv.classList.add('selected');
+  
+    currentSelectedColor = window
+      .getComputedStyle(currentSelectedDiv, null)
+      .getPropertyValue('background-color');
+  }
 
   clearButton.addEventListener('click', function () {
     const clearPixel = document.querySelectorAll('.pixel');
