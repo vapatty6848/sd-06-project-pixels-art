@@ -1,42 +1,42 @@
 .color-palette {
-    display: flex;
+  display: flex;
 }
 
 .color {
-    background-color: black;
-    border: 1px solid black;
-    height: 50px;
-    margin: 10px;
-    width: 50px;
+  background-color: black;
+  border: 1px solid black;
+  height: 50px;
+  margin: 10px;
+  width: 50px;
 }
 
 .red {
-    background-color: red;
+  background-color: red;
 }
 
 .blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 .green {
-    background-color: green;
+  background-color: green;
 }
+
 .table {
-    display: table;
-    margin: 10px;
-    width: 40px;
-    height: 40px;
-    
+  border: 1px solid black;
+  display: table;
+  margin: 10px;
 }
+
 .tr {
-    display: table-row;
-    margin: 0;
-    
+  display: table-row;
+  margin: 0;    
 }
+
 .td {
-    display: table-cell;
-    margin: 0;
-    
-    
-    background-color: white;
+  background-color: white;
+  display: table-cell;
+  height: 40px;
+  margin: 0;
+  width: 40px;
 }
