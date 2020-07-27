@@ -31,9 +31,14 @@ html, body{
     background-color: darkgoldenrod;
 }
   
+.clear-board{
+    margin-top: 50px;
+}
 
 .pixel-board {
     display: grid;
+    width: 200px;
+    margin-top: 50px;
     grid-template-columns: auto auto auto auto auto;
 }
 
