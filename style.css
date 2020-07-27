@@ -22,21 +22,22 @@
   background-color: green;
 }
 
+.table, tr, td {
+    border: 1px solid black;
+}
+
 .table {
-  border: 1px solid black;
+  border-collapse: collapse;
   display: table;
   margin: 10px;
-  padding:;
 }
 
 .tr {
-  display: table-row;
-  border: 1px solid black;    
+  display: table-row;    
 }
 
 .td {
   background-color: white;
-  border: 1px solid black;
   display: table-cell;
   height: 40px;
   width: 40px;
