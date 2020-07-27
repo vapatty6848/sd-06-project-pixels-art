@@ -26,7 +26,8 @@
     border: 1px solid black;
     margin: -2px;
     padding: 40px;
-    display: inline-block;
-    
-    
+    display: inline-block;   
+}
+.bgbranco{
+    background: white;
 }

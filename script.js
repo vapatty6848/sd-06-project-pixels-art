@@ -6,7 +6,7 @@ let classSel = 'preto';
 function createPixelBoard() {
 for (let i = 0; i < 25; i+=1) {
     let create = document.createElement('span')
-    create.setAttribute('class', 'pixel ')
+    create.setAttribute('class', 'pixel bgbranco')
     pixelBoard.appendChild(create);   
 }   
 }
