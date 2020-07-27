@@ -12,9 +12,16 @@
   height: 40px;
   width: 40px;
 }
+.pixel-board {
+  background-color: white;
+  
+}
 .button {
-  display: block;
-} 
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
 #clear-board {
   background-color: white;
 }
