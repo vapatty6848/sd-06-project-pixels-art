@@ -1,18 +1,6 @@
 // Starting Pixel Art
 let currentSelectedColor = 'black';
 
-window.onload = function () {
-  createColorPalette([
-    'black',
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
-  ]);
-  createPixelsBoard();
-  clearBoard();
-  createBoard();
-};
-
 function clearBoard() {
   const clearBoard = document.querySelector('#clear-board');
   clearBoard.addEventListener('click', function () {
@@ -31,29 +19,8 @@ function generateRandomColor() {
   const colorR = generateRandomColorNumber();
   const colorG = generateRandomColorNumber();
   const colorB = generateRandomColorNumber();
-  const colorRGB = 'rgb(' + colorR + ', ' + colorG + ', ' + colorB + ')';
+  const colorRGB = `rgb(${colorR}, ${colorG}, ${colorB} )`;
   return colorRGB;
-}
-
-function createColorPalette(colors) {
-  let colorPaletteContainer = document.getElementById('color-palette');
-
-  for (let index in colors) {
-    let paletteItemDiv = createPaletteItem(colors[index]);
-    colorPaletteContainer.appendChild(paletteItemDiv);
-  }
-}
-
-function createPaletteItem(color) {
-  let paletteItemDiv = document.createElement('div');
-  paletteItemDiv.style.backgroundColor = color;
-  paletteItemDiv.className = 'color';
-  paletteItemDiv.addEventListener('click', handlePaletteItemEvent);
-
-  if (color === 'black') {
-    paletteItemDiv.classList.add('selected');
-  }
-  return paletteItemDiv;
 }
 
 function handlePaletteItemEvent(event) {
@@ -68,6 +35,27 @@ function handlePaletteItemEvent(event) {
     .getPropertyValue('background-color');
 }
 
+function createPaletteItem(color) {
+  let paletteItemDiv = document.createElement('div');
+  paletteItemDiv.style.backgroundColor = color;
+  paletteItemDiv.className = 'color';
+  paletteItemDiv.addEventListener('click', handlePaletteItemEvent);
+
+  if (color === 'black') {
+    paletteItemDiv.classList.add('selected');
+  }
+  return paletteItemDiv;
+}
+
+function createColorPalette(colors) {
+  let colorPaletteContainer = document.getElementById('color-palette');
+
+  for (let index in colors) {
+    let paletteItemDiv = createPaletteItem(colors[index]);
+    colorPaletteContainer.appendChild(paletteItemDiv);
+  }
+}
+
 function handlePixelEvent(event) {
   let divColorized = event.target;
   divColorized.style.backgroundColor = currentSelectedColor;
@@ -78,11 +66,6 @@ function createPixelsDiv(divClassName) {
   pixelDiv.className = divClassName;
   pixelDiv.addEventListener('click', handlePixelEvent);
   return pixelDiv;
-}
-
-function createBoard() {
-  const btnVQV = document.querySelector('#generate-board');
-  btnVQV.addEventListener('click', createPixelsBoard);
 }
 
 function createPixelsBoard() {
@@ -98,3 +81,20 @@ function createPixelsBoard() {
     createBoard.appendChild(createPixelsDiv('pixel'));
   }
 }
+
+function createBoard() {
+  const btnVQV = document.querySelector('#generate-board');
+  btnVQV.addEventListener('click', createPixelsBoard);
+}
+
+window.onload = function () {
+  createColorPalette([
+    'black',
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+  ]);
+  createPixelsBoard();
+  clearBoard();
+  createBoard();
+};
