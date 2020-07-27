@@ -9,6 +9,7 @@ nav {
 }
 
 .color {
+  background-color: black;
   border: 1px black solid;
   display: inline-block;
   height: 40px;

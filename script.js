@@ -26,6 +26,7 @@ window.onload = function () {
       selected[0].className = 'color';
       event.target.className = 'selected';
       event.target.backgroundColor = event.target.style.backgroundColor;
+      console.log(selected.length)
     } else if (event.target.classList.contains('pixel')) {
       event.target.style.backgroundColor = selected[0].style.backgroundColor ;
     }
