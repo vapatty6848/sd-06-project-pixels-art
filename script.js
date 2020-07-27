@@ -1,7 +1,7 @@
 function clear() {
   const pixel = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.backgroundColor = 'white';
+    pixel[i].style.backgroundColor = 'rgb(0, 128, 0)';
   }
 }
 
