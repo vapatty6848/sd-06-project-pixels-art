@@ -13,15 +13,13 @@ palette.forEach(color => {
 
 const pixelBoard = document.querySelectorAll('.pixel');
 console.log(pixelBoard)
-let bg
 pixelBoard.forEach(pixel => {
-    palette.forEach(color => {
-        if (color.classList.contains('selected')) {
-            pixel.addEventListener('click', () => {
-                pixel.style.backgroundColor = color.style.backgroundColor
-            })
-
-        }
-
+    pixel.addEventListener('click', () => {
+        palette.forEach(color => {
+            if(color.classList.contains('selected')){
+                pixel.className += ' ' + color.classList[1]
+            }
+        })
     })
 })
+
