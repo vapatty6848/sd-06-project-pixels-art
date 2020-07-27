@@ -1,19 +1,19 @@
 window.onload = function () {
-  let pixelLines = document.querySelectorAll('.pixel-line');
-  console.log(pixelLines);
-  fillBoardLines(pixelLines);
+  const pixelLines = document.querySelectorAll('.pixel-line');
 
-  function fillBoardLines (lines) {
-    for (let line in lines) {
-      fillBoardColumn(lines, line);
-    }
-  }
-
-  function fillBoardColumn (lines, line) {
+  function fillBoardColumn(lines, line) {
     for (let column = 0; column < lines.length; column += 1) {
-      let pixelColumn = document.createElement('div');
+      const pixelColumn = document.createElement('div');
       pixelColumn.className = 'pixel';
       pixelLines[line].appendChild(pixelColumn);
     }
   }
-}
+
+  function fillBoardLines(lines) {
+    for (const line = 0; line < lines.length; line += 1) {
+      fillBoardColumn(lines, line);
+    }
+  }
+
+  fillBoardLines(pixelLines);
+};

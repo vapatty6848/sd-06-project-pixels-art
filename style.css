@@ -1,4 +1,4 @@
-.color , .pixel{
+.color , .pixel {
   border: 1px solid black;
   box-sizing: border-box;
   height: 40px;
@@ -13,8 +13,8 @@
 
 .pixel-board .pixel-line {
   box-sizing: border-box;
-  width: 100%;
   height: 40px;
+  width: 100%;
 }
 
 .pixel {
@@ -41,5 +41,3 @@
 .green {
   background-color: green;
 }
-
-
