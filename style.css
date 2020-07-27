@@ -11,10 +11,23 @@ body {
   border-color: black;
   border-style: solid;
   display: inline-block;
-  height: 30px;
-  width: 10%;
+  height: 52px;
+  width: 52px;
 }
 
 .title1 {
   text-align: center;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  height: 41px;
+  width: 41px;
+}
+
+.pixel_board {
+  border-spacing: 0;
 }
