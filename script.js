@@ -3,7 +3,7 @@ window.onload = function () {
   let colors = document.getElementById  ("color-palette").childNodes;
 
   let colorBlack = colors[1]
-  colorBlack.style.backgroundColor = 'rgb(0, 0, 0)';
+  colorBlack.style.backgroundColor = 'black';
   colorBlack.className = 'selected';
 
   let getColorRGB = colorBlack.style.backgroundColor
@@ -33,8 +33,6 @@ window.onload = function () {
     } else if (event.target.classList.contains ('pixel') && selected.length === 1) {
       event.target.style.backgroundColor = getColorRGB;
       //console.log(event.target)
-    } else if (event.target.classList.contains ('pixel') && selected.length === 0) {
-      event.target.style.backgroundColor = 'black';
     };
   });
 
@@ -45,6 +43,6 @@ window.onload = function () {
   clearButton.addEventListener("click", function () {
     for (i = 0; i < pixel.length; i += 1)
     pixel[i].style.backgroundColor = 'white'
-  })
+  });
 
 };
