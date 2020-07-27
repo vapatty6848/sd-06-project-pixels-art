@@ -12,14 +12,14 @@
   width: 40px;
 }
 
-#pixel-board {
+.pixel-board {
   background-color: white;
   border: 1px solid black;
   height: 210px;
   width: 210px;
 }
 
-#color-palette {
+.color-palette {
   border: 1px solid black;
   height: 70px;
   width: 290px;

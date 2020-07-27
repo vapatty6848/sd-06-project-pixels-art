@@ -24,7 +24,7 @@ window.onload = function () {
   }
   clearButton.addEventListener('click', clearBoard);
 
-    /********Tentativa usando o webstorage******************
+    /* *******Tentativa usando o webstorage******************
     //localStorage.setItem("chosenColor", "black"); // selecionando a cor preta ao carregar a página
     //localStorage.setItem("chosenColor", "black"); // selecionando a cor preta ao carregar a página
     // colorPalette.addEventListener('click', function (event) {
@@ -33,4 +33,4 @@ window.onload = function () {
     //   return chosenColor;
     // });
     /****************************************************** */
-}
+};
