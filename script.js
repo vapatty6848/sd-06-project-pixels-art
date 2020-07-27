@@ -37,9 +37,9 @@ boardClickedPixel.addEventListener('click', function (event) {
 });
 
 const clearBoard = document.querySelector('#clear-board');
-clearBoard.addEventListener('click', function (event) {
+clearBoard.addEventListener('click', function () {
   const clearPixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < clearPixel.length; index++) {
+  for (let index = 0; index < clearPixel.length; index += 1) {
     clearPixel[index].style.backgroundColor = 'white';
   }
 });
