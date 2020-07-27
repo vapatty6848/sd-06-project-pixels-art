@@ -37,6 +37,10 @@
     height: 40px;
 }
 
+.white {
+    background-color: white;
+}
+
 #clear-board {
     margin-top: 25px;
     width: 100px;
