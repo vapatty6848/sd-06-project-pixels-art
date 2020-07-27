@@ -44,7 +44,8 @@ function createPixelBoard() {
 }
 
 function fillPixel() {
-  this.setAttribute("style", 'background-color: #000');
+  let colorSelectedItem = document.querySelector('.selected').style.backgroundColor;
+  this.setAttribute("style", 'background-color: ' + colorSelectedItem);
 }
 
 function changeSelected() {
