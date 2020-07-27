@@ -11,6 +11,7 @@ function setColor(event,  elementToChange) {
 }
 
 function setClass(event) {
+
   $('.selected').classList.remove('selected');
   event.currentTarget.classList = `${event.currentTarget.className} selected`;
 }
