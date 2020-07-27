@@ -3,8 +3,10 @@ window.onload = function () {
   let colors = document.getElementById  ("color-palette").childNodes;
 
   let colorBlack = colors[1]
-  colorBlack.style.backgroundColor = 'black';
+  colorBlack.style.backgroundColor = 'rgb(0, 0,0)';
   colorBlack.className = 'selected';
+
+  console.log(document.querySelector("div"))
 
   let getColorRGB = colorBlack.style.backgroundColor
 
@@ -20,19 +22,17 @@ window.onload = function () {
   let colorYellow = colors[9];
   colorYellow.style.backgroundColor = 'yellow';
 
-  let selected = document.getElementsByClassName('selected')
+  let selected = document.getElementsByClassName('selected');
 
   document.addEventListener('click', function (event) {
-    if (event.target.classList.contains ('color') && selected.length >= 1) {
+    if (event.target.classList.contains ('color')) {
       console.log(selected);
       selected[0].className = 'color';
       getColorRGB = event.target.style.backgroundColor;
       event.target.className = 'selected';
       console.log(selected.length);
-      //console.log(getColorRGB);
-    } else if (event.target.classList.contains ('pixel') && selected.length === 1) {
+    } else if (event.target.classList.contains ('pixel')) {
       event.target.style.backgroundColor = getColorRGB;
-      //console.log(event.target)
     };
   });
 
@@ -44,5 +44,4 @@ window.onload = function () {
     for (i = 0; i < pixel.length; i += 1)
     pixel[i].style.backgroundColor = 'white'
   });
-
 };

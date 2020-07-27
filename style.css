@@ -32,8 +32,7 @@ nav {
 
 .board {
   display: table;
-  /*border: 1px black solid;
-  border-width: 1px 1px 1px 1px;*/
+  border: 1px black solid;
   margin: auto;
 }
 
