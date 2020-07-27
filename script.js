@@ -4,9 +4,8 @@ window.onload = function () {
 
   let colorBlack = colors[1]
   colorBlack.style.backgroundColor = 'rgb(0, 0,0)';
-  colorBlack.className = 'selected';
 
-  console.log(document.querySelector("div"))
+  console.log(document.querySelector(".color"))
 
   let getColorRGB = colorBlack.style.backgroundColor;
 
@@ -29,7 +28,7 @@ window.onload = function () {
   let selected = document.getElementsByClassName('selected');
 
   console.log(selected.length)
-
+  colorBlack.className = 'selected';
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains ('color')) {
       console.log(selected);
