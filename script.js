@@ -35,7 +35,13 @@ function randomColor() {
 }
 
 function createPixelBoard() {
-  let boardSize = parseInt(document.querySelector('#board-size').value);
+  let boardSize = document.querySelector('#board-size').value;
+  
+  if (boardSize.length == 0) {
+    alert('Board inválido!');
+    return false;
+  }
+  
   deletePixel();
 
   for (let countLines = 0; countLines < boardSize; countLines += 1) {
