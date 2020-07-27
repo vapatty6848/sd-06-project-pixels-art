@@ -1,24 +1,26 @@
 window.onload = function () {
-  let colors = document.getElementById('color-palette').childNodes;
+  let colorPalette = document.querySelector('#color-palette');
+  
+  function createColorPallet(colors) {
+    for (index in colors) {
+      let colorDiv = createColor(colors[index]);
+      colorPalette.appendChild(colorDiv);
+    }
+  };
+  
+  let colors = ['black', 'green', 'blue', 'red'];
 
-  let colorBlack = colors[1];
-  colorBlack.style.backgroundColor = 'rgb(0, 0,0)';
-  colorBlack.classList.add('selected');
+  createColorPallet(colors);
 
-  let getColorRGB;
-
-  let colorGreen = colors[3];
-  colorGreen.style.backgroundColor = 'green';
-
-  let colorBlue = colors[5];
-  colorBlue.style.backgroundColor = 'blue';
-
-  let colorRed = colors[7];
-  colorRed.style.backgroundColor = 'red';
+  function createColor(color) {
+    let colorDiv = document.createElement('div');
+    colorDiv.className = 'color';
+    colorDiv.style.backgroundColor = color;
+    return colorDiv;
+  };
 
   let selected = document.getElementsByClassName('selected');
-
-  console.log(selected.length)
+  document.querySelector('div').classList.add('selected');
 
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('color')) {
@@ -40,6 +42,6 @@ window.onload = function () {
       pixel[i].style.backgroundColor = 'white';
     }
     selected[0].className = 'color';
-    colorBlack.classList.add('selected');
+    document.querySelector('div').classList.add('selected');
   });
 };
