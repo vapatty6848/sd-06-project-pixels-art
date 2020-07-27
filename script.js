@@ -1,6 +1,6 @@
 window.onload = function () {
   const color1 = document.getElementsByClassName('color')[0];
-  color1.style.backgroundColor = 'red';
+  color1.style.backgroundColor = 'black';
 
   const color2 = document.getElementsByClassName('color')[1];
   color2.style.backgroundColor = 'green';
