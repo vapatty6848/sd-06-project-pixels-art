@@ -28,9 +28,10 @@ nav {
 }
 
 .pixel {
-  display: table-cell;
+  color: white;
   border: 1px black solid;
   border-width: 0px 0px 1px 1px;
+  display: table-cell;
   height: 40px;
   width: 40px;
 }
