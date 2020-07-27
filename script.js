@@ -8,6 +8,23 @@ function returnPixelBox(number){
   return rBox;
 }
 
+let corSelecionada = 'black';
+function addCSelecionada(cor){
+  corSelecionada = color;
+  const ponto = '.';
+  const selecionada = 'selected';
+  const removeElement = document.querySelector('.selected');
+  removeElement.classList.remove('selected');
+  const addElemento = document.querySelector(ponto + color);
+  addElemento.classList.add(selecionada);
+}
+
+let pallet = returnColorPallet(number);
+pallet.addEventListener('click', function(){
+  addCSelecionada.style.backgroundColor;
+});
+
+
 const clearButton = document.querySelector("#clear-board");
 clearButton.addEventListener('click', function(){
   const selectedPixel = document.querySelectorAll(".pixel");
