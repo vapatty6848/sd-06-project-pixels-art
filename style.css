@@ -26,17 +26,18 @@
   border: 1px solid black;
   display: table;
   margin: 10px;
+  padding:;
 }
 
 .tr {
   display: table-row;
-  margin: 0;    
+  border: 1px solid black;    
 }
 
 .td {
   background-color: white;
+  border: 1px solid black;
   display: table-cell;
   height: 40px;
-  margin: 0;
   width: 40px;
 }
