@@ -13,7 +13,12 @@ for (let i = 0; i < 25; i+=1) {
 
 colorPalet.addEventListener('click', function (event) {
      classSel = event.target.classList[1]
-    
+    for (const j of document.getElementsByTagName('div')) {
+        if (j.classList.contains('selected')) {
+            j.classList.remove('selected')
+        }
+    }
+     event.target.classList.add('selected')
 })
 
 pixelBoard.addEventListener('click', function (event) {

@@ -2,6 +2,10 @@
     border: black 1px solid;
     display: inline-block;
 }
+
+.selected{
+    
+}
 .preto{
     background-color: black;
     padding: 40px;
