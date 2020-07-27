@@ -13,7 +13,10 @@ let height = parseInt(5);
 let width = parseInt(5);
 
 document.getElementById('clearPixelBoard').addEventListener('click', function() {
-  console.log('vai limpar se Deus quiser')
+  let objPixels = document.querySelectorAll('.pixel'); // [0]
+  for (var pixel in objPixels) {
+    objPixels[pixel].style.backgroundColor = '#FFF';
+  }
 });
 
 function randomColor() {
