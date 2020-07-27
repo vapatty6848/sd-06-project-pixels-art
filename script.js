@@ -1,5 +1,5 @@
 window.onload = function () {
-  const pixelLines = document.querySelectorAll('.pixel-line');
+  const pixelLines = document.getElementsByClassName('pixel-line');
 
   function fillBoardColumn(lines, line) {
     for (let column = 0; column < lines.length; column += 1) {
@@ -10,7 +10,7 @@ window.onload = function () {
   }
 
   function fillBoardLines(lines) {
-    for (const line = 0; line < lines.length; line += 1) {
+    for (let line = 0; line < lines.length; line += 1) {
       fillBoardColumn(lines, line);
     }
   }
