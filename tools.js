@@ -16,7 +16,11 @@ function add(triggerObj,triggerType,action,obj) {
   }}})
 }
 
-
+function addClass(triggerObj,triggerType,action) {
+  triggerObj.addEventListener(triggerType, function(event){
+    setclass(event);
+  })
+}
 
 function generateRandomColor() {
   let parameters = []
