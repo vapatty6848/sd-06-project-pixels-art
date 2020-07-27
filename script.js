@@ -26,7 +26,7 @@ window.onload = function () {
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('color')) {
       selected[0].className = 'color';
-      event.target.className = 'selected';
+      event.target.classList.add('selected');
       event.target.backgroundColor = event.target.style.backgroundColor;
       console.log(selected.length)
     } else if (event.target.classList.contains('pixel')) {
@@ -43,6 +43,6 @@ window.onload = function () {
       pixel[i].style.backgroundColor = 'white';
     }
     selected[0].className = 'color';
-    colorBlack.className = 'selected';
+    colorBlack.classList.add('selected');
   });
 };
