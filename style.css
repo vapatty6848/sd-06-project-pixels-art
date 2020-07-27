@@ -15,11 +15,14 @@
     border-color: black;
     display: inline-block;
 }
+.tr {
+    display : table-row
+}
 
 .selected {
 
 }
 
 .color {
-    
+
 }
