@@ -34,9 +34,10 @@ window.onload = function () {
 
   let pixel = document.getElementsByClassName('pixel');
 
-  clearButton.addEventListener("click", function () {
-    for (i = 0; i < pixel.length; i += 1)
-    pixel[i].style.backgroundColor = 'white'
+  clearButton.addEventListener('click', function () {
+    for (let i = 0; i < pixel.length; i += 1) {
+      pixel[i].style.backgroundColor = 'white';
+    };
   });
 };
 
