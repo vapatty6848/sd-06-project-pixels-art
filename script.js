@@ -32,6 +32,6 @@ btnColorBlue.addEventListener('click', function () {
 
 const boardClickedPixel = document.querySelector('#pixel-board');
 boardClickedPixel.addEventListener('click', function (event) {
-  let clickedPixel = event.target;
+  const clickedPixel = event.target;
   clickedPixel.style.backgroundColor = colorSelected;
 });
