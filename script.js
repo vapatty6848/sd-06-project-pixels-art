@@ -1,41 +1,31 @@
 window.onload = function () {
-  
-  let colors = document.getElementById  ("color-palette").childNodes;
+  let colors = document.getElementById('color-palette').childNodes;
 
-  let colorBlack = colors[1]
+  let colorBlack = colors[1];
   colorBlack.style.backgroundColor = 'rgb(0, 0,0)';
-
-  console.log(document.querySelector(".color"))
 
   let getColorRGB = colorBlack.style.backgroundColor;
 
   let colorGreen = colors[3];
   colorGreen.style.backgroundColor = 'green';
-  colorGreen.className = "color";
 
   let colorBlue = colors[5];
   colorBlue.style.backgroundColor = 'blue';
-  colorBlue.className = "color";
 
   let colorRed = colors[7];
   colorRed.style.backgroundColor = 'red';
-  colorRed.className = "color";
 
   let colorYellow = colors[9];
   colorYellow.style.backgroundColor = 'yellow';
-  colorYellow.className = "color";
 
   let selected = document.getElementsByClassName('selected');
 
-  console.log(selected.length)
-  colorBlack.className = 'selected';
   document.addEventListener('click', function (event) {
-    if (event.target.classList.contains ('color')) {
-      console.log(selected);
+    if (event.target.classList.contains('color')) {
       selected[0].className = 'color';
       getColorRGB = event.target.style.backgroundColor;
       event.target.className = 'selected';
-    } else if (event.target.classList.contains ('pixel')) {
+    } else if (event.target.classList.contains('pixel')) {
       event.target.style.backgroundColor = getColorRGB;
     };
   });
@@ -49,3 +39,7 @@ window.onload = function () {
     pixel[i].style.backgroundColor = 'white'
   });
 };
+
+let colors = document.getElementById('color-palette').childNodes;
+let colorBlack = colors[1];
+colorBlack.className = 'selected';
