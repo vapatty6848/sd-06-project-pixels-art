@@ -26,7 +26,6 @@ for(let i = 0; i < color.length; i ++) {
 }
 
 
-
 function selectedColor() {
     for (let i = 0; i < color.length; i++) {
         color[0].classList.add('selected');
@@ -35,13 +34,20 @@ function selectedColor() {
                 pixel[i].className = 'pixel color1'
             })
         };
+
+    
         color[i].addEventListener('click', function() {
             for (let index = 0; index < color.length; index++) {
                 if (color[index].classList.contains('selected')) {
                     color[index].classList.remove('selected')
                 } else {
-                    color[i].classList.add('selected');
+                    color[i].addEventListener('click', function() {
+                        for(let j = 0; j < color.length; j++) {
+                            color[i].classList.add('selected')
+                        }
+                    })
                 }
+        
 
                 for (let i = 0; i < pixel.length; i++) {
                     pixel[i].addEventListener('click', function () {
@@ -54,7 +60,6 @@ function selectedColor() {
                         } else if (color[2].classList.contains('selected')) {
                             pixel[i].className = 'pixel color3';
                             pixel[i].style.backgroundColor = color[2].style.backgroundColor
-
                         } else {
                             pixel[i].className = 'pixel color4';
                             pixel[i].style.backgroundColor = color[3].style.backgroundColor
@@ -70,20 +75,6 @@ function selectedColor() {
 };
 
 
-
-
-
-// Resetando a pagina para pixels brancos
-
-// function whitePixels() {
-//     for (let i = 0; i < pixel.length; i++) {
-//         pixel[i].style.backgroundColor = 'white';
-//     }
-// }
-
-// window.onload = whitePixels();
-
-////
 
 
 // Criando botao ClearBoard
