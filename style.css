@@ -3,7 +3,7 @@
   display: inline-block;
 }
 
-div {padding: 40px;}
+.color {padding: 40px;}
 
 .preto {
   background-color: black;
@@ -25,8 +25,8 @@ div {padding: 40px;}
 }
 
 #pixel-board {
-  width: 190px;
   background-color: white;
+  width: 190px;
 }
 
 .pixel {
