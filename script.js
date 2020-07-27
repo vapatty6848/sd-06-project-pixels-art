@@ -1,14 +1,17 @@
 window.onload = function () {
 
-let varPixel = document.querySelector("#table")
-let colorBlack = document.querySelector(".selected")
-let cadaPixel = document.querySelectorAll(".pixel")
 
-cadaPixel.forEach(cadaPixel => { 
-  cadaPixel.addEventListener('click', function () {
-    cadaPixel.style.backgroundColor = colorBlack => {
-    //handle click
-  }
-  })
+let color = document.querySelectorAll(".color")
+let pixel = document.querySelectorAll(".pixel")
+
+colorBlack = document.getElementById("black")
+
+colorBlack.addEventListener("click", function () {
+  const divSelect = document.getElementsByClassName('selected');
+  const div = document.getElementsByClassName('color');
+  divSelect.classList.remove('selected');
+  div.classList.add('selected');
 })
+
+
 }
