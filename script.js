@@ -1,27 +1,58 @@
 function getColor(event,  elementToCopy) {
-  let storage;
   let elemento = event.target;
-  storage = elemento.style.backgroundColor;
+  let storage = elemento.style.backgroundColor;
   return  storage
 }
 
 function setColor(event,  elementToChange) {
-  event.currentTarget.style.backgroundColor = colorStoraged;
+  let elementoAtual = event.currentTarget;
+  elementoAtual.style.backgroundColor = colorStoraged;
   return colorStoraged
 }
 
-function PalleteEvents(classColors) {
-  for(let i in classColors) {
-    if(classColors[i].className !== undefined)
-      add(classColors[i],'click',getColor,classColors[i]);
+function setClass(event,elementToChange) {
+  $('.selected').classList.remove("selected");
+  event.Target.classList = `${event.Target.className} + selected`
+}
+//events
+function PalleteEvents(colors) {
+  for(let i in colors) {
+    let color = colors[i];
+    if(color.className !== undefined)
+      add(color,'click',getColor,color);
 
   }
 }
 
-function BoardEvents(classPixels) {
-  for(let i in classPixels) {
-    if(classPixels[i].className !== undefined)
-      add(classPixels[i],'click',setColor,classPixels[i]);
+function BoardEvents(pixels) {
+  for(let i in pixels) {
+    pixel = pixels[i]
+    if(pixels[i].className !== undefined)
+      add(pixel,'click',setColor,pixel);
+  }
+}
+
+//initiate pixel and colors
+
+function initPixelColor(pixelsColors) {
+  colors = pixelsColors;
+  for(let i = 0;i < colors.length;i+=1) {
+    let color = colors[i];
+    if(color.style.backgroundColor !== undefined) {
+      color.style.backgroundColor = 'white';
+    }
+  }
+}
+
+function initPalleteColor(paletteColors) {
+
+  paletteColors[0].style.backgroundColor = 'black';
+  colorStoraged = 'black';
+  for(let i = 1 ; i < paletteColors.length; i+=1) {
+    let paletteColor = paletteColors[i];
+    if(paletteColor.style.backgroundColor !== undefined){
+      paletteColor.style.backgroundColor = generateRandomColor();
+    }
   }
 }
 
