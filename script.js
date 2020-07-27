@@ -2,12 +2,20 @@ window.onload = function () {
 
 let corBlack = document.getElementById("black")
 corBlack.classList.add("selected")
-const cores = document.querySelectorAll(".color")
-const pixel = document.querySelectorAll(".pixel")
-const pixelQuadro = document.querySelector("#pixel-board")
-let botaoApagar = document.querySelector("#clear-board")
 
-botaoApagar.addEventListener("click", function () {
-  pixelQuadro.style.backgroundColor = "white";
+//add classe selected ao elemento que recebeu um clique
+//remover classe selected dos outros elementos
+
+let corClasse = document.querySelectorAll('.color')
+let estiloComputado = window.getComputedStyle(corClasse, null).getPropertyValue("background-color")
+let selectedColor = document.querySelector(".selected")
+
+document.querySelectorAll('.color').forEach(item => {
+  item.addEventListener('click',function (){
+    corClasse.add.classList("selected")
+    document.querySelectorAll(".selected").remove.classList("selected")
+  })
 })
+
+
 }
