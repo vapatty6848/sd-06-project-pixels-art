@@ -7,7 +7,6 @@ corBlack.classList.add("selected")
 //remover classe selected dos outros elementos
 
 let corClasse = document.querySelectorAll('.color')
-let estiloComputado = window.getComputedStyle(corClasse, null).getPropertyValue("background-color")
 let selectedColor = document.querySelector(".selected")
 
 document.querySelectorAll('.color').forEach(item => {
