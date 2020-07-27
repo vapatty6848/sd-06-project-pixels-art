@@ -34,8 +34,12 @@ colorPalet.addEventListener('click', function (event) {
 
 pixelBoard.addEventListener('click', function (event) {
   if (event.target.classList.contains('pixel')) {
-    event.target.className = "";
+    event.target.className = '';
+    event.target.classList.add('pixel')
+    event.target.classList.add(classSel)
+    event.target.classList.remove('bgbranco')
+    //event.target.className = "";
   }
-  event.target.classList.add('pixel')
-  event.target.classList.add(classSel)
+  //event.target.classList.add('pixel')
+  //event.target.classList.add(classSel)
 })
