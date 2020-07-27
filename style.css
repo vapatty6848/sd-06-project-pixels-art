@@ -20,15 +20,15 @@ html, body{
 }
 
 #color-2{
-    background-color: blueviolet;
+    background-color: blue;
 }
 
 #color-3{
-    background-color: chartreuse;
+    background-color: yellow;
 }
 
 #color-4{
-    background-color: darkgoldenrod;
+    background-color: red;
 }
   
 .clear-board{
@@ -43,7 +43,7 @@ html, body{
 }
 
 .pixel{
-    background-color: white;
+    background-color:white;
     border: 1px;
     border-color: black;
     border-collapse: collapse;
