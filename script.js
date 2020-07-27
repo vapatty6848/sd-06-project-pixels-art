@@ -3,7 +3,7 @@ window.onload = function () {
 
   let colorBlack = colors[1];
   colorBlack.style.backgroundColor = 'rgb(0, 0,0)';
-  colorBlack.className = 'selected';
+  colorBlack.classList.add('selected');
 
   let getColorRGB;
 
@@ -20,6 +20,8 @@ window.onload = function () {
   colorYellow.style.backgroundColor = 'yellow';
 
   let selected = document.getElementsByClassName('selected');
+
+  console.log(selected.length)
 
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('color')) {
