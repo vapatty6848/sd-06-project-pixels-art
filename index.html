@@ -11,11 +11,17 @@
         <h1 id="title">Paleta de Cores</h1>
     </header>
     <main>
-        <section id="color-palette">
-            <div class="color" id="colorOption1"></div>
+        <section id="color-palette" class="group">
+            <div class="color selected" id="colorOption1"></div>
             <div class="color" id="colorOption2"></div>
             <div class="color" id="colorOption3"></div>
             <div class="color" id="colorOption4"></div>
+        </section>
+        <section id="options">
+            <button id="clearPixelBoard">Limpar Pixel Board</button>
+        </section>
+        <section id="pixelBoard">
+            <table id="pixel_canvas"></table>
         </section>
     </main>
     <script src="script.js"></script>

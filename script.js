@@ -8,6 +8,14 @@ document.getElementById('colorOption2').style.backgroundColor = colorBlock2;
 document.getElementById('colorOption3').style.backgroundColor = colorBlock3;
 document.getElementById('colorOption4').style.backgroundColor = colorBlock4;
 
+let table = document.getElementById("pixel_canvas");
+let height = parseInt(5);
+let width = parseInt(5);
+
+document.getElementById('clearPixelBoard').addEventListener('click', function() {
+  console.log('vai limpar se Deus quiser')
+});
+
 function randomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -17,3 +25,19 @@ function randomColor() {
   return color;
 }
 
+function createPixelBoard() {
+  for (let countLines = 0; countLines < height; countLines += 1) {
+    const row = table.insertRow(countLines);
+    for (let countCell = 0; countCell < width; countCell += 1) {
+        const cell = row.insertCell(countCell);
+        cell.className = 'pixel';
+        cell.addEventListener("click", fillPixel);
+    }
+  }
+}
+
+function fillPixel() {
+  this.setAttribute("style", 'background-color: #000');
+}
+
+createPixelBoard();
