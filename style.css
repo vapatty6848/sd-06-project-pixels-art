@@ -16,6 +16,14 @@ nav {
   width: 40px;
 }
 
+.selected {
+  border: 1px black solid;
+  display: inline-block;
+  height: 40px;
+  margin: 5px;
+  width: 40px;
+}
+
 .board {
   display: table;
   border: 1px black solid;
