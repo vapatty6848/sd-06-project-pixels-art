@@ -21,3 +21,11 @@
 .green {
     background-color: green;
 }
+.container {
+    display: inline-flex;    
+}
+.pixel {
+    border: 1px solid black;
+    width: 39px;
+    height: 39px;
+}
