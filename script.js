@@ -22,6 +22,7 @@ function selectedColor() {
                 } else {
                     color[i].classList.add('selected');
                 }
+                
                 for (let i = 0; i < pixel.length; i++) {
                     pixel[i].addEventListener('click', function () {
                         if (color[0].classList.contains('selected')) {
