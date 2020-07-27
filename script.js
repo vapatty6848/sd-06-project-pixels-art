@@ -1,5 +1,4 @@
 // Starting Pixel Art
-window.onload = {};
 let colorSelected = 'black';
 function addColorSelected(color) {
   colorSelected = color;

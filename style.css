@@ -1,7 +1,13 @@
+.palette {
+  display: block;
+  width: 208px;
+}
+
 .color {
   border: solid 1px black;
   display: inline-block;
   height: 40px;
+  margin: 3px;
   width: 40px;
 }
 
@@ -10,30 +16,29 @@
 }
 
 .red {
-  background-color: rgb(88, 41, 59);
+  background-color: red;
 }
 
 .green {
-  background-color: rgb(118, 134, 43);
+  background-color: green;
 }
 
 .blue {
-  background-color: rgb(73, 123, 156);
+  background-color: blue;
 }
 
-.table {
-  display: table;
-  width: 200px;
-}
-
-.row {
-  display: table-row;
+.board {
+  display: inline-block;
+  height: 208px;
+  margin: 0;
+  width: 208px;
 }
 
 .pixel {
   background-color: white;
   border: solid 1px black;
-  display: table-cell;
-  height: 42px;
-  width: 42px;
+  display: inline-block;
+  height: 40px;
+  margin: -2px;
+  width: 40px;
 }
