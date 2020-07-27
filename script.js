@@ -9,15 +9,15 @@ let color4 = document.querySelector('.color4');
 
 function generateAleatoryColor() {
     let color = '#';
-    
-    for(let i = 0; i < 3; i++) {
+
+    for (let i = 0; i < 3; i++) {
         let sub = Math.floor(Math.random() * 256).toString(16);
         color += (sub.length == 1 ? '0' + sub : sub);
     }
     return color
 }
 
-for(let i = 0; i < color.length; i ++) {
+for (let i = 0; i < color.length; i++) {
     color[0].style.backgroundColor = "#000"
     color[i].style.backgroundColor = generateAleatoryColor();
 }
@@ -30,12 +30,12 @@ function selectedColor() {
                 pixel[i].className = 'pixel color1'
             })
         };
-        color[i].addEventListener('click', function() {
+        color[i].addEventListener('click', function () {
             for (let index = 0; index < color.length; index++) {
                 if (color[index].classList.contains('selected')) {
                     color[index].classList.remove('selected')
                 } else {
-                    color[i].className = 'color color4 selected'                    
+                    color[i].className = 'color color4 selected'
                 }
 
                 for (let i = 0; i < pixel.length; i++) {
@@ -82,22 +82,25 @@ function buttonClear() {
 // Limitando quadros de pixels
 let inputSize = document.querySelector('#board-size');
 let buttonInputSize = document.querySelector('#generate-board')
-let valueSize = 0;
+let valueInput;
 
-
-function checkNumber() {
-    buttonInputSize.addEventListener('click', function() {
-        if(inputSize.value === '') {
-            alert ("Board Inválido")
-        } else  {
-            valueSize = Number(inputSize.value)
+function checkValue() {
+    buttonInputSize.addEventListener('click', function () {
+        if (inputSize.value === '') {
+            alert("Board Inválido")
+        }else if (inputSize.value < 5) {
+            inputSize.value = 5;
+        }else if (inputSize.value > 50) {
+            inputSize.value = 50;
         }
+                 
+        valueInput = inputSize.value
+        console.log(valueInput)
     })
-    
 }
 
-console.log(valueSize)
 
+checkValue();
 
 
 
@@ -106,7 +109,6 @@ console.log(valueSize)
 
 
 ///
-checkNumber()
 generateAleatoryColor()
 buttonClear();
 selectedColor();
