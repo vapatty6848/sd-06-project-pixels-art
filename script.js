@@ -20,8 +20,9 @@ document.querySelector('#generate-board').addEventListener('click', createPixelB
 
 document.getElementById('clear-board').addEventListener('click', function() {
   let objPixels = document.querySelectorAll('.pixel'); // [0]
-  for (var pixel in objPixels) {
-    objPixels[pixel].style.backgroundColor = '#FFF';
+
+  for (index = 0; index < objPixels.length; index += 1) {
+    objPixels[index].style.backgroundColor = '#FFF';
   }
 });
 
