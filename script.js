@@ -8,4 +8,11 @@ window.onclick = function() {
     if(event.target.className === "pixel") { 
         event.target.style.backgroundColor = selection.id;
     }
+    if(event.target.id === "clear-board") {
+        const all = document.querySelectorAll(".pixel");
+        for (let i = 0; i < all.length; i++){
+            all[i].style.backgroundColor = "white";
+        }
+        
+    }
 }
