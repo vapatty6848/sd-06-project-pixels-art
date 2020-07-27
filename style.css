@@ -10,10 +10,6 @@ div {
   border: 1px solid black;
 }
 
-table, tr, td {
-  border: 1px solid #000;
-}
-
 table {
   border-collapse: collapse;
   margin: 10px;
@@ -41,5 +37,6 @@ table {
   height: 40px;
   width: 40px;
   cursor: pointer;
+  border: 1px solid #000;
   background-color: white;
 } 
