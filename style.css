@@ -18,3 +18,6 @@
 #clear-board {
   background-color: white;
 }
+.color {
+  border: 0px;
+}
