@@ -1,3 +1,10 @@
+function clear() {
+  const pixel = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+
 window.onload = function () {
   const color1 = document.getElementsByClassName('color')[0];
   color1.style.backgroundColor = 'black';
@@ -12,10 +19,5 @@ window.onload = function () {
   color4.style.backgroundColor = 'blue';
 
   const clearBoard = document.getElementById('clear-board');
-  clearBoard.addEventListener('change', clear);
+  clearBoard.addEventListener('click', clear);
 };
-
-function clear() {
-  const pixel = document.querySelectorAll('.pixel');
-  pixel.style.backgroundColor = 'rgb(255, 255, 255)';
-}

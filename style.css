@@ -8,7 +8,7 @@ body {
 
 .color {
   border: 1px;
-  border-color: rgb(0, 0, 0);
+  border-color: black;
   border-style: solid;
   display: inline-block;
   height: 52px;
@@ -20,9 +20,9 @@ body {
 }
 
 .pixel {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: 1px;
-  border-color: rgb(0, 0, 0);
+  border-color: black;
   border-style: solid;
   height: 40px;
   width: 40px;
