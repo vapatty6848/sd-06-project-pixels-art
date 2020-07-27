@@ -1,4 +1,4 @@
-function clear() {
+function clear(event) {
   const pixel = document.getElementsByClassName('pixel');
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
