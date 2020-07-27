@@ -60,6 +60,10 @@ let elements = document.getElementsByClassName("pixel");
             div[i].style.backgroundColor = "white"
 
        }
-
     }
+
+
+
+
+    
 }
