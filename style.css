@@ -21,11 +21,17 @@
 .green {
     background-color: green;
 }
-.container {
-    display: inline-flex;    
+.table {
+    display: inline-flex;
+    border: 1px solid black;  
 }
-.pixel {
+.tr {
     border: 1px solid black;
-    width: 39px;
-    height: 39px;
+}
+.td {
+    border: 1px solid black;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    background-color: white;
 }
