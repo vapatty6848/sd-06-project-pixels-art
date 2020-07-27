@@ -19,6 +19,7 @@
     background-color: yellow;
 }
 .pixel {
+    margin: -3px;
     border-color: black;
     border-style: solid;
     border-width: 1px;
@@ -26,4 +27,10 @@
     width: 40px;
     height: 40px;
     background-color: white;
+}
+#pixel-board {
+    margin-left: 3px;
+    margin-top: 3px;
+    width: 206px;
+    height: 206px;
 }
