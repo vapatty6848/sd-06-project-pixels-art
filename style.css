@@ -5,11 +5,17 @@ body {
   padding: 0;
 }
 
+#button-section {
+  margin-left: 5px;
+}
+
 .footer {
+  overflow: hidden;
+  bottom: 0;
   color: ghostwhite;
   background-color: seagreen;
-  bottom: 0;
-  position: absolute;
+  margin-top: 10px;
+  position: fixed;
   width: 100%;
 }
 
@@ -63,5 +69,13 @@ body {
 }
 
 .print-area {
-  background-color: seagreen;
+  width: 100%;
+  margin-left: 10px;
+}
+
+#print-button {
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  margin-left: 5px;
 }

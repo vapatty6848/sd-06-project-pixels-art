@@ -72,8 +72,6 @@ function renewColors() {
     colorPalete();
     colorContainer.appendChild(renewColorsButton);
   })
-
-
 }
 
 function colorPalete() {
@@ -143,9 +141,12 @@ function printButton() {
   const printButton = document.getElementById('print-button');
   const printSection = document.getElementById('print-section')
   printButton.addEventListener('click', () => {
-    html2canvas(document.querySelector("#pixel-board")).then(canvas => {
+    while (printSection.firstChild) {
+      printSection.removeChild(printSection.lastChild);
+    }
+    html2canvas(document.querySelector("#pixel-board"), { allowTaint: true , scrollX:0, scrollY: -window.scrollY }).then(canvas => {
       const p = document.createElement('p');
-      p.innerHTML = 'Aqui esta seu belo desenho <br> clicke com o segundo botão e salve!'
+      p.innerHTML = 'Aqui esta seu belo desenho!<br> Click com o segundo botão e salve!'
       printSection.appendChild(p);
       printSection.appendChild(canvas);
   });
@@ -153,10 +154,6 @@ function printButton() {
 }
 
 window.onload = function () {
-  // console.log('page loaded')
-  // global variables
-  // selected = 'black';
-  // calls
   getRandomColors();
   colorPalete();
   sizeButtons();
