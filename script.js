@@ -40,9 +40,19 @@ function removeClass(){
   document.querySelectorAll('.color')[3].className = "color";
 }
 
+let selectedColor = document.querySelector('.color').style.backgroundColor;
 document.querySelectorAll('.color').forEach(item => {
   item.addEventListener('click', event => {
     removeClass();
     item.classList.add("selected");
+    selectedColor = item.style.backgroundColor;
   })
 })
+
+document.querySelectorAll('.pixel').forEach(item => {
+  item.addEventListener('click', event => {
+    item.style.backgroundColor = selectedColor;
+  })
+})
+
+
