@@ -81,7 +81,7 @@ body {
     border: 1px solid black;
     width: 40px;
     height: 40px;
-    margin: -1px 0px;
+    margin: 0px 0px;
     background-color: white;
 }
 
@@ -90,45 +90,239 @@ body {
     text-align: center;
 }
 
+
+
+/*coluna 1*/
 #coluna1{
+    height: 40px;
+}
+
+#coluna1-linha1{
     display: inline-block;
     width: 40px;
-    height: 200px;
-    margin: -1px -2px;
-    border: 0px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
 }
+
+#coluna1-linha2{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna1-linha3{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna1-linha4{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna1-linha5{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+
+/*coluna 2*/
 
 #coluna2{
+    height: 40px;
+}
+
+#coluna2-linha1{
     display: inline-block;
     width: 40px;
-    height: 200px;
-    margin: -1px -2px;
+    height: 40px;
+    margin: 0px -3px;
     border: 0px 0px 0px 0px;
 }
+
+#coluna2-linha2{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna2-linha3{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna2-linha4{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna2-linha5{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+/*coluna 3*/
 
 #coluna3{
+    height: 40px;
+}
+
+#coluna3-linha1{
     display: inline-block;
     width: 40px;
-    height: 200px;
-    margin: -1px -2px;
+    height: 40px;
+    margin: 0px -3px;
     border: 0px 0px 0px 0px;
 }
+
+#coluna3-linha2{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna3-linha3{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna3-linha4{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna3-linha5{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+/*coluna 4*/
 
 #coluna4{
+    height: 40px;
+}
+
+#coluna4-linha1{
     display: inline-block;
     width: 40px;
-    height: 200px;
-    margin: -1px -2px;
+    height: 40px;
+    margin: 0px -3px;
     border: 0px 0px 0px 0px;
 }
 
-#coluna5{
+#coluna4-linha2{
     display: inline-block;
     width: 40px;
-    height: 200px;
-    margin: -1px -2px;
+    height: 40px;
+    margin: 0px -3px;
     border: 0px 0px 0px 0px;
 }
+
+#coluna4-linha3{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna4-linha4{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna4-linha5{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+/*coluna 5*/
+
+#coluna5{
+    height: 40px;
+}
+
+#coluna5-linha1{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna5-linha2{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna5-linha3{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna5-linha4{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+#coluna5-linha5{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px -3px;
+    border: 0px 0px 0px 0px;
+}
+
+
 
 /*botoes*/
 
