@@ -1,13 +1,9 @@
 .pixel-board {
   border: 1px solid black;
   width: 210px;
-  height: max-content;
+  height: 261px;
 }
 
 .paint {
   width: 250px;
-}
-
-.palette {
-  margin-left: 2px;
 }
