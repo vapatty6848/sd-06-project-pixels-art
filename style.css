@@ -15,4 +15,10 @@
 }   
 #blue {
     background-color: blue;
+}
+.pixel {
+    display: inline-block;
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;    
 } 
