@@ -25,3 +25,8 @@
     margin: 0px;
     padding: 0px;    
 }
+.centralizar {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}

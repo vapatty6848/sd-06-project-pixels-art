@@ -1,8 +1,10 @@
 window.onload = function() {
-    let color = document.querySelectorAll(".color");
+    let color = document.querySelectorAll(".color");    
     let quadroPixel = document.querySelector("#pixel-board");
     let containerColor = document.querySelector("#color-palette");
+    let botaoLimpar = document.querySelector("#clear-board")
     let cores = ["black", "yellow", "blue", "gray", "Gold"];
+
     for (let nColor = 0; nColor < color.length; nColor += 1) {
         color[nColor].style.backgroundColor = cores[nColor];        
     }
@@ -15,7 +17,6 @@ window.onload = function() {
     let elementoSelecionado = color[0];
     let click1 = 0;    
     containerColor.addEventListener("click", function(event) {
-        /* selected = event.target.style.backgroundColor; */
         elementoSelecionado.className = "color";
         console.log(elementoSelecionado.className); 
         elementoSelecionado = event.target;
@@ -26,6 +27,13 @@ window.onload = function() {
 
     quadroPixel.addEventListener("click", function(event) {
         event.target.style.backgroundColor = elementoSelecionado.style.backgroundColor;               
+    });
+
+    botaoLimpar.addEventListener("click", function(event) {
+        let listaPixel = document.querySelectorAll("div.pixel");
+        for (let nPixel = 0; nPixel < listaPixel.length; nPixel += 1) {
+            listaPixel[nPixel].style.backgroundColor = "white";
+        }             
     });
 
 }
