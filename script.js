@@ -6,7 +6,7 @@ createColorPallet(colors);
 
 //Quando clica, add o select e retira da cor antiga
 function handlePalletItemEvent(event) {
-    let oldSelectedDiv = document.querySelector('.select');
+    let oldSelectedDiv = document.querySelector('.selected');
     let currentSelectedDiv = event.target;
 
     oldSelectedDiv.classList.remove('selected');
@@ -31,7 +31,7 @@ function createPalletItem(color) {
 
 //Pega a paleta de cores e add os itens a paleta
 function createColorPallet(colors) {
-    let colorPalletContainer = document.getElementById('color-pallete');
+    let colorPalletContainer = document.getElementById('color-palette');
 
     for (let index in colors) {
         let palletItemDiv = createPalletItem(colors[index]);
