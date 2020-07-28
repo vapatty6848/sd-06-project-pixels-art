@@ -1,5 +1,6 @@
 window.onload = function () {
 
+  createColorPallet(['black', 'red', 'blue', 'green'])
 
 //Pega a paleta de cores e add os itens a paleta
   function createColorPallet(colors) {
@@ -11,13 +12,13 @@ window.onload = function () {
     }
   }
 
-  createColorPallet(['black', 'red', 'blue', 'green'])
 
 //Criação dos itens da paleta (divs)
   function createPalletItem(color) {
     let palletItemDiv = document.createElement('div');
     palletItemDiv.style.backgroundColor = color;
-    palletItemDiv.className = "color";
+    paletteItemDiv.classList.add("palette-item");
+    paletteItemDiv.classList.add("color");
     palletItemDiv.addEventListener("click", handlePalletItemEvent);
 
     if (color === "black") {
