@@ -71,9 +71,10 @@ function createPixelsDiv(divClassName) {
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
   const sizeCreateBoard = document.querySelector('.board');
-  let inputCreateBoard = parseInt(document.getElementById('board-size').value);
-  if (inputCreateBoard === '') {
-    return alert('Board inválido!');
+  let inputCreateBoard = parseInt(document.getElementById('board-size').value, 10);
+  let inputCreateBoardI = document.getElementById('board-size').value;
+  if (inputCreateBoardI == '') {
+    alert('Board inválido!');
   } else if (inputCreateBoard < 5) {
     inputCreateBoard = 5;
   } else if (inputCreateBoard > 50) {
