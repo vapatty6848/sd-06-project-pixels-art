@@ -1,5 +1,9 @@
-
-  
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    margin-left: 600px;
+  }
   .color {
     border: 1px;
     border-color: black;
@@ -8,17 +12,15 @@
     height: 52px;
     width: 52px;
   }
-  
-  #title {
-    text-align: center;
-  }
-  
+
   .pixel {
+    margin-left: 200px;
     background-color: white;
     border: 1px;
     border-color: black;
-    border-style: solid;
+    border-style: solid;;
     height: 40px;
     width: 40px;
   }
+  
   
