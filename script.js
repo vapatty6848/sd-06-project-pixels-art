@@ -34,19 +34,19 @@ currentSelectedDiv.classList.add("selected")
 }
 
 // individualizando os pixels para colorir
-let pixels = document.querySelectorAll(".pixel");
-function colorir(pixels) {
-    for(let index in pixels) {
-    let pixel = createPaletteItem(pixels[index]);
+let quadradinhos = document.querySelectorAll(".pixel");
+    for (let index in quadradinhos){
+    quadradinhos[index].addEventListener("click", function(){
+    this.style.backgroundColor = document.querySelector(".selected").style.backgroundColor
+    })
     }
-}
-
 
 // usando o botão para limpar todos os pixels
 let botao = document.getElementById("clear-board");
 function clearBoard() {
-    for (let index = 0; index < pixels.length; index += 1) {
-        pixels[index].style.backgroundColor = "rgb(255, 255, 255)";
+    let limpar = document.getElementsByClassName("pixel")
+    for (let index = 0; index < limpar.length; index += 1) {
+        limpar[index].style.backgroundColor = "white";
       }
 }
  botao.addEventListener("click", clearBoard)
