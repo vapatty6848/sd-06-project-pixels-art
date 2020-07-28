@@ -3,10 +3,10 @@ window.onload = function () {
   // Elements
   let colorPalette = document.querySelector('#color-palette');
   let pixelsBoardTable = document.querySelector('#pixel-board');
-  let availableColors = ['black', 'blue', 'red' , 'green'];
   let clearButton = document.querySelector('#clear-board');
   let numberOfColumns = 5;
   let numberOfRows = 5;
+  let numberOfColors = 4;
 
   // Functionalities
   let functionalities = {
@@ -33,13 +33,25 @@ window.onload = function () {
         allPixels[i].style.background = 'white';
       }
     },
+    generateColorPalette: function () {
+      let redChannel = Math.random() * 255;
+      let greenChannel = Math.random() * 255;  
+      let blueChannel = Math.random() * 255;
+      let color = 'rgb(' + [redChannel , greenChannel , blueChannel].toString() + ')';
+      return color;
+    },
   }
 
   // Building colors palette
-  for (let i = 0; i < 4; i += 1) {
+  for (let i = 0; i < numberOfColors; i += 1) {
     let colorItem = document.createElement('li');
-    colorItem.className = (i === 0) ? 'color selected' : 'color'; // Default color 
-    colorItem.style.background = availableColors[i];
+    if (i === 0) {
+        colorItem.className = 'color selected'; // Default color black
+        colorItem.style.background = 'black';
+    } else {
+        colorItem.className = 'color';
+        colorItem.style.background = functionalities.generateColorPalette(); // Random color
+    }
     colorPalette.appendChild(colorItem);
     colorItem.addEventListener('click', functionalities.changeClass); // Event to change class
   }

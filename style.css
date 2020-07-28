@@ -46,17 +46,15 @@ footer {
 
 .pixel-board {
   display: block;
-  height: 210px;
   line-height: 0;
-  width: 210px;
 }
 
 .pixel {
   border: solid black 1px;
   background-color: white;
   display: inline-block;
-  height: 42px;
-  width: 42px;
+  height: 40px;
+  width: 40px;
 }
 
 .clear-button {
