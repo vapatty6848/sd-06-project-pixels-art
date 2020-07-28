@@ -35,3 +35,11 @@ function handlePalletItemEvent(event) {
 //     });
 //   }
 // }
+function limpaTudo() {
+  let pixel = document.querySelectorAll('.pixel')
+  for (let i in pixel) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+let botao = document.getElementById('clear-board');
+botao.addEventListener('click', limpaTudo);
