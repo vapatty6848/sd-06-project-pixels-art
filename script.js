@@ -5,9 +5,11 @@ let colorPalette = document.querySelector("#color-palette");
 
 createPaletteColors("black", "red", "blue", "green");
 createPixelBoard();
+colorPalette.addEventListener("click", chooseColor);
 
 
 colorPalette.firstElementChild.classList.add("selected");
+let currentSelectedColor = document.querySelector(".selected");
 
 
 
@@ -33,3 +35,9 @@ function createPixelBoard(){
 
     }
 } 
+
+function chooseColor(event){
+    document.querySelector(".selected").classList.remove("selected");
+    event.target.classList.add("selected");
+    currentSelectedColor = document.querySelector(".selected");
+}
