@@ -24,20 +24,11 @@ yellowButton.addEventListener("click", function(){
     selectColor("rgb(245, 210, 116)");
 })
 
-let orangeButton = document.getElementById("orange");
-orangeButton.addEventListener("click", function(){
-    selectColor("rgb(245, 169, 82)");
-})
-
 let redButton = document.getElementById("red");
 redButton.addEventListener("click", function(){
     selectColor("rgb(245, 131, 116)");
 })
 
-let purpleButton = document.getElementById("purple");
-purpleButton.addEventListener("click", function(){
-    selectColor("rgb(217, 128, 235)");
-})
 
 let blueButton = document.getElementById("blue");
 blueButton.addEventListener("click", function(){
@@ -45,10 +36,6 @@ blueButton.addEventListener("click", function(){
 })
 
 
-let greenButton = document.getElementById("green");
-greenButton.addEventListener("click", function(){
-    selectColor("rgb(117, 241, 128)");
-})
 
 
 //Paste colors
