@@ -28,8 +28,6 @@ function CreateRows(NumberOfRows) {
   }
 }
 
-
-
 function RemoveCurrentBoard() {
   const Currentboard = document.querySelector('.brush-body');
   while (Currentboard.firstChild) {
