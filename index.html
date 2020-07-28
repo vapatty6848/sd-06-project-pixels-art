@@ -39,10 +39,23 @@
             width: 90px;
         }
 
+        #clear-board {
+            border: 1px solid rgb(199, 191, 149);
+            border-radius: 15px;
+            color: rgb(199, 191, 149);
+            font-family: Verdana;
+            font-size: 20px;
+            margin: auto;
+            margin-top: 25px;
+            cursor: pointer;
+            text-align: center;
+            width: 140px;
+        }
+
         /* Tabela de pixels */
         table {
             margin: auto;
-            margin-top: 30px;
+            margin-top: 15px;
             border-spacing: 0;
             border-collapse: collapse;
         }
@@ -70,6 +83,10 @@
         <div class="color" id="yellow"></div>
         <div class="color" id="gray"></div>
     </nav>
+
+    <!-- Botão de limpar -->
+    <p id="clear-board">LIMPAR</p>
+
 
     <section>
         <table id="pixel-board">
@@ -161,13 +178,22 @@
             pixelBoxes[i].addEventListener("click", function () {
                 pixelBoxes[i].style.backgroundColor = chosenColor;
             });
-            // extra pra apagar
+            // extra pra apagar com o botão direito do mouse!!
             pixelBoxes[i].addEventListener("contextmenu", function () {
                 pixelBoxes[i].style.backgroundColor = "white";
                 event.preventDefault();
             });
         }
 
+        // Adicionar o botão de limpar
+        let limparButton = document.getElementById('clear-board');
+
+        limparButton.addEventListener('click', function () {
+            // Todos os pixelBoxes viram branco de novo.
+            for (let i = 0; i < pixelBoxes.length; i++) {
+                pixelBoxes[i].style.backgroundColor = 'white';
+            }
+        });
 
     </script>
 </body>
