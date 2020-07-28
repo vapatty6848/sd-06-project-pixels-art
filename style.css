@@ -6,3 +6,16 @@
   margin: 3px;
   width: 50px;
 }
+
+#pixel-board {
+  display: table;
+}
+.tr {
+  display: table-row;
+}
+.td {
+  border: 1px solid black;
+  display: table-cell;
+  height: 50px;
+  width: 50px;
+}
