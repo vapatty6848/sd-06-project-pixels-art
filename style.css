@@ -6,6 +6,7 @@
     width: 800px;
     margin-left: 330px;
     border: 2px solid black;
+    padding-bottom: 330px;
 }
 
 #title {
@@ -19,15 +20,15 @@
 }
 
 .color {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border: 1px solid black;
     float: left;
     margin-left: 20px;
 }
 
 #color1 {
-    margin-left: 207px;
+    margin-left: 245px;
     background-color: black;
 }
 
@@ -41,4 +42,22 @@
  
 #color4 {
     background-color: green;
+}
+
+#pixel-board {
+    display: table;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#tr {
+    display: table-row;    
+}
+
+.pixel {
+   display: table-cell;
+   background-color: white;
+   border: 1px black solid;
+   height: 40px;
+   width: 40px;
 }
