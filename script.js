@@ -75,6 +75,7 @@ function createPixelsBoard() {
   let inputCreateBoardI = document.getElementById('board-size').value;
   if (inputCreateBoardI == '') {
     alert('Board inválido!');
+    return false;
   } else if (inputCreateBoard < 5) {
     inputCreateBoard = 5;
   } else if (inputCreateBoard > 50) {
