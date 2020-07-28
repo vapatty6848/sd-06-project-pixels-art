@@ -1,13 +1,11 @@
 let pixelBoard = document.querySelector("#pixel-board");
 let colorPalette = document.querySelector("#color-palette");
-let oldSelectedColor = "";
-let currentSelectedColor = document.querySelector(".selected");
+
 
 
 createPaletteColors("black", "red", "blue", "green");
 createPixelBoard();
-colorPalette.addEventListener("click", selectPaletteColor);
-pixelBoard.addEventListener("click", setPixelColor);
+
 
 colorPalette.firstElementChild.classList.add("selected");
 
@@ -35,19 +33,3 @@ function createPixelBoard(){
 
     }
 } 
-
-function selectPaletteColor (event){
-    if(event.target.className !== "color-palette"){
-        oldSelectedColor = document.querySelector(".selected");
-        currentSelectedColor = event.target;
-
-        currentSelectedColor.classList.add("selected");
-        oldSelectedColor.classList.remove("selected");
-    }
-}
-
-function setPixelColor(event){
-    if(event.target.className == "pixel"){
-        event.target.style.backgroundColor = currentSelectedColor.style.backgroundColor;
-    }    
-}

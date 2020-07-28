@@ -8,10 +8,10 @@
     border-style: solid;
 }
 
-.selected{
-    /* border-radius: 50%;
-    border-style: outset; */
-}
+/* .selected{
+    border-radius: 50%;
+    border-style: outset;
+} */
 
 button{
     display: inline-block;
