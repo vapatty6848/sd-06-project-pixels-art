@@ -10,10 +10,10 @@ const lazyCoder = function (method, tagName) {
 const divBoard = lazyCoder(0, '.board');
 const divPalette = lazyCoder(0, '#color-palette');
 const btnReset = lazyCoder(0, '.btn-reset');
-const elements = lazyCoder(0, '#generate-board');
+const btnGenerate = lazyCoder(0, '#generate-board');
 const generateBoard = lazyCoder(0, '.input-text');
 const divColumns = [];
-const pixel = lazyCoder(1, '.pixel');
+let pixel = lazyCoder(1, '.pixel');
 let divWithSelection = lazyCoder(0, '#black');
 
 function generateElements(elements) {
@@ -40,13 +40,13 @@ function generateElements(elements) {
   });
 }
 
-elements.onclick = () => {
+btnGenerate.onclick = () => {
   if (generateBoard.value === '') {
     window.alert('Board inválido!');
   }
   lazyCoder(1, '.pixel').forEach((e) => e.remove());
   lazyCoder(1, '.line').forEach((e) => e.remove());
-  generateElements(lazyCoder(0, '.input-text').value);
+  generateElements(generateBoard.value);
 };
 
 const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua', 'turquoise',
