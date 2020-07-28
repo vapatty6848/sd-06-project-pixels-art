@@ -1,22 +1,32 @@
-.color-picker {
-  margin-left: 150px;
-  padding-top: 50px;
+body {
+  margin: 0;
+  padding: 0;
+}
 
+.color , .pixel {
+  border: solid black 1px;
+  display: inline-block;
+  height: 40px;
+  margin: 3px;
+  width: 40px;
 }
 
 .color-palete {
+  background-color: burlywood;
   display: inline;
-  background-color: brown;
 }
 
-.color {
-  border:solid black 1px;
-  display: inline-block;
-  height: 2rem;
-  margin: 3px;
-  width: 2rem;
+.color-picker , .row {
+  margin-left: 150px;
+}
+
+.color-picker {
+  padding-top: 50px;
+  padding-left: 45px;
+  padding-bottom: 50px;
 }
 
 .title {
-  margin: 20px 30px 0 80px;
+  margin: 20px 130px 0 180px;
+
 }

@@ -1,12 +1,12 @@
-function modifyStyle(element , property , attribute) {
+function modifyStyle(element, property, attribute) {
   element.style[`${property}`] = `${attribute}`;
 }
 
-colorPalete = document.getElementById('black');
-modifyStyle(colorPalete, `backgroundColor`, `black`);
-colorPalete = document.getElementById('orange');
-modifyStyle(colorPalete, `backgroundColor`, `orange`);
-colorPalete = document.getElementById('blue');
-modifyStyle(colorPalete, `backgroundColor`, `blue`);
-colorPalete = document.getElementById('burlywood');
-modifyStyle(colorPalete, `backgroundColor`, `red`);
+const BLACKPALETE = document.getElementById('black');
+modifyStyle(BLACKPALETE, 'backgroundColor', 'black');
+const ORANGEPALETE = document.getElementById('orange');
+modifyStyle(ORANGEPALETE, 'backgroundColor', 'orange');
+const BLUEPALETE = document.getElementById('blue');
+modifyStyle(BLUEPALETE, 'backgroundColor', 'blue');
+const BURLYWOODPALETE = document.getElementById('burlywood');
+modifyStyle(BURLYWOODPALETE, 'backgroundColor', 'red');
