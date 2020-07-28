@@ -2,6 +2,7 @@ const colorsPaletteNotBlack = document.querySelectorAll('.not-black');
 const colorsPalette = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
 const firstColor = document.querySelector('.color');
+let selectedColor = document.querySelector('.selected');
 
 const colors = ['red', 'green', 'blue'];
 
@@ -28,18 +29,10 @@ const removeClassSelected = () => {
   colorsPalette.forEach((item) => item.classList.remove('selected'));
 };
 
-const getSelectedColor = () => {
-  colorsPalette.forEach((item) => {
-    item.addEventListener('click', () => {
-      removeClassSelected();
-      item.classList.add('selected');
-    });
-  });
-};
-
 const setSelectedColorToPixel = () => {
   const pixels = document.querySelectorAll('.pixel');
-  const selectedColor = document.querySelector('.selected');
+  selectedColor = document.querySelector('.selected');
+
   pixels.forEach((item) => {
     item.addEventListener('click', () => {
       item.style.backgroundColor = selectedColor.style.backgroundColor;
@@ -47,10 +40,21 @@ const setSelectedColorToPixel = () => {
   });
 };
 
+const getSelectedColor = () => {
+  colorsPalette.forEach((item) => {
+    item.addEventListener('click', () => {
+      removeClassSelected();
+      item.classList.add('selected');
+      setSelectedColorToPixel();
+    });
+  });
+};
 
-generatePaletteColors();
-firstColor.style.backgroundColor = 'black';
-firstColor.classList.add('selected');
-generateBoard();
-getSelectedColor();
-setSelectedColorToPixel();
+window.onload = () => {
+  generatePaletteColors();
+  firstColor.style.backgroundColor = 'black';
+  firstColor.classList.add('selected');
+  generateBoard();
+  getSelectedColor();
+  setSelectedColorToPixel();
+};
