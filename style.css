@@ -5,16 +5,33 @@ body {
 
 .color-palette {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   max-width: 480px;
+}
+
+.color {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
 
 .color:first-child {
   background-color: black;
 }
 
-.color {
+.pixel-board {
+  margin: 40px auto;
+  max-width: 470px;
+}
+
+.line {
+  display: flex;
+  justify-content: initial;
+}
+
+.pixel {
+  background-color: white;
   border: 1px solid black;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
 }
