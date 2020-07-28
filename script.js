@@ -1,13 +1,26 @@
-//Add select class to the black color from the palette first
-let corPreta = document.getElementById('color-1');
-corPreta.classList.add('selected');
+window.onload = function() {
+    createColorPalette(['black', 'blue', 'green', 'yellow']);
+}
 
-//Add select class when clicking on the square from the palette
-let selectedColor = document.querySelectorAll('.color');
-document.addEventListener('click', function(event) {
-    if (event.target.classList = 'color') {
-        selectedColor.classList.add('selected');
+//Create the palette color itens, inside the palette-container
+function createColorPalette(colors) {
+    let colorPaletteContainer = document.getElementById('color-palette');
+    for (let index in colors) {
+        let colorItensDiv = createPaletteItens(colors[index]);
+        colorPaletteContainer.appendChild(colorItensDiv);
     }
-});
+}
+
+function createPaletteItens(color) {
+    let colorItensDiv = document.createElement('div');
+    colorItensDiv.style.backgroundColor = color;
+    colorItensDiv.className = 'palette-itens';
+    colorItensDiv.addEventListener('click', handlePaletteItenEvent);
+    return colorItensDiv;
+}
+
+function handlePaletteItenEvent() {
+    console.log("tudo ok!");
+}
 
 
