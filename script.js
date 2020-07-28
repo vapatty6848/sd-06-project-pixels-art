@@ -32,4 +32,12 @@ let currentSelectedDiv = event.target
 oldSelectedDiv.classList.remove("selected");
 currentSelectedDiv.classList.add("selected")
 }
+let botao = document.getElementById("clear-board");
+function clearBoard() {
+    let pixel = document.querySelectorAll(".pixel");
+    for (let index = 0; index < pixel.length; index += 1) {
+        pixel[index].style.backgroundColor = 'white';
+      }
+}
+botao.addEventListener("click", clearBoard)
 }
