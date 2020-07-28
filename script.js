@@ -5,9 +5,12 @@ window.onload = function () {
   createColorPalette(colorList);
 
   createPixelBoard(5);
+
+  pixelColoring();
+
 };
 
-let colorSelected = '';
+let colorSelected = 'black';
 
 function createColorSelector(color) {
   const selectorDivElement = document.createElement('div');
@@ -56,4 +59,12 @@ function colorSelection(event) {
   oldChosenColor.classList.remove('selected', 'pushed');
   chosenColor.classList.add('selected', 'pushed');
   colorSelected = chosenColor.style.backgroundColor;
+}
+
+function pixelColoring() {
+  document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('pixel')) {
+      event.target.style.backgroundColor = colorSelected;
+    }
+  })
 }
