@@ -1,7 +1,7 @@
 const BLACKPALETE = document.getElementById('black');
 const ORANGEPALETE = document.getElementById('green');
 const BLUEPALETE = document.getElementById('blue');
-const BURLYWOODPALETE = document.getElementById('red');
+const REDPALETE = document.getElementById('red');
 const CANVAS = document.querySelectorAll('.pixel');
 let brush = 'black';
 
@@ -13,8 +13,16 @@ function pixelChange(pixel) {
   modifyStyle(pixel, 'backgroundColor', `${brush}`);
 }
 
+function resetPalleteClass() {
+  document.querySelectorAll('.color').forEach((x) => {
+    x.className = 'color';
+  });
+}
+
 function colorPicker(color) {
-  brush = `${color}`;
+  brush = `${color.id}`;
+  resetPalleteClass();
+  color.className = `color selected`;
 }
 
 function clearCanvas() {
@@ -27,4 +35,4 @@ function clearCanvas() {
 modifyStyle(BLACKPALETE, 'backgroundColor', 'black');
 modifyStyle(ORANGEPALETE, 'backgroundColor', 'green');
 modifyStyle(BLUEPALETE, 'backgroundColor', 'blue');
-modifyStyle(BURLYWOODPALETE, 'backgroundColor', 'red');
+modifyStyle(REDPALETE, 'backgroundColor', 'red');
