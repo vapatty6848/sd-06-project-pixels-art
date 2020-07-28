@@ -28,16 +28,24 @@ function CreateElements(NumberOfElements,Row) {
   }
 }
 
-function CreateBoard(){
+function RemoveCurrentBoard() {
+  let Currentboard =  document.querySelector('.brush-body');
+  while (Currentboard.firstChild) {
+    Currentboard.removeChild(Currentboard.firstChild);
+
+  }
+}
+
+function CreateBoard() {
   let inputValue = document.querySelector('#board-size').value;
-      if(inputValue < 5){inputValue = 5;}
-      else if(inputValue > 50){inputValue = 50;}
-      CreateRows(inputValue)
-      let classPixels = document.querySelectorAll('.pixel');
-      let clearButton = document.querySelector('.clear');
-      initPixelColor(classPixels);
-      BoardEvents(classPixels);
-      ButtonsEvents(clearButton,classPixels,ClearBoard);
+  if(inputValue < 5){inputValue = 5;}
+    else if(inputValue > 50){inputValue = 50;}
+  CreateRows(inputValue)
+  let classPixels = document.querySelectorAll('.pixel');
+  let clearButton = document.querySelector('.clear');
+  initPixelColor(classPixels);
+  BoardEvents(classPixels);
+  ButtonsEvents(clearButton,classPixels,ClearBoard);
   }
 
 
@@ -80,6 +88,7 @@ function ButtonsEvents(clearButton,board) {
 }
 function VqvEvents(vqvButton) {
   vqvButton.addEventListener('click',function(){
+    RemoveCurrentBoard();
     CreateBoard();
   })
 }
