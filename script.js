@@ -3,7 +3,7 @@ const squarePaletteSize = '50px';
 const squareBoardSize = '40px';
 
 for (let i = 0; i < 4; i += 1) {
-  let createColorClassDiv = document.createElement('div');
+  const createColorClassDiv = document.createElement('div');
   createColorClassDiv.className = 'color';
   createColorClassDiv.style.width = squarePaletteSize;
   createColorClassDiv.style.height = squarePaletteSize;
@@ -21,7 +21,7 @@ for (let i = 0; i < 5; i += 1) {
   document.getElementById('pixel-board').appendChild(lineDiv);
 
   for (let j = 0; j < 5; j += 1) {
-    let createColorClassDiv = document.createElement('div');
+    const createColorClassDiv = document.createElement('div');
     createColorClassDiv.className = 'pixel';
     createColorClassDiv.style.width = squareBoardSize;
     createColorClassDiv.style.height = squareBoardSize;
@@ -29,27 +29,27 @@ for (let i = 0; i < 5; i += 1) {
     createColorClassDiv.style.float = 'left';
     createColorClassDiv.style.border = '1px solid black';
 
-
     document.getElementsByClassName('pixel-wrapp')[i].appendChild(createColorClassDiv);
   }
 }
 
+document.getElementById('color-palette').height = 'auto';
 
-// for (let i = 0; i < 5; i += 1) {
-//   // const lineDiv = document.createElement('div');
-//   // lineDiv.id = 'pixel-wrapp';
-//   document.getElementById('pixel-board').appendChild(lineDiv);
-//   for (let i = 0; i < 5; i += 1) {
-//     let createColorClassDiv = document.createElement('div');
-//     createColorClassDiv.className = 'pixel';
-//     createColorClassDiv.style.width = squareBoardSize;
-//     createColorClassDiv.style.height = squareBoardSize;
-//     createColorClassDiv.style.backgroundColor = 'white';
-//     createColorClassDiv.style.float = 'left';
-//     createColorClassDiv.style.border = '1px solid black';
+function deleteAllSelected() {
+  document.querySelectorAll('.color').forEach(item => {
+    for (let i = 0; i < item.classList.length; i += 1) {
+      if (item.classList[i] === 'selected') {
+        item.classList.remove(item.classList[i])
+      }
+    }
+  });
+}
 
+document.querySelectorAll('.color').forEach(item => {
+  item.addEventListener('click', event => {
+    deleteAllSelected();
+    event.target.className += ' selected';
+  })
+})
 
-//     document.getElementById('pixel-wrapp').appendChild(createColorClassDiv);
-//   }
-// }
-// document.getElementById('')
+document.querySelectorAll('.color')[0].className += ' selected';
