@@ -2,13 +2,6 @@
   display: flex;
 }
 
-.color {
-  border: 1px solid black;
-  height: 45px;
-  margin: 1px;
-  width: 45px;
-}
-
 .black {
     background-color: black;
 }
@@ -26,7 +19,7 @@
 }
 
 .clear-board {
-    width: 195px;
+
 }
 
 .table {
@@ -45,4 +38,13 @@
   display: table-cell;
   height: 40px;
   width: 40px;
+}
+
+.color {
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  display: inline-block;
 }
