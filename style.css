@@ -1,10 +1,11 @@
 .colorPalette {
   width: 100%;
 }
+
 .color {
   border: 1px solid black;
   display: inline-block;
-  height: 80px;  
+  height: 80px;
   width: 80px;
 }
 
@@ -22,7 +23,11 @@
 
 .green {
   background-color: green;
-  }
+}
+
+.pixelBoard {
+  padding-top: 10px;
+}
 
 .pixel {
   background-color: white;
