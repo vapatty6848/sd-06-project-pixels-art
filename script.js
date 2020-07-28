@@ -1,13 +1,13 @@
 let pixelBoard = document.querySelector("#pixel-board");
 let colorPalette = document.querySelector("#color-palette");
-
+let clearBoard = document.querySelector("#clear-board");
 
 
 createPaletteColors("black", "red", "blue", "green");
 createPixelBoard();
 colorPalette.addEventListener("click", chooseColor);
 pixelBoard.addEventListener("click", setPixelColor);
-
+clearBoard.addEventListener("click", clearPixelBoard);
 
 colorPalette.firstElementChild.classList.add("selected");
 let currentSelectedColor = document.querySelector(".selected");
@@ -45,4 +45,11 @@ function chooseColor(event){
 
 function setPixelColor(event){
     event.target.style.backgroundColor = currentSelectedColor.style.backgroundColor;
+}
+
+function clearPixelBoard(){
+    let pixelArray = document.querySelectorAll(".pixel");
+    for (index = 0; index < pixelArray.length; index += 1){
+        pixelArray[index].style.backgroundColor = "rgb(255,255,255)";
+    }
 }
