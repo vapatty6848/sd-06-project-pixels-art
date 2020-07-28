@@ -31,18 +31,16 @@ body {
 }
 
 .line {
-  text-align: center;
+  display: inline-block;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
-  display: inline-flex;
   height: 40px;
   width: 40px;
 }
 
 .pixel-board {
   width: fit-content;
-  margin-top: 20px;
 }
