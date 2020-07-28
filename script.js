@@ -1,27 +1,4 @@
 
-window.onload = function () {
-  // Elements
-  //const colorPalette = document.querySelector('#color-palette');
-  //const pixelsBoardTable = document.querySelector('#pixel-board');
-  const clearButton = document.querySelector('#clear-board');
-  const buildBoardButton = document.querySelector('#generate-board');
-  const numberOfColumns = 5;
-  const numberOfRows = 5;
-  const numberOfColors = 4;
-
-  // Building pixels board
-  functionalities.buildBoard(numberOfRows, numberOfColumns);
-
-  // Building colors palette
-  functionalities.buildColorsPalette(numberOfColors);
-
-  // Clear all pixels
-  clearButton.addEventListener('click', functionalities.clearPixels);
-
-  // Rebuild the board as user set
-  buildBoardButton.addEventListener('click', functionalities.rebuildBoard);
-};
-
 // Functionalities
 const functionalities = {
   putColor: function putColor() {
@@ -97,12 +74,36 @@ const functionalities = {
         numberOfRows = userInputDimension;
         numberOfColumns = userInputDimension;
       }
-      const previousTableRows = document.querySelectorAll('tr');
-      for (let i = 0; i < previousTableRows.length; i += 1) {
-        const pixelsBoardTable = document.querySelector('#pixel-board');
-        pixelsBoardTable.removeChild(previousTableRows[i]);
-      }
-      functionalities.buildBoard(numberOfRows, numberOfColumns);
+      functionalities.deleteBoard(); // Delete previous pixels board
+      functionalities.buildBoard(numberOfRows, numberOfColumns); // Create new pixels board
     }
   },
+  deleteBoard: function deleteBoard() {
+    const previousTableRows = document.querySelectorAll('tr');
+    for (let i = 0; i < previousTableRows.length; i += 1) {
+      const pixelsBoardTable = document.querySelector('#pixel-board');
+      pixelsBoardTable.removeChild(previousTableRows[i]);
+    }
+  },
+};
+
+window.onload = function () {
+  // Elements
+  const clearButton = document.querySelector('#clear-board');
+  const buildBoardButton = document.querySelector('#generate-board');
+  const numberOfColumns = 5;
+  const numberOfRows = 5;
+  const numberOfColors = 4;
+
+  // Building pixels board
+  functionalities.buildBoard(numberOfRows, numberOfColumns);
+
+  // Building colors palette
+  functionalities.buildColorsPalette(numberOfColors);
+
+  // Clear all pixels
+  clearButton.addEventListener('click', functionalities.clearPixels);
+
+  // Rebuild the board as user set
+  buildBoardButton.addEventListener('click', functionalities.rebuildBoard);
 };
