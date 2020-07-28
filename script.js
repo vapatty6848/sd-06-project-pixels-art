@@ -44,6 +44,13 @@ window.onload = function() {
             clickPixel[i].style.backgroundColor = selectedColor;
         })
     }
+
+    let buttonClear = document.querySelector(".btn");
+    buttonClear.addEventListener("click", function() {
+        for (let i = 0; i < clickPixel.length; i += 1){
+                clickPixel[i].style.backgroundColor = "white";
+            }
+        })
     
     
 }
