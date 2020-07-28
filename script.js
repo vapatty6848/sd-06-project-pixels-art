@@ -1,6 +1,6 @@
 window.onload = function() {
-  let colorPallet = document.getElementById('color-palette');
-  collorPallet.addEventListener('click', )
+  // let colorPallet = document.getElementById('color-palette');
+  // collorPallet.addEventListener('click', )
   createColorPallet(['black', 'red', 'blue', 'green']);
 }
 function createColorPallet(colors) {
