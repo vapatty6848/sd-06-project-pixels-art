@@ -10,8 +10,8 @@
 }
 
 .color {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border: 1px solid;
     border-color: black;
     display: inline-block;
@@ -43,20 +43,12 @@
 #pixel-board {
     border-collapse: collapse;
     text-align: center;
+    background-color: white;
 }
 
 .palleteItem {
     border-color: black;
     border-style: solid;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-}
-
-.pixel {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
     width: 40px;
     height: 40px;
     display: inline-block;
