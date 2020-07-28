@@ -1,3 +1,6 @@
+window.onload {
+
+
 
 //Add select class to the black color from the palette first
 let corPreta = document.getElementById('color-1');
@@ -10,3 +13,6 @@ document.addEventListener('click', function(event) {
         selectedColor.classList.add('selected');
     }
 });
+
+}
+
