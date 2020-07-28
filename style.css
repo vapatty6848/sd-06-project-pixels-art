@@ -6,14 +6,12 @@
   width: 40px;
 }
 
-#pixel-board {
-    display: inline-grid;
-    grid-template-columns: auto auto auto auto auto;
-    column-gap: 0px;
-}
+
+
 .pixel {
+    background-color: white;
     border: 1px black solid;
+    display: inline-block;
     height: 40px;
     width: 40px;
-    background-color: white;
 }

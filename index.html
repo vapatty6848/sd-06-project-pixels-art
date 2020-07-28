@@ -1,47 +1,121 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pixels Art</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Paleta de Cores</h1>
+
+    </header>
+
+    <main>
+        <div id="color-palette">
+            <section class="color color1 selected"></section>
+            <section class="color color2"></section>
+            <section class="color color3"></section>
+            <section class="color color4"></section>
+        </div>
+
+        <button id="clear-board">Limpar</button>
+
+        <section class="size-controller">
+            <input type="number" min="1" id="board-size">
+            <button id="generate-board">VQV</button>
+        </section>
+
+        <section id="pixel-board">
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+        </section>
+
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html> 
+
+
+
+
+<!--<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF8">
         <link rel="stylesheet" type="text/css" href="style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Project Pixerl-Art</title>
     </head>
     <body>
-        <section class="page-title">
-           <h1 id="title">Paleta de Cores</h1>
-        </section>
-        <section id="color-palette" class="color_palette">
-           <div class="color" class="selected" style = "background-color : black" ></div>
-           <div class="color" id="blue" style = "background-color: blue"></div>
-           <div class="color" id="brown" style = "background-color: brown "></div>
-           <div class="color" id="cyan" style = "background-color: cyan"></div>
-        </section><br>
+        
+        <header class="page-title">
 
-        <section id="pixel-board">
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>
-           <div class="pixel"></div>           
+           <h1 id="title">Paleta de Cores</h1>
+
+        </header>
+
+       <section id="color-palette" class="color_palette">
+        <input id="size" type="number" min="1" max="50">
+       </section>
+       <br>
+        <section class="pixel_board">
+            <div id="pixel-board"> 
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <br>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <br>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <br>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <br>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>               
         </section>
 
 
