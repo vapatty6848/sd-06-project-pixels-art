@@ -45,7 +45,6 @@ function generateElements(elements) {
     e.style.gridTemplateColumns = `repeat(${elements}, 40px)`;
     divBoard.appendChild(e);
   });
-  console.log(`${divColumns.length}`);
   pixel = lazyCoder(1, 6);
 }
 
