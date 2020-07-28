@@ -19,7 +19,7 @@ function generateRandomColor() {
   const colorR = generateRandomColorNumber();
   const colorG = generateRandomColorNumber();
   const colorB = generateRandomColorNumber();
-  const colorRGB = `rgb(${colorR}, ${colorG}, ${colorB} )`;
+  const colorRGB = `rgb(${colorR}, ${colorG}, ${colorB})`;
   return colorRGB;
 }
 
