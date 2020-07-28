@@ -25,6 +25,6 @@ function generatePixels() {
 }
 
 window.onload = function () {
-generatePixels();
-generateColorPalette();
+  generatePixels();
+  generateColorPalette();
 };
