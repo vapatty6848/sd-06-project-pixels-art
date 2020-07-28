@@ -1,7 +1,7 @@
 .color {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 1px solid black;
 }    
 #color-palette, h1{
@@ -11,15 +11,15 @@
     background-color: white;
     margin-left: auto;
     margin-right: auto;
-    width: 510px;
-    height: 510px;
+    width: 210px;
+    height: 210px;
     padding: 0px;
     border: 1px solid black;
     line-height: 0px;
 }
 .pixel {
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     margin: 0px;
     padding: 0px;
