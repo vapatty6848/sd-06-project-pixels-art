@@ -1,22 +1,11 @@
 window.onload = function() {
-
   createColorPallet(['black', 'blue', 'blueviolet', 'pink']);
-  selectedColor = 'black';
+  let selectedColor = 'black';
+};
 
-}
-
-//Pega a paleta de cores e add os itens a paleta
-function createColorPallet(colors) {
-  let colorPalletContainer = document.getElementById("color-palette");
-  for (let i in colors) {
-    let palletColorDiv = createPalletItem(colors[i]);
-    colorPalletContainer.appendChild(palletColorDiv);
-  }
-}
-
-//Criação dos itens da paleta (divs)
+// Criação dos itens da paleta (divs)
 function createPalletItem(color) {
-  let palletColorDiv = document.createElement('div');
+  const palletColorDiv = document.createElement('div');
   palletColorDiv.style.backgroundColor = color;
   palletColorDiv.className = 'color';
   palletColorDiv.addEventListener('click', handlePalletColorEvent);
@@ -26,14 +15,23 @@ function createPalletItem(color) {
   return palletColorDiv;
 }
 
+// Pega a paleta de cores e add os itens a paleta
+function createColorPallet(colors) {
+  const colorPalletContainer = document.getElementById('color-palette');
+  for (let i in colors) {
+    const palletColorDiv = createPalletItem(colors[i]);
+    colorPalletContainer.appendChild(palletColorDiv);
+  }
+}
+
 // Quando clica, add o selected e retira da cor antiga
-function handlePalletColorEvent (event) {
+function handlePalletColorEvent(event) {
   let oldSelectedDiv = document.querySelector('.selected');
   let currentSelectedDiv = event.target;
 
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
-  selectedColor = currentSelectedDiv.style.backgroundColor;
+  let selectedColor = currentSelectedDiv.style.backgroundColor;
 }
 
 // Pintando o quadro
@@ -47,7 +45,7 @@ function handlePixelClick(event) {
 
 // Botão reset
 function resetPixelBoard() {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
   }
@@ -56,10 +54,9 @@ function resetPixelBoard() {
 // Criando pixel board pelo usuario
 function createPixelBoard() {
   let sizeBoard = document.getElementById('board-size').value;
-    if (sizeBoard === 0) {
-      alert('Board inválido!');
-    } else if (sizeBoard < 5) {
-      sizeBoard = 5;
-    }
-  
+  if (sizeBoard === 0) {
+    alert('Board inválido!');
+  } else if (sizeBoard < 5) {
+    sizeBoard = 5;
+  }
 }
