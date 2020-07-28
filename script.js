@@ -1,4 +1,3 @@
-
 function clickPixel(event) {
   event.target.classList.remove('selected', 'two', 'three', 'four');
   event.target.classList.add(sessionStorage.getItem('class'));
@@ -37,8 +36,8 @@ function setBoardSize() {
       element.style.width = size + 'px';
       element.classList.remove('selected', 'two', 'three', 'four');
     }
-  } else if (size > 60) {
-    size = 60;
+  } else if (size > 50) {
+    size = 50;
     for (let element of document.getElementsByClassName('pixel')) {
       element.style.height = size + 'px';
       element.style.width = size + 'px';
