@@ -27,4 +27,18 @@ function setPixelColor(event){
     }    
 }
 
+// clear board EVENT
+let clearButton = document.querySelector("#clear-board");
+clearButton.addEventListener("click", clearBoard);
+
+// clear board FUNCTION
+let pixels = document.querySelectorAll(".pixel");
+function clearBoard(){
+    for (index in pixels){
+        if (pixels[index].className == "pixel"){
+            pixels[index].style.backgroundColor = "";
+        }
+    }
+}
+
 

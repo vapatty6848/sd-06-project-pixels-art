@@ -29,6 +29,11 @@
     border-style: outset;
 }
 
+button{
+    display: inline-block;
+    margin: 2% 0% 2% 11.5%;
+}
+
 .pixel {
     display: inline-block;
     margin: 0px 0px 0px 0px;
