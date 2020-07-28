@@ -23,11 +23,11 @@ body {
     float: left;
 }
 
-#pixel-board {
+.pixel-board {
     background-color: white;
     border: 1px solid black;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
 }
 
 .pixel {
