@@ -1,3 +1,5 @@
+document.querySelector("#black").classList.add("selected");
+
 // Select pallet color EVENT
 let palette = document.querySelector("#color-palette");
 palette.addEventListener("click", selectPaletteColor);
