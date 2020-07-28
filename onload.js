@@ -1,9 +1,9 @@
 
 window.onload = function() {
 
-  let classColors = queryAll('.color');
-  let classPixels = queryAll('.pixel');
-  let clearButton = query('.clear');
+  let classColors = document.querySelectorAll('.color');
+  let classPixels = document.querySelectorAll('.pixel');
+  let clearButton = document.querySelector('.clear');
 
 
   initPalleteColor(classColors);

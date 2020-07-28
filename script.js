@@ -20,7 +20,7 @@ function ClearBoard(colors){
 }
 
 function setClass(event) {
-  query('.selected').classList.remove('selected');
+  document.querySelector('.selected').classList.remove('selected');
   event.currentTarget.classList = `${event.currentTarget.className} selected`;
 }
 //init events

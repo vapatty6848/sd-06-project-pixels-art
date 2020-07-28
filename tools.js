@@ -1,9 +1,4 @@
-function query(cssSelector){
-  return document.querySelector(cssSelector);
-}
-function queryAll(tagOrClass) {
-  return document.querySelectorAll(tagOrClass);
-}
+
 
 function add(triggerObj,triggerType,action,obj) {
   triggerObj.addEventListener(triggerType,function(event){
