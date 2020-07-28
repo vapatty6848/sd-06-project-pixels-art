@@ -53,16 +53,17 @@ greenButton.addEventListener("click", function(){
 
 //Paste colors
 
-function pasteColor(id){
-    let color = localStorage.getItem("selected-color");
-    document.getElementById(id).style.backgroundColor = color;
+function pasteColor(pixel, color){
+    pixel.style.backgroundColor = color;
 }
 
 let pixels = document.getElementsByClassName("pixel");
-pixels.addEventListener("click", function(){
-    
-    pasteColor(localStorage.getItem("selected-color"));
-})
+
+for (let i=0; i < pixels.length; i++) {
+    pixels[i].onclick = function() {
+        pasteColor(pixels[i], localStorage.getItem("selected-color"));
+    }
+}
 
 //clear-button
 
