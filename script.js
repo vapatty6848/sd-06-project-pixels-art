@@ -117,7 +117,7 @@ function sizeButtons() {
     if (sizeField.value != '') {
       createPixelBoard(newBoardSize);
     } else {
-      alert('Board invalido');
+      alert('Board inválido!');
       createPixelBoard(5);
     }
   });
