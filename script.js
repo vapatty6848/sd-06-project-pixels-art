@@ -20,10 +20,23 @@ window.onload=function(){
     colorDivCreated.className = 'color';//cirando class para todas as divs de color
     colorDivCreated.style.backgroundColor = color;//utilizando a mesma cor para o background
     colorDivCreated.style.border = "black 3px solid";
+
+    colorDivCreated.addEventListener("click", handleColorDivCreated);
+    if (color === 'black'){
+    colorDivCreated.classList.add('selected');
+    }
     
     return colorDivCreated;
   };
 
+function handleColorDivCreated(event){
+    let oldSeletecedDiv = document.querySelector('.selected');
+    let currentSelectedDiv = event.target
+
+    oldSeletecedDiv.classList.remove("selected");
+    currentSelectedDiv.classList.add("selected");
+    selectedColor = currentSelectedDiv.style.backgroundColor;
+    }
   }
 
 
