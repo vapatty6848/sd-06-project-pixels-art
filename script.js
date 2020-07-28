@@ -38,7 +38,7 @@ window.onload = function () {
     //Limpar tela
     let btn = document.querySelector('#clear-board');
     let pixel = document.getElementsByClassName('pixel');
-    btn.addEventListener('click', function (params) {
+    btn.addEventListener('click', function () {
       for (let index = 0; index < pixel.length; index++) {
         pixel[index].style.backgroundColor = 'white';
       }
