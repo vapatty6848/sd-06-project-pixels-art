@@ -1,6 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+.pixel { 
+  display: inline-block;
+  border: 1px black solid;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+}
 
-h1 {
-    color: #008000;
+#color-palette {
+  display: inline-block;
+  transform: rotate(270deg);
+  margin-left: 70px;
 }
