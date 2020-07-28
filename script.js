@@ -1,7 +1,7 @@
 window.onload = function () {
 
   createColorPallet(['black', 'red', 'blue', 'green'])
-  
+
 //Pega a paleta de cores e add os itens a paleta
   function createColorPallet(colors) {
     let colorPalletContainer = document.getElementById("color-palette");
@@ -44,5 +44,5 @@ window.onload = function () {
       pixel[i].style.backgroundColor = "white";
     }
   })
-  
+
 }
