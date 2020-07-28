@@ -1,8 +1,9 @@
-let selectedColor = 'Black';
-let palette = document.getElementsByClassName('color');
-let pixelBoard = document.getElementsByClassName('pixel');
-
 window.onload = function () {
+  let selectedColor = 'black';
+  let palette = document.getElementsByClassName('color');
+  let pixelBoard = document.getElementsByClassName('pixel');
+
+  console.log(selectedColor);
   
   // captura a cor após o click na paleta de cores
   for (let i = 0; i < palette.length; i += 1) {
