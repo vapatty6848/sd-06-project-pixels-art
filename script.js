@@ -31,6 +31,7 @@ window.onload = function(){
     selectedColor = currentSelectedDiv.style.backgroundColor;
     }
     
+    
 
     // document.getElementsByClassName('pixel').addEventListener('click', function(){
     //     pixelColorSelected = document.querySelector('.selected');
