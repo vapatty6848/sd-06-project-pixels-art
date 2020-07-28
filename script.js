@@ -12,7 +12,6 @@ window.onload = function () {
     }
   }
 
-
 //Criação dos itens da paleta (divs)
   function createPalletItem(color) {
     let palletItemDiv = document.createElement('div');
@@ -34,5 +33,7 @@ window.onload = function () {
     oldSelectedDiv.classList.remove("selected");
     currentSelectedDiv.classList.add("selected")
   }
+  
+  //Ao carregar a página, deve ser possível pintar os pixels de preto
   
   }
