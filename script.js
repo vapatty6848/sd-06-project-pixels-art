@@ -24,22 +24,23 @@ function handlePalletItemEvent(event) {
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
 }
-function addPixelsTdEvents() {
+function addPixelsEvents() {
   let pixelTds = document.querySelectorAll('.pixel');
   for (let index in pixelTds) {
-    let td = pixelTds[index];
-    td.addEventListener('click', function() {
-      const pixels = document.querySelectorAll('.pixel');
-      let seleCor = 'black';
-      for (let i = 0; i < pixels.length; i += 1) {
-        pixels[i].addEventListener('click', function() {
-        pixels[i].style.background = seleCor;
-        });
-      }
+    let pixel = pixelTds[index];
+    pixel.addEventListener('click', colorize);
+  }
+}
+function colorize() {
+  const pixels = document.querySelectorAll('.pixel');
+  let seleCor = 'black';
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].addEventListener('click', function() {
+    pixels[i].style.background = seleCor;
     });
   }
 }
-addPixelsTdEvents();
+addPixelsEvents();
 function limpaTudo() {
   const pixels = document.querySelectorAll('.pixel');
   let seleCor = 'white';
