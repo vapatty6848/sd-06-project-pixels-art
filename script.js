@@ -21,6 +21,34 @@ let colorToFill = document.getElementById('pixel-board');
 
 }
 
+let btn = document.getElementById('generate-board');
+btn.addEventListener('click',createBoard);
+
+function createBoard(){
+    let inpt = document.getElementById('board-size');
+    if (inpt.value === ""){
+        alert ("Board inválido!")
+    } else {
+        clearFullBoard();
+        let pixelBoard = document.getElementById('pixel-board');
+    for ( let i = 0 ; i < inpt.value ; i ++ ){
+        for ( let j = 0 ; j < inpt.value ; j ++ ){
+            let eachPixel = document.createElement('div');
+            eachPixel.className = "pixel";
+            eachPixel.style.backgroundColor = "white";
+            eachPixel.style.width = "40px";
+            eachPixel.style.height= "40px"
+            pixelBoard.appendChild(eachPixel);                 
+        }
+    }
+    let size = document.getElementById('pixel-board');
+    size.style.width = (42.5 * inpt.value) + "px";
+    }
+    
+
+
+}
+
 window.onload = initialLoad();
 
 let colorSelected = document.getElementById("color-palette");
@@ -55,5 +83,12 @@ function clearBoard(){
     let pixelBoard = document.getElementsByClassName('pixel')
     for( let i=0; i< pixelBoard.length ; i+=1){
         pixelBoard[i].style.backgroundColor = 'white';
+    }
+}
+
+function clearFullBoard(){
+    let fullDelete = document.getElementsByClassName('pixel')
+    while (fullDelete.length > 0){
+        fullDelete[0].remove();
     }
 }
