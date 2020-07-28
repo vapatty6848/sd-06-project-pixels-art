@@ -28,7 +28,7 @@ function generateRandomColor() {
   for(let i = 0 ; i < 3 ; i += 1) {
     parameters.push(RandomGenerator256Bits())
   }
-   let numero =parameters.join(',');
+   let numero = parameters.join(',');
    return `rgb(${numero})`
 }
 
