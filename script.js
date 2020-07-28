@@ -17,10 +17,10 @@ function createColorPallet(colors) {
 function createPalletItem(color) {
   let palletColorDiv = document.createElement('div');
   palletColorDiv.style.backgroundColor = color;
-  palletColorDiv.className = "color";
-  palletColorDiv.addEventListener("click", handlePalletColorEvent);
-    if (color === "black") {
-      palletColorDiv.classList.add("selected");
+  palletColorDiv.className = 'color';
+  palletColorDiv.addEventListener('click', handlePalletColorEvent);
+    if (color === 'black') {
+      palletColorDiv.classList.add('selected');
     }
   return palletColorDiv;
 }
@@ -32,12 +32,22 @@ function handlePalletColorEvent (event) {
 
   oldSelectedDiv.classList.remove("selected");
   currentSelectedDiv.classList.add("selected");
+  let selectedColor = currentSelectedDiv.style.backgroundColor;
 }
+
+const pixels = document.querySelectorAll('.pixel');
 
 // Botão reset
 function resetPixelBoard() {
-  const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].style.backgroundColor = '#white';
+    pixels[i].style.backgroundColor = 'white';
   }
+}
+
+// Criando pixel board pelo usuario
+const sizeBoard = document.getElementById('board-size').value;
+if (sizeBoard === 0) {
+  alert('Board inválido!');
+} else if (sizeBoard < 5) {
+  sizeBoard = 5;
 }
