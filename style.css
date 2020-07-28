@@ -1,1 +1,14 @@
-//Hello world!!!
+body{
+    text-align: center;
+}
+
+.color{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    display: inline-block;
+}
+#pixel-board{
+    display: inline-block;
+}
