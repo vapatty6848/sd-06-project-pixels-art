@@ -8,4 +8,21 @@
   height: 40px;
   border: 1px solid black;
   margin: 0px;
+  display: table-cell;
+  
+}
+#black{
+  background-color: black;
+}
+#red {
+  background-color: red;
+}
+#yellow {
+  background-color: yellow;
+}
+#green{
+  background-color: green;
+}
+.line{
+  display: table-row;
 }
