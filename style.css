@@ -8,7 +8,7 @@
   margin-bottom: 0px;
 }
 
-#pixel-board{ 
+#pixel-board{
   display: inline-block;
 }
 
@@ -22,6 +22,6 @@
 
 #color-palette {
   display: inline-block;
-  transform: rotate(270deg); 
+  transform: rotate(270deg);
   margin-left: 70px;
 }
