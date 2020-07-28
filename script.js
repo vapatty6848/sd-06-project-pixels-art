@@ -28,7 +28,7 @@ function manipulaPalete(event) {
   oldDiv.classList.remove('selected');
   atualDiv.classList.add('selected');
 
-  atualColor = window
+  corSelecionada = window
     .getComputedStyle(atualDiv, null)
     .getPropertyValue('background-color');
 }
