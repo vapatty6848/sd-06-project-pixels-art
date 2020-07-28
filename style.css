@@ -1,0 +1,30 @@
+.color {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+
+.color1 {
+  background-color: black;
+}
+
+.color2 {
+  background-color: violet;
+}
+
+.color3 {
+  background-color: thistle;
+}
+
+.color4 {
+  background-color: steelblue;
+}
+
+.color5 {
+  background-color: palevioletred;
+}
+
+.color6 {
+  background-color: tomato;
+}
