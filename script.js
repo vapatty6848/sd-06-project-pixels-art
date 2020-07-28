@@ -21,8 +21,7 @@ const firstColor = document.getElementById('first-color');
 const secondColor = document.getElementById('second-color');
 const thirdColor = document.getElementById('third-color');
 const fourthColor = document.getElementById('fourth-color');
-
-let selectedColor = document.querySelector('.selected');
+const pixelBoard = document.getElementById('pixel-board');
 
 function clearSelected() {
   firstColor.className = 'color color1';
@@ -48,6 +47,7 @@ secondColor.addEventListener('click', function (event) {
 });
 
 thirdColor.addEventListener('click', function (event) {
+  clearSelected();
   const classArray = event.target.className.split(' ');
   if (classArray[classArray.length - 1] !== 'selected') {
     event.target.className += ' selected';
@@ -55,8 +55,16 @@ thirdColor.addEventListener('click', function (event) {
 });
 
 fourthColor.addEventListener('click', function (event) {
+  clearSelected();
   const classArray = event.target.className.split(' ');
   if (classArray[classArray.length - 1] !== 'selected') {
     event.target.className += ' selected';
   }
+});
+
+pixelBoard.addEventListener('click', function (event) {
+  const selectedColor = document.querySelector('.selected');
+  const bgProperty = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
+  console.log(bgProperty);
+  event.target.style.backgroundColor = bgProperty;
 });
