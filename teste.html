@@ -51,13 +51,14 @@
         #board-size {
             border: 1px solid rgb(199, 191, 149);
             border-radius: 15px 0 0 15px;
-            box-shadow: 0px 5px 5px rgba(199, 191, 149, 50%);
             color: rgb(199, 191, 149);
             font-family: Verdana;
             font-size: 15px;
             margin-top: 0;
             padding-top: 2px;
             width: 300px;
+            box-shadow: 0px 5px 5px rgba(199, 191, 149, 50%);
+
         }
 
         ::placeholder {
@@ -68,7 +69,6 @@
             border: 1px solid rgb(199, 191, 149);
             border-radius: 0 10px 10px 0;
             background-color: white;
-            box-shadow: 0px 5px 5px rgba(199, 191, 149, 50%);
             color: rgb(199, 191, 149);
             cursor: pointer;
             display: inline-block;
@@ -89,7 +89,7 @@
             font-family: Verdana;
             font-size: 20px;
             margin: auto;
-            margin-top: 20px;
+            margin-top: 5px;
             text-align: center;
             text-transform: uppercase;
             width: 140px;
@@ -103,7 +103,7 @@
             border-collapse: collapse;
         }
 
-        td.pixel {
+        td {
             border: 1px solid black;
             width: 40px;
             height: 40px;
@@ -246,10 +246,6 @@
             }
         }
 
-        // BONUS 1 - Mudar tamanho do quadro
-        let sizeInput = document.getElementById("board-size");
-        let sizeButton = document.getElementById("generate-board");
-        console.log(sizeButton);
     </script>
 </body>
 
