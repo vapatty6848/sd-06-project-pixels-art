@@ -2,7 +2,6 @@ body {
   padding-left: 30px;
   padding-right: 33%;
   padding-top: 8px;
-
 }
 .color {
   border: 1px solid black;
@@ -26,6 +25,12 @@ body {
 
 .green {
   background-color: green;
+}
+
+.clear-board {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .pixel-board {
