@@ -68,39 +68,15 @@ for (let i=0; i < pixels.length; i++) {
 //clear-button
 
 function clearColor(color){
-    document.getElementById("linha1Coluna1").style.backgroundColor=color;
-    document.getElementById("linha1Coluna2").style.backgroundColor=color;
-    document.getElementById("linha1Coluna3").style.backgroundColor=color;
-    document.getElementById("linha1Coluna4").style.backgroundColor=color;
-    document.getElementById("linha1Coluna5").style.backgroundColor=color;
+    let pixels = document.getElementsByClassName("pixel");
 
-    document.getElementById("linha2Coluna1").style.backgroundColor=color;
-    document.getElementById("linha2Coluna2").style.backgroundColor=color;
-    document.getElementById("linha2Coluna3").style.backgroundColor=color;
-    document.getElementById("linha2Coluna4").style.backgroundColor=color;
-    document.getElementById("linha2Coluna5").style.backgroundColor=color;
-
-    document.getElementById("linha3Coluna1").style.backgroundColor=color;
-    document.getElementById("linha3Coluna2").style.backgroundColor=color;
-    document.getElementById("linha3Coluna3").style.backgroundColor=color;
-    document.getElementById("linha3Coluna4").style.backgroundColor=color;
-    document.getElementById("linha3Coluna5").style.backgroundColor=color;
-
-    document.getElementById("linha4Coluna1").style.backgroundColor=color;
-    document.getElementById("linha4Coluna2").style.backgroundColor=color;
-    document.getElementById("linha4Coluna3").style.backgroundColor=color;
-    document.getElementById("linha4Coluna4").style.backgroundColor=color;
-    document.getElementById("linha4Coluna5").style.backgroundColor=color;
-
-    document.getElementById("linha5Coluna1").style.backgroundColor=color;
-    document.getElementById("linha5Coluna2").style.backgroundColor=color;
-    document.getElementById("linha5Coluna3").style.backgroundColor=color;
-    document.getElementById("linha5Coluna4").style.backgroundColor=color;
-    document.getElementById("linha5Coluna5").style.backgroundColor=color;
-
+    for (let i=0; i < pixels.length; i++) {
+        pixels[i].style.backgroundColor="white"
+    }
 }
 
 let clearButton = document.getElementById("clear-board");
-clearButton.addEventListener("click", function(){
+clearButton.addEventListener("click", function() {
     clearColor("white");
 })
+
