@@ -1,7 +1,12 @@
+let pixelBoard = document.querySelector("#pixel-board");
 let colorPalette = document.querySelector("#color-palette");
 
-// create palette colors
+
 createPaletteColors("black", "red", "blue", "green");
+createPixelBoard();
+colorPalette.firstElementChild.classList.add("selected");
+
+
 
 function createPaletteColors (color1, color2, color3, color4){
     let colorArray = [color1, color2, color3, color4];
@@ -13,11 +18,6 @@ function createPaletteColors (color1, color2, color3, color4){
 
     }
 }
-
-// create pixel board
-let pixelBoard = document.querySelector("#pixel-board");
-
-createPixelBoard();
 
 function createPixelBoard(){
     for (index = 1; index <= 5; index += 1){
