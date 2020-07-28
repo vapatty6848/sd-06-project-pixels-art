@@ -4,3 +4,9 @@
   border: 1px solid black;
   display: inline-block;
 }
+
+.pixel {
+  width: 41px;
+  height: 41px;
+  border: 1px solid black;
+}
