@@ -19,9 +19,6 @@
      display: table;
  }
 
- .tr {
-    display: table-row;
-}
  .pixel {
      display: table-cell;
      border: 1px black solid;
@@ -29,9 +26,9 @@
      width: 40px;
      background-color: white;
  }
- /* div.pixel {
+.palette-item {
+    display: inline-block;
     border: 1px black solid;
     height: 40px;
     width: 40px;
-    background-color: white;
- } */
+}
