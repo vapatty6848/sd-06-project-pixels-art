@@ -28,7 +28,6 @@ body {
 
 .line {
   display: grid;
-  /* grid-template-columns: repeat(5, 40px); */
 }
 
 .pixel {
@@ -39,9 +38,9 @@ body {
 }
 
 .input-text {
-  padding: 0;
-  width: 35px;
   margin-left: 5px;
+  padding: 0;
+  width: 35px;  
 }
 
 .gen-btn {

@@ -6,20 +6,23 @@ const METHODS = {
 
 const lazyCoder = function (method, tagName) {
   return document[`${METHODS[method]}`](tagName);
-}
+};
 const divBoard = lazyCoder(0, '.board');
 const divPalette = lazyCoder(0, '#color-palette');
 const btnReset = lazyCoder(0, '.btn-reset');
 const elements = lazyCoder(0, '#generate-board');
-
-let generateBoard = lazyCoder(0, '.input-text');
-let pixel = lazyCoder(1, '.pixel');
-let divColumns = [];
+const generateBoard = lazyCoder(0, '.input-text');
+const divColumns = [];
+const pixel = lazyCoder(1, '.pixel');
 let divWithSelection = lazyCoder(0, '#black');
-let columns = 5;
-let rows = 5;
 
-function generateElements(elements = 5) {
+function generateElements(elements) {
+  if (elements < 5) {
+    elements = 5;
+  } else if (elements > 50) {
+    elements = 50;
+  }
+
   for (let i = 0; i < elements; i += 1) {
     divColumns.push(document.createElement('div'));
     divColumns[i].className = 'line';
@@ -38,11 +41,11 @@ function generateElements(elements = 5) {
 }
 
 elements.onclick = () => {
-  if (generateBoard.value === "") {
+  if (generateBoard.value === '') {
     window.alert('Board inválido!');
   }
-  lazyCoder(1, '.pixel').forEach(e => e.remove());
-  lazyCoder(1, '.line').forEach(e => e.remove());
+  lazyCoder(1, '.pixel').forEach((e) => e.remove());
+  lazyCoder(1, '.line').forEach((e) => e.remove());
   generateElements(lazyCoder(0, '.input-text').value);
 };
 
