@@ -1,4 +1,4 @@
-const corSelecionada = 'black';
+let corSelecionada = 'black';
 function limpaBorda() {
   const elementoLimparBorda = document.querySelector('#clear-board');
   elementoLimparBorda.addEventListener('click', function () {
@@ -36,7 +36,7 @@ function manipulaPalete(event) {
 function criaPaletaItem(cor) {
   const criaDiv = document.createElement('div');
   criaDiv.style.backgroundColor = cor;
-  criaDiv.className = 'color';
+  criaDiv.className = 'cor';
   criaDiv.addEventListener('click', manipulaPalete);
 
   if (cor === 'black') {
