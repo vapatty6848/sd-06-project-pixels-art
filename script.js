@@ -1,4 +1,5 @@
 function initialLoad(){
+  
 let pixelBoard = document.getElementById('pixel-board');
 for ( let i = 0 ; i < 5 ; i ++ ){
     for ( let j = 0 ; j < 5 ; j ++ ){
@@ -26,6 +27,13 @@ btn.addEventListener('click',createBoard);
 
 function createBoard(){
     let inpt = document.getElementById('board-size');
+    if(inpt.value < 5){
+        inpt.value = 5;
+        
+    } else if(inpt.value > 50){
+        inpt.value = 50;
+    }
+
     if (inpt.value === ""){
         alert ("Board inválido!")
     } else {
