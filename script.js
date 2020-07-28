@@ -12,8 +12,7 @@ window.onload = function() {
         pixel.className = "pixel";
         quadroPixel.appendChild(pixel);        
     } 
-    let colorSelecionada = cores[0];
-    console.log(colorSelecionada);
+    let colorSelecionada = cores[0];    
     containerColor.addEventListener("click", function(event) {
         colorSelecionada = event.target.style.backgroundColor;        
     });
