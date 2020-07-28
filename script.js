@@ -12,7 +12,7 @@ for (let pixel = 0; pixel < pixels.length; pixel += 1) {
 for (let color = 0; color < colors.length; color += 1) {
   const cor = colors[color];
   cor.addEventListener('click', function () {
-    if(!cor.classList.contains('selected')){
+    if (!cor.classList.contains('selected')) {
       for (let i = 0; i < colors.length; i += 1) {
         colors[i].classList.remove('selected');
       }
