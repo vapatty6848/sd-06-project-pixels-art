@@ -45,6 +45,11 @@
   width: 40px;
 }
 
+.pixel-line {
+  background-color: white;
+  margin-left: 115px;
+}
+
 .pixel {
   background-color: white;
   border: 1px solid black;
