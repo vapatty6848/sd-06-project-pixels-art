@@ -1,0 +1,25 @@
+.color{
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    /* pq o display inline não funciona e some com os elementos? */
+    border-width: 1px;
+    border-color: rgb(0,0,0);
+    border-style: solid;
+}
+
+#black{
+    background-color: rgb(0,0,0);
+}
+
+#red{
+    background-color: rgb(255,0,0);
+}
+
+#blue{
+    background-color: rgb(0,0,255);
+}
+
+#green{
+    background-color: rgb(0,255,0);
+}
