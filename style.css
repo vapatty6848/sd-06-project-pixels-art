@@ -42,8 +42,15 @@
 
 #pixel-board {
     border-collapse: collapse;
-    border: 1px;
     text-align: center;
+}
+
+.palleteItem {
+    border-color: black;
+    border-style: solid;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
 }
 
 .pixel {
@@ -52,4 +59,9 @@
     border-width: 1px;
     width: 40px;
     height: 40px;
+    display: inline-block;
+}
+
+#clear-board {
+    color: pink;
 }
