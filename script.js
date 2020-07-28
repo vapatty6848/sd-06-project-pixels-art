@@ -43,3 +43,13 @@ function limpaTudo() {
 }
 let botao = document.getElementById('clear-board');
 botao.addEventListener('click', limpaTudo);
+
+const pixels = document.querySelectorAll('.pixel');
+const colors = document.querySelectorAll('.color');
+let seleCor = 'black';
+for (let i = 0; i < pixels.length; i += 1) {
+  pixels[i].addEventListener('click', function() {
+    pixels[i].style.background = seleCor;
+  });
+}
+
