@@ -8,16 +8,20 @@ function clearBoard() {
   }
 }
 
+function enableColor(newColor) {
+  const previousColor = document.querySelector('.selected');
+  previousColor.classList.remove('selected');
+  newColor.classList.add('selected');
+  selectedColor = window.getComputedStyle(newColor, null).getPropertyValue('background-color');
+}
+
 document.addEventListener('click', function (event) {
   // Click on color palette
   if (event.target.classList.contains('color')) {
-    // Swap selected color
-    document.querySelector('.selected').classList.remove('selected');
-    event.target.classList.add('selected');
-
-    // Set selected color;
-    selectedColor = window.getComputedStyle(event.target, null).getPropertyValue('background-color');
+    const newColor = event.target
+    enableColor(newColor);
   }
+
   // Click on board cell
   if (event.target.classList.contains('pixel')) {
     event.target.style.backgroundColor = selectedColor;
