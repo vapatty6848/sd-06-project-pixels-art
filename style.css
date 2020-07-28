@@ -5,3 +5,20 @@
   margin: 5px;
   width: 75px;
 }
+
+#table {
+  display: table; 
+  border: 1px solid black;
+}
+.tr {
+  border: 1px solid black;
+  display: table-row; 
+  height: 40px;
+  width: 40px;
+}
+.td {
+  border: 1px solid black;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+}
