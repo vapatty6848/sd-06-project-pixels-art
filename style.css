@@ -8,18 +8,20 @@
 }
 
 .pixel-board {
-  width: 250px;
   height: 250px;
+  width: 250px;
 }
 
 .tabela {
-  border-spacing: 0px;
+  border-spacing: 0;
   display: inline-block;
 }
+
 .pixel {
   /* border-spacing: 0px; */
-  border-collapse: collapse;
+  background-color: white;
   border: 1px solid black;
-  width: 40px;
+  border-collapse: collapse;
   height: 40px;
+  width: 40px;
 }
