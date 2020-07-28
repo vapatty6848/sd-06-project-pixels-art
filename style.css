@@ -25,3 +25,23 @@ body {
 .four {
   background-color: yellow;
 }
+
+#pixel-board {
+  background-color: white;
+  border: 1px solid black;
+  display: table;
+  height: 200px;
+  width: 200px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+}
+
+.tr-square {
+  display: table-row;
+}
