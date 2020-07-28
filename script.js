@@ -71,7 +71,7 @@ function createPixelsDiv(divClassName) {
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
   const sizeCreateBoard = document.querySelector('.board');
-  let inputCreateBoard = parseInt(
+  const inputCreateBoard = parseInt(
     document.getElementById('board-size').value,
     10
   );
@@ -88,7 +88,8 @@ function createPixelsBoard() {
   }
   const px = 'px';
   const gridPixel = inputCreateBoard * inputCreateBoard;
-  let sizeBoard = inputCreateBoard * 40 + inputCreateBoard + 1;
+  let sizeBoard = inputCreateBoard * 40;
+  sizeBoard += inputCreateBoard + 1;
   sizeCreateBoard.style.width = sizeBoard + px;
   elementCreateBoard.querySelectorAll('*').forEach((n) => n.remove());
   for (let index = 0; index < gridPixel; index += 1) {
