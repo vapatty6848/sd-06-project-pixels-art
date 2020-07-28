@@ -22,6 +22,7 @@ const secondColor = document.getElementById('second-color');
 const thirdColor = document.getElementById('third-color');
 const fourthColor = document.getElementById('fourth-color');
 const pixelBoard = document.getElementById('pixel-board');
+const clearButton = document.getElementById('clear-board');
 
 function clearSelected() {
   firstColor.className = 'color color1';
@@ -65,6 +66,12 @@ fourthColor.addEventListener('click', function (event) {
 pixelBoard.addEventListener('click', function (event) {
   const selectedColor = document.querySelector('.selected');
   const bgProperty = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
-  console.log(bgProperty);
   event.target.style.backgroundColor = bgProperty;
+});
+
+clearButton.addEventListener('click', function () {
+  const pixelsArray = document.getElementsByClassName('pixel');
+  for (let i = 0; i <pixelsArray.length; i += 1) {
+    pixelsArray[i].style.backgroundColor = 'white';
+  }
 });
