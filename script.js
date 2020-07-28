@@ -1,39 +1,47 @@
-const METHODS = { 0: 'querySelector', 1: 'querySelectorAll', 2: 'createElement', };
+const METHODS = {
+  0: 'querySelector',
+  1: 'querySelectorAll',
+  2: 'createElement',
+};
 
 const DIVS = {
-  0: '.board', 1: '#color-palette', 2: '.btn-reset', 3: '#generate-board',
-  4: '.input-text', 5: '#black', 6: '.pixel', 7: '.line', 8: '.random', 9: 'div',
+  0: '.board',
+  1: '#color-palette',
+  2: '.btn-reset',
+  3: '#generate-board',
+  4: '.input-text',
+  5: '#black',
+  6: '.pixel',
+  7: '.line',
+  8: '.random',
+  9: 'div',
 };
 
 function lazyCoder(keyMethod, keyDiv) {
   return document[`${METHODS[keyMethod]}`](DIVS[keyDiv]);
 }
 
-let divBoard = lazyCoder(0, 0);
+const divBoard = lazyCoder(0, 0);
 let pixel = lazyCoder(1, 6);
 let divWithSelection = lazyCoder(0, 5);
-const divColumns = [];
 
 function generateElements(elements) {
-
   if (elements < 5) {
     elements = 5;
   } else if (elements > 50) {
     elements = 50;
   }
 
-  let divColumns = new Array(elements).fill(0);  
-  console.log(`${divColumns.length}`);
-  
-  divColumns.forEach((e, index, array) => {  
+  const divColumns = new Array(elements).fill(0);
+  divColumns.forEach((e, index, array) => {
     e = lazyCoder(2, 9);
     e.className = 'line';
-    array.forEach((i) => {   
+    array.forEach((i) => {
       i = lazyCoder(2, 9);
       i.className = 'pixel';
       i.id = 'pixel';
       e.appendChild(i);
-    });    
+    });
     e.style.gridTemplateColumns = `repeat(${elements}, 40px)`;
     divBoard.appendChild(e);
   });
@@ -54,7 +62,7 @@ lazyCoder(0, 3).onclick = () => {
     window.alert('Board inválido!');
   } else {
     clearBoard();
-    generateElements(parseInt(lazyCoder(0, 4).value));
+    generateElements(Number(lazyCoder(0, 4).value));
   }
 };
 
@@ -75,7 +83,7 @@ lazyCoder(0, 2).addEventListener('click', () => {
 });
 
 function getRandomColor() {
-  let colors = [];
+  const colors = [];
 
   for (let i = 0; i < 3; i += 1) {
     colors.push(Math.floor(Math.random() * 255));
