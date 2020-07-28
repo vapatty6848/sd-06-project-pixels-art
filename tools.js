@@ -1,5 +1,3 @@
-
-
 function add(triggerObj,triggerType,action,colorStorage) {
   triggerObj.addEventListener(triggerType,function(event) {
         colorStoraged = action(event,colorStorage);
