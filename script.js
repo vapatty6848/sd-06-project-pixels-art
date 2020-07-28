@@ -1,8 +1,5 @@
 
-
-
-
-    createPalette = (['black', 'blue', 'brown', 'cyan']);    
+createPalette = (['black', 'blue', 'brown', 'cyan']);    
 //cria div inteira precisa de uma array de cores 
     //Pega a paleta de cores e add os itens a paleta
     function createColorPallet(colors) {
@@ -12,7 +9,7 @@
         paletteContainer.appendChild(paletteColorDiv);
       }
     }
-    
+
     //Criação dos itens da paleta (divs)
     function createPalletItem(color) {
       let paletteColorDiv = document.createElement('div');
@@ -24,25 +21,25 @@
         }
       return paletteColorDiv;
     }
-    
+
     //Quando clica, add o selected e retira da cor antiga
     function handlePaletteColorEvent (event) {
       let oldSelectedDiv = document.querySelector('.selected');
       let currentSelectedDiv = event.target;
-    
+
       oldSelectedDiv.classList.remove('selected');
       currentSelectedDiv.classList.add('selected');
       selectedColor = currentSelectedDiv.style.backgroundColor;
     }
-    
+
     let boardDiv = document.querySelector('.pixel_board');
     boardDiv.addEventListener('click', handlePixelClick);
-    
+
     function handlePixelClick(event) {
       let selectedPixelDiv = event.target;
       selectedPixelDiv.style.backgroundColor = selectedColor;
     }
-    
+
     // Criando pixel board pelo usuario
     function createPixelBoard() {
       let sizeBoard = document.getElementById('size').value;
@@ -51,7 +48,7 @@
         } else if (sizeBoard < 5) {
           sizeBoard = 5;
         }
-    
+
     } 
 
 
@@ -61,4 +58,4 @@
       for (let i = 0; i < pixels.length; i += 1) {
         pixels[i].style.backgroundColor = 'white';
       }
-    }
+    } 
