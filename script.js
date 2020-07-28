@@ -124,25 +124,25 @@ window.onload = function () {
   getRandomColors();
   colorPalete();
   sizeButtons();
-  createPixelBoard(10);
+  createPixelBoard(5);
   clearButton();
 };
 
 
-function createPixelBoard(size) {
-  const totalSize = size * size;
-  let name = 1;
-  const boardWidth = (size * 40) + (size * 2);
-  const pixelBoard = document.getElementById('pixel-board');
-  pixelBoard.style.borderStyle = 'solid';
-  pixelBoard.style.borderWidth = '2px';
-  pixelBoard.style.width = `${boardWidth}px`;
-  for (let i = 0; i < totalSize; i += 1) {
-    const pixel = document.createElement('div');
-    pixel.classList.add('pixel');
-    pixel.id = name;
-    pixel.addEventListener('click', giveColor);
-    pixelBoard.appendChild(pixel);
-    name += 1;
-  }
-}
+// function createPixelBoard(size) {
+//   const totalSize = size * size;
+//   let name = 1;
+//   const boardWidth = (size * 40) + (size * 2);
+//   const pixelBoard = document.getElementById('pixel-board');
+//   pixelBoard.style.borderStyle = 'solid';
+//   pixelBoard.style.borderWidth = '2px';
+//   pixelBoard.style.width = `${boardWidth}px`;
+//   for (let i = 0; i < totalSize; i += 1) {
+//     const pixel = document.createElement('div');
+//     pixel.classList.add('pixel');
+//     pixel.id = name;
+//     pixel.addEventListener('click', giveColor);
+//     pixelBoard.appendChild(pixel);
+//     name += 1;
+//   }
+// }
