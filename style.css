@@ -17,8 +17,8 @@
   background-color: blue;
 }
 #pixel-board {
-  height: 200px;
-  width: 200px;
+  height: auto;
+  width: auto;
 }
 .pixel {
   display: inline-block;
