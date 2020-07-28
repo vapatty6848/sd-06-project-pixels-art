@@ -61,3 +61,19 @@ document.getElementById('clear-board').addEventListener('click', function(){
   })
 })
 
+function resetBoard(){
+  document.querySelectorAll('.tr').forEach(item => {
+    item.remove();
+  })
+}
+document.getElementById('generate-board').addEventListener('click', function(){
+  let inputValue = document.getElementById('board-size').value
+  if(inputValue == ""){
+    alert('Board inválido!');
+  } else{
+    N = inputValue;
+    resetBoard();
+    createPixelBoard(N);
+  }
+})
+
