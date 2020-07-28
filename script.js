@@ -2,7 +2,8 @@
 window.onload = function () {
 
   function clickPixel(event) {
-    console.log(sessionStorage.getItem('class'))
+    console.log(sessionStorage.getItem('class'));
+    event.target.classList.remove('selected', 'two', 'three', 'four');
     event.target.classList.add(sessionStorage.getItem('class'));
   }
   function selectColor(event) {
@@ -23,9 +24,14 @@ window.onload = function () {
   }
   document.getElementById('pixel-board').addEventListener('click', clickPixel);
   document.getElementById('color-palette').addEventListener('click', selectColor);
+  
 }
 
+function setBlackColor() {
+  sessionStorage.setItem('class', 'selected');
+}
 
+setBlackColor();
 
 
 
