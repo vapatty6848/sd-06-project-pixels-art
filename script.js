@@ -31,11 +31,7 @@ window.onload = function(){
     selectedColor = currentSelectedDiv.style.backgroundColor;
     }
     
-    document.getElementsByClassName('pixel').addEventListener('click', function(){
-      pixelColorSelected = document.querySelector('.selected');
-      let pixelBackgroundColor = pixelColorSelected.style.backgroundColor;
-      event.target.style.backgroundColor = pixelBackgroundColor;  
-    })
+
 
     let btn = document.querySelector('#clear-board');
     let pixel = document.getElementsByClassName('pixel');
