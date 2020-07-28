@@ -17,7 +17,7 @@ window.onload = function () {
   function createPalletItem(color) {
     let palletItemDiv = document.createElement('div');
     palletItemDiv.style.backgroundColor = color;
-    palletItemDiv.className = "pallet-item";
+    palletItemDiv.className = "color";
     palletItemDiv.addEventListener("click", handlePalletItemEvent);
 
     if (color === "black") {
