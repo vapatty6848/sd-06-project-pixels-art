@@ -40,5 +40,9 @@ body {
   width: 40px;
   border: black solid 1px;
   background-color: white;
-  display: inline-block;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(5 , 40px);
 }
