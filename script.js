@@ -1,4 +1,15 @@
 const pixelBoard = document.querySelector('#pixel-board');
+const colorPalette = document.querySelector('#color-palette');
+const colors = ['black', 'red', 'blue', 'green'];
+
+function generateColorPalette() {
+  for (let i = 0; i < colors.length; i += 1) {
+    const divCollor = document.createElement('div');
+    divCollor.classList.add('color');
+    divCollor.classList.add(colors[i]);
+    colorPalette.appendChild(divCollor);
+  }
+}
 
 function generatePixels() {
   for (let i = 0; i < 5; i += 1) {
@@ -13,4 +24,7 @@ function generatePixels() {
   }
 }
 
-window.onload = generatePixels();
+window.onload = function () {
+generatePixels();
+generateColorPalette();
+};

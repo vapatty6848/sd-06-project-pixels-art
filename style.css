@@ -31,7 +31,7 @@ body {
 }
 
 .line {
-  display: inline-block;
+  display: inline-flex;
 }
 
 .pixel {
@@ -42,7 +42,6 @@ body {
 }
 
 .pixel-board {
-  display: inline-table;
   margin-top: 20px;
-  width: fit-content;
+  width: 210px;
 }
