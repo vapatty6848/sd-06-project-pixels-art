@@ -3,7 +3,7 @@ window.onload = function () {
 
 //Pega a paleta de cores e add os itens a paleta
   function createColorPallet(colors) {
-    let colorPalletContainer = document.getElementById("color-pallete");
+    let colorPalletContainer = document.getElementById("color-palette");
 
     for (let index in colors) {
     let palletItemDiv = createPalletItem(colors[index]);
