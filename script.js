@@ -31,21 +31,19 @@ window.onload = function(){
     selectedColor = currentSelectedDiv.style.backgroundColor;
     }
     
-    
+    function handlePixelClick(event) {
+        let selectedPixelDiv = event.target;
+        selectedPixelDiv.style.backgroundColor = selectedColor;
+      }
 
-    // document.getElementsByClassName('pixel').addEventListener('click', function(){
-    //     pixelColorSelected = document.querySelector('.selected');
-    //     let pixelBackgroundColor = pixelColorSelected.style.backgroundColor;
-    //     event.target.style.backgroundColor = pixelBackgroundColor;  
-    //   })
-  
+      let pixelBoardDiv = document.querySelector("#pixel-board");
+      pixelBoardDiv.addEventListener("click", handlePixelClick);
 
-//     let btn = document.querySelector('#clear-board');
-//     let pixel = document.getElementsByClassName('pixel');
-//     btn.addEventListener('click', function(){
-//         for (let index = 0; index < pixel.length; index += 1){
-//             pixel[index].style.backgroundColor = 'white';
-//         }
-//     })
-
+      let btn = document.querySelector('#clear-board');
+      let pixel = document.getElementsByClassName('pixel');
+      btn.addEventListener("click", function () {
+        for (let i = 0; i < pixel.length; i += 1) {
+          pixel[i].style.backgroundColor = "white";
+        }
+      })
 }
