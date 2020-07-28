@@ -5,13 +5,13 @@ function clear() {
   }
 }
 function chooseColor() {
-  let choosed = document.querySelector('.choosed');
-  choosed.classList.remove('choosed');
-  this.classList.add('choosed');
+  let choosedBtn = document.querySelector('.selected');
+  choosedBtn.classList.remove('selected');
+  this.classList.add('selected');
 }
 function clickPrint() {
-  let buttonColor = document.querySelector('.choosed');
-  this.style.backgroundColor = buttonColor.style.backgroundColor;
+  let btnColor = document.querySelector('.selected');
+  this.style.backgroundColor = btnColor.style.backgroundColor;
 }
 
 window.onload = function () {
@@ -34,7 +34,7 @@ window.onload = function () {
   let clearBoard = document.getElementById('clear-board');
   clearBoard.addEventListener('click', clear);
 
-  const pixels = document.getElementsByClassName('pixel');
+  let pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener('click', clickPrint);
   }
