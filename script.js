@@ -76,7 +76,7 @@ function createPixelsBoard() {
     inputCreateBoard < 5 ||
     inputCreateBoard === undefined ||
     inputCreateBoard === null ||
-    inputCreateBoard === ''
+    isNaN(inputCreateBoard)
   ) {
     inputCreateBoard = 5;
     alert('Board inválido!');
