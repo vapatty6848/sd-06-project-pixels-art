@@ -11,3 +11,13 @@ document.addEventListener('click', function (pointedPixel) {
     pointedPixel.style.backgroundColor = changeColor;
   }
 });
+
+let clearBoard = document.querySelector('#clear-board');
+
+clearBoard.addEventListener('click', function () {
+  for (let analizedLine = document.getElementById('pixel-board').firstElementChild; analizedLine; analizedLine = analizedLine.nextElementSibling) {
+    for (let analizedChild = analizedLine.firstElementChild; analizedChild; analizedChild = analizedChild.nextElementSibling) {
+      analizedChild.style.backgroundColor = 'white';
+    }
+  }
+})
