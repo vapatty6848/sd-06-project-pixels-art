@@ -1,12 +1,64 @@
 //inciando
 
-//meme-text
+window.onload=function(){
 
-function onChangeText () {
+    storage.clear();
 
-    let textInput = document.querySelector("#text-input");
-    
-    document.querySelector("#meme-text").innerText = textInput.value;
+    sessionStorage.setItem("selected-color", "black");
 }
-let textInput = document.querySelector("#text-input");
-textInput.addEventListener("input", onChangeText);
+
+//select color-buttons
+
+function selectColor(color){
+    localStorage.setItem("selected-color", color);
+}
+
+//
+
+let blackButton = document.getElementById("black");
+blackButton.addEventListener("click", function(){
+    selectColor("black");
+})
+
+let yellowButton = document.getElementById("yellow");
+yellowButton.addEventListener("click", function(){
+    selectColor("rgb(245, 210, 116)");
+})
+
+let orangeButton = document.getElementById("orange");
+orangeButton.addEventListener("click", function(){
+    selectColor("rgb(245, 169, 82)");
+})
+
+let redButton = document.getElementById("red");
+redButton.addEventListener("click", function(){
+    selectColor("rgb(245, 131, 116)");
+})
+
+let purpleButton = document.getElementById("purple");
+purpleButton.addEventListener("click", function(){
+    selectColor("rgb(217, 128, 235)");
+})
+
+let blueButton = document.getElementById("blue");
+blueButton.addEventListener("click", function(){
+    selectColor("rgb(113, 222, 226)");
+})
+
+let greenButton = document.getElemen("green");
+greenButton.addEventListener("click", function(){
+    selectColor("rgb(117, 241, 128)");
+})
+
+
+//Paste colors
+
+function pasteColor(localStorage.getItem("background-color")){
+    document.getElementById(this.id).style.backgroundColor=color;
+}
+
+let pixelSelecionado = document.getElementById(this.id);
+pixelSelecionado.addEventListener("click", function{
+    pasteColor(localStorage.getItem("selected-color"));
+})
+
