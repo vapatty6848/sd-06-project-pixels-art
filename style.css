@@ -5,15 +5,6 @@
   border: 1px solid black;
 }
 
-.selected {
-  background-color: black;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
-  
-}
-
 #black {
   background-color: black;
 }
