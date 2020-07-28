@@ -1,3 +1,12 @@
+#color-palette{
+ height:10px;
+}
+
+#pixel-board{
+ height: 250px;
+ width: 250px;
+}
+
 .color{
  height: 50px;
  width: 50px;
@@ -30,6 +39,3 @@
  background-color: white;
  }
 
-.table{
- width: 250px;
-}
