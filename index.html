@@ -4,8 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixels Art - Fábio Corrêa</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h3>Starting!</h3>
+
+  <header>
+    <h2>Fábio's Pixel Art Project</h2>
+    <p>Create something beautiful!</p>
+  </header>
+
+  <main>
+    <form class="user-input">
+      <label for="board-size">Escolha o tamanho da tela:</label>
+      <input type="number" name="table-sizer" id="board-size" min=5 max=50>
+      <button id="generate-board" type="submit">VQV</button>
+    </form>
+
+
+      <section class="app-header">
+        <div class="instructions">
+          <h1 id="title">Paleta de Cores</h1>
+          <div id="color-palette" class="color-container">
+            <div class="color selected"></div>
+            <div class="color random"></div>
+            <div class="color random"></div>
+            <div class="color random"></div>
+          </div>
+        </div>
+        <section class="selected-color-container">
+          <h3>Cor</h3>
+          <div class="selected-color"></div>
+        </section>
+        <button id="clear-board" class="clear-btn">Limpar</button>
+      </section>
+
+    <section class="board-container" id="pixel-board">
+      <table class='board'>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+      </table>
+    </section>
+
+  </main>
+
+
+
+
+<script src="script.js"></script>
 </body>
 </html>
