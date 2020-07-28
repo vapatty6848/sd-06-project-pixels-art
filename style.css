@@ -1,1 +1,49 @@
 
+.color {
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+  }
+  
+  #pixel-board {
+        border-collapse: collapse;
+        height: fit-content;
+        padding: 0px;
+        padding: 0;
+        width: fit-content;
+  }
+  
+  #btn-container{
+      margin: 7px;
+  }
+
+  .line {
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: -2px;
+    width: fit-content;
+  }
+  
+  .pallet-item {
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+  }
+  
+  .pixel { 
+    background-color: white;
+    border-right: 1px black solid;
+    display: table-cell;
+    height: 40px;
+    width: 40px;
+  }
+  
+  #color-palette {
+    display: inline-block;
+  }
+  
+  .color {
+    display: inline-block;
+  }

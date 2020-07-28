@@ -5,33 +5,33 @@ window.onload = function(){
         let colorPalletContainer = document.getElementById('color-palette');
 
         for(let i in colors){
-            let palleteItemDiv = createPaletteItem(colors[i]);
-            colorPalletContainer.appendChild(palleteItemDiv);
+            let palletItemDiv = createPaletteItem(colors[i]);
+            colorPalletContainer.appendChild(palletItemDiv);
         }
     }
 
     function createPaletteItem (color){
-        let palleteItemDiv = document.createElement('div');
-        palleteItemDiv.style.backgroundColor = color;
-        palleteItemDiv.className = "collor";
-        palleteItemDiv.addEventListener('click', handlePalleteItemEvent);
+        let palletItemDiv = document.createElement('div');
+        palletItemDiv.style.backgroundColor = color;
+        palletItemDiv.className = "color";
+        palletItemDiv.addEventListener('click', handlePalletItemEvent);
 
         if(color === 'black'){
-            palleteItemDiv.classList.add('selected');
+            palletItemDiv.classList.add('selected');
         }
-        return palleteItemDiv;
+        return palletItemDiv;
     }
 
-    function handlePalleteItemEvent (event){
+    function handlePalletItemEvent(event){
     let oldSeletecedDiv = document.querySelector(".selected");
     let currentSelectedDiv = event.target
 
     oldSeletecedDiv.classList.remove("selected");
     currentSelectedDiv.classList.add("selected");
-
+    selectedColor = currentSelectedDiv.style.backgroundColor;
     }
     
-    document.getElementById('pixel').addEventListener('click', function(){
+    document.getElementsByClassName('pixel').addEventListener('click', function(){
       pixelColorSelected = document.querySelector('.selected');
       let pixelBackgroundColor = pixelColorSelected.style.backgroundColor;
       event.target.style.backgroundColor = pixelBackgroundColor;  
