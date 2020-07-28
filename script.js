@@ -1,5 +1,7 @@
 window.onload = function() {
     createColorPalette(['black', 'blue', 'green', 'yellow']);
+    let colorBlack = document.getElementsByClassName['palette-itens'][0];
+    colorBlack.style.backgroundColor = 'black';
 }
 
 //Create the palette color itens, inside the palette-container
