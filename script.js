@@ -86,7 +86,7 @@ function createPixelsBoard() {
   const px = 'px';
   const gridPixel = inputCreateBoard * inputCreateBoard;
   let sizeBoard = inputCreateBoard * 40;
-  sizeBoard += parseInt(inputCreateBoard);
+  sizeBoard += inputCreateBoard;
   sizeBoard += 1;
   sizeCreateBoard.style.width = sizeBoard + px;
   elementCreateBoard.querySelectorAll('*').forEach((n) => n.remove());
