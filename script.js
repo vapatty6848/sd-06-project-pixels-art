@@ -102,13 +102,19 @@ function sizeButtons() {
   const sizeField = document.getElementById('board-size');
   let newBoardSize = 5;
   sizeField.addEventListener('input', () => {
-    newBoardSize = sizeField.value
+    if (sizeField.value < 5) {
+      sizeField.value = 5;
+    } else if (sizeField.value > 50) {
+      sizeField.value = 50;
+    } else {
+      newBoardSize = sizeField.value
+    }    
   });
   generateButton.addEventListener('click', () => {
     while (actualBoard.firstChild) {
       actualBoard.removeChild(actualBoard.lastChild);
     }
-    if (sizeField.value > 4 && sizeField.value < 51) {
+    if (sizeField.value != '') {
       createPixelBoard(newBoardSize);
     } else {
       alert('Board invalido');
