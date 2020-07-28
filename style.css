@@ -1,6 +1,10 @@
+.title-text {
+  text-align: center;
+}
+
 .black {
   background-color: black;
-  margin-left: 23px;
+  margin-left: 43.1%;
 }
 
 .blue {
@@ -35,6 +39,6 @@
 }
 
 .button {
-  border-radius: 15%;
-  margin-left: 50px;
+  margin-bottom: 4px;
+  width: 100%;
 }
