@@ -33,13 +33,13 @@ function manipulaPalete(event) {
     .getPropertyValue('background-color');
 }
 
-function criaPaletaItem(cor) {
+function criaPaletaItem(color) {
   const criaDiv = document.createElement('div');
-  criaDiv.style.backgroundColor = cor;
-  criaDiv.className = 'cor';
+  criaDiv.style.backgroundColor = color;
+  criaDiv.className = 'color';
   criaDiv.addEventListener('click', manipulaPalete);
 
-  if (cor === 'black') {
+  if (color === 'black') {
     criaDiv.classList.add('selected');
   }
   return criaDiv;
