@@ -74,6 +74,7 @@ function createPixelsBoard() {
   let inputCreateBoard = parseInt(document.getElementById('board-size').value, 10);
   if (
     inputCreateBoard < 5 ||
+    inputCreateBoard === undefined ||
     inputCreateBoard === null ||
     inputCreateBoard === ''
   ) {
