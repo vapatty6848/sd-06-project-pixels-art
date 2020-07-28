@@ -1,4 +1,4 @@
-window.onload = function {
+window.onload = function () {
     const clearButton = document.getElementById('clear-board');
 
     function clearBoard() {
