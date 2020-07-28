@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+.one {
+  background-color: black;
+}
+.two {
+  background-color: rgb(0 , 255 , 255);
+}
+.three {
+  background-color: rgb(255 , 0 , 255);
+}
+.four {
+  background-color: rgb(255 , 255 , 0);
+}
