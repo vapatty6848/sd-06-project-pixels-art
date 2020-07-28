@@ -32,3 +32,17 @@ function blackSelectedOnload(){
   blackFather.firstChild.className += " selected";
 }
 onload = blackSelectedOnload();
+
+function removeClass(){
+  document.querySelectorAll('.color')[0].className = "color";
+  document.querySelectorAll('.color')[1].className = "color";
+  document.querySelectorAll('.color')[2].className = "color";
+  document.querySelectorAll('.color')[3].className = "color";
+}
+
+document.querySelectorAll('.color').forEach(item => {
+  item.addEventListener('click', event => {
+    removeClass();
+    item.classList.add("selected");
+  })
+})
