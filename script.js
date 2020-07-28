@@ -70,7 +70,15 @@ document.getElementById('generate-board').addEventListener('click', function(){
   let inputValue = document.getElementById('board-size').value
   if(inputValue == ""){
     alert('Board inválido!');
-  } else{
+  } else if(inputValue < 5){
+    N = 5;
+    resetBoard();
+    createPixelBoard(N);
+  } else if(inputValue > 50){
+    N = 50;
+    resetBoard();
+    createPixelBoard(N);
+  } else {
     N = inputValue;
     resetBoard();
     createPixelBoard(N);
