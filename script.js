@@ -51,8 +51,23 @@ function createColorButton(color) {
   colorContainer.appendChild(colorBtn);
 }
 
+function getRandomColors() {
+  let randomColors = ['color1', 'color2', 'color3']
+  for (let i = 0; i < randomColors.length; i += 1) {
+    let newColor = '#'+Math.random().toString(16).substr(-6);
+    randomColors[i] = newColor
+  }
+  return randomColors;
+}
+
 function colorPalete() {
-  const colors = ['black', 'green', 'blue', 'purple'];
+  const colors = ['black']
+  const randomColors = getRandomColors();
+  for (color in randomColors) {
+    colors.push(randomColors[color]);
+    console.log(colors)
+  }
+  // const colors = ['black', 'green', 'blue', 'purple'];
   for (let i = 0; i < colors.length; i += 1) {
     const color = colors[i];
     createColorButton(color);
@@ -87,6 +102,7 @@ window.onload = function () {
   // global variables
   // selected = 'black';
   // calls
+  getRandomColors();
   colorPalete();
   createPixelBoard(5);
   clearButton();
