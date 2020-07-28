@@ -7,7 +7,6 @@
 
 .red{
     background-color: red;
-    
 }
 
 .green{
@@ -19,4 +18,12 @@
 }
 .blue{
     background-color: blue;
+}
+
+.pixel {
+    border: rgb(189, 38, 38) solid 1px;
+    display: inline-block;
+    width: 100px;
+    height: 90px;
+    background-color: white;
 }
