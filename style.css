@@ -1,5 +1,24 @@
 body {
   background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  color: ghostwhite;
+  background-color: seagreen;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.top-bar {
+  color: ghostwhite;
+  background-color: seagreen;
+  font-family: Ubuntu;
+  font-size: 25px;
+  padding-top: 1px;
 }
 
 .color {
@@ -22,6 +41,27 @@ body {
 
 .pixel-board {
   line-height: 0;
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding: 2px;
+}
+
+.renew-colors {
+  background-color: rgba(157, 192, 153, 0.288);
+  background-image: url(/images/spinarrow.png);
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+}
+
+.palette-section {
+  border: black solid 1px;
+  margin: 10px;
+  width: 300px;
+}
+
+.print-area {
+  background-color: seagreen;
 }

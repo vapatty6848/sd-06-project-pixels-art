@@ -60,6 +60,22 @@ function getRandomColors() {
   return randomColors;
 }
 
+function renewColors() {
+  const renewColorsButton = document.createElement('button');
+  const colorContainer = document.getElementById('color-palette');
+  renewColorsButton.classList.add('renew-colors');
+  colorContainer.appendChild(renewColorsButton);
+  renewColorsButton.addEventListener('click', () => {
+    while (colorContainer.firstChild) {
+      colorContainer.removeChild(colorContainer.lastChild);
+    }
+    colorPalete();
+    colorContainer.appendChild(renewColorsButton);
+  })
+
+
+}
+
 function colorPalete() {
   const colors = ['black']
   const randomColors = getRandomColors();
@@ -147,23 +163,5 @@ window.onload = function () {
   createPixelBoard(5);
   clearButton();
   printButton();
+  renewColors();
 };
-
-
-// function createPixelBoard(size) {
-//   const totalSize = size * size;
-//   let name = 1;
-//   const boardWidth = (size * 40) + (size * 2);
-//   const pixelBoard = document.getElementById('pixel-board');
-//   pixelBoard.style.borderStyle = 'solid';
-//   pixelBoard.style.borderWidth = '2px';
-//   pixelBoard.style.width = `${boardWidth}px`;
-//   for (let i = 0; i < totalSize; i += 1) {
-//     const pixel = document.createElement('div');
-//     pixel.classList.add('pixel');
-//     pixel.id = name;
-//     pixel.addEventListener('click', giveColor);
-//     pixelBoard.appendChild(pixel);
-//     name += 1;
-//   }
-// }
