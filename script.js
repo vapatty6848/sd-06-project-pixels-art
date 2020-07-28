@@ -7,7 +7,6 @@ window.onload = function () {
   createPixelBoard(5);
 
   pixelColoring();
-
 };
 
 let colorSelected = 'black';
@@ -66,5 +65,5 @@ function pixelColoring() {
     if (event.target.classList.contains('pixel')) {
       event.target.style.backgroundColor = colorSelected;
     }
-  })
+  });
 }
