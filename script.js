@@ -70,13 +70,17 @@ window.onload = function () {
     },
     rebuildBoard: function () {
       let userInputDimension = document.querySelector('#board-size').value;
-      numberOfRows = (userInputDimension >= 5 && userInputDimension <= 50) ? userInputDimension : 5;
-      numberOfColumns = numberOfRows;
-      let previousTableRows = document.querySelectorAll('tr');
-      for (let i = 0; i < previousTableRows.length; i += 1) {
-        pixelsBoardTable.removeChild(previousTableRows[i]);
+      if (userInputDimension === '') {
+        alert('Board Invalido!');
+      } else {
+        numberOfRows = (userInputDimension >= 5 && userInputDimension <= 50) ? userInputDimension : 5;
+        numberOfColumns = numberOfRows;
+        let previousTableRows = document.querySelectorAll('tr');
+        for (let i = 0; i < previousTableRows.length; i += 1) {
+          pixelsBoardTable.removeChild(previousTableRows[i]);
+        }
+        functionalities.buildBoard();
       }
-      functionalities.buildBoard();
     },
   }
 
