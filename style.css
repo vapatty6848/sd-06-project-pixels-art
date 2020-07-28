@@ -1,8 +1,8 @@
 .color{
     border: black solid 1px;
     display: inline-block;
-    width: 100px;
-    height: 90px;
+    width: 40px;
+    height: 40px;
 }
 
 .red{
@@ -23,7 +23,7 @@
 .pixel {
     border: rgb(189, 38, 38) solid 1px;
     display: inline-block;
-    width: 100px;
-    height: 90px;
+    width: 40px;
+    height: 40px;
     background-color: white;
 }
