@@ -22,7 +22,8 @@
 .board {
   display: inline-block;
   margin: 0;
-  width: 200px;
+  width: 206px;
+  background-color: teal;
 }
 
 .pixel {
@@ -30,7 +31,7 @@
   border: solid 1px black;
   display: inline-block;
   height: 40px;
-  margin: -3px;
+  margin: -3px -1px;
   width: 40px;
 }
 

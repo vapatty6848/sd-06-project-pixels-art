@@ -70,6 +70,7 @@ function createPixelsDiv(divClassName) {
 
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
+  const sizeCreateBoard = document.querySelector('.board');
   let inputCreateBoard = document.getElementById('board-size').value;
   if (
     inputCreateBoard < 5 ||
@@ -83,6 +84,10 @@ function createPixelsBoard() {
     alert('Board inválido!');
   }
   const gridPixel = inputCreateBoard * inputCreateBoard;
+  const sizeBoard = inputCreateBoard * 40 + parseInt(inputCreateBoard) + 1;
+  sizeCreateBoard.style.width = sizeBoard + 'px';
+  console.log(sizeBoard + 'px');
+  console.log(inputCreateBoard);
   elementCreateBoard.querySelectorAll('*').forEach((n) => n.remove());
   for (let index = 0; index < gridPixel; index += 1) {
     elementCreateBoard.appendChild(createPixelsDiv('pixel'));
