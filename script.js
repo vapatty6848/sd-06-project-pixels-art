@@ -31,8 +31,9 @@ function getColor(event){
     let currentSelectedDiv = event.target;
 
     if(currentSelectedDiv.id != "color-palette"){
+        oldSelectedDiv.classList.remove('selected');
     currentSelectedDiv.classList.add('selected');
-    oldSelectedDiv.classList.remove('selected');
+   
     }
 
     let myColor = event.target.id;
@@ -47,7 +48,7 @@ function getColor(event){
     
 }
 
-let clearBoardBtn = document.getElementById('clear-board');
+let clearBoardBtn = document.querySelector('#clear-board');
 clearBoardBtn.addEventListener('click',clearBoard);
 
 function clearBoard(){
