@@ -17,8 +17,19 @@
     background-color: fuchsia;
 }
 .pixel {
-    display: inline-block;
+    border-color: black;
+    border: 1px;
+    display: table-cell;
     height: 40px;
     width: 40px;
-    border: white 1px;
+    background-color: thistle;
+    margin: 0px;
+}
+.line {
+    display: table-row;
+}
+#pixel-board {
+    display: inline-block;
+    border-color: black;
+    border-width: 1px;
 }
