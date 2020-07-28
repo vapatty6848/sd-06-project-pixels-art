@@ -7,9 +7,9 @@ function enableBTN() {
     const pixels = document.querySelectorAll('.pixel');
     pixels.forEach((pixel) => {
       pixel.style.backgroundColor = 'white';
-    });
-  };
-};
+    })
+  }
+}
 
 // palette colors
 
@@ -22,7 +22,7 @@ function randomizeColors() {
     const blue = Math.round(Math.random() * 255);
     color.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
   });
-};
+}
 
 // color selecting
 
@@ -42,7 +42,7 @@ function paintingEnabler() {
       selectedColorElement.style.backgroundColor = selectedColor;
     });
   });
-};
+}
 
 // color changing
 
@@ -54,7 +54,7 @@ function tableColoringEnabler() {
       pixel.style.backgroundColor = selectedColor;
     });
   });
-};
+}
 
 // table by user-input
 
@@ -76,7 +76,7 @@ function createTable(tableElm, boardContainer, userInput) {
   }
   boardContainer.appendChild(newTable);
   tableColoringEnabler();
-};
+}
 
 creationForm.onsubmit = (event) => {
   event.preventDefault();
@@ -90,18 +90,18 @@ creationForm.onsubmit = (event) => {
     userInput = userInput.value;
   } else {
     userInput = userInput.value;
-  };
+  }
 
   const tableElm = document.querySelector('.board');
   const boardContainer = document.getElementById('pixel-board');
 
   if (!userInput) {
     alert('Board inválido!');
-    return
-  };
+  } else {
+    createTable(tableElm, boardContainer, userInput);
+  }
 
-  createTable(tableElm, boardContainer, userInput);
-};
+}
 
 // more colors!
 
@@ -130,7 +130,7 @@ function enableMoreColorsBTN() {
     }
 
   }
-};
+}
 
 // check size to display 'current color' or not
 
@@ -149,7 +149,7 @@ function checkSize() {
       selectColorContainer.style.display = 'flex';
     }
   });
-};
+}
 
 window.onload = () => {
   enableBTN();
@@ -158,5 +158,4 @@ window.onload = () => {
   tableColoringEnabler();
   enableMoreColorsBTN();
   checkSize();
-};
-
+}
