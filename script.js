@@ -19,7 +19,7 @@ window.onload=function(){
     let colorDivCreated = document.createElement('div');//Criando uma div para cada color
     colorDivCreated.className = 'color';//cirando class para todas as divs de color
     colorDivCreated.style.backgroundColor = color;//utilizando a mesma cor para o background
-    colorDivCreated.style.border = "black 3px solid";
+    colorDivCreated.style.border = "black solid 1px";
 
     colorDivCreated.addEventListener("click", handleColorDivCreated);
     if (color === 'black'){
