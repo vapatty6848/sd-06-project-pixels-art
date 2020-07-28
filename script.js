@@ -1,12 +1,26 @@
 window.onload = function () {
   const colorList = ['black', 'red', 'green', 'blue'];
-  // const pixels = document.querySelectorAll('.pixel');
 
   createColorPalette(colorList);
 
   createPixelBoard(5);
 
   pixelColoring();
+  
+  const pixels = document.querySelectorAll('.pixel');
+
+  clearBoard(pixels);
+
+  function erasePixels() {
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = 'white';
+    }
+  }
+
+  function clearBoard() {
+    const button = document.querySelector('#clear-board');
+    button.addEventListener('click', erasePixels)
+  }
 };
 
 let colorSelected = 'black';
