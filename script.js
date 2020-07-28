@@ -4,7 +4,7 @@ let preto = document.querySelector('#black')
 
 for (let i = 0; i < 5; i++){
     let linha = document.createElement('div');
-    linha.className = 'pixel';
+    linha.className = 'row';
     pixelBoard.appendChild(linha);
     for (let j = 0; j < 5; j++){
         let coluna = document.createElement('div');
@@ -14,6 +14,6 @@ for (let i = 0; i < 5; i++){
     }
 }
 
-window.onload = function(){
-    preto.style = "black"
-}
+// window.onload = function(){
+//     preto.style = "black"
+// }
