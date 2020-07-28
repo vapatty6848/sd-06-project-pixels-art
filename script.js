@@ -39,6 +39,7 @@ window.onload = function() {
     
     const pixel = document.createElement("div");
     pixel.className = "pixel";
+    pixel.style.backgroundColor = "white"
 
     pixelLines[index].appendChild(pixel);
   }
