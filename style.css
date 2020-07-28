@@ -13,11 +13,10 @@ body {
   width: 40px;
   border: solid black 1px;
   display: inline-block;
+  background-color: white;
 }
 
-#colorPalette1 {
-  background-color: black;
-}
+
 
 #colorPalette2 {
   background-color: green;
@@ -29,8 +28,4 @@ body {
 
 #colorPalette4 {
   background-color: blue;
-}
-
-#colorPalette5 {
-  background-color: teal;
 }
