@@ -118,8 +118,22 @@ function sizeButtons() {
       createPixelBoard(newBoardSize);
     } else {
       alert('Board invalido');
+      createPixelBoard(5);
     }
   });
+}
+
+function printButton() {
+  const printButton = document.getElementById('print-button');
+  const printSection = document.getElementById('print-section')
+  printButton.addEventListener('click', () => {
+    html2canvas(document.querySelector("#pixel-board")).then(canvas => {
+      const p = document.createElement('p');
+      p.innerHTML = 'Aqui esta seu belo desenho <br> clicke com o segundo botão e salve!'
+      printSection.appendChild(p);
+      printSection.appendChild(canvas);
+  });
+  })
 }
 
 window.onload = function () {
@@ -132,6 +146,7 @@ window.onload = function () {
   sizeButtons();
   createPixelBoard(5);
   clearButton();
+  printButton();
 };
 
 
