@@ -1,0 +1,24 @@
+.color {
+    border: black solid 1px;
+    display: inline-block;
+}
+#color-one {
+    background-color: tomato;
+    height: 100px;
+    width: 100px;
+}
+#color-two {
+    background-color: cornflowerblue;
+    height: 100px;
+    width: 100px;
+}
+#color-three {
+    background-color: blueviolet;
+    height: 100px;
+    width: 100px;
+}
+#color-four {
+    background-color: purple;
+    height: 100px;
+    width: 100px;
+}
