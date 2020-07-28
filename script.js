@@ -1,66 +1,48 @@
 window.onload = function () {
-	// // Altera o texto do Meme
-	// let myTextImput = document.getElementById("text-input");
-	// myTextImput.addEventListener("keyup", function () {
-	// 	let myTextMeme = document.getElementById("meme-text");
-	// 	if (myTextImput.value == "") {
-	// 		myTextMeme.innerText = "Texto do Meme"
-	// 	} else {
-	// 		myTextMeme.innerText = myTextImput.value;
-	// 	}
-	// });
+	// Altera a cor selecionada
+  let myColor01 = document.getElementById("color01");
+  myColor01.style.backgroundColor = "rgb(0 , 0 , 0)";
+	myColor01.addEventListener("click", function () {
+		chageSelected(myColor01);
+	});	
 
-	// // Altera a imagem do Meme	
-	// let myImageInput = document.getElementById("meme-insert");
-	// myImageInput.addEventListener("change", function (event) {
-	// 	let myImageMeme = document.getElementById("meme-image");
-	// 	myImageMeme.src = URL.createObjectURL(event.target.files[0]);
-	// 	myImageMeme.onload = function () {
-	// 		URL.revokeObjectURL(myImageMeme.src);
-	// 	}
-	// });
+  let myColor02 = document.getElementById("color02");
+  myColor02.style.backgroundColor = "rgb(155 , 50 , 8)";  
+	myColor02.addEventListener("click", function () {
+		chageSelected(myColor02);
+	});	
 
-	// // Altera bordas da imagem usando botões
-	// let btnFire = document.getElementById("fire");
-	// btnFire.addEventListener("click", function () {
-	// 	let myImageContainer = document.getElementById("meme-image-container");
-	// 	myImageContainer.style.border = "3px dashed red";
-	// });	
-	// let btnWater = document.getElementById("water");
-	// btnWater.addEventListener("click", function () {
-	// 	let myImageContainer = document.getElementById("meme-image-container");
-	// 	myImageContainer.style.border = "5px double blue";
-	// });	
-	// let btnEarth = document.getElementById("earth");
-	// btnEarth.addEventListener("click", function () {
-	// 	let myImageContainer = document.getElementById("meme-image-container");
-	// 	myImageContainer.style.border = "6px groove green";
-	// });	
+  let myColor03 = document.getElementById("color03");
+  myColor03.style.backgroundColor = "rgb(198 , 168 , 108)";  
+	myColor03.addEventListener("click", function () {
+		chageSelected(myColor03);
+	});	
 
-	// // Altera Imagem usando as imagens de exemplo
-	// let meme1 = document.getElementById("meme-1");
-	// meme1.addEventListener("click", function () {
-	// 	changeImage(meme1);
-	// });
-	// let meme2 = document.getElementById("meme-2");
-	// meme2.addEventListener("click", function () {
-	// 	changeImage(meme2);
-	// });	
-	// let meme3 = document.getElementById("meme-3");
-	// meme3.addEventListener("click", function () {
-	// 	changeImage(meme3);
-	// });	
-	// let meme4 = document.getElementById("meme-4");
-	// meme4.addEventListener("click", function () {
-	// 	changeImage(meme4);
-	// });	
+  let myColor04 = document.getElementById("color04");
+  myColor04.style.backgroundColor = "rgb(45 , 75 , 139)";
+	myColor04.addEventListener("click", function () {
+		chageSelected(myColor04);
+  });	
+  
+  let colorSelected = "";
+  
+    function chageSelected(newSelected){
+      let oldSelected = document.querySelector(".selected");
 
-	// function changeImage(memeImage) {
-	// 	let myImageMeme = document.getElementById("meme-image");
-	// 	myImageMeme.src = memeImage.getAttribute('src'); // URL.createObjectURL(event.target.value);
-	// 	myImageMeme.onload = function () {
-	// 		URL.revokeObjectURL(myImageMeme.src);
-	// 	}
-	// }
+      // colorSelected = window.getComputedStyle(newSelected, null).getPropertyValue("background-color");
+      colorSelected = newSelected.style.backgroundColor;
+      console.log(newSelected);
+      console.log(newSelected.style.backgroundColor);
+      console.log(colorSelected);
+
+      // newSelected.style.backgroundColor = "rgb(0 , 55, 100)";
+      // console.log(newSelected.style.backgroundColor);
+
+	   	let myPixel = document.getElementById("pixel11");
+	   	myPixel.style.backgroundColor = colorSelected;
+
+      oldSelected.classList.remove("selected");
+      newSelected.classList.add("selected");
+    }
 
 }
