@@ -24,7 +24,7 @@ window.onload = function () {
 		chageSelected(myColor04);
   });	
   
-  let colorSelected = "";
+  let colorSelected = "rgb(0 , 0 , 0)";
   
   function chageSelected(newSelected){
     let oldSelected = document.querySelector(".selected");

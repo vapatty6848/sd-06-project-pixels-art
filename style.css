@@ -98,95 +98,9 @@ header h1 {
 #pixel-board .pixel {
   background-color: rgb(255 , 255 , 255);
   /* display: inline-block;   */
-  width: 39px;
-  height: 39px;
+  width: 38px;
+  height: 38px;
   border: 1px solid rgb(0 , 0 , 0);
   margin: 0px 0px;
   padding: 0px 0px;
-}
-
-/* #meme-image-container {
-  width: 400px;
-  background-color: rgb(255 , 255 , 255);
-  border: 1px solid rgb(0 , 0 , 0);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#meme-image-container #meme-image {
-  width: 400px;
-  background-size: cover;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#meme-image-container #meme-text {
-  position: absolute;
-  width: 400px;
-  top: 200px;
-  text-align: center;
-  font-size: 30px;
-  text-shadow: 5px 5px 5px rgb(0 , 0 , 0);
-  color: rgb(255 , 255 , 255);
-}
-
-#meme-buttons-container { 
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  text-align: center;
-}
-
-#meme-buttons-container button { 
-  width: 60px;
-  height: 25px;
-  color: rgb(255 , 255 , 255);;
-}
-
-#meme-buttons-container #fire { 
-  background-color: rgb(255 , 0 , 0);
-}
-
-#meme-buttons-container #water { 
-  background-color: rgb(0 , 0 , 255);
-}
-
-#meme-buttons-container #earth { 
-  background-color: rgb(0 , 128 , 0 );;
-}
-
-#meme-famosos-container {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-  text-align: center;
-}
-
-#meme-famosos-container img { 
-  width: 80px;
-  height: 70px;
-  border-radius: 90%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
-
-#meme-famosos-container img:hover {
-  cursor: pointer;
-} */ 
-
-footer {
-  text-align: center;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer h2 {
-  width: 400px;
-  font-size: 12px;
-  font-weight: lighter;
-  color: rgb(255 , 255 , 255);
 }
