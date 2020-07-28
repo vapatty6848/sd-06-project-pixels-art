@@ -12,12 +12,12 @@ document.addEventListener('click', function (pointedPixel) {
   }
 });
 
-let clearBoard = document.querySelector('#clear-board');
+const clearBoard = document.querySelector('#clear-board');
 
 clearBoard.addEventListener('click', function () {
-  for (let analizedLine = document.getElementById('pixel-board').firstElementChild; analizedLine; analizedLine = analizedLine.nextElementSibling) {
-    for (let analizedChild = analizedLine.firstElementChild; analizedChild; analizedChild = analizedChild.nextElementSibling) {
-      analizedChild.style.backgroundColor = 'white';
+  for (let anLine = document.getElementById('pixel-board').firstElementChild; anLine; anLine = anLine.nextElementSibling) {
+    for (let anChild = anLine.firstElementChild; anChild; anChild = anChild.nextElementSibling) {
+      anChild.style.backgroundColor = 'white';
     }
   }
-})
+});
