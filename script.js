@@ -42,4 +42,12 @@ window.onload = function () {
     });
   }
 
+  let btnClear = document.getElementById("clear-board");
+  btnClear.addEventListener('click', function() {
+    for(var i = 0; i < Pixels.length; i += 1) {
+      let myItemPixel = Pixels[i];
+      myItemPixel.style.backgroundColor = "rgb(255 , 255 , 255)";
+    }
+  });
+
 }
