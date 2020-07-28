@@ -32,19 +32,25 @@ const getSelectedColor = () => {
   colorsPalette.forEach((item) => {
     item.addEventListener('click', () => {
       removeClassSelected();
-      if (!item.classList.contains('selected')) {
-        item.classList.add('selected');
-      } else {
-        item.classList.remove('selected');
-      }
+      item.classList.add('selected');
     });
   });
 };
 
-window.onload = () => {
-  generatePaletteColors();
-  firstColor.style.backgroundColor = 'black';
-  firstColor.classList.add('selected');
-  generateBoard();
-  getSelectedColor();
+const setSelectedColorToPixel = () => {
+  const pixels = document.querySelectorAll('.pixel');
+  const selectedColor = document.querySelector('.selected');
+  pixels.forEach((item) => {
+    item.addEventListener('click', () => {
+      item.style.backgroundColor = selectedColor.style.backgroundColor;
+    });
+  });
 };
+
+
+generatePaletteColors();
+firstColor.style.backgroundColor = 'black';
+firstColor.classList.add('selected');
+generateBoard();
+getSelectedColor();
+setSelectedColorToPixel();
