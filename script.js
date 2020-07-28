@@ -1,9 +1,11 @@
+const pixels = document.querySelectorAll('.pixel');
 const btnLimpar = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
 const btnGenerate = document.querySelector('#generate-board');
 const pixelBoard = document.querySelector('#pixel-board');
 
 let corSelecionada = 'black';
+criarEventos();
 function criarEventos() {
   const pixels = document.querySelectorAll('.pixel');
   for (let pixel = 0; pixel < pixels.length; pixel += 1) {
@@ -39,10 +41,12 @@ function gerarPixels(pixels) {
   } else if (pixels > 50) {
     pixels = 50;
   }
+  const tbody = document.createElement('tbody');
+  pixelBoard.appendChild(tbody);
   for (let i = 0; i < pixels; i += 1) {
     const tr = document.createElement('tr');
     tr.className = 'linha';
-    pixelBoard.appendChild(tr);
+    tbody.appendChild(tr);
     for (let j = 0; j < pixels; j += 1) {
       const td = document.createElement('td');
       td.className = 'pixel';
@@ -57,6 +61,28 @@ btnGenerate.addEventListener('click', () => {
   if (value === '') {
     alert('Board inválido!');
   } else {
+    let tabela = document.querySelector('tbody');
+    console.log(tabela);
+    pixelBoard.removeChild(tabela);
     gerarPixels(value);
   }
 });
+
+
+function aleatorio(inferior,superior){
+  numPossibilidades = superior - inferior
+  aleat = Math.random() * numPossibilidades
+  aleat = Math.floor(aleat)
+  return parseInt(inferior) + aleat
+}
+
+function dar_cor_aleatoria(){
+  let hexadecimal = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F")
+  let cor_aleatoria = "#";
+  for (i=0;i<6;i++){
+     let posarray = aleatorio(0,hexadecimal.length)
+     cor_aleatoria += hexadecimal[posarray]
+  }
+  return cor_aleatoria
+}
+console.log(dar_cor_aleatoria());
