@@ -5,7 +5,8 @@ var red = document.querySelector(".red");
 var green = document.querySelector(".green");
 var blue = document.querySelector(".blue");
 var colors = document.querySelectorAll(".color")
-console.log(colors[1].classList[1])
+var clear = document.querySelector("#clear-board")
+var quadrados = document.querySelectorAll(".pixel")
 
 black.addEventListener("click", function(){
     for(i = 0; i < colors.length; i += 1){
@@ -66,4 +67,10 @@ pixelBoard.addEventListener("click", function(event){
             event.target.style.backgroundColor = "blue";
     }
 
+})
+
+clear.addEventListener("click", function(){
+    for(let i = 0; i < quadrados.length; i +=1){
+        quadrados[i].style.backgroundColor = "white"
+    }
 })
