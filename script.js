@@ -32,13 +32,22 @@ let currentSelectedDiv = event.target
 oldSelectedDiv.classList.remove("selected");
 currentSelectedDiv.classList.add("selected")
 }
+
+// individualizando os pixels para colorir
+let pixels = document.querySelectorAll(".pixel");
+function colorir(pixels) {
+    for(let index in pixels) {
+    let pixel = createPaletteItem(pixels[index]);
+    }
+}
+
+
 // usando o botão para limpar todos os pixels
-// let botao = document.getElementById("clear-board");
-// function clearBoard() {
-//     let pixel = document.querySelectorAll(".pixel");
-//     for (let index = 0; index < pixel.length; index += 1) {
-//         pixel[index].style.backgroundColor = 'white';
-//       }
-// }
-// botao.addEventListener("click", clearBoard)
+let botao = document.getElementById("clear-board");
+function clearBoard() {
+    for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = "rgb(255, 255, 255)";
+      }
+}
+ botao.addEventListener("click", clearBoard)
 }
