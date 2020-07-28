@@ -71,18 +71,13 @@ function createPixelsDiv(divClassName) {
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
   const sizeCreateBoard = document.querySelector('.board');
-  let inputCreateBoard = parseInt(document.getElementById('board-size').value, 10);
-  if (
-    inputCreateBoard < 5 ||
-    inputCreateBoard === undefined ||
-    inputCreateBoard === null ||
-    isNaN(inputCreateBoard)
-  ) {
+  let inputCreateBoard = parseInt(document.getElementById('board-size').value);
+  if (inputCreateBoard === '') {
+    return alert('Board inválido!');
+  } else if (inputCreateBoard < 5) {
     inputCreateBoard = 5;
-    alert('Board inválido!');
   } else if (inputCreateBoard > 50) {
     inputCreateBoard = 50;
-    alert('Board inválido!');
   }
   const px = 'px';
   const gridPixel = inputCreateBoard * inputCreateBoard;
