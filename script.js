@@ -1,10 +1,10 @@
-function getColor(event,  elementToCopy) {
-  let elemento = event.target;
-  let storage = elemento.style.backgroundColor;
-  return  storage
+function getColor(event) {
+  const elemento = event.target;
+  colorStoraged = elemento.style.backgroundColor;
+  return  colorStoraged
 }
 
-function setColor(event,  elementToChange) {
+function setColor(event) {
   let elementoAtual = event.currentTarget;
   elementoAtual.style.backgroundColor = colorStoraged;
   return colorStoraged
@@ -16,7 +16,7 @@ function CreateRows(NumberOfRows) {
     let linha = document.createElement("div");
     linha.className = 'row';
     board.appendChild(linha);
-    CreateElements(NumberOfRows,linha)
+    CreateElements(NumberOfRows,linha);
   }
 }
 
@@ -59,21 +59,17 @@ function CreateBoard() {
   ButtonsEvents(clearButton, classPixels, ClearBoard);
   }
 
-
-
 function setClass(event) {
   document.querySelector('.selected').classList.remove('selected');
   event.currentTarget.classList = `${event.currentTarget.className} selected`;
 }
-//init events
-function PaletteEvents(colors) {
-  for (let i in colors) {
-    let color = colors[i];
-    if(color.className !== undefined){
-      add(color, 'click', getColor, color);
-      addClassEvent(color, 'click', setClass);
 
-
+function PaletteEvents(paletteElements,colorStoraged) {
+  for (let i in paletteElements) {
+    let paletteElement = paletteElements[i];
+    if(paletteElement.className !== undefined){
+      add(paletteElement, 'click', getColor,colorStoraged);
+      addClassEvent(paletteElement, 'click', setClass);
     }
   }
 }
@@ -82,7 +78,7 @@ function BoardEvents(pixels) {
   for (let i in pixels) {
     let pixel = pixels[i]
     if (pixel.className !== undefined) {
-      add(pixel, 'click', setColor, pixel);
+      add(pixel, 'click', setColor,colorStoraged);
     }
   }
 }
@@ -99,35 +95,23 @@ function VqvEvents(vqvButton) {
       CreateBoard();
     }
     else{
-      alert('Board inválido!')
+      alert('Board inválido!');
     }
   })
 }
-//initiate palette and pixels
 
 function initPixelColor(pixelsColors) {
   colors = pixelsColors;
   ClearBoard(colors);
 }
 
-
 function initPalette() {
   let paletteColors = document.querySelectorAll('.color');
   paletteColors[0].style.backgroundColor = 'black';
-  colorStoraged = 'black';
   for (let i = 1 ; i < paletteColors.length; i += 1) {
     let paletteColor = paletteColors[i];
-    if(paletteColor.style.backgroundColor !== undefined) {
+    if (paletteColor.style.backgroundColor !== undefined) {
       paletteColor.style.backgroundColor = generateRandomColor();
     }
-  }
-  PaletteEvents(paletteColors);
+  } PaletteEvents(paletteColors,colorStoraged);
 }
-
-
-
-// for(let i in classPixel)
-
-// add($('.pixel'),'click',setColor,colorStoraged,$('.pixel'));
-
-

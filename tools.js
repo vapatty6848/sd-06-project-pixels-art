@@ -1,14 +1,11 @@
 
 
-function add(triggerObj,triggerType,action,obj) {
+function add(triggerObj,triggerType,action,colorStorage) {
   triggerObj.addEventListener(triggerType,function(event){
-      let objetos = obj;
-      if(objetos.length === undefined) {
-        colorStoraged = action(event, objetos);
-      } else {
-          for (let i in objetos) {
-            colorStoraged = action(event, objetos[i]);
-  }}})
+
+        colorStoraged = action(event,colorStorage);
+
+      })
 }
 
 function addClassEvent(triggerObj,triggerType,action) {
@@ -28,8 +25,8 @@ function generateRandomColor() {
   for (let i = 0 ; i < 3 ; i += 1) {
     parameters.push(RandomGenerator256Bits())
   }
-   let numero =parameters.join(',');
-   return `rgb(${numero})`
+  let numero =parameters.join(',');
+  return `rgb(${numero})`
 }
 
 function RandomGenerator256Bits() {
@@ -46,4 +43,3 @@ function RandomGenerator256Bits() {
   }
   return (valores.join(''));
 }
-
