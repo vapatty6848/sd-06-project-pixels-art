@@ -60,23 +60,26 @@ const functionalities = {
       colorItem.addEventListener('click', functionalities.changeClass); // Event to change class
     }
   },
-  rebuildBoard: function rebuildBoard() {
+  verifyInputDimensionAndRebuild: function verify() {
     const userInputDimension = document.querySelector('#board-size').value;
     if (userInputDimension === '') {
       alert('Board inválido!');
     } else {
-      let numberOfRows = 5;
-      let numberOfColumns = 5;
-      if (userInputDimension > 50) {
-        numberOfRows = 50;
-        numberOfColumns = 50;
-      } else if (userInputDimension >= 5 && userInputDimension <= 50) {
-        numberOfRows = userInputDimension;
-        numberOfColumns = userInputDimension;
-      }
-      functionalities.deleteBoard(); // Delete previous pixels board
-      functionalities.buildBoard(numberOfRows, numberOfColumns); // Create new pixels board
+      functionalities.rebuildBoard(userInputDimension);
     }
+  },
+  rebuildBoard: function rebuildBoard(newDimension) {
+    let numberOfRows = 5;
+    let numberOfColumns = 5;
+    if (newDimension > 50) {
+      numberOfRows = 50;
+      numberOfColumns = 50;
+    } else if (newDimension >= 5 && newDimension <= 50) {
+      numberOfRows = newDimension;
+      numberOfColumns = newDimension;
+    }
+    functionalities.deleteBoard(); // Delete previous pixels board
+    functionalities.buildBoard(numberOfRows, numberOfColumns); // Create new pixels board
   },
   deleteBoard: function deleteBoard() {
     const previousTableRows = document.querySelectorAll('tr');
@@ -105,5 +108,5 @@ window.onload = function () {
   clearButton.addEventListener('click', functionalities.clearPixels);
 
   // Rebuild the board as user set
-  buildBoardButton.addEventListener('click', functionalities.rebuildBoard);
+  buildBoardButton.addEventListener('click', functionalities.verifyInputDimensionAndRebuild);
 };
