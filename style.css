@@ -1,4 +1,4 @@
-.black {
+#black {
   height: 40px;
   width: 40px;
   background-color: black;
@@ -6,7 +6,7 @@
   display: inline-block;
 }
 
-.blue {
+#blue {
   height: 40px;
   width: 40px;
   background-color: blue;
@@ -14,7 +14,7 @@
   display: inline-block;
 }
 
-.green {
+#green {
   height: 40px;
   width: 40px;
   background-color: green;
@@ -22,10 +22,17 @@
   display: inline-block;
 }
 
-.red {
+#red {
   height: 40px;
   width: 40px;
   background-color: red;
   border: black solid 1px;
   display: inline-block;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: black solid 1px;
+  background-color: white;
 }
