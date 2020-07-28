@@ -16,3 +16,47 @@
 //     }
 //   }
 // }
+
+const firstColor = document.getElementById('first-color');
+const secondColor = document.getElementById('second-color');
+const thirdColor = document.getElementById('third-color');
+const fourthColor = document.getElementById('fourth-color');
+
+let selectedColor = document.querySelector('.selected');
+
+function clearSelected() {
+  firstColor.className = 'color color1';
+  secondColor.className = 'color color2';
+  thirdColor.className = 'color color3';
+  fourthColor.className = 'color color4';
+}
+
+firstColor.addEventListener('click', function (event) {
+  clearSelected();
+  const classArray = event.target.className.split(' ');
+  if (classArray[classArray.length - 1] !== 'selected') {
+    event.target.className += ' selected';
+  }
+});
+
+secondColor.addEventListener('click', function (event) {
+  clearSelected();
+  const classArray = event.target.className.split(' ');
+  if (classArray[classArray.length - 1] !== 'selected') {
+    event.target.className += ' selected';
+  }
+});
+
+thirdColor.addEventListener('click', function (event) {
+  const classArray = event.target.className.split(' ');
+  if (classArray[classArray.length - 1] !== 'selected') {
+    event.target.className += ' selected';
+  }
+});
+
+fourthColor.addEventListener('click', function (event) {
+  const classArray = event.target.className.split(' ');
+  if (classArray[classArray.length - 1] !== 'selected') {
+    event.target.className += ' selected';
+  }
+});
