@@ -11,10 +11,10 @@
   border: 1px solid black;
   display: inline-block;
   background-color: white;
+  margin-bottom:-4px ;
 }
 
 #pixel-board {
-  width: 220px;
-  height: 230px;
-  border: 1px solid black;
+  width: 212px;
+  background-color: white;
 }
