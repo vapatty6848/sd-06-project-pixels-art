@@ -7,3 +7,20 @@
 #color-palette, h1{
     text-align: center;
 }
+#pixel-board {
+    margin-left: auto;
+    margin-right: auto;
+    width: 510px;
+    height: 510px;
+    padding: 0px;
+    border: 1px solid black;
+    line-height: 0px;
+}
+.pixel {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid black;
+}
