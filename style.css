@@ -8,33 +8,16 @@
   width: fit-content;
 }
 
-.pixel-board .pixel-line {
+.pixel-board .pixel-row {
   height: 42px;
   width: fit-content;
 }
 
 .pixel {
-  background-color: white;
   display: inline-block;
 }
 
 .color {
   display: inline-block;
   margin-right: 10px;
-}
-
-.black {
-  background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
 }

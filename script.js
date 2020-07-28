@@ -1,27 +1,39 @@
 window.onload = function () {
-  const pixelLines = document.getElementsByClassName('pixel-line');
-  const colorBlack = document.querySelector('.black');
-  const colorRed = document.querySelector('.red');
-  const colorBlue = document.querySelector('.blue');
-  const colorGreen = document.querySelector('.green');
+  const pixelRows = document.getElementsByClassName('pixel-row');
 
-  function fillBoardColumn(lines, line) {
-    for (let column = 0; column < lines.length; column += 1) {
+  function fillBoardColumn(divPixelBoard) {
+    for (let column = 0; column < pixelRows.length; column += 1) {
       const pixelColumn = document.createElement('div');
       pixelColumn.className = 'pixel';
-      pixelLines[line].appendChild(pixelColumn);
+      pixelColumn.style.backgroundColor = 'rgb(255, 255, 255)';
+      pixelRows[column].appendChild(pixelColumn);
     }
   }
 
-  function fillBoardLines(lines) {
-    for (let line = 0; line < lines.length; line += 1) {
-      fillBoardColumn(lines, line);
+  function fillBoardRows(pixelRows) {
+    for (let row = 0; row < pixelRows.length; row += 1) {
+      fillBoardColumn();
     }
   }
 
-  colorBlack.addEventListener('click', function(event) {
-    console.log(event);
-  });
+  let coolors = ['black', 'red', 'blue', 'green'];
 
-  fillBoardLines(pixelLines);
+  function createPalleteDiv(coolors) {
+    let divPallete = document.getElementById('color-palette');
+
+    for (let index in coolors) {
+      let divColor = createPalleteColor(coolors[index]);
+      divPallete.appendChild(divColor);
+    }
+  }
+
+  function createPalleteColor(color) {
+    let divColor = document.createElement('div');
+    divColor.style.backgroundColor = color;
+    divColor.className = 'color';
+    return divColor;
+  }
+
+  createPalleteDiv(coolors);
+  fillBoardRows(pixelRows);
 };
