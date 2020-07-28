@@ -1,15 +1,19 @@
 let pixelBoard = document.querySelector('#pixel-board');
-
+let preto = document.querySelector('#black')
 
 
 for (let i = 0; i < 5; i++){
     let linha = document.createElement('div');
-    linha.className = 'row';
+    linha.className = 'pixel';
     pixelBoard.appendChild(linha);
     for (let j = 0; j < 5; j++){
         let coluna = document.createElement('div');
-        coluna.className = 'column';
-        coluna.id= 'pixel'
+        coluna.className = 'pixel';
+        coluna.id= 'column'
         linha.appendChild(coluna);
     }
+}
+
+window.onload = function(){
+    preto.style = "black"
 }
