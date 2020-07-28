@@ -1,11 +1,9 @@
-const pixels = document.querySelectorAll('.pixel');
 const btnLimpar = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
 const btnGenerate = document.querySelector('#generate-board');
 const pixelBoard = document.querySelector('#pixel-board');
 
 let corSelecionada = 'black';
-criarEventos();
 function criarEventos() {
   const pixels = document.querySelectorAll('.pixel');
   for (let pixel = 0; pixel < pixels.length; pixel += 1) {
@@ -14,6 +12,8 @@ function criarEventos() {
     });
   }
 }
+criarEventos();
+
 const colors = document.querySelectorAll('.color');
 for (let color = 0; color < colors.length; color += 1) {
   const cor = colors[color];
@@ -23,7 +23,7 @@ for (let color = 0; color < colors.length; color += 1) {
         colors[i].classList.remove('selected');
       }
       cor.className += ' selected';
-      corSelecionada = colors[color].classList[1];
+      corSelecionada = event.target.style.backgroundColor;
     }
   });
 }
@@ -61,28 +61,28 @@ btnGenerate.addEventListener('click', () => {
   if (value === '') {
     alert('Board inválido!');
   } else {
-    let tabela = document.querySelector('tbody');
-    console.log(tabela);
+    const tabela = document.querySelector('tbody');
     pixelBoard.removeChild(tabela);
     gerarPixels(value);
   }
 });
 
-
-function aleatorio(inferior,superior){
-  numPossibilidades = superior - inferior
-  aleat = Math.random() * numPossibilidades
-  aleat = Math.floor(aleat)
-  return parseInt(inferior) + aleat
+function aleatorio(tamanhoArray) {
+  const numPossibilidades = tamanhoArray;
+  let aleat = Math.random() * numPossibilidades;
+  aleat = Math.floor(aleat);
+  return aleat;
 }
 
-function dar_cor_aleatoria(){
-  let hexadecimal = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F")
-  let cor_aleatoria = "#";
-  for (i=0;i<6;i++){
-     let posarray = aleatorio(0,hexadecimal.length)
-     cor_aleatoria += hexadecimal[posarray]
+function corAleatoria() {
+  for (let i = 1; i < colors.length; i += 1) {
+    const hexadecimal = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+    let cor = '#';
+    for (let j = 0; j < 6; j += 1) {
+      const posarray = aleatorio(hexadecimal.length);
+      cor += hexadecimal[posarray];
+    }
+    colors[i].style.backgroundColor = `${cor}`;
   }
-  return cor_aleatoria
 }
-console.log(dar_cor_aleatoria());
+corAleatoria();
