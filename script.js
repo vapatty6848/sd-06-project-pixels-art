@@ -11,7 +11,7 @@ window.onload = function () {
   // Functionalities
   let functionalities = {
     putColor: function () { 
-      let activeColorOfPalette = document.querySelector('.selected'); // Selected color
+      let activeColorOfPalette = document.querySelector('.color.selected'); // Selected color
       event.target.style.background = activeColorOfPalette.style.backgroundColor;
     },
     changeClass: function () {
@@ -22,9 +22,9 @@ window.onload = function () {
       // Set selected class just to clicked color icon
       // IF to avoid wrong class concatenation in case of click the same color 2 or more times in a row
       if (event.target.className.includes('selected')) { 
-        event.target.className = event.target.className.concat(' selected'); 
-      } else {
         event.target.className = event.target.className;
+      } else {
+        event.target.className = event.target.className.concat(' selected');
       }
     },
     clearPixels: function () {
