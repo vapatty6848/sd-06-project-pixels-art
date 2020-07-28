@@ -7,7 +7,7 @@ function clear() {
 function chooseColor() {
   let choosed = document.querySelector('.choosed');
   choosed.classList.remove('choosed');
-  this.classList.add('choose');
+  this.classList.add('choosed');
 }
 function clickPrint() {
   let buttonColor = document.querySelector('.choosed');
