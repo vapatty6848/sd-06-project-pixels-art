@@ -55,4 +55,9 @@ document.querySelectorAll('.pixel').forEach(item => {
   })
 })
 
+document.getElementById('clear-board').addEventListener('click', function(){
+  document.querySelectorAll('.pixel').forEach(item => {
+    item.style.backgroundColor = 'white';
+  })
+})
 
