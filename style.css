@@ -30,19 +30,42 @@ header h1 {
   text-align: center;
 }
 
-/* #meme-imput-container {
-  height: 60px;
-  width: 200px;
+#color-palette {
+  height: 80px;
+  width: 400px;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px;
+  padding: 15px;
+  text-align: center;
 }
 
-#meme-imput-container input{
-  margin-top: 5px;
+#color-palette .color {
+  height: 70px;
+  width: 70px;
+  margin: 2px 5px;
+  border: 1px solid rgb(0 , 0 , 0);
+  display: inline-block;
+  box-shadow: 5px 5px 5px rgb(0 , 0 , 0);
 }
 
-#meme-image-container {
+#color-palette #color01 {
+  background-color: rgb(9 , 52 , 34);
+}
+ 
+#color-palette #color02 {
+  background-color: rgb(155 , 50 , 8);
+}
+
+#color-palette #color03 {
+  background-color: rgb(198 , 168 , 108);
+}
+
+#color-palette #color04 {
+  background-color: rgb(45 , 75 , 139);
+}
+
+
+/* #meme-image-container {
   width: 400px;
   background-color: rgb(255 , 255 , 255);
   border: 1px solid rgb(0 , 0 , 0);
@@ -112,7 +135,7 @@ header h1 {
 
 #meme-famosos-container img:hover {
   cursor: pointer;
-} */
+} */ 
 
 footer {
   text-align: center;
