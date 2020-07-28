@@ -21,3 +21,7 @@ for (let i = 0; i < 5; i += 1) {
     linha.appendChild(pixel);
   }
 }
+
+window.onload = function () {
+  document.getElementsByClassName('color')[0].className += ' selected';
+}
