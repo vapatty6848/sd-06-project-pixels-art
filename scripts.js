@@ -2,9 +2,11 @@ const colorBlack = document.querySelector('.black');
 const colorRed = document.querySelector('.red');
 const colorBlue = document.querySelector('.blue');
 const colorPurple = document.querySelector('.purple');
+const pixel = document.querySelectorAll('.pixel');
 
 window.onload = function () {
   document.querySelector('.black').className += ' selected';
+  document.querySelector('.selected').style.color = 'black';
 };
 
 colorBlack.addEventListener('click', function () {
@@ -42,3 +44,9 @@ colorPurple.addEventListener('click', function () {
   colorPurple.className += ' selected';
   document.querySelector('.selected').style.color = 'purple';
 });
+
+for (let i = 0; i < pixel.length; i += 1) {
+  pixel[i].addEventListener('click', function () {
+    pixel[i].style.backgroundColor = document.querySelector('.selected').style.color;
+  });
+}
