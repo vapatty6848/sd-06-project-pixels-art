@@ -14,7 +14,7 @@ for (let i = 0; i < colors.length; i += 1) {
 }
 window.onload = function () {
   document.getElementsByClassName('color')[0].className += ' selected';
-}
+};
 
 for (let i = 0; i < 5; i += 1) {
   const createTr = document.createElement('tr');
