@@ -1,6 +1,5 @@
 window.onload = function() {
   createColorPallet(['black', 'red', 'blue', 'green']);
-  //addPixelsTdEvents();
 }
 function createColorPallet(colors) {
   let colorPaletContainer = document.getElementById("color-palette");
@@ -25,31 +24,29 @@ function handlePalletItemEvent(event) {
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
 }
-// function addPixelsTdEvents() {
-//   let pixelTds = document.querySelectorAll('.pixel');
-//   for (let index in pixelTds) {
-//     let td = pixelTds[index];
-//     td.addEventListener('click', function(event) {
-//       let backColor = document.querySelector('.selected').style.backgroundColor
-//       event.target.id.backgroundColor = backColor;
-//     });
-//   }
-// }
-function limpaTudo() {
-  let pixel = document.querySelectorAll('.pixel')
-  for (let i in pixel) {
-    pixel[i].style.backgroundColor = 'white';
+function addPixelsTdEvents() {
+  let pixelTds = document.querySelectorAll('.pixel');
+  for (let index in pixelTds) {
+    let td = pixelTds[index];
+    td.addEventListener('click', function() {
+      const pixels = document.querySelectorAll('.pixel');
+      let seleCor = 'black';
+      for (let i = 0; i < pixels.length; i += 1) {
+        pixels[i].addEventListener('click', function() {
+        pixels[i].style.background = seleCor;
+        });
+      }
+    });
   }
 }
-let botao = document.getElementById('clear-board');
-botao.addEventListener('click', limpaTudo);
-
-const pixels = document.querySelectorAll('.pixel');
-const colors = document.querySelectorAll('.color');
-let seleCor = 'black';
-for (let i = 0; i < pixels.length; i += 1) {
-  pixels[i].addEventListener('click', function() {
+addPixelsTdEvents();
+function limpaTudo() {
+  const pixels = document.querySelectorAll('.pixel');
+  let seleCor = 'white';
+  for (let i in pixels) {
     pixels[i].style.background = seleCor;
-  });
+  }
 }
+
+
 
