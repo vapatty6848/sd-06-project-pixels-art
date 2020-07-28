@@ -37,3 +37,10 @@
   height: 40px;
   width: 40px;
 }
+
+#clear-board {
+  border: 1px solid black;
+  height: 100px;
+  margin: 15px;
+  width: 100px;
+}
