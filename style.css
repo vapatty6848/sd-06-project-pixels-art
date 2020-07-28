@@ -11,29 +11,29 @@
 }
 
 #color2 {
-  background-color: rgb(252, 252, 252);
+  background-color: red;
 }
 
 #color3 {
-  background-color: rgb(253, 253, 253);
+  background-color: blue;
 }
 
 #color4 {
-  background-color: rgb(254, 254, 254); /* trolei */
+  background-color: green;
 }
 
 #pixel-board {
   background-color: white;
   border: 1px solid black;
-  height: 510px;
+  height: 210px;
   margin: 15px;
-  width: 510px;
+  width: 210px;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
   float: left;
-  height: 100px;
-  width: 100px;
+  height: 40px;
+  width: 40px;
 }
