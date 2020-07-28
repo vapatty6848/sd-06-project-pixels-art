@@ -3,6 +3,10 @@ body {
   padding: 0;
 }
 
+.clear {
+  margin: 15px;
+}
+
 .color {
   border: solid black 1px;
   display: inline-block;
@@ -18,12 +22,9 @@ body {
 
 .color-picker {
   margin-left: 150px;
-}
-
-.color-picker {
-  padding-top: 50px;
-  padding-left: 45px;
   padding-bottom: 50px;
+  padding-left: 45px;
+  padding-top: 50px;
 }
 
 .pixel {
@@ -32,7 +33,18 @@ body {
   display: inline-block;
   height: 40px;
   margin: 0;
+  padding: 0;
   width: 40px;
+}
+
+.pixel-board {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
 }
 
 .title {
