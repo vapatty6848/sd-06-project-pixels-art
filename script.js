@@ -1,3 +1,6 @@
+
+let selectedColor = "black";
+
 window.onload = function () {
 
   createColorPallet(['black', 'red', 'blue', 'green'])
@@ -7,8 +10,8 @@ window.onload = function () {
     let colorPalletContainer = document.getElementById("color-palette");
 
     for (let index in colors) {
-    let palletItemDiv = createPalletItem(colors[index]);
-    colorPalletContainer.appendChild(palletItemDiv);
+      let palletItemDiv = createPalletItem(colors[index]);
+      colorPalletContainer.appendChild(palletItemDiv);
     }
   }
 
@@ -26,20 +29,24 @@ window.onload = function () {
   }
 
 //Quando clica, add o selected e retira da cor antiga
-  function handlePalletItemEvent (event) {
+  function handlePalletItemEvent(event) {
     let oldSelectedDiv = document.querySelector(".selected");
     let currentSelectedDiv = event.target;
 
     oldSelectedDiv.classList.remove("selected");
-    currentSelectedDiv.classList.add("selected")
+    currentSelectedDiv.classList.add("selected");
+
+    selectedColor = currentSelectedDiv.style.backgroundColor;
   }
 
-  //Pintar os pixels da cor selecionada
-  document.getElementById('pixel').addEventListener('click', function() {
-  let pixelColorSelected = document.querySelector('.selected');
-  let pixelBcColor = pixelColorSelected.style.backgroundColor;
-  event.target.style.backgroundColor = pixelBcColor;
-}) 
+
+  function handlePixelClick(event) {
+    let selectedPixelDiv = event.target;
+    selectedPixelDiv.style.backgroundColor = selectedColor;
+  }
+
+  let pixelBoardDiv = document.querySelector("#pixel-board");
+  pixelBoardDiv.addEventListener("click", handlePixelClick)
   
 
   //Botão que limpa o quadro todo
