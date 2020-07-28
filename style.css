@@ -61,8 +61,8 @@ footer {
   background: red;
   border: solid white 3px;
   border-radius: 20%;
-  display: inline-block;
-  margin: 2%;
+  display: block;
+  margin: 2% auto;
   padding: 2%;
 }
 
