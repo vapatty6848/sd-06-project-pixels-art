@@ -11,8 +11,8 @@ h1 {
 
 .color {
     border: 1px solid black;
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
     margin: 10px;
 }
 
@@ -30,4 +30,27 @@ h1 {
 
 #color-4 {
     background-color: rgb(243, 193, 120);
+}
+
+#pixel-board {
+    align-content: center;
+    margin-top: 40px;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, td {
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    empty-cells: show;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
 }
