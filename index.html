@@ -65,7 +65,7 @@
 
     <nav id="color-palette">
         <!-- Não pode ter cor branca -->
-        <div class="color selected" id="black"></div>
+        <div class="color" id="black"></div>
         <div class="color" id="red"></div>
         <div class="color" id="yellow"></div>
         <div class="color" id="gray"></div>
@@ -120,6 +120,7 @@
         // Selecionar e colocar as cores no background dos divs
         let colors = ["black", "rgb(214, 40, 40)", "rgb(252, 191, 73)", "rgb(234, 226, 183)"];
 
+
         function setColors(one, two, three, four) {
             let box1 = document.getElementById("black");
             let box2 = document.getElementById("red");
@@ -134,16 +135,22 @@
 
         setColors(colors[0], colors[1], colors[2], colors[3])
 
+
         // Pegar a cor clicada
         let chosenColor = colors[0]; // preto já pré-selecionado
 
         let colorElements = document.getElementsByClassName("color");
+        let selectedDiv = colorElements[0];
+        colorElements[0].classList.add('selected');
 
         for (let i = 0; i < colorElements.length; i++) {
             // pegar cada elemento com a id color 
             // adicionar um eventListener nele
             colorElements[i].addEventListener("click", function () {
                 chosenColor = colorElements[i].style.backgroundColor;
+                selectedDiv.classList.remove('selected');
+                selectedDiv = colorElements[i];
+                colorElements[i].classList.add('selected');
             });
         }
 
@@ -160,6 +167,7 @@
                 event.preventDefault();
             });
         }
+
 
     </script>
 </body>
