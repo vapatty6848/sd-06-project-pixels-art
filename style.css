@@ -45,7 +45,3 @@ body {
   height: 40px;
   width: 40px;
 }
-
-.selected {
-  border: 5px dotted blueviolet;
-}
