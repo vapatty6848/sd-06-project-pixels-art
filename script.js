@@ -33,7 +33,18 @@ function setBlackColor() {
 }
 
 function setBoardSize() {
-
+  const size = parseInt(document.getElementById('board-size').value);
+  if (document.getElementById('board-size').value === '') {
+    alert("Board inválido!")
+  }
+  if (size >= 5 && size <= 60) {
+    for (let element of document.getElementsByClassName('pixel')) {
+      element.style.height = size + 'px';
+      element.style.width = size + 'px';
+      element.classList.remove('selected', 'two', 'three', 'four');
+    }
+  }
+  setBlackColor();
 }
 
 setBlackColor();
