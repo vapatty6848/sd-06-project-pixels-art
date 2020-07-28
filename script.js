@@ -1,27 +1,40 @@
 window.onload = function() {
 
-  // Deixar o preto selecionado
-  let colorBlack = document.querySelector('#black');
-  colorBlack.classList.add('selected');
-  console.log(colorBlack);
+  createColorPallet(['black', 'blue', 'blueviolet', 'pink']);
 
-  // Como funciona a seleção de cores:
-  // Classe selected = Deixa a cor selecionada para pintar a div (Add class="selected" style.backgroundColor = ".color[x]")
-  // Quando clica em outra cor remove classe selected da antiga e adiciona na nova (onclick -> remove selected da antiga e poe na clicada)
-  // Preto já inicia com a classe selected (WebStorage infinito)
-  // Apertando no pixel em branco transforma na cor seleceionada -> onclick chama funcao changeColor muda pra cor selecionada
 }
 
-const palleteColor = document.querySelector('#color-pallete');
-palleteColor.addEventListener('click', function() {
-  let oldSelectedDiv = document.querySelector('.selected');
+//Pega a paleta de cores e add os itens a paleta
+function createColorPallet(colors) {
+  let colorPalletContainer = document.getElementById("color-palette");
+  for (let i in colors) {
+    let palletColorDiv = createPalletItem(colors[i]);
+    colorPalletContainer.appendChild(palletColorDiv);
+  }
+}
+
+//Criação dos itens da paleta (divs)
+function createPalletItem(color) {
+  let palletColorDiv = document.createElement('div');
+  palletColorDiv.style.backgroundColor = color;
+  palletColorDiv.className = "color";
+  palletColorDiv.addEventListener("click", handlePalletColorEvent);
+    if (color === "black") {
+      palletColorDiv.classList.add("selected");
+    }
+  return palletColorDiv;
+}
+
+//Quando clica, add o selected e retira da cor antiga
+function handlePalletColorEvent (event) {
+  let oldSelectedDiv = document.querySelector(".selected");
   let currentSelectedDiv = event.target;
 
-  oldSelectedDiv.classList.remove('selected');
-  currentSelectedDiv.classList.add('selected');
-  console.log(currentSelectedDiv);
-});
+  oldSelectedDiv.classList.remove("selected");
+  currentSelectedDiv.classList.add("selected");
+}
 
+// Botão reset
 function resetPixelBoard() {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
