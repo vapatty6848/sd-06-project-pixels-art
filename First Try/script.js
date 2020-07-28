@@ -1,3 +1,9 @@
+//create color palete FUNCTION CALL
+
+
+//create color palet FUNCTION
+function createColorPalette(color1, color2, color3)
+
 document.querySelector("#black").classList.add("selected");
 
 // Select pallet color EVENT
