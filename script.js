@@ -79,16 +79,18 @@ function PaletteEvents(colors) {
 }
 
 function BoardEvents(pixels) {
-  for(let i in pixels) {
-    pixel = pixels[i]
-    if(pixel.className !== undefined)
+  for (let i in pixels) {
+    let pixel = pixels[i]
+    if (pixel.className !== undefined) {
       add(pixel, 'click', setColor, pixel);
+    }
   }
 }
 
 function ButtonsEvents(clearButton,board) {
   addButtonEvent(clearButton, 'click', ClearBoard, board);
 }
+
 function VqvEvents(vqvButton) {
   valorInput = document.querySelector('#board-size');
   vqvButton.addEventListener('click', function() {
@@ -99,7 +101,6 @@ function VqvEvents(vqvButton) {
     else{
       alert('Board inválido!')
     }
-
   })
 }
 //initiate palette and pixels
@@ -112,7 +113,6 @@ function initPixelColor(pixelsColors) {
 
 function initPalette() {
   let paletteColors = document.querySelectorAll('.color');
-
   paletteColors[0].style.backgroundColor = 'black';
   colorStoraged = 'black';
   for (let i = 1 ; i < paletteColors.length; i += 1) {
