@@ -3,10 +3,10 @@ body {
   padding: 0;
 }
 
-header { 
-  background-color: rgb(37 , 190 , 210);
+header {
+  background-color: rgb(37, 190, 210);
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 30px;
   margin-top: 0;
   padding: 1%;
@@ -26,13 +26,12 @@ ul {
 }
 
 footer {
-  background-color: rgb(37 , 190 , 210);
+  background-color: rgb(37, 190, 210);
   color: white;
   margin-top: 9.5%;
   padding: 5px;
   text-align: center;
-  width: 100%;
-    
+  width: 100%;    
 }
 
 .color {
@@ -50,8 +49,8 @@ footer {
 }
 
 .pixel {
-  border: solid black 1px;
   background-color: white;
+  border: solid black 1px;
   display: inline-block;
   height: 40px;
   width: 40px;
