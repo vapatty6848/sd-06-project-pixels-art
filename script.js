@@ -1,3 +1,4 @@
+let selectedColor = "black"
 window.onload = function () {
     // passamos as cores do array
     createColorPalette(["black", "rgb(240, 49, 122)", "yellow", "purple"])
