@@ -22,9 +22,9 @@ window.onload = function () {
     event.target.style.backgroundColor = color;
   });
   clearBtn.addEventListener('click', function () {
-    let pixel = document.querySelectorAll('.pixel');
+    const pixel = document.querySelectorAll('.pixel');
     for (let i = 0; i < pixel.length; i += 1) {
-      pixel[i].style.backgroundColor = "white";
+      pixel[i].style.backgroundColor = 'white';
     }
-  })
+  });
 };
