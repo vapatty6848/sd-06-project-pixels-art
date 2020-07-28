@@ -1,6 +1,6 @@
 #color-palette {
   display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	width: 20%;
 
 }
@@ -26,4 +26,36 @@
 
 #fourth-color {
 	background-color: green;
+}
+
+#picked-color {
+  margin-left: 40px;
+  inner-text: "cor";
+  color: black;
+}
+
+#clear-board {
+	margin-top: 10px;
+}
+
+:root {
+  --cols: 1;
+  --rows: 1;
+}
+
+#pixel-board {
+  display: grid;
+  grid-gap: 0;
+  grid-template-rows: repeat(var(--rows), 1fr);
+  grid-template-columns: repeat(var(--cols), 1fr);
+  width: 210px;
+  margin-top: 10px;
+  margin-left: 2.7%;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
 }
