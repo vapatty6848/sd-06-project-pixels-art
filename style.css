@@ -42,5 +42,7 @@ body {
 }
 
 .pixel-board {
+  display: inline-table;
+  margin-top: 20px;
   width: fit-content;
 }
