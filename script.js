@@ -21,8 +21,8 @@ function clearCanvas() {
   CANVAS.forEach((x) => {
     modifyStyle(x, 'backgroundColor', 'white');
   }
-  )
-};
+  );
+}
 
 modifyStyle(BLACKPALETE, 'backgroundColor', 'black');
 modifyStyle(ORANGEPALETE, 'backgroundColor', 'green');
