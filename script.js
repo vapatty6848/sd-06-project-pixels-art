@@ -32,12 +32,17 @@ function setBlackColor() {
   sessionStorage.setItem('class', 'selected');
 }
 
+function setBoardSize() {
+
+}
+
 setBlackColor();
 
 window.onload = function () {
   document.getElementById('pixel-board').addEventListener('click', clickPixel);
   document.getElementById('color-palette').addEventListener('click', selectColor);
   document.getElementById('clear-board').addEventListener('click', clearBoard);
+  document.getElementById('generate-board').addEventListener('click', setBoardSize);
 }
 
 
