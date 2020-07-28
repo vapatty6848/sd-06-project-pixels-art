@@ -20,8 +20,8 @@ function CreateElements(NumberOfElements, Row) {
 
 function CreateRows(NumberOfRows) {
   for (let i = 0; i < NumberOfRows;i += 1){
-    let board = document.querySelector('#pixel-board');
-    let linha = document.createElement("div");
+    const board = document.querySelector('#pixel-board');
+    const linha = document.createElement("div");
     linha.className = 'row';
     board.appendChild(linha);
     CreateElements(NumberOfRows,linha);
@@ -46,12 +46,11 @@ function ClearBoard(colors) {
 }
 
 function initPixelColor(pixelsColors) {
-  colors = pixelsColors;
-  ClearBoard(colors);
+  ClearBoard(pixelsColors);
 }
 
 function BoardEvents(pixels) {
-  for (let i in pixels) {
+  for (const i in pixels) {
     let pixel = pixels[i]
     if (pixel.className !== undefined) {
       add(pixel, 'click', setColor,colorStoraged);
@@ -64,7 +63,7 @@ function ButtonsEvents(clearButton,board) {
 }
 
 function CreateBoard() {
-  let inputValue = document.querySelector('#board-size').value;
+  const inputValue = document.querySelector('#board-size').value;
   if (inputValue < 5) {
     inputValue = 5;
   } else if (inputValue > 50) {
@@ -107,10 +106,10 @@ function VqvEvents(vqvButton) {
 }
 
 function initPalette() {
-  let paletteColors = document.querySelectorAll('.color');
+  const paletteColors = document.querySelectorAll('.color');
   paletteColors[0].style.backgroundColor = 'black';
-  for (let i = 1 ; i < paletteColors.length; i += 1) {
-    let paletteColor = paletteColors[i];
+  for (const i = 1 ; i < paletteColors.length; i += 1) {
+    const paletteColor = paletteColors[i];
     if (paletteColor.style.backgroundColor !== undefined) {
       paletteColor.style.backgroundColor = generateRandomColor();
     }
