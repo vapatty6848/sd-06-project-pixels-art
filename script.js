@@ -1,19 +1,17 @@
-window.onload = function() {
-  createColorPallet(['black', 'red', 'blue', 'green']);
-}
+
 
 function createColorPallet(colors) {
-  let colorPaletContainer = document.getElementById('color-palette')
+  let colorPaletContainer = document.getElementById('color-palette');
   for (let index in colors) {
     let palletItemDiv = createPalletItem(colors[index]);
-    colorPaletContainer.appendChild(palletItemDiv)
+    colorPaletContainer.appendChild(palletItemDiv);
   }
 }
 
 function createPalletItem(color) {
   let palletItemDiv = document.createElement('div');
   palletItemDiv.style.backgroundColor = color;
-  palletItemDiv.classList.add("pallet-item");
+  palletItemDiv.classList.add('color');
   palletItemDiv.addEventListener('click', handlePalletItemEvent);
 
   if (color === 'black') {
@@ -29,4 +27,8 @@ function handlePalletItemEvent(event) {
 
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
+}
+
+window.onload = function () {
+  createColorPallet(['black', 'red', 'blue', 'green']);
 }
