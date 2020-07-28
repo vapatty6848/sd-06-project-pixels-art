@@ -24,4 +24,23 @@ window.onload = function () {
     }
     return palletItemDiv;
   }
+
+    //Mudando o selected da paleta de cores
+    function handlePalletItemEvent(event) {
+      let oldSelectedDiv = document.querySelector(".selected");
+      let currentSelectedDiv = event.target;
+      oldSelectedDiv.classList.remove("selected");
+      currentSelectedDiv.classList.add("selected");
+  
+      selectedColor = currentSelectedDiv.style.backgroundColor;
+    }
+  
+    //Limpar tela
+    let btn = document.querySelector('#clear-board');
+    let pixel = document.getElementsByClassName('pixel');
+    btn.addEventListener('click', function (params) {
+      for (let index = 0; index < pixel.length; index++) {
+        pixel[index].style.backgroundColor = 'white';
+      }
+    })
 }

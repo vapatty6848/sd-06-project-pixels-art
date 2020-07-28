@@ -1,3 +1,17 @@
+.color {
+  border: 1px black solid;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+#title {
+  margin-bottom: 0px;
+}
+
+#pixel-board{ 
+  display: inline-block;
+}
+
 .pixel { 
   display: inline-block;
   border: 1px black solid;
@@ -8,6 +22,6 @@
 
 #color-palette {
   display: inline-block;
-  transform: rotate(270deg);
+  transform: rotate(270deg); 
   margin-left: 70px;
 }
