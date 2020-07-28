@@ -12,6 +12,20 @@ greenColor.style.backgroundColor = 'green'
 
  
 
-console.log(
-    blackColor
-)
+
+
+
+    for( i = 1; i <= 5; i ++ ) {
+
+        for( k = 1; k <= 5; k ++) {
+            let CriaDiv = document.createElement('div');
+            let Board = document.getElementById('pixel-board');
+            CriaDiv.className = 'pixel'
+            Board.appendChild(CriaDiv)
+            Board.appendChild(CriaDiv)
+
+
+        }
+
+
+    }
