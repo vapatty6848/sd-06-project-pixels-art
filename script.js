@@ -85,7 +85,7 @@ creationForm.onsubmit = (event) => {
   if (userInput.value > 50) {
     userInput.value = 50;
     userInput = userInput.value;
-  } else if (userInput.value < 5) {
+  } else if (userInput.value < 5 && userInput.value > 0) {
     userInput.value = 5;
     userInput = userInput.value;
   } else {
