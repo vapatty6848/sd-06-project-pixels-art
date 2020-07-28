@@ -19,12 +19,12 @@ function CreateElements(NumberOfElements, Row) {
 }
 
 function CreateRows(NumberOfRows) {
-  for (let i = 0; i < NumberOfRows;i += 1){
+  for (let i = 0 ; i < NumberOfRows ; i += 1) {
     const board = document.querySelector('#pixel-board');
-    const linha = document.createElement("div");
+    const linha = document.createElement('div');
     linha.className = 'row';
     board.appendChild(linha);
-    CreateElements(NumberOfRows,linha);
+    CreateElements(NumberOfRows, linha);
   }
 }
 
@@ -51,19 +51,19 @@ function initPixelColor(pixelsColors) {
 
 function BoardEvents(pixels) {
   for (const i in pixels) {
-    let pixel = pixels[i]
+    const pixel = pixels[i];
     if (pixel.className !== undefined) {
-      add(pixel, 'click', setColor,colorStoraged);
+      add(pixel, 'click', setColor, colorStoraged);
     }
   }
 }
 
-function ButtonsEvents(clearButton,board) {
+function ButtonsEvents(clearButton, board) {
   addButtonEvent(clearButton, 'click', ClearBoard, board);
 }
 
 function CreateBoard() {
-  const inputValue = document.querySelector('#board-size').value;
+  let inputValue = document.querySelector('#board-size').value;
   if (inputValue < 5) {
     inputValue = 5;
   } else if (inputValue > 50) {
@@ -75,7 +75,8 @@ function CreateBoard() {
   initPixelColor(classPixels);
   BoardEvents(classPixels);
   ButtonsEvents(clearButton, classPixels, ClearBoard);
-  }
+
+}
 
 function setClass(event) {
   document.querySelector('.selected').classList.remove('selected');
@@ -86,7 +87,7 @@ function PaletteEvents(paletteElements, colorStoraged) {
   for (const i in paletteElements) {
     const paletteElement = paletteElements[i];
     if (paletteElement.className !== undefined) {
-      add(paletteElement, 'click', getColor,colorStoraged);
+      add(paletteElement, 'click', getColor, colorStoraged);
       addClassEvent(paletteElement, 'click', setClass);
     }
   }
@@ -94,24 +95,24 @@ function PaletteEvents(paletteElements, colorStoraged) {
 
 function VqvEvents(vqvButton) {
   const valorInput = document.querySelector('#board-size');
-  vqvButton.addEventListener('click', function() {
-    if( valorInput.value != '') {
+  vqvButton.addEventListener('click', function () {
+    if( valorInput.value !== '') {
       RemoveCurrentBoard();
       CreateBoard();
     }
-    else{
+    else {
       alert('Board inválido!');
     }
-  })
+  });
 }
 
 function initPalette() {
   const paletteColors = document.querySelectorAll('.color');
   paletteColors[0].style.backgroundColor = 'black';
-  for (const i = 1 ; i < paletteColors.length; i += 1) {
+  for (let i = 1 ; i < paletteColors.length; i += 1) {
     const paletteColor = paletteColors[i];
     if (paletteColor.style.backgroundColor !== undefined) {
       paletteColor.style.backgroundColor = generateRandomColor();
     }
-  } PaletteEvents(paletteColors,colorStoraged);
+  } PaletteEvents(paletteColors, colorStoraged);
 }
