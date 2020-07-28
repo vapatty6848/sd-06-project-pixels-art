@@ -1,8 +1,17 @@
 .color{
   display: inline-block;
-  width: 80px;
-  height: 120px;
+  width: 40px;
+  height: 60px;
   border: 1px solid black;
   margin-right: 5px;
 }
-
+#pixel-board {
+  margin-top: 10px;
+}
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin: 2px;
+}
