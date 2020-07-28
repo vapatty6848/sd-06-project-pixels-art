@@ -3,7 +3,6 @@
 window.onload=function(){
 
     localStorage.clear();
-
     localStorage.setItem("selected-color", "black");
 }
 
@@ -45,7 +44,8 @@ blueButton.addEventListener("click", function(){
     selectColor("rgb(113, 222, 226)");
 })
 
-let greenButton = document.getElemen("green");
+
+let greenButton = document.getElementById("green");
 greenButton.addEventListener("click", function(){
     selectColor("rgb(117, 241, 128)");
 })
@@ -53,12 +53,14 @@ greenButton.addEventListener("click", function(){
 
 //Paste colors
 
-function pasteColor(localStorage.getItem("background-color")){
-    document.getElementById(this.id).style.backgroundColor=color;
+function pasteColor(id){
+    let color = localStorage.getItem("selected-color");
+    document.getElementById(id).style.backgroundColor = color;
 }
 
-let pixelSelecionado = document.getElementById(this.id);
-pixelSelecionado.addEventListener("click", function{
+let pixels = document.getElementsByClassName("pixel");
+pixels.addEventListener("click", function(){
+    
     pasteColor(localStorage.getItem("selected-color"));
 })
 
@@ -70,6 +72,6 @@ function clearColor(color){
 }
 
 let clearButton = document.getElementById("clear-board");
-clearButton.addEventListener("click", function{
+clearButton.addEventListener("click", function(){
     clearColor("white");
 })
