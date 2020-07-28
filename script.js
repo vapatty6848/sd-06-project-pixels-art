@@ -4,7 +4,7 @@ window.onload=function(){
 
     storage.clear();
 
-    sessionStorage.setItem("selected-color", "black");
+    localStorage.setItem("selected-color", "black");
 }
 
 //select color-buttons
@@ -62,3 +62,14 @@ pixelSelecionado.addEventListener("click", function{
     pasteColor(localStorage.getItem("selected-color"));
 })
 
+//clear-button
+
+function clearColor(color){
+    document.getElementsByClassName("pixel").style.backgroundColor=color;
+
+}
+
+let clearButton = document.getElementById("clear-board");
+clearButton.addEventListener("click", function{
+    clearColor("white");
+})
