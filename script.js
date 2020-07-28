@@ -45,9 +45,11 @@ function resetPixelBoard() {
 }
 
 // Criando pixel board pelo usuario
-const sizeBoard = document.getElementById('board-size').value;
-if (sizeBoard === 0) {
-  alert('Board inválido!');
-} else if (sizeBoard < 5) {
-  sizeBoard = 5;
+function createPixelBoard() {
+  let sizeBoard = document.getElementById('board-size').value;
+    if (sizeBoard === 0) {
+      alert('Board inválido!');
+    } else if (sizeBoard < 5) {
+      sizeBoard = 5;
+    }
 }
