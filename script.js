@@ -26,3 +26,9 @@ function createPixelBoard(N){
   }  
 }
 onload= createPixelBoard(N);
+
+function blackSelectedOnload(){
+  let blackFather = document.getElementById('color-palette');
+  blackFather.firstChild.className += " selected";
+}
+onload = blackSelectedOnload();
