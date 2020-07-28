@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixel art project - exercício Trybe</title>
+  <title>Paleta de Cores</title>
   <script src="https://kit.fontawesome.com/f5646ff336.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <h1 id="title">Paleta de cores</h1>
+  <h1 id="title">Paleta de Cores</h1>
   <div id="color-palette">
-    <p>Para pintar, clique ou arraste. <button class="reset" onclick="resetPixels()"><i class="fas fa-sync-alt"></i></button></p>
+    <p>Para pintar, clique ou arraste.</p>
     <section id="palette-bg">
       <button class="color black selected" draggable="true"></button>
       <button class="color bgcolor1" draggable="true"></button>
@@ -20,6 +20,7 @@
       <button class="color bgcolor4" draggable="true"></button>
     </section>
   </div>
+  <button class="reset" id="clear-board" onclick="resetPixels()">Limpar <i class="fas fa-sync-alt"></i></button>
   <div id="pixel-board">
 
   </div>

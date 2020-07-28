@@ -2,9 +2,9 @@ const colorOptions = document.querySelectorAll('.color');
 let currentColorElement = document.querySelector('.selected');
 let currentColor = window.getComputedStyle(currentColorElement).backgroundColor;
 
-function getColor (event) {
+function getColor(event) {
   currentColorElement = event.target;
-  for (let i of colorOptions) {
+  for (const i of colorOptions) {
     if (i.classList.contains('selected')) {
       i.classList.remove('selected');
     }
@@ -13,27 +13,26 @@ function getColor (event) {
   currentColor = window.getComputedStyle(currentColorElement).backgroundColor;
 }
 
-colorOptions.forEach( (colorOption) => { 
+colorOptions.forEach((colorOption) => {
   colorOption.addEventListener('click', getColor);
   colorOption.addEventListener('drag', getColor);
   }
 );
 
-function getDraggedColor (event) {
+function getDraggedColor(event) {
   event.preventDefault();
-  if ( event.target.className == 'pixel' ) {
+  if (event.target.className === 'pixel') {
     event.target.style.background = currentColor;
   }
 }
 
 for(let i = 1; i <= 25; i += 1) {
-  let divPixel = document.createElement('div');
+  const divPixel = document.createElement('div');
   divPixel.className = 'pixel';
-  // divPixel.setAttribute('ondrop', 'getDraggedColor');
   if (i % 5 === 0) {
-    let createBR = document.createElement('br');
+    const createBR = document.createElement('br');
     document.querySelector('#pixel-board').appendChild(divPixel);
-    document.querySelector('#pixel-board').appendChild(createBR);  
+    document.querySelector('#pixel-board').appendChild(createBR);
   } else {
     document.querySelector('#pixel-board').appendChild(divPixel);
   }
@@ -41,17 +40,17 @@ for(let i = 1; i <= 25; i += 1) {
 
 const pixels = document.querySelectorAll('.pixel');
 
-function paintColor (event) {
+function paintColor(event) {
   event.target.style.backgroundColor = currentColor;
 }
 
-pixels.forEach( (elem) => { 
+pixels.forEach((elem) => {
   elem.addEventListener('click', paintColor);
-  elem.addEventListener('dragover', ( event ) => { event.preventDefault(); });
+  elem.addEventListener('dragover', (event) => { event.preventDefault(); });
   elem.addEventListener('drop', getDraggedColor);
-  }
+  };
 );
 
-function resetPixels () {
-  pixels.forEach( (elem) => { elem.style.backgroundColor = 'white'; });
+function resetPixels() {
+  pixels.forEach((elem) => { elem.style.backgroundColor = 'white'; });
 }
