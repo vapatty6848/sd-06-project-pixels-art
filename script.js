@@ -69,12 +69,20 @@ let creationForm = document.querySelector('form');
 
 creationForm.onsubmit = (event) => {
   event.preventDefault();
-  const userInput = document.getElementById('board-size').value;
+  let userInput = document.getElementById('board-size');
+
+  if (userInput.value > 50) {
+    userInput.value = 50;
+    userInput = userInput.value;
+  } else {
+    userInput = userInput.value;
+  }
+
   const tableElm = document.querySelector('.board');
   const boardContainer = document.getElementById('pixel-board');
 
   if (!userInput) {
-    alert("Board inválido");
+    alert("Board inválido!");
   } else {
     tableElm.remove();
     const newTable = document.createElement('table');
