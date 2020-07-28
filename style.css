@@ -1,5 +1,6 @@
 .black {
   background-color: black;
+  margin-left: 23px;
 }
 
 .blue {
@@ -10,32 +11,8 @@
   background-color: red;
 }
 
-.pink {
-  background-color: pink;
-}
-
 .yellow {
   background-color: yellow;
-}
-
-.green {
-  background-color: green;
-}
-
-.gray {
-  background-color: gray;
-}
-
-.purple {
-  background-color: purple;
-}
-
-.brown {
-  background-color: brown;
-}
-
-.orange {
-  background-color: orange;
 }
 
 .color {
@@ -47,7 +24,6 @@
 
 .pixel-line {
   background-color: white;
-  margin-left: 115px;
 }
 
 .pixel {
