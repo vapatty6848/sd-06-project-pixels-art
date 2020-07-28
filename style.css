@@ -1,0 +1,31 @@
+.flexy {
+    display: flex;
+    font-size: 20px;
+}
+
+.color {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+#black {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
