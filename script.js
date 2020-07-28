@@ -1,9 +1,3 @@
-const METHODS = {
-  0: 'querySelector',
-  1: 'querySelectorAll',
-  3: 'createElement',
-};
-
 const lazyCoder = function (method, tagName) {
   return document[`${METHODS[method]}`](tagName);
 };
@@ -15,6 +9,13 @@ const generateBoard = lazyCoder(0, '.input-text');
 const divColumns = [];
 let pixel = lazyCoder(1, '.pixel');
 let divWithSelection = lazyCoder(0, '#black');
+const METHODS = {
+  0: 'querySelector',
+  1: 'querySelectorAll',
+  3: 'createElement',
+};
+const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua', 'turquoise',
+  'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
 
 function generateElements(elements) {
   if (elements < 5) {
@@ -43,14 +44,13 @@ function generateElements(elements) {
 btnGenerate.onclick = () => {
   if (generateBoard.value === '') {
     window.alert('Board inválido!');
+  } else {
+    lazyCoder(1, '.pixel').forEach((e) => e.remove());
+    lazyCoder(1, '.line').forEach((e) => e.remove());
+    generateElements(generateBoard.value);
   }
-  lazyCoder(1, '.pixel').forEach((e) => e.remove());
-  lazyCoder(1, '.line').forEach((e) => e.remove());
-  generateElements(generateBoard.value);
 };
-
-const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua', 'turquoise',
-  'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
+pixel = lazyCoder(1, '.pixel');
 
 function getCurrentColor() {
   return divWithSelection.style.backgroundColor;
