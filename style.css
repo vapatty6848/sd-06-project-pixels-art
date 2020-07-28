@@ -10,7 +10,7 @@ body {
   width: 40px;
 }
 
-.selected {
+.one {
   background-color: black;
 }
 
@@ -44,4 +44,8 @@ body {
 
 .tr-pixel {
   display: table-row;
+}
+
+.btnclear {
+  margin-bottom: 5px;
 }
