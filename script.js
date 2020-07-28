@@ -7,18 +7,18 @@ const colors = ['black', 'blue', 'yellow', 'red'];
 
 // functions and events
 for (let i = 0; i < colors.length; i++) {
-  let createBoxColor = document.createElement('li');
+  const createBoxColor = document.createElement('li');
   createBoxColor.className = 'color';
   createBoxColor.style.backgroundColor = colors[i];
   colorPalette.appendChild(createBoxColor);
 }
 
 for (let i = 0; i < 5; i++) {
-  let createTr = document.createElement('tr');
+  const createTr = document.createElement('tr');
   createTr.className = 'tabela';
   tableColor.appendChild(createTr);
   for (let i = 0; i < 5; i++) {
-    let createTd = document.createElement('td');
+    const createTd = document.createElement('td');
     createTd.className = 'pixel';
     createTr.appendChild(createTd);
   }
