@@ -37,7 +37,7 @@ window.onload = function () {
   clearBoard.addEventListener('click', clear);
 
   const pixels = document.getElementsByClassName('pixel');
-  for (let index in pixels) {
-    pixels[index].onclick = setColorClick;
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', setColorClick);
   }
 };
