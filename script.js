@@ -33,7 +33,16 @@ window.onload = function () {
     oldSelectedDiv.classList.remove("selected");
     currentSelectedDiv.classList.add("selected")
   }
-  
+
   //Ao carregar a página, deve ser possível pintar os pixels de preto
+
+  //Botão que limpa o quadro todo
+  let btn = document.querySelector('#clear-board');
+  let pixel = document.getElementsByClassName('pixel');
+  btn.addEventListener("click", function () {
+    for (let i = 0; i < pixel.length; i += 1) {
+      pixel[i].style.backgroundColor = "white";
+    }
+  })
   
-  }
+}
