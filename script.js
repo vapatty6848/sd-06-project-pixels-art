@@ -44,7 +44,6 @@ function createPixelBoard(size) {
     pixelBoard.appendChild(createDivTr);
     for (let i = 1; i <= size; i += 1){
     let createDivPixel = document.createElement('div');
-    createDivPixel.style.backgroundColor = "white";
     createDivPixel.className = "pixel";
     createDivTr.appendChild(createDivPixel);
     }
@@ -76,10 +75,13 @@ createButton.addEventListener('click', resetPixelBoard);
 function resetPixelBoard() {
   pixelBoard.innerHTML = '';
   let sizeBoard = document.getElementById('board-size').value;
-  if (sizeBoard === 0) {
+  if (sizeBoard === '') {
     alert('Board inválido!');
+    createPixelBoard(5);
   } else if (sizeBoard < 5) {
     sizeBoard = 5;
+  } else if (sizeBoard > 50) {
+    sizeBoard = 50;
   }
   for(let i = 1; i <= sizeBoard; i += 1){
     let createDivTr = document.createElement('div');
@@ -87,7 +89,6 @@ function resetPixelBoard() {
     pixelBoard.appendChild(createDivTr);
     for (let i = 1; i <= sizeBoard; i += 1){
     let createDivPixel = document.createElement('div');
-    createDivPixel.style.backgroundColor = "white";
     createDivPixel.className = "pixel";
     createDivTr.appendChild(createDivPixel);
     }
