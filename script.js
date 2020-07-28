@@ -32,13 +32,19 @@ window.onload = function(){
     }
     
 
+    // document.getElementsByClassName('pixel').addEventListener('click', function(){
+    //     pixelColorSelected = document.querySelector('.selected');
+    //     let pixelBackgroundColor = pixelColorSelected.style.backgroundColor;
+    //     event.target.style.backgroundColor = pixelBackgroundColor;  
+    //   })
+  
 
-    let btn = document.querySelector('#clear-board');
-    let pixel = document.getElementsByClassName('pixel');
-    btn.addEventListener('click', function(){
-        for (let index = 0; index < pixel.length; index += 1){
-            pixel[index].style.backgroundColor = 'white';
-        }
-    })
+//     let btn = document.querySelector('#clear-board');
+//     let pixel = document.getElementsByClassName('pixel');
+//     btn.addEventListener('click', function(){
+//         for (let index = 0; index < pixel.length; index += 1){
+//             pixel[index].style.backgroundColor = 'white';
+//         }
+//     })
 
 }
