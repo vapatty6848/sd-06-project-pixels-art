@@ -1,54 +1,39 @@
-html, body{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
+body, html{
+    margin: 0;
+    padding: 0px;
 }
 
 .color{
-    height: 80px;
-    width: 80px;
     border: 1px;
     border-color: black;
     border-style: solid;
     display: inline-block;
-    padding: 20px;
+    height: 40px;
     margin-left: 20px;
+    width: 40px;
 }
 
-#color-1{
-    background-color: black;
-}
-
-#color-2{
-    background-color: blue;
-}
-
-#color-3{
-    background-color: yellow;
-}
-
-#color-4{
-    background-color: red;
-}
   
-.clear-board{
+.clear{
     margin-top: 50px;
 }
 
-#pixel-board {
+.board {
     display: grid;
-    width: 200px;
-    margin-top: 50px;
     grid-template-columns: auto auto auto auto auto;
+    margin-top: 50px;
+    width: 200px;
 }
 
 .pixel{
     background-color:white;
     border: 1px;
     border-color: black;
-    border-collapse: collapse;
     border-style: solid;
     height: 40px;
     width: 40px;
 }
 
+.generate-board {
+    margin-bottom: 20px;
+  }
