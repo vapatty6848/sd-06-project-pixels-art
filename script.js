@@ -12,6 +12,10 @@ window.onload = function() {
   const colorPaletteContainer = document.getElementById("color-palette");
   createColorPalette(4);
 
+  // Assigning class "selected" to black palette
+  const blackPalette = document.querySelectorAll(".color")[0];
+  blackPalette.className += " selected"
+
   // 
   function generateRandomColor() {
     const randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
@@ -39,7 +43,6 @@ window.onload = function() {
     
     const pixel = document.createElement("div");
     pixel.className = "pixel";
-    pixel.style.backgroundColor = "white"
 
     pixelLines[index].appendChild(pixel);
   }
