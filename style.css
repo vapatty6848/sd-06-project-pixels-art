@@ -26,6 +26,14 @@
   width: 40px;
 }
 
+.board-input {
+  width: 36.16px;
+}
+
+.generate-button {
+  width: 44.16px;
+}
+
 .pixel-line {
   background-color: white;
 }
@@ -35,10 +43,11 @@
   border: 1px solid black;
   display: inline-block;
   height: 40px;
+  margin-right: 4px;
   width: 40px;
 }
 
-.button {
+.clear-button {
   margin-bottom: 4px;
   width: 100%;
 }

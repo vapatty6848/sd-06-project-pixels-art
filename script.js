@@ -1,5 +1,36 @@
 let changeColor = document.querySelector('.selected').id;
 
+function generateBoard () {
+  let boardSize = document.querySelector('#board-size').value;
+
+  if (boardSize === "") {
+    alert('Board inválido!');
+  } else {
+    let whereCreate = document.querySelector('#pixel-board');
+
+    while (whereCreate.firstChild) {
+      whereCreate.removeChild(whereCreate.firstChild);
+    }
+
+    for (let x = 1; x <= boardSize; x += 1) {
+      let newLine = document.createElement('div');
+      newLine.className = 'pixel-line';
+
+      for (let y = 1; y <= boardSize; y += 1) {
+        let newPixel = document.createElement('div');
+        newPixel.className = 'pixel';
+        newLine.appendChild(newPixel);
+      }
+      whereCreate.appendChild(newLine);
+    }
+    console.log(whereCreate);
+  }
+}
+
+const generateButton = document.querySelector('#generate-board');
+
+generateButton.addEventListener('click', generateBoard);
+
 document.addEventListener('click', function (pointedPixel) {
   pointedPixel = event.target;
 
