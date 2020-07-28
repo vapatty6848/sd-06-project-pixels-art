@@ -20,10 +20,23 @@
     background-color: blue;
 }
 
-.pixel {
-    border: rgb(189, 38, 38) solid 1px;
+.row {
+    border:black solid 1px;
     display: inline-block;
     width: 40px;
     height: 40px;
     background-color: white;
+    display: inline-block;
+}
+
+.column {
+    border:black solid 1px;
+    width: 40px;
+    height: 40px;
+}
+
+#pixel-board{
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
 }
