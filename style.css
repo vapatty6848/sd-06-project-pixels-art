@@ -1,8 +1,8 @@
 .color {
   border: 1px solid black;
+  display: inline-block;
   height: 100px;
   width: 100px;
-  display: inline-block;
 }
 
 .color1 {
@@ -10,7 +10,7 @@
 }
 
 .color2 {
-  background-color: violet;
+  background-color: tomato;
 }
 
 .color3 {
@@ -21,10 +21,13 @@
   background-color: steelblue;
 }
 
-.color5 {
-  background-color: palevioletred;
+.line {
+  display: flex;
 }
 
-.color6 {
-  background-color: tomato;
+.pixel {
+  border: 1px solid black;
+  float: left;
+  height: 40px;
+  width: 40px;
 }
