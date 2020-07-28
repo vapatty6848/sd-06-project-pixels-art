@@ -31,23 +31,29 @@ let currentSelectedDiv = event.target
 
 oldSelectedDiv.classList.remove("selected");
 currentSelectedDiv.classList.add("selected")
+
+selectedColor = currentSelectedDiv.style.backgroundColor;
+}
+
+// colorindo os pixels
+function handlePixel(event) {
+    let selectedPixelDiv = event.target;
+    selectedPixelDiv.style.backgroundColor = selectedColor;
 }
 
 // individualizando os pixels para colorir
-let quadradinhos = document.querySelectorAll(".pixel");
-    for (let index in quadradinhos){
-    quadradinhos[index].addEventListener("click", function(){
-    this.style.backgroundColor = document.querySelector(".selected").style.backgroundColor
-    })
-    }
+let pixelBoardDiv= document.getElementById("pixel-board");
+pixelBoardDiv.addEventListener("click", handlePixel)   
+
 
 // usando o botão para limpar todos os pixels
-// let botao = document.getElementById("clear-board");
-// function clearBoard() {
-//     let limpar = document.getElementsByClassName("pixel")
+let botao = document.getElementById("clear-board");
+let limpar = document.getElementsByClassName("pixel")
+function clearBoard() {
+    for (let index = 0; index < limpar.length; index ++) {
+        limpar[index].style.backgroundColor = "white";
+    }
   
-//         limpar.style.backgroundColor = "white";
-
-// }
-//  botao.addEventListener("click", clearBoard)
+}
+ botao.addEventListener("click", clearBoard)
 }
