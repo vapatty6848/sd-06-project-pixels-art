@@ -14,8 +14,8 @@
 }
 
 .pixel {
-  display: inline-block;
   background-color: white;
+  display: inline-block;
 }
 
 .color {

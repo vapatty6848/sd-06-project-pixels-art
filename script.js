@@ -1,5 +1,9 @@
 window.onload = function () {
   const pixelLines = document.getElementsByClassName('pixel-line');
+  const colorBlack = document.querySelector('.black');
+  const colorRed = document.querySelector('.red');
+  const colorBlue = document.querySelector('.blue');
+  const colorGreen = document.querySelector('.green');
 
   function fillBoardColumn(lines, line) {
     for (let column = 0; column < lines.length; column += 1) {
@@ -14,6 +18,10 @@ window.onload = function () {
       fillBoardColumn(lines, line);
     }
   }
+
+  colorBlack.addEventListener('click', function(event) {
+    console.log(event);
+  });
 
   fillBoardLines(pixelLines);
 };
