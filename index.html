@@ -2,19 +2,26 @@
 
 <head>
 
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+
     <style>
         body {
             background-image: url(imgs/bg.png);
         }
 
         header {
-            width: 300px;
+            color: rgb(214, 40, 40);
+            font-family: 'Merriweather', serif;
             margin: auto;
+            margin-bottom: 30px;
             text-align: center;
+            width: 300px;
         }
 
         #title {
-            color: red;
+            font-family: 'Pacifico', cursive;
+            margin-bottom: -10px;
         }
 
         #color-palette {
@@ -28,27 +35,8 @@
         .color {
             border: 1px solid black;
             display: inline-block;
-            height: 100px;
-            width: 100px;
-
-
-
-        }
-
-        #black {
-            background-color: black;
-        }
-
-        #red {
-            background-color: rgb(214, 40, 40);
-        }
-
-        #yellow {
-            background-color: rgb(252, 191, 73);
-        }
-
-        #gray {
-            background-color: rgb(234, 226, 183);
+            height: 90px;
+            width: 90px;
         }
 
         /* Tabela de pixels */
@@ -77,7 +65,7 @@
 
     <nav id="color-palette">
         <!-- Não pode ter cor branca -->
-        <div class="color" id="black"></div>
+        <div class="color selected" id="black"></div>
         <div class="color" id="red"></div>
         <div class="color" id="yellow"></div>
         <div class="color" id="gray"></div>
@@ -126,8 +114,54 @@
                 <td class="pixel"></td>
             </tr>
         </table>
-
     </section>
+
+    <script type="text/javascript">
+        // Selecionar e colocar as cores no background dos divs
+        let colors = ["black", "rgb(214, 40, 40)", "rgb(252, 191, 73)", "rgb(234, 226, 183)"];
+
+        function setColors(one, two, three, four) {
+            let box1 = document.getElementById("black");
+            let box2 = document.getElementById("red");
+            let box3 = document.getElementById("yellow");
+            let box4 = document.getElementById("gray");
+
+            box1.style.backgroundColor = one;
+            box2.style.backgroundColor = two;
+            box3.style.backgroundColor = three;
+            box4.style.backgroundColor = four;
+        }
+
+        setColors(colors[0], colors[1], colors[2], colors[3])
+
+        // Pegar a cor clicada
+        let chosenColor = colors[0]; // preto já pré-selecionado
+
+        let colorElements = document.getElementsByClassName("color");
+
+        for (let i = 0; i < colorElements.length; i++) {
+            // pegar cada elemento com a id color 
+            // adicionar um eventListener nele
+            colorElements[i].addEventListener("click", function () {
+                chosenColor = colorElements[i].style.backgroundColor;
+            });
+        }
+
+        // Pintar qualquer pixel com a cor clicada
+        let pixelBoxes = document.getElementsByClassName("pixel");
+
+        for (let i = 0; i < pixelBoxes.length; i++) {
+            pixelBoxes[i].addEventListener("click", function () {
+                pixelBoxes[i].style.backgroundColor = chosenColor;
+            });
+            // extra pra apagar
+            pixelBoxes[i].addEventListener("contextmenu", function () {
+                pixelBoxes[i].style.backgroundColor = "white";
+                event.preventDefault();
+            });
+        }
+
+    </script>
 </body>
 
 </html>
