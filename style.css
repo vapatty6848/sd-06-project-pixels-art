@@ -1,0 +1,11 @@
+#color-palette {
+    margin-left: 45%;    
+}
+
+.color {
+    border: 1px solid black;
+    float: left;
+    height: 40px;
+    margin: 5px;
+    width: 40px;
+}
