@@ -48,7 +48,7 @@ pixels.forEach((elem) => {
   elem.addEventListener('click', paintColor);
   elem.addEventListener('dragover', (event) => { event.preventDefault(); });
   elem.addEventListener('drop', getDraggedColor);
-  };
+  }
 );
 
 function resetPixels() {
