@@ -52,32 +52,5 @@ window.onload = function() {
             }
         })
     
-    let pixelBoard = document.querySelector("#pixel-board");
-    
-    let firstSize = document.querySelector(".size1");
-    firstSize.addEventListener("change", function() {
-        if (firstSize.value > 50) {
-            firstSize.value = 50;
-        } else if (firstSize.value < 5) {
-            firstSize.value = 5;
-        }
-        let boardH = parseInt(firstSize.value);
-        pixelBoard.style.height = boardH + "px";
-    })
-
-    let secondSize = document.querySelector(".size2");
-    secondSize.addEventListener("change", function() {
-        if (secondSize.value > 50) {
-            secondSize.value = 50;
-        } else if (secondSize.value < 5) {
-            secondSize.value = 5;
-        }
-        let boardW = parseInt(secondSize.value);
-        pixelBoard.style.width = boardW + "px";
-    })
-
-    
-    pixelBoard.style.height = firstSize.value + "px";
-    pixelBoard.style.width = secondSize.value + "px";
     
 }

@@ -23,16 +23,12 @@
 }
 
 #pixel-board {
-    display: table;
+    width: 240px;
     background-color: white;
 }
 
-.tableColum {
-    display: table-row;
-}
-
 .pixel {
-    display: table-cell;
+    display: inline-block;
     width: 40px;
     height: 40px;
     margin: -2px;
@@ -47,4 +43,3 @@
     width: 210px;
     height: 50px;
 }
-
