@@ -2,7 +2,7 @@
 
 window.onload=function(){
 
-    storage.clear();
+    localStorage.clear();
 
     localStorage.setItem("selected-color", "black");
 }
