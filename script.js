@@ -7,14 +7,6 @@ window.onload=function(){
   
     createColorPalette(colorList);
  }
-    function colorSelector (color){
-        let selectorDivElement = document.createElement('div');
-        selectorDivElement.className = 'color';
-        selectorDivElement.style.backgroundColor = color;
-        selectorDivElement.style.display = "table-cell";
-        return selectorDivElement;
-      }
-    }
 
 
 

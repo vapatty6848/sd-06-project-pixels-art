@@ -12,3 +12,19 @@ body{
 #pixel-board{
     display: inline-block;
 }
+.black {
+    border: 1px solid black;
+    background-color: black;
+}
+.blue {
+    border: 1px solid black;
+    background-color: blue;
+}
+.red {
+    border: 1px solid black;
+    background-color: red;
+}
+.green {
+    border: 1px solid black;
+    background-color: green;
+}
