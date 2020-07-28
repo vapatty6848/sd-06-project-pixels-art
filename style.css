@@ -15,10 +15,6 @@ body {
   width: 40px;
 }
 
-.color:first-child {
-  background-color: black;
-}
-
 .pixel-board {
   margin: 40px auto;
   max-width: 470px;
