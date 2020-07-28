@@ -1,0 +1,36 @@
+body {
+  text-align: center;
+}
+
+.color {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: solid black 1px;
+  display: inline-block;
+}
+
+#colorPalette1 {
+  background-color: black;
+}
+
+#colorPalette2 {
+  background-color: green;
+}
+
+#colorPalette3 {
+  background-color: red;
+}
+
+#colorPalette4 {
+  background-color: blue;
+}
+
+#colorPalette5 {
+  background-color: teal;
+}
