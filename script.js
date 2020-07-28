@@ -1,11 +1,53 @@
-const DQSEL = function (params) { return document.querySelector(params); };
-const divBoard = DQSEL('.board');
-const divPalette = DQSEL('#color-palette');
-const btnReset = DQSEL('.btn-reset');
-let divWithSelection = DQSEL('#black');
+const METHODS = {
+  0: 'querySelector',
+  1: 'querySelectorAll',
+  3: 'createElement',
+};
 
-const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua',
-  'turquoise', 'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
+const lazyCoder = function (method, tagName) {
+  return document[`${METHODS[method]}`](tagName);
+}
+const divBoard = lazyCoder(0, '.board');
+const divPalette = lazyCoder(0, '#color-palette');
+const btnReset = lazyCoder(0, '.btn-reset');
+const elements = lazyCoder(0, '#generate-board');
+
+let generateBoard = lazyCoder(0, '.input-text');
+let pixel = lazyCoder(1, '.pixel');
+let divColumns = [];
+let divWithSelection = lazyCoder(0, '#black');
+let columns = 5;
+let rows = 5;
+
+function generateElements(elements = 5) {
+  for (let i = 0; i < elements; i += 1) {
+    divColumns.push(document.createElement('div'));
+    divColumns[i].className = 'line';
+    for (let j = 0; j < elements; j += 1) {
+      let pixels = document.createElement('div');
+      pixels.className = 'pixel';
+      divColumns[i].appendChild(pixels);
+    }
+    divBoard.appendChild(divColumns[i]);
+  }
+
+  pixel = lazyCoder(1, '.pixel');
+  divColumns.forEach((g) => {
+    g.style.gridTemplateColumns = `repeat(${elements}, 40px)`;
+  });
+}
+
+elements.onclick = () => {
+  if (generateBoard.value === "") {
+    window.alert('Board inválido!');
+  }
+  lazyCoder(1, '.pixel').forEach(e => e.remove());
+  lazyCoder(1, '.line').forEach(e => e.remove());
+  generateElements(lazyCoder(0, '.input-text').value);
+};
+
+const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua', 'turquoise',
+  'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
 
 function getCurrentColor() {
   return divWithSelection.style.backgroundColor;
@@ -22,8 +64,6 @@ divBoard.addEventListener('click', (e) => {
 });
 
 btnReset.addEventListener('click', () => {
-  const pixel = document.querySelectorAll('.pixel');
-
   pixel.forEach((p) => {
     p.style.backgroundColor = 'white';
   });
@@ -43,7 +83,8 @@ function changeColorToRandom() {
 
   if (repeated[0] === repeated[1]) {
     repeated[1] = getRandomColor();
-  } else if (repeated[1] === repeated[2]) {
+  }
+  if (repeated[1] === repeated[2]) {
     repeated[2] = getRandomColor();
   }
 
@@ -54,4 +95,5 @@ function changeColorToRandom() {
 
 window.onload = () => {
   changeColorToRandom();
+  generateElements();
 };

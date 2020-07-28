@@ -17,7 +17,7 @@ body {
   border-style: unset;
   font-size: 150%;
   height: 20px;
-  margin: 15px 70px;
+  margin: 20px 45px;
   width: 60px;
 }
 
@@ -28,7 +28,7 @@ body {
 
 .line {
   display: grid;
-  grid-template-columns: repeat(5, 40px);
+  /* grid-template-columns: repeat(5, 40px); */
 }
 
 .pixel {
@@ -39,7 +39,17 @@ body {
 }
 
 .input-text {
-  height: 0;
   padding: 0;
-  width: 0;
+  width: 35px;
+  margin-left: 5px;
+}
+
+.gen-btn {
+  background-color: lightgrey;
+  border-radius: 2px;
+  border-style: unset;
+  font-size: 140%;
+  height: 20px;
+  margin-left: 10px;
+  width: 40px;
 }
