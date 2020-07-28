@@ -7,7 +7,7 @@ function desenhandoBlocos(){
         for (let o=0;o<5;o++){
             let blocoUnico=document.createElement("div")
             blocoUnico.className="pixel"
-            blocoUnico.style.background="red"
+            blocoUnico.style.background="white"
             blocoUnico.style.width="40px"
             blocoUnico.style.height="40px"
             blocoUnico.style.border="1px solid black"
@@ -16,3 +16,4 @@ function desenhandoBlocos(){
         }
     }
 }
+window.onload = desenhandoBlocos();
