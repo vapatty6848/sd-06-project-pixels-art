@@ -1,20 +1,38 @@
 window.onload = function () {
 
-let corBlack = document.getElementById("black")
-corBlack.classList.add("selected")
 
-//add classe selected ao elemento que recebeu um clique
-//remover classe selected dos outros elementos
+//Pega a paleta de cores e add os itens a paleta
+  function createColorPallet(colors) {
+    let colorPalletContainer = document.getElementById("color-pallete");
 
-let corClasse = document.querySelectorAll('.color')
-let selectedColor = document.querySelector(".selected")
+    for (let index in colors) {
+    let palletItemDiv = createPalletItem(colors[index]);
+    colorPalletContainer.appendChild(palletItemDiv);
+    }
+  }
 
-document.querySelectorAll('.color').forEach(item => {
-  item.addEventListener('click',function (){
-    corClasse.add.classList("selected")
-    document.querySelectorAll(".selected").remove.classList("selected")
-  })
-})
+  createColorPallet(['black', 'red', 'blue', 'green'])
 
+//Criação dos itens da paleta (divs)
+  function createPalletItem(color) {
+    let palletItemDiv = document.createElement('div');
+    palletItemDiv.style.backgroundColor = color;
+    palletItemDiv.className = "pallet-item";
+    palletItemDiv.addEventListener("click", handlePalletItemEvent);
 
-}
+    if (color === "black") {
+      palletItemDiv.classList.add("selected");
+    }
+    return palletItemDiv;
+  }
+
+//Quando clica, add o selected e retira da cor antiga
+  function handlePalletItemEvent (event) {
+    let oldSelectedDiv = document.querySelector(".selected");
+    let currentSelectedDiv = event.target;
+
+    oldSelectedDiv.classList.remove("selected");
+    currentSelectedDiv.classList.add("selected")
+  }
+  
+  }
