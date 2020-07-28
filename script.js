@@ -1,4 +1,4 @@
-window.onload = createPixelBoard();
+// window.onload = createPixelBoard();
 
 // function createPixelBoard () {
 //   for (let y = 0; y <= 5; y += 1) {
