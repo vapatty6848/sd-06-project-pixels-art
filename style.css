@@ -8,8 +8,17 @@ body {
     font-family: 'Galada', cursive;
 }
 
-#color {
-    border: rgb(0,0,0) 1px solid;
-    width: 40px;
-    height: 40px;
+#color-palette {
+    width: 290px;
+    height: 75px;
+    background-color: white;
+    border: 1px solid rgb(0,0,0);
+}
+
+.color {
+    border: 1px solid rgb(0,0,0);
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
 }
