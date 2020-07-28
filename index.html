@@ -2,6 +2,59 @@
 
 <head>
 
+    <style>
+        header {
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #title {
+            color: red;
+        }
+
+        #color-palette {
+            /* <nav> */
+            margin: auto;
+            text-align: center;
+            width: 650px;
+
+        }
+
+        .color {
+            border: 1px solid black;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+
+
+
+        }
+
+        #black {
+            background-color: rgb(0, 0, 0);
+        }
+
+        #blue {
+            background-color: rgb(0, 48, 73);
+        }
+
+        #red {
+            background-color: rgb(214, 40, 40);
+        }
+
+        #orange {
+            background-color: rgb(247, 127, 0);
+        }
+
+        #yellow {
+            background-color: rgb(252, 191, 73);
+        }
+
+        #gray {
+            background-color: rgb(234, 226, 183);
+        }
+    </style>
 </head>
 
 <body>
@@ -10,6 +63,16 @@
         <h1 id="title">Paleta de Cores</h1>
         <p>Crie seu pixel art abaixo!</p>
     </header>
+
+    <nav id="color-palette">
+        <!-- Não pode ter cor branca -->
+        <div class="color" id="black"></div>
+        <div class="color" id="blue"></div>
+        <div class="color" id="red"></div>
+        <div class="color" id="orange"></div>
+        <div class="color" id="yellow"></div>
+        <div class="color" id="gray"></div>
+    </nav>
 </body>
 
 </html>
