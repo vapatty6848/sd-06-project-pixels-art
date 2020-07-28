@@ -18,13 +18,13 @@ function changeClass(div) {
 }
 
 function selectColor(div){
-  color = div.getAttribute('background-color');
+  color = document.defaultView.getComputedStyle(div, null).getPropertyValue('background-color');
   changeClass(div);
 }
 
 function changeColor(pixel) {
   pixel.addEventListener('click', function() {
-    pixel.style.backgroundColor = 'color';
+    pixel.style.backgroundColor = color;
   });
 }
 
