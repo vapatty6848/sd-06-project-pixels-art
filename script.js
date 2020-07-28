@@ -27,18 +27,25 @@ function createPalletItem(color) {
 
 //Quando clica, add o selected e retira da cor antiga
 function handlePalletColorEvent (event) {
-  let oldSelectedDiv = document.querySelector(".selected");
+  let oldSelectedDiv = document.querySelector('.selected');
   let currentSelectedDiv = event.target;
 
-  oldSelectedDiv.classList.remove("selected");
-  currentSelectedDiv.classList.add("selected");
-  let selectedColor = currentSelectedDiv.style.backgroundColor;
+  oldSelectedDiv.classList.remove('selected');
+  currentSelectedDiv.classList.add('selected');
+  selectedColor = currentSelectedDiv.style.backgroundColor;
 }
 
-const pixels = document.querySelectorAll('.pixel');
+let pixelBoardDiv = document.querySelector('.pixel-board-container');
+pixelBoardDiv.addEventListener('click', handlePixelClick);
+
+function handlePixelClick(event) {
+  let selectedPixelDiv = event.target;
+  selectedPixelDiv.style.backgroundColor = selectedColor;
+}
 
 // Botão reset
 function resetPixelBoard() {
+  let pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
   }
@@ -52,4 +59,5 @@ function createPixelBoard() {
     } else if (sizeBoard < 5) {
       sizeBoard = 5;
     }
+  
 }
