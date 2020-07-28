@@ -1,6 +1,16 @@
+const METHODS = {
+  0: 'querySelector',
+  1: 'querySelectorAll',
+  3: 'createElement',
+};
+
 const lazyCoder = function (method, tagName) {
   return document[`${METHODS[method]}`](tagName);
 };
+
+const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua', 'turquoise',
+  'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
+
 const divBoard = lazyCoder(0, '.board');
 const divPalette = lazyCoder(0, '#color-palette');
 const btnReset = lazyCoder(0, '.btn-reset');
@@ -9,13 +19,6 @@ const generateBoard = lazyCoder(0, '.input-text');
 const divColumns = [];
 let pixel = lazyCoder(1, '.pixel');
 let divWithSelection = lazyCoder(0, '#black');
-const METHODS = {
-  0: 'querySelector',
-  1: 'querySelectorAll',
-  3: 'createElement',
-};
-const COLORS = ['deeppink', 'magenta', 'deepskyblue', 'aqua', 'turquoise',
-  'azure', 'goldenrod', 'lime', 'gold', 'darkorange', 'crimson'];
 
 function generateElements(elements) {
   if (elements < 5) {
@@ -50,7 +53,6 @@ btnGenerate.onclick = () => {
     generateElements(generateBoard.value);
   }
 };
-pixel = lazyCoder(1, '.pixel');
 
 function getCurrentColor() {
   return divWithSelection.style.backgroundColor;
