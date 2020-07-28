@@ -42,9 +42,9 @@ body {
 
 .pixel-board {
   display: block;
+  height: 210px;
   margin: auto;
   margin-top: 20px;
-  height: 210px;
   position: relative;
-  width: 210px
+  width: fit-content;
 }
