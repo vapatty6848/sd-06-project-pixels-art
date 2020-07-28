@@ -103,9 +103,9 @@ function sizeButtons() {
   let newBoardSize = 5;
   sizeField.addEventListener('input', () => {
     if (sizeField.value < 5) {
-      sizeField.value = 5;
+      newBoardSize = 5;
     } else if (sizeField.value > 50) {
-      sizeField.value = 50;
+      newBoardSize = 50;
     } else {
       newBoardSize = sizeField.value
     }    
