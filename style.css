@@ -1,3 +1,7 @@
+.black {
+  background-color: black;
+}
+
 .blue {
   background-color: blue;
 }
@@ -24,10 +28,6 @@
 
 .purple {
   background-color: purple;
-}
-
-.black {
-  background-color: black;
 }
 
 .brown {
