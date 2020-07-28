@@ -81,7 +81,7 @@ clearButton.addEventListener('click', function () {
 });
 
 generateBoardButton.addEventListener('click', function () {
-  if (generateBoardInput.value === '') {
+  if (generateBoardInput.value === '' || generateBoardInput.value < 5 || generateBoardInput.value > 50) {
     alert('Board inválido!');
   }
-})
+});
