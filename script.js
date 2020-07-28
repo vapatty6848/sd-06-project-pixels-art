@@ -87,9 +87,16 @@ function ButtonsEvents(clearButton,board) {
   addButtonEvent(clearButton,'click',ClearBoard,board);
 }
 function VqvEvents(vqvButton) {
+  valorInput = document.querySelector('#board-size');
   vqvButton.addEventListener('click',function(){
-    RemoveCurrentBoard();
-    CreateBoard();
+    if( valorInput.value != '') {
+      RemoveCurrentBoard();
+      CreateBoard();
+    }
+    else{
+      alert('Board inválido!')
+    }
+
   })
 }
 //initiate palette and pixels
@@ -100,7 +107,9 @@ function initPixelColor(pixelsColors) {
 }
 
 
-function initPalleteColor(paletteColors) {
+function initPalette() {
+  let paletteColors = document.querySelectorAll('.color');
+
   paletteColors[0].style.backgroundColor = 'black';
   colorStoraged = 'black';
   for(let i = 1 ; i < paletteColors.length; i += 1) {
@@ -109,6 +118,7 @@ function initPalleteColor(paletteColors) {
       paletteColor.style.backgroundColor = generateRandomColor();
     }
   }
+  PaletteEvents(paletteColors);
 }
 
 
