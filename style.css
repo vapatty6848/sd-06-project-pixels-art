@@ -4,26 +4,11 @@
     height: 40px;
     width: 40px;
 }
-#color-one {
-    background-color: black;
-}
-#color-two {
-    background-color: aqua; 
-}
-#color-three {
-    background-color: lawngreen;
-}
-#color-four {
-    background-color: fuchsia;
-}
 .pixel {
-    border-color: black;
-    border: 1px;
     display: table-cell;
     height: 40px;
     width: 40px;
-    background-color: thistle;
-    margin: 0px;
+    background-color: white;
 }
 .line {
     display: table-row;
