@@ -1,11 +1,11 @@
 window.onload = function() {
   createColorPallet(['black', 'blue', 'blueviolet', 'pink']);
-  let selectedColor = 'black';
+  selectedColor = 'black';
 };
 
 // Criação dos itens da paleta (divs)
 function createPalletItem(color) {
-  const palletColorDiv = document.createElement('div');
+  let palletColorDiv = document.createElement('div');
   palletColorDiv.style.backgroundColor = color;
   palletColorDiv.className = 'color';
   palletColorDiv.addEventListener('click', handlePalletColorEvent);
@@ -17,9 +17,9 @@ function createPalletItem(color) {
 
 // Pega a paleta de cores e add os itens a paleta
 function createColorPallet(colors) {
-  const colorPalletContainer = document.getElementById('color-palette');
+  let colorPalletContainer = document.getElementById('color-palette');
   for (let i in colors) {
-    const palletColorDiv = createPalletItem(colors[i]);
+    let palletColorDiv = createPalletItem(colors[i]);
     colorPalletContainer.appendChild(palletColorDiv);
   }
 }
@@ -31,7 +31,7 @@ function handlePalletColorEvent(event) {
 
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
-  let selectedColor = currentSelectedDiv.style.backgroundColor;
+  selectedColor = currentSelectedDiv.style.backgroundColor;
 }
 
 // Pintando o quadro
@@ -44,6 +44,8 @@ function handlePixelClick(event) {
 }
 
 // Botão reset
+let resetButton = document.getElementById('clear-board');
+resetButton.addEventListener('click', resetPixelBoard);
 function resetPixelBoard() {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
@@ -52,6 +54,8 @@ function resetPixelBoard() {
 }
 
 // Criando pixel board pelo usuario
+let createButton = document.getElementById('generate-board');
+createButton.addEventListener('click', createPixelBoard);
 function createPixelBoard() {
   let sizeBoard = document.getElementById('board-size').value;
   if (sizeBoard === 0) {
