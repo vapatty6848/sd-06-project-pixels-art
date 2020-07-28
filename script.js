@@ -1,3 +1,4 @@
+//teste
 window.onload = function ()
 
     let corSelecionada = document.querySelector("#black");
