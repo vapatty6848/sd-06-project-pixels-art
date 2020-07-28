@@ -1,7 +1,7 @@
 
 
 function add(triggerObj,triggerType,action,colorStorage) {
-  triggerObj.addEventListener(triggerType,function(event){
+  triggerObj.addEventListener(triggerType,function(event) {
 
         colorStoraged = action(event,colorStorage);
 
@@ -9,13 +9,13 @@ function add(triggerObj,triggerType,action,colorStorage) {
 }
 
 function addClassEvent(triggerObj,triggerType,action) {
-  triggerObj.addEventListener(triggerType, function(event){
+  triggerObj.addEventListener(triggerType, function(event) {
     action(event);
   })
 }
 
 function addButtonEvent(triggerObj,triggerType,action,target) {
-  triggerObj.addEventListener(triggerType, function(){
+  triggerObj.addEventListener(triggerType, function() {
     action(target);
   })
 }
