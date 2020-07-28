@@ -1,4 +1,6 @@
 window.onload = function() {
+  let colorPallet = document.getElementById('color-palette');
+  collorPallet.addEventListener('click', )
   createColorPallet(['black', 'red', 'blue', 'green']);
 }
 function createColorPallet(colors) {
@@ -24,22 +26,7 @@ function handlePalletItemEvent(event) {
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
 }
-// function addPixelsEvents() {
-//   let pixelTds = document.querySelectorAll('.pixel');
-//   for (let index in pixelTds) {
-//     let pixel = pixelTds[index].addEventListener('click', colorize);
-//   }
-// }
-// function colorize() {
-//   const pixels = document.querySelectorAll('.pixel');
-//   let seleCor = 'black';
-//   for (let i = 0; i < pixels.length; i += 1) {
-//     pixels[i].addEventListener('click', function() {
-//     pixels[i].style.background = seleCor;
-//     });
-//   }
-// }
-// addPixelsEvents();
+
 function limpaTudo() {
   const pixels = document.querySelectorAll('.pixel');
   let seleCor = 'white';
