@@ -42,12 +42,12 @@ let quadradinhos = document.querySelectorAll(".pixel");
     }
 
 // usando o botão para limpar todos os pixels
-let botao = document.getElementById("clear-board");
-function clearBoard() {
-    let limpar = document.getElementsByClassName("pixel")
-    for (let index = 0; index < limpar.length; index += 1) {
-        limpar[index].style.backgroundColor = "white";
-      }
-}
- botao.addEventListener("click", clearBoard)
+// let botao = document.getElementById("clear-board");
+// function clearBoard() {
+//     let limpar = document.getElementsByClassName("pixel")
+  
+//         limpar.style.backgroundColor = "white";
+
+// }
+//  botao.addEventListener("click", clearBoard)
 }
