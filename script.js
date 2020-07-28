@@ -1,46 +1,61 @@
 // black de largada onload
 
-let colorOne = document.getElementsByClassName('color')[0];
-colorOne.style.backgroundColor = "#000000";
+createColorPallet(["black", "purple", "green", "yellow", "red"]);
 
-let colorTwo = document.getElementsByClassName('color')[1];
-colorTwo.style.backgroundColor = "#FFFA00";
+function createColorPallet(colors) {
+    let colorPaletContainer = document.getElementById("color-palette");
+    
+    for (let index in colors) {
+        let palletItemDiv = createPalletItem(colors[index]);
+        colorPaletContainer.appendChild(palletItemDiv);
+    }
+}
 
-let colorThree = document.getElementsByClassName('color')[2];
-colorThree.style.backgroundColor = "#FF0F0F";
+function createPalletItem(color) {
+    let palletItemDiv = document.createElement("div");
+    palletItemDiv.style.backgroundColor = color;
+    palletItemDiv.className = "pallet-item";
+    palletItemDiv.addEventListener("click", handlePalletItemEvent);
 
-let colorFour = document.getElementsByClassName('color')[3];
-colorFour.style.backgroundColor = "#31FF4E";
+    if(color === "black") {
+        palletItemDiv.classList.add("selected");
+    }
+    return palletItemDiv;
+}
 
-let colorSection = document.querySelector("#color-palette");
+function handlePalletItemEvent(event) {
+    let oldSelectedDiv = document.querySelector(".selected");
+    let currentSelectedDiv = event.target;
 
-let selectedColorsList = document.querySelector(".subtitle-colors-span");
+    console.log(currentSelectedDiv);
+    let div = event.target;
+    let backgroundColor = div.style.backgroundColor;
+    console.log(backgroundColor);
+}
 
-// selectedColorsList.innerText = `${colorOne.style.backgroundColorName}`;
-// document.getElementById("line-1").appendChild.style.display = "inline-block"
 
-colorSection.addEventListener("click", function(event) {
-let selectedColorSpan = document.querySelector(".selected-color");
+// colorSection.addEventListener("click", function(event) {
+// let selectedColorSpan = document.querySelector(".selected-color");
   
-let className = event.target.className;
+// let className = event.target.className;
       
-if (className) {
-   selectedColorSpan.innerText = className;
-   selectedColorSpan.style.color = className;
-} else {
-    selectedColorSpan.innerText = "Você não selecionou um quadrado da paleta!";        
-}      
-});
+// if (className) {
+//    selectedColorSpan.innerText = className;
+//    selectedColorSpan.style.color = className;
+// } else {
+//     selectedColorSpan.innerText = "Você não selecionou um quadrado da paleta!";        
+// }      
+// });
 
-let lineOne = document.getElementById(".line-1");
+// let lineOne = document.getElementById(".line-1");
 
-lineOne.addEventListener("click",function(event) {
-let pixel = document.querySelector(".pixel");
+// lineOne.addEventListener("click",function(event) {
+// let pixel = document.querySelector(".pixel");
 
-// pixel.style.background-color = event.target.className;
+// // pixel.style.background-color = event.target.className;
 
 
-});
+// });
 
 
 
