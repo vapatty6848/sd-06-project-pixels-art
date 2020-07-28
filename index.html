@@ -103,7 +103,7 @@
             border-collapse: collapse;
         }
 
-        td.pixel {
+        .pixel {
             border: 1px solid black;
             width: 40px;
             height: 40px;
@@ -249,7 +249,14 @@
         // BONUS 1 - Mudar tamanho do quadro
         let sizeInput = document.getElementById("board-size");
         let sizeButton = document.getElementById("generate-board");
-        console.log(sizeButton);
+
+        sizeButton.addEventListener('click', function () {
+            let times = sizeInput.value; // o número que o usuario colocou
+            letboxesArray = [];
+
+
+        });
+
     </script>
 </body>
 
