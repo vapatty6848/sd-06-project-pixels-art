@@ -1,5 +1,5 @@
 window.onload = function () {
-	// criando paleta de cores
+	// creating colors palet
 	let paletColors = ['black','blue','green','gray'];
 	for (index in paletColors) {
 		const createdElement = document.createElement('li');
@@ -7,16 +7,20 @@ window.onload = function () {
 		createdElement.style.backgroundColor = paletColors[index];
 		createdElement.className = 'color';
 	}
-	// gerando os elementos pixel 
+	// generating pixels elements
 	let PixelsGenarator = 5;
 	for (let index = 0; index < PixelsGenarator; index +=1) {
-		console.log('testando');
-	  for (let index2 = 0; index2 <  PixelsGenarator; index2 +=1) {
-			console.log('testando2')
+		for (let index2 = 0; index2 <  PixelsGenarator; index2 +=1) {
 			const PixelsElement = document.createElement('div');
 			PixelsElement.className = 'pixel';
 			document.querySelector('#pixel-board').appendChild(PixelsElement);
 		}
 	}
-	
+	//function for select black element on window.onload
+	function selectedElement () {
+		let elementSelected = document.querySelector('.color-palette').firstChild;
+		elementSelected.className = 'selected'
+	}
+	selectedElement()
 }
+
