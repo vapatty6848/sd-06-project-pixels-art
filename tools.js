@@ -1,6 +1,6 @@
 function add(triggerObj, triggerType, action, colorStorage) {
   triggerObj.addEventListener(triggerType, function (event) {
-  colorStoraged = action(event, colorStorage);
+    colorStoraged = action(event, colorStorage);
   });
 }
 
@@ -18,8 +18,8 @@ function addButtonEvent(triggerObj, triggerType, action, target) {
 
 function RandomGenerator256Bits() {
   const valores = [];
-  const primeiroValor  = Math.ceil(Math.random()*2);
-  for (let i = 0; i < 3 ; i += 1) {
+  const primeiroValor = Math.ceil(Math.random()*2);
+  for (let i = 0; i < 3; i += 1) {
     if (i === 0) {
       valores.push(primeiroValor);
     }
@@ -34,8 +34,8 @@ function RandomGenerator256Bits() {
 function generateRandomColor() {
   const parameters = [];
   for (let i = 0; i < 3; i += 1) {
-    parameters.push(RandomGenerator256Bits())
+    parameters.push(RandomGenerator256Bits());
   }
   const numero = parameters.join(',');
-  return `rgb(${numero})`
+  return `rgb(${numero})`;
 }

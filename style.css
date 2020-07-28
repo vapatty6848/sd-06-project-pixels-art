@@ -18,7 +18,7 @@ header {
   margin-bottom: 10px;
 }
 
-.pixel, .color {
+.pixel , .color {
   border: 1px solid black;
   display: inline-block;
   height: 40px;
