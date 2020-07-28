@@ -6,7 +6,7 @@ function add(triggerObj,triggerType,action,obj) {
       if(objetos.length === undefined) {
         colorStoraged = action(event, objetos);
       } else {
-          for(let i in objetos){
+          for (let i in objetos) {
             colorStoraged = action(event, objetos[i]);
   }}})
 }
@@ -25,7 +25,7 @@ function addButtonEvent(triggerObj,triggerType,action,target) {
 
 function generateRandomColor() {
   let parameters = []
-  for(let i = 0 ; i < 3 ; i += 1) {
+  for (let i = 0 ; i < 3 ; i += 1) {
     parameters.push(RandomGenerator256Bits())
   }
    let numero =parameters.join(',');
@@ -35,7 +35,7 @@ function generateRandomColor() {
 function RandomGenerator256Bits() {
   let valores = []
   let primeiroValor  = Math.ceil(Math.random()*2);
-  for(let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     if(i === 0) {
       valores.push(primeiroValor);
     }
