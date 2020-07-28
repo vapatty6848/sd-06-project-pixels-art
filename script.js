@@ -5,8 +5,8 @@ window.onload = function () {
   const pixelsBoardTable = document.querySelector('#pixel-board');
   const clearButton = document.querySelector('#clear-board');
   const buildBoardButton = document.querySelector('#generate-board');
-  const numberOfColumns = 5;
-  const numberOfRows = 5;
+  let numberOfColumns = 5;
+  let numberOfRows = 5;
   const numberOfColors = 4;
 
   // Functionalities
@@ -73,14 +73,13 @@ window.onload = function () {
       if (userInputDimension === '') {
         alert('Board inválido!');
       } else {
-        if (userInputDimension < 5) {
-          numberOfRows = 5;
-        } else if(userInputDimension > 50) {
+        if (userInputDimension > 50) {
           numberOfRows = 50;
-        } else {
+          numberOfColumns = numberOfRows;
+        } else if (userInputDimension >= 5 && userInputDimension <= 50) {
           numberOfRows = userInputDimension;
+          numberOfColumns = numberOfRows;
         }
-        numberOfColumns = numberOfRows;
         const previousTableRows = document.querySelectorAll('tr');
         for (let i = 0; i < previousTableRows.length; i += 1) {
           pixelsBoardTable.removeChild(previousTableRows[i]);
@@ -88,7 +87,7 @@ window.onload = function () {
         functionalities.buildBoard();
       }
     },
-  }
+  };
 
   // Building pixels board
   functionalities.buildBoard();
@@ -101,4 +100,4 @@ window.onload = function () {
 
   // Rebuild the board as user set
   buildBoardButton.addEventListener('click', functionalities.rebuildBoard);
-}
+};
