@@ -1,3 +1,6 @@
+//load inicial da pagina
+window.onload = desenhandoBlocos();
+
 //Criando os Blocos da Tabela
 function desenhandoBlocos(){
     let bloco = document.getElementById("pixel-board")
@@ -16,4 +19,14 @@ function desenhandoBlocos(){
         }
     }
 }
-window.onload = desenhandoBlocos();
+//variaveis
+let colorIninit = document.querySelector('.selected')
+let corDeDentro = document.getElementById('pixel-board')
+
+//Eventos 
+corDeDentro.addEventListener('click',function(event){
+    if(event.target.id != "pixel-board"){
+        event.target.style.backgroundColor = colorIninit.id;
+    }
+})
+
