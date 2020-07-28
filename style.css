@@ -6,19 +6,15 @@
   width: 75px;
 }
 
-#table {
-  display: table; 
-  border: 1px solid black;
+#pixel-board {
+
 }
-.tr {
+
+.pixel {
+  background-color: white;
   border: 1px solid black;
-  display: table-row; 
+  display: inline-block;
   height: 40px;
-  width: 40px;
-}
-.td {
-  border: 1px solid black;
-  display: table-cell;
-  height: 40px;
+  margin: -2px;
   width: 40px;
 }
