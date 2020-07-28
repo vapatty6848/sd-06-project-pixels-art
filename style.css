@@ -1,4 +1,4 @@
-* {
+body {
   margin: 0;
   padding: 0;
 }
@@ -9,15 +9,19 @@
   height: 40px;
   width: 40px;
 }
+
 .one {
   background-color: black;
 }
+
 .two {
-  background-color: rgb(0 , 255 , 255);
+  background-color: aqua;
 }
+
 .three {
-  background-color: rgb(255 , 0 , 255);
+  background-color: pink;
 }
+
 .four {
-  background-color: rgb(255 , 255 , 0);
+  background-color: yellow;
 }
