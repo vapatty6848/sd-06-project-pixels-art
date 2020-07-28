@@ -1,7 +1,7 @@
-function $(cssSelector){
+function query(cssSelector){
   return document.querySelector(cssSelector);
 }
-function $a(tagOrClass) {
+function queryAll(tagOrClass) {
   return document.querySelectorAll(tagOrClass);
 }
 
@@ -22,9 +22,9 @@ function addClassEvent(triggerObj,triggerType,action) {
   })
 }
 
-function addButtonEvent(triggerObj,triggerType,action) {
-  triggerObj.addEventListener(triggerType, function(event){
-    action(event);
+function addButtonEvent(triggerObj,triggerType,action,target) {
+  triggerObj.addEventListener(triggerType, function(){
+    action(target);
   })
 }
 

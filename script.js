@@ -10,9 +10,17 @@ function setColor(event,  elementToChange) {
   return colorStoraged
 }
 
-function setClass(event) {
+function ClearBoard(colors){
+  for(let i = 0;i < colors.length;i += 1) {
+    let color = colors[i];
+    if(color.style.backgroundColor !== undefined) {
+      color.style.backgroundColor = 'white';
+    }
+  }
+}
 
-  $('.selected').classList.remove('selected');
+function setClass(event) {
+  query('.selected').classList.remove('selected');
   event.currentTarget.classList = `${event.currentTarget.className} selected`;
 }
 //init events
@@ -30,26 +38,22 @@ function PalleteEvents(colors) {
 function BoardEvents(pixels) {
   for(let i in pixels) {
     pixel = pixels[i]
-    if(pixels[i].className !== undefined)
+    if(pixel.className !== undefined)
       add(pixel,'click',setColor,pixel);
   }
 }
 
-function buttonEvents(buttons) {
-
+function ButtonsEvents(clearButton,board) {
+  addButtonEvent(clearButton,'click',ClearBoard,board);
 }
 
 //initiate palette and pixels
 
 function initPixelColor(pixelsColors) {
   colors = pixelsColors;
-  for(let i = 0;i < colors.length;i += 1) {
-    let color = colors[i];
-    if(color.style.backgroundColor !== undefined) {
-      color.style.backgroundColor = 'white';
-    }
-  }
+  ClearBoard(colors);
 }
+
 
 function initPalleteColor(paletteColors) {
 
