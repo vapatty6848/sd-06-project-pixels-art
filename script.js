@@ -83,11 +83,12 @@ function createPixelsBoard() {
     inputCreateBoard = 50;
     alert('Board inválido!');
   }
+  const px = 'px';
   const gridPixel = inputCreateBoard * inputCreateBoard;
-  const sizeBoard = inputCreateBoard * 40 + parseInt(inputCreateBoard) + 1;
-  sizeCreateBoard.style.width = sizeBoard + 'px';
-  console.log(sizeBoard + 'px');
-  console.log(inputCreateBoard);
+  const sizeBoard = inputCreateBoard * 40;
+  sizeBoard += parseInt(inputCreateBoard);
+  sizeBoard += 1;
+  sizeCreateBoard.style.width = sizeBoard + px;
   elementCreateBoard.querySelectorAll('*').forEach((n) => n.remove());
   for (let index = 0; index < gridPixel; index += 1) {
     elementCreateBoard.appendChild(createPixelsDiv('pixel'));
