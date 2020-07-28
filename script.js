@@ -1,9 +1,13 @@
 let pixelBoard = document.querySelector("#pixel-board");
 let colorPalette = document.querySelector("#color-palette");
+let oldSelectedColor = "";
+let currentSelectedColor = document.querySelector(".selected");
 
 
 createPaletteColors("black", "red", "blue", "green");
 createPixelBoard();
+colorPalette.addEventListener("click", selectPaletteColor);
+
 colorPalette.firstElementChild.classList.add("selected");
 
 
@@ -28,5 +32,15 @@ function createPixelBoard(){
             pixelBoard.lastChild.appendChild(newPixel).className = "pixel";
         }
 
+    }
+} 
+
+function selectPaletteColor (event){
+    if(event.target.className !== "color-palette"){
+        oldSelectedColor = document.querySelector(".selected");
+        currentSelectedColor = event.target;
+
+        currentSelectedColor.classList.add("selected");
+        oldSelectedColor.classList.remove("selected");
     }
 }
