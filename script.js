@@ -6,18 +6,18 @@ const tableColor = document.getElementById('pixel-board');
 const colors = ['black', 'blue', 'yellow', 'red'];
 
 // functions and events
-for (let i = 0; i < colors.length; i++) {
+for (let i = 0; i < colors.length; i += 1) {
   const createBoxColor = document.createElement('li');
   createBoxColor.className = 'color';
   createBoxColor.style.backgroundColor = colors[i];
   colorPalette.appendChild(createBoxColor);
 }
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i += 1) {
   const createTr = document.createElement('tr');
   createTr.className = 'tabela';
   tableColor.appendChild(createTr);
-  for (let i = 0; i < 5; i++) {
+  for (let index = 0; index < 5; index += 1) {
     const createTd = document.createElement('td');
     createTd.className = 'pixel';
     createTr.appendChild(createTd);
