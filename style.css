@@ -21,3 +21,11 @@
 #black {
     background-color: black;
 }
+
+.pixel {
+    background-color: white;
+    border: black solid 1px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
