@@ -1,1 +1,26 @@
-/*Iniciando CSS
+#color-palette{
+ 
+}
+
+.color{
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.bgcolorBlue {
+  background-color: blue;
+}
+
+.bgcolorRed {
+  background-color: red;
+}
+
+.bgcolorGreen {
+  background-color: green;
+}
+
+.bgcolorPurple {
+  background-color: purple;
+}
