@@ -5,18 +5,28 @@ function clear() {
   }
 }
 
+function changeColor() {
+  const buttonSelected = document.querySelector('.selected');
+  buttonSelected.classList.remove('selected');
+  this.classList.add('selected');
+}
+
 window.onload = function () {
-  const color1 = document.getElementsByClassName('color')[0];
-  color1.style.backgroundColor = 'black';
+  const blackPalette = document.getElementById('black-palette');
+  blackPalette.style.backgroundColor = 'black';
+  blackPalette.addEventListener('click', changeColor);
 
-  const color2 = document.getElementsByClassName('color')[1];
-  color2.style.backgroundColor = 'green';
+  const greenPalette = document.getElementById('green-palette');
+  greenPalette.style.backgroundColor = 'green';
+  greenPalette.addEventListener('click', changeColor);
 
-  const color3 = document.getElementsByClassName('color')[2];
-  color3.style.backgroundColor = 'yellow';
+  const yellowPalette = document.getElementById('yellow-palette');
+  yellowPalette.style.backgroundColor = 'yellow';
+  yellowPalette.addEventListener('click', changeColor);
 
-  const color4 = document.getElementsByClassName('color')[3];
-  color4.style.backgroundColor = 'blue';
+  const bluePalette = document.getElementById('blue-palette');
+  bluePalette.style.backgroundColor = 'blue';
+  bluePalette.addEventListener('click', changeColor);
 
   const clearBoard = document.getElementById('clear-board');
   clearBoard.addEventListener('click', clear);
