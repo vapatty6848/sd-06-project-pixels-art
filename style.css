@@ -2,39 +2,49 @@
   margin: 0;
   padding: 0;
 }
+
 .pixel {
   background-color: white;
   border: 1px solid black;
   height: 40px;
   width: 40px;
 }
+
 .color {
   border: 1px solid black;
   display: inline-block;
   height: 40px;
   width: 40px;
 }
+
 .selected {
   background-color: black;
 }
+
 .one {
   background-color: black;
 }
+
 .two {
   background-color: rgb(67, 170, 139);
 }
+
 .three {
   background-color: rgb(249, 65, 68);
 }
+
 .four {
   background-color: rgb(243, 114, 44);
 }
+
 .pixel-board {
   display: table;
 }
+
 .tr {
   display: table-row;
 }
+
 .td {
   display: table-cell;
 }
