@@ -34,6 +34,18 @@ window.onload = function() {
     selectedColor = currentSelectedDiv.style.backgroundColor;
   }
   
+  // Criando pixel board pelo usuario
+  let createButton = document.getElementById('generate-board');
+  createButton.addEventListener('click', createPixelBoard);
+  function createPixelBoard() {
+    let sizeBoard = document.getElementById('board-size').value;
+    if (sizeBoard === 0) {
+      alert('Board inválido!');
+    } else if (sizeBoard < 5) {
+      sizeBoard = 5;
+    }
+  }
+
   // Pintando o quadro
   let pixelBoardDiv = document.querySelector('.pixel-board-container');
   pixelBoardDiv.addEventListener('click', handlePixelClick);
@@ -51,16 +63,8 @@ window.onload = function() {
     for (let i = 0; i < pixels.length; i += 1) {
       pixels[i].style.backgroundColor = 'white';
     }
-  }
+
+}
   
-  // Criando pixel board pelo usuario
-  let createButton = document.getElementById('generate-board');
-  createButton.addEventListener('click', createPixelBoard);
-  function createPixelBoard() {
-    let sizeBoard = document.getElementById('board-size').value;
-    if (sizeBoard === 0) {
-      alert('Board inválido!');
-    } else if (sizeBoard < 5) {
-      sizeBoard = 5;
-    }
-  }
+  
+
