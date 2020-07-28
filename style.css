@@ -11,16 +11,16 @@
   background-color: white;
   border-collapse: collapse;
   display: block;
-  text-align: center;
   height: 250px;
+  text-align: center;
   width: 250px;
 }
 
-.colun {
+.pixel {
   background: white;
   border: 1px black solid;
   display: inline-block;
-  height: 39px;
-  margin-bottom:-4px;
-  width: 39px;
+  height: 40px;
+  margin-bottom: 0px;
+  width: 40px;
 }

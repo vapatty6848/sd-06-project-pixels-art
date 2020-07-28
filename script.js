@@ -17,7 +17,7 @@ for (let i = 0; i < 5; i += 1) {
   pixelBoard.appendChild(linha);
   for (let j = 0; j < 5; j += 1) {
     const pixel = document.createElement('div');
-    pixel.className = 'colun pixel';
-    pixelBoard.appendChild(pixel);
+    pixel.className = 'pixel';
+    linha.appendChild(pixel);
   }
 }
