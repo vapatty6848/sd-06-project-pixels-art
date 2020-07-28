@@ -46,7 +46,9 @@ footer {
 
 .pixels-board {
   display: block;
+  height: 200px;
   line-height: 0;
+  width: 200px;
 }
 
 .pixel {

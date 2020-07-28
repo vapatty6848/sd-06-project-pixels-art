@@ -2,9 +2,9 @@
 window.onload = function () {
   // Elements
   let colorPalette = document.querySelector('#color-palette');
-  let pixelsBoardTable = document.querySelector('#pixels-board');
+  let pixelsBoardTable = document.querySelector('#pixel-board');
   let availableColors = ['black', 'blue', 'red' , 'green'];
-  let clearButton = document.querySelector('button');
+  let clearButton = document.querySelector('#clear-board');
   let numberOfColumns = 5;
   let numberOfRows = 5;
 
