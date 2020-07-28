@@ -1,6 +1,7 @@
 window.onload = function() {
 
   createColorPallet(['black', 'blue', 'blueviolet', 'pink']);
+  selectedColor = 'black';
 
 }
 
@@ -25,7 +26,7 @@ function createPalletItem(color) {
   return palletColorDiv;
 }
 
-//Quando clica, add o selected e retira da cor antiga
+// Quando clica, add o selected e retira da cor antiga
 function handlePalletColorEvent (event) {
   let oldSelectedDiv = document.querySelector('.selected');
   let currentSelectedDiv = event.target;
@@ -35,6 +36,7 @@ function handlePalletColorEvent (event) {
   selectedColor = currentSelectedDiv.style.backgroundColor;
 }
 
+// Pintando o quadro
 let pixelBoardDiv = document.querySelector('.pixel-board-container');
 pixelBoardDiv.addEventListener('click', handlePixelClick);
 
