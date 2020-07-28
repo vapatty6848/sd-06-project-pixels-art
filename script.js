@@ -10,6 +10,37 @@ function setColor(event,  elementToChange) {
   return colorStoraged
 }
 
+function CreateRows(NumberOfRows) {
+  for(let i = 0; i < NumberOfRows;i += 1){
+    let board = document.querySelector('#pixel-board');
+    let linha = document.createElement("div");
+    linha.className = 'row';
+    board.appendChild(linha);
+    CreateElements(NumberOfRows,linha)
+  }
+}
+
+function CreateElements(NumberOfElements,Row) {
+  for(let x = 0;x < NumberOfElements;x +=1) {
+    let element = document.createElement("div");
+    element.className = 'pixel';
+    Row.appendChild(element);
+  }
+}
+
+function CreateBoard(){
+  let inputValue = document.querySelector('#board-size').value;
+      if(inputValue < 5){inputValue = 5;}
+      else if(inputValue > 50){inputValue = 50;}
+      CreateRows(inputValue)
+      let classPixels = document.querySelectorAll('.pixel');
+      let clearButton = document.querySelector('.clear');
+      initPixelColor(classPixels);
+      BoardEvents(classPixels);
+      ButtonsEvents(clearButton,classPixels,ClearBoard);
+  }
+
+
 function ClearBoard(colors){
   for(let i = 0;i < colors.length;i += 1) {
     let color = colors[i];
@@ -24,12 +55,13 @@ function setClass(event) {
   event.currentTarget.classList = `${event.currentTarget.className} selected`;
 }
 //init events
-function PalleteEvents(colors) {
+function PaletteEvents(colors) {
   for(let i in colors) {
     let color = colors[i];
     if(color.className !== undefined){
       add(color,'click',getColor,color);
       addClassEvent(color,'click',setClass);
+
 
     }
   }
@@ -46,7 +78,11 @@ function BoardEvents(pixels) {
 function ButtonsEvents(clearButton,board) {
   addButtonEvent(clearButton,'click',ClearBoard,board);
 }
-
+function VqvEvents(vqvButton) {
+  vqvButton.addEventListener('click',function(){
+    CreateBoard();
+  })
+}
 //initiate palette and pixels
 
 function initPixelColor(pixelsColors) {
@@ -56,7 +92,6 @@ function initPixelColor(pixelsColors) {
 
 
 function initPalleteColor(paletteColors) {
-
   paletteColors[0].style.backgroundColor = 'black';
   colorStoraged = 'black';
   for(let i = 1 ; i < paletteColors.length; i += 1) {

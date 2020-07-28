@@ -1,15 +1,12 @@
 
 window.onload = function() {
+  let vqvButton = document.querySelector('#generate-board');
+  CreateBoard();
 
   let classColors = document.querySelectorAll('.color');
-  let classPixels = document.querySelectorAll('.pixel');
-  let clearButton = document.querySelector('.clear');
-
 
   initPalleteColor(classColors);
-  initPixelColor(classPixels);
-  PalleteEvents(classColors);
-  BoardEvents(classPixels);
-  ButtonsEvents(clearButton,classPixels);
+  PaletteEvents(classColors);
+  VqvEvents(vqvButton);
 }
 
