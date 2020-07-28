@@ -31,7 +31,7 @@ function generateElements(elements) {
     divColumns.push(document.createElement('div'));
     divColumns[i].className = 'line';
     for (let j = 0; j < elements; j += 1) {
-      let pixels = document.createElement('div');
+      const pixels = document.createElement('div');
       pixels.className = 'pixel';
       divColumns[i].appendChild(pixels);
     }
@@ -74,12 +74,8 @@ btnReset.addEventListener('click', () => {
   });
 });
 
-function getRandomNumber() {
-  return Math.round(Math.random() * 10);
-}
-
 function getRandomColor() {
-  return COLORS[getRandomNumber()];
+  return COLORS[Math.round(Math.random() * 10)];
 }
 
 function changeColorToRandom() {
@@ -100,5 +96,5 @@ function changeColorToRandom() {
 
 window.onload = () => {
   changeColorToRandom();
-  generateElements();
+  generateElements(5);
 };
