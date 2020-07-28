@@ -50,12 +50,10 @@ function createPixelBoard(n) {
   }
 }
 
-// document.addEventListener('click', colorSelection)
-
 function colorSelection(event) {
   const chosenColor = event.target;
   const oldChosenColor = document.querySelector('.selected');
-  oldChosenColor.classList.remove('selected');
-  chosenColor.classList.add('selected');
+  oldChosenColor.classList.remove('selected', 'pushed');
+  chosenColor.classList.add('selected', 'pushed');
   colorSelected = chosenColor.style.backgroundColor;
 }

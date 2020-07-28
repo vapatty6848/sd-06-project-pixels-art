@@ -27,5 +27,9 @@ h1 {
 }
 
 .selected {
+  color: white;
+}
+
+.pushed {
   border: 1px solid white;
 }
