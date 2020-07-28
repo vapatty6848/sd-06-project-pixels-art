@@ -71,7 +71,7 @@ function createPixelsDiv(divClassName) {
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
   const sizeCreateBoard = document.querySelector('.board');
-  const inputCreateBoard = parseInt(document.getElementById('board-size').value, 10);
+  let inputCreateBoard = parseInt(document.getElementById('board-size').value, 10);
   if (
     inputCreateBoard < 5 ||
     inputCreateBoard === undefined ||
