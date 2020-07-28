@@ -6,8 +6,8 @@
 }
 
 .pixel {
-    border: black solid 1px;
-    display: inline-block;
-    height: 25px;
-    width: 25px; 
+  border: black solid 1px;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
 }
