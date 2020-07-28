@@ -23,3 +23,9 @@ pixelBoard.forEach(pixel => {
     })
 })
 
+const botaoApagar = document.getElementById('clear-board');
+botaoApagar.addEventListener('click', () => {
+    pixelBoard.forEach(pixel => {
+        pixel.className = 'pixel td';
+    })
+});
