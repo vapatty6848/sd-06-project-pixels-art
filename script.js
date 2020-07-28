@@ -1,4 +1,4 @@
-let corSelecionada = 'black';
+const corSelecionada = 'black';
 function limpaBorda() {
   const elementoLimparBorda = document.querySelector('#clear-board');
   elementoLimparBorda.addEventListener('click', function () {
@@ -29,13 +29,13 @@ function manipulaPalete(event) {
   atualDiv.classList.add('selected');
 
   atualColor = window
-    .getComputedStyle(currentSelectedDiv, null)
+    .getComputedStyle(atualDiv, null)
     .getPropertyValue('background-color');
 }
 
 function criaPaletaItem(cor) {
   const criaDiv = document.createElement('div');
-  criaDiv.style.backgroundColor = color;
+  criaDiv.style.backgroundColor = cor;
   criaDiv.className = 'color';
   criaDiv.addEventListener('click', manipulaPalete);
 
@@ -83,7 +83,7 @@ function createPixelsBoard() {
   const gridPixel = inputCreateBoard * inputCreateBoard;
   elementoCriaBoard.querySelectorAll('*').forEach((n) => n.remove());
   for (let index = 0; index < gridPixel; index += 1) {
-    elementoCriaBoard.appendChild(createPixelsDiv('pixel'));
+    elementoCriaBoard.appendChild(criaPixelsDiv('pixel'));
   }
 }
 
@@ -95,9 +95,9 @@ function criaBoard() {
 window.onload = function () {
   criaCorPalette([
     'black',
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
+    geraCorAleatoria(),
+    geraCorAleatoria(),
+    geraCorAleatoria(),
   ]);
   createPixelsBoard();
   limpaBorda();

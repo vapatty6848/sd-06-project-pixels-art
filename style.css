@@ -1,6 +1,6 @@
 body, html{
     margin: 0;
-    padding: 0px;
+    padding: 0;
 }
 
 .color{
@@ -13,7 +13,6 @@ body, html{
     width: 40px;
 }
 
-  
 .clear{
     margin-top: 50px;
 }
@@ -37,3 +36,4 @@ body, html{
 .generate-board {
     margin-bottom: 20px;
   }
+  
