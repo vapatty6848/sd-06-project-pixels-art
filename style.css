@@ -1,15 +1,31 @@
-
-.color {
-  border: 1px black solid;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-}
-
-.pixel {
-  background-color: white;
-  border: 1px black solid;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-}
+body {
+    align-content: center;
+  }
+  
+  .color {
+    border: 1px solid black;
+    display: inline-block;
+    height: 75px;
+    margin: 5px;
+    width: 75px;
+  }
+  
+  button {
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .pixel-board-container {
+    margin: 20px;
+    padding: 10px;
+  }
+  
+  .pixel {
+    background-color: white;
+    border: 1px solid black;
+    display: inline-block;
+    height: 40px;
+    margin: -2px;
+    width: 40px;
+  }

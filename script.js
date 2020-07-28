@@ -1,61 +1,66 @@
-
-createPalette = (['black', 'blue', 'brown', 'cyan']);    
-//cria div inteira precisa de uma array de cores 
-    //Pega a paleta de cores e add os itens a paleta
-    function createColorPallet(colors) {
-      let paletteContainer = document.getElementById("color-palette");
-      for (let i in colors) {
-        let paletteColorDiv = createPalletItem(colors[i]);
-        paletteContainer.appendChild(paletteColorDiv);
+window.onload = function() {
+    createColorPallet(['black', 'brown', 'blue', 'cyan']);
+    selectedColor = 'black';
+  };
+  
+  // Criação dos itens da paleta (divs)
+  function createPalletItem(color) {
+    let palletColorDiv = document.createElement('div');
+    palletColorDiv.style.backgroundColor = color;
+    palletColorDiv.className = 'color';
+    palletColorDiv.addEventListener('click', handlePalletColorEvent);
+      if (color === 'black') {
+        palletColorDiv.classList.add('selected');
       }
+    return palletColorDiv;
+  }
+  
+  // Pega a paleta de cores e add os itens a paleta
+  function createColorPallet(colors) {
+    let colorPalletContainer = document.getElementById('color-palette');
+    for (let i in colors) {
+      let palletColorDiv = createPalletItem(colors[i]);
+      colorPalletContainer.appendChild(palletColorDiv);
     }
-
-    //Criação dos itens da paleta (divs)
-    function createPalletItem(color) {
-      let paletteColorDiv = document.createElement('div');
-      paletteColorDiv.style.backgroundColor = color;
-      paletteColorDiv.className = 'color';
-      paletteColorDiv.addEventListener('click', handlePaletteColorEvent);
-        if (color === 'black') {
-          paletteColorDiv.classList.add('selected');
-        }
-      return paletteColorDiv;
+  }
+  
+  // Quando clica, add o selected e retira da cor antiga
+  function handlePalletColorEvent(event) {
+    let oldSelectedDiv = document.querySelector('.selected');
+    let currentSelectedDiv = event.target;
+  
+    oldSelectedDiv.classList.remove('selected');
+    currentSelectedDiv.classList.add('selected');
+    selectedColor = currentSelectedDiv.style.backgroundColor;
+  }
+  
+  // Pintando o quadro
+  let pixelBoardDiv = document.querySelector('.pixel-board-container');
+  pixelBoardDiv.addEventListener('click', handlePixelClick);
+  
+  function handlePixelClick(event) {
+    let selectedPixelDiv = event.target;
+    selectedPixelDiv.style.backgroundColor = selectedColor;
+  }
+  
+  // Botão reset
+  let resetButton = document.getElementById('clear-board');
+  resetButton.addEventListener('click', resetPixelBoard);
+  function resetPixelBoard() {
+    const pixels = document.querySelectorAll('.pixel');
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = 'white';
     }
-
-    //Quando clica, add o selected e retira da cor antiga
-    function handlePaletteColorEvent (event) {
-      let oldSelectedDiv = document.querySelector('.selected');
-      let currentSelectedDiv = event.target;
-
-      oldSelectedDiv.classList.remove('selected');
-      currentSelectedDiv.classList.add('selected');
-      selectedColor = currentSelectedDiv.style.backgroundColor;
+  }
+  
+  // Criando pixel board pelo usuario
+  let createButton = document.getElementById('generate-board');
+  createButton.addEventListener('click', createPixelBoard);
+  function createPixelBoard() {
+    let sizeBoard = document.getElementById('board-size').value;
+    if (sizeBoard === 0) {
+      alert('Board inválido!');
+    } else if (sizeBoard < 5) {
+      sizeBoard = 5;
     }
-
-    let boardDiv = document.querySelector('.pixel_board');
-    boardDiv.addEventListener('click', handlePixelClick);
-
-    function handlePixelClick(event) {
-      let selectedPixelDiv = event.target;
-      selectedPixelDiv.style.backgroundColor = selectedColor;
-    }
-
-    // Criando pixel board pelo usuario
-    function createPixelBoard() {
-      let sizeBoard = document.getElementById('size').value;
-        if (sizeBoard === 0) {
-          alert('Board inválido!');
-        } else if (sizeBoard < 5) {
-          sizeBoard = 5;
-        }
-
-    } 
-
-
- // Botão reset
-    function resetPixelBoard() {
-      let pixels = document.querySelectorAll('.pixel');
-      for (let i = 0; i < pixels.length; i += 1) {
-        pixels[i].style.backgroundColor = 'white';
-      }
-    } 
+  }
