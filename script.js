@@ -11,6 +11,11 @@ function changeColor() {
   this.classList.add('selected');
 }
 
+function setColorClick() {
+  const buttonColor = document.querySelector('.selected');
+  this.style.backgroundColor = buttonColor.style.backgroundColor;
+}
+
 window.onload = function () {
   const blackPalette = document.getElementById('black-palette');
   blackPalette.style.backgroundColor = 'black';
@@ -30,4 +35,9 @@ window.onload = function () {
 
   const clearBoard = document.getElementById('clear-board');
   clearBoard.addEventListener('click', clear);
+
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index in pixels) {
+    pixels[index].onclick = setColorClick;
+  }
 };
