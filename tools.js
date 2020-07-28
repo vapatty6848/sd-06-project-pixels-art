@@ -1,16 +1,16 @@
-function add(triggerObj,triggerType,action,colorStorage) {
+function add(triggerObj, triggerType, action, colorStorage) {
   triggerObj.addEventListener(triggerType,function(event) {
         colorStoraged = action(event,colorStorage);
       })
 }
 
-function addClassEvent(triggerObj,triggerType,action) {
+function addClassEvent(triggerObj, triggerType, action) {
   triggerObj.addEventListener(triggerType, function(event) {
     action(event);
   })
 }
 
-function addButtonEvent(triggerObj,triggerType,action,target) {
+function addButtonEvent(triggerObj, triggerType, action, target) {
   triggerObj.addEventListener(triggerType, function() {
     action(target);
   })

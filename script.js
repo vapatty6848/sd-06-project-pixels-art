@@ -1,17 +1,25 @@
 function getColor(event) {
   const elemento = event.target;
   colorStoraged = elemento.style.backgroundColor;
-  return  colorStoraged
+  return  colorStoraged;
 }
 
 function setColor(event) {
-  let elementoAtual = event.currentTarget;
+  const elementoAtual = event.currentTarget;
   elementoAtual.style.backgroundColor = colorStoraged;
-  return colorStoraged
+  return colorStoraged;
+}
+
+function CreateElements(NumberOfElements, Row) {
+  for (let x = 0; x < NumberOfElements;x += 1) {
+    const element = document.createElement('div');
+    element.className = 'pixel';
+    Row.appendChild(element);
+  }
 }
 
 function CreateRows(NumberOfRows) {
-  for(let i = 0; i < NumberOfRows;i += 1){
+  for (let i = 0; i < NumberOfRows;i += 1){
     let board = document.querySelector('#pixel-board');
     let linha = document.createElement("div");
     linha.className = 'row';
@@ -20,13 +28,7 @@ function CreateRows(NumberOfRows) {
   }
 }
 
-function CreateElements(NumberOfElements,Row) {
-  for (let x = 0;x < NumberOfElements;x += 1) {
-    const element = document.createElement('div');
-    element.className = 'pixel';
-    Row.appendChild(element);
-  }
-}
+
 
 function RemoveCurrentBoard() {
   const Currentboard = document.querySelector('.brush-body');
@@ -35,43 +37,17 @@ function RemoveCurrentBoard() {
   }
 }
 
-function ClearBoard(colors){
+function ClearBoard(colors) {
   for (let i = 0; i < colors.length; i += 1) {
-    let color = colors[i];
-    if(color.style.backgroundColor !== undefined) {
-      color.style.backgroundColor = 'white';
+    if(colors[i].style.backgroundColor !== undefined) {
+      colors[i].style.backgroundColor = 'white';
     }
   }
 }
 
-function CreateBoard() {
-  let inputValue = document.querySelector('#board-size').value;
-  if (inputValue < 5) {
-    inputValue = 5;
-  } else if (inputValue > 50) {
-      inputValue = 50;
-    }
-  CreateRows(inputValue);
-  const classPixels = document.querySelectorAll('.pixel');
-  const clearButton = document.querySelector('.clear');
-  initPixelColor(classPixels);
-  BoardEvents(classPixels);
-  ButtonsEvents(clearButton, classPixels, ClearBoard);
-  }
-
-function setClass(event) {
-  document.querySelector('.selected').classList.remove('selected');
-  event.currentTarget.classList = `${event.currentTarget.className} selected`;
-}
-
-function PaletteEvents(paletteElements,colorStoraged) {
-  for (let i in paletteElements) {
-    let paletteElement = paletteElements[i];
-    if(paletteElement.className !== undefined){
-      add(paletteElement, 'click', getColor,colorStoraged);
-      addClassEvent(paletteElement, 'click', setClass);
-    }
-  }
+function initPixelColor(pixelsColors) {
+  colors = pixelsColors;
+  ClearBoard(colors);
 }
 
 function BoardEvents(pixels) {
@@ -87,8 +63,38 @@ function ButtonsEvents(clearButton,board) {
   addButtonEvent(clearButton, 'click', ClearBoard, board);
 }
 
+function CreateBoard() {
+  let inputValue = document.querySelector('#board-size').value;
+  if (inputValue < 5) {
+    inputValue = 5;
+  } else if (inputValue > 50) {
+    inputValue = 50;
+  }
+  CreateRows(inputValue);
+  const classPixels = document.querySelectorAll('.pixel');
+  const clearButton = document.querySelector('.clear');
+  initPixelColor(classPixels);
+  BoardEvents(classPixels);
+  ButtonsEvents(clearButton, classPixels, ClearBoard);
+  }
+
+function setClass(event) {
+  document.querySelector('.selected').classList.remove('selected');
+  event.currentTarget.classList = `${event.currentTarget.className} selected`;
+}
+
+function PaletteEvents(paletteElements, colorStoraged) {
+  for (const i in paletteElements) {
+    const paletteElement = paletteElements[i];
+    if (paletteElement.className !== undefined) {
+      add(paletteElement, 'click', getColor,colorStoraged);
+      addClassEvent(paletteElement, 'click', setClass);
+    }
+  }
+}
+
 function VqvEvents(vqvButton) {
-  valorInput = document.querySelector('#board-size');
+  const valorInput = document.querySelector('#board-size');
   vqvButton.addEventListener('click', function() {
     if( valorInput.value != '') {
       RemoveCurrentBoard();
@@ -98,11 +104,6 @@ function VqvEvents(vqvButton) {
       alert('Board inválido!');
     }
   })
-}
-
-function initPixelColor(pixelsColors) {
-  colors = pixelsColors;
-  ClearBoard(colors);
 }
 
 function initPalette() {
