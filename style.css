@@ -33,3 +33,7 @@
 .selected {
   color: black;
 }
+
+button {
+  margin: 10px;
+}

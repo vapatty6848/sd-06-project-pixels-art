@@ -3,6 +3,7 @@ const colorRed = document.querySelector('.red');
 const colorBlue = document.querySelector('.blue');
 const colorPurple = document.querySelector('.purple');
 const pixel = document.querySelectorAll('.pixel');
+const btnClear = document.getElementById('clear-board');
 
 window.onload = function () {
   document.querySelector('.black').className += ' selected';
@@ -50,3 +51,9 @@ for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = document.querySelector('.selected').style.color;
   });
 }
+
+btnClear.addEventListener('click', function () {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+});
