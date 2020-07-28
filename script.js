@@ -7,6 +7,7 @@ let currentSelectedColor = document.querySelector(".selected");
 createPaletteColors("black", "red", "blue", "green");
 createPixelBoard();
 colorPalette.addEventListener("click", selectPaletteColor);
+pixelBoard.addEventListener("click", setPixelColor);
 
 colorPalette.firstElementChild.classList.add("selected");
 
@@ -43,4 +44,10 @@ function selectPaletteColor (event){
         currentSelectedColor.classList.add("selected");
         oldSelectedColor.classList.remove("selected");
     }
+}
+
+function setPixelColor(event){
+    if(event.target.className == "pixel"){
+        event.target.style.backgroundColor = currentSelectedColor.style.backgroundColor;
+    }    
 }
