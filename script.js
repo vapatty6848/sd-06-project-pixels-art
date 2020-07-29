@@ -1,14 +1,3 @@
-window.onload = function () {
-  const cores = ['black', 'gray', 'red', 'yellow'];
-  const quantidade = 5;
-  const corSelecionada = '';
-  criarPaleta(cores);
-  criarPixels(quantidade);
-  pegaCor();
-  pintar();
-  limparTudo();
-}
-/* ******************************************************** */
 function criarPaleta(cores) {
   for (let i = 0; i < cores.length; i += 1) {
     const criarCor = document.createElement('div');
@@ -40,20 +29,20 @@ function criarPixels(quantidade) {
 function pegaCor() {
   const cores = document.getElementsByClassName('color');
   let selecionada = document.querySelector('.selected');
-  for (let i = 0; i < cores.length; i +=1 ){
-    cores[i].addEventListener('click', function() {
+  for (let i = 0; i < cores.length; i += 1) {
+    cores[i].addEventListener('click', function () {
       corSelecionada = event.target.style.backgroundColor;
-      cores[i].className += ' selected'
-      selecionada.classList.remove('selected')
+      cores[i].className += ' selected';
+      selecionada.classList.remove('selected');
       selecionada = document.querySelector('.selected');
     });
   }
 }
 /* ******************************************************** */
 function pintar() {
-  let pintarPixel = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pintarPixel.length; i += 1){
-    pintarPixel[i].addEventListener('click', function() {
+  const pintarPixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pintarPixel.length; i += 1) {
+    pintarPixel[i].addEventListener('click', function () {
       pintarPixel[i].style.backgroundColor = corSelecionada;
     });
   }
@@ -61,11 +50,22 @@ function pintar() {
 /* ******************************************************** */
 function limparTudo() {
   const btnLimpar = document.getElementById('clear-board');
-  btnLimpar.addEventListener('click', function() {
+  btnLimpar.addEventListener('click', function () {
     const pixels = document.querySelectorAll('.pixel');
     for (let i = 0; i < pixels.length; i += 1) {
       pixels[i].style.backgroundColor = 'white';
     }
   });
 }
+/* ******************************************************** */
+window.onload = function () {
+  const cores = ['black', 'gray', 'red', 'yellow'];
+  const quantidade = 5;
+  let corSelecionada;
+  criarPaleta(cores);
+  criarPixels(quantidade);
+  pegaCor();
+  pintar();
+  limparTudo();
+};
 /* ******************************************************** */
