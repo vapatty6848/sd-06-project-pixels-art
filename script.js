@@ -13,6 +13,7 @@ let sizeBox = 5;
 function createPixelBoard() {
   if (highBox < 5) {
     highBox = 5;
+    sizeBox = 5;
   }
 
   if (highBox > 50) {

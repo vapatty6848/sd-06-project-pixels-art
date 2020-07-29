@@ -2,9 +2,7 @@
   border: black 1px solid;
   display: inline-block;
 }
-body{
-  width: 5000px;
-}
+
 .color {padding: 40px;}
 
 .preto {
@@ -29,7 +27,6 @@ body{
 #pixel-board {
   background-color: white;
   display: block;
-
   width: 100%;
   position: relative;
 }
