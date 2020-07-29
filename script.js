@@ -19,7 +19,7 @@ function randomColors() {
     }
   }
 }
-randomColors();
+
 
 function createColorPalet(colors) {
   for (const index in colors) {
