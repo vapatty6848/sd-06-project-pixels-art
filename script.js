@@ -50,8 +50,8 @@ function populandoUmLinha(number) {
   pixelLine.appendChild(br);
 }
 
-function populandoBoard(nLine, nColums) {
-  for (let index = 0; index < nColums; index += 1) {
+function populandoBoard(nLine, nColumn) {
+  for (let index = 0; index < nColumn; index += 1) {
     populandoUmLinha(nLine);
   }
 }
@@ -64,6 +64,30 @@ function clearBoard() {
     pixelBoard[index].style.background = cor;
   }
 }
+
+// Mexendo com o tamanho do board
+const tamanho = document.querySelector('#board-size');
+
+
+function deleteBoard() {
+  const node = document.querySelector('#pixel-board');
+  while (node.firstChild) {
+    node.removeChild(node.firstChild);
+  }
+}
+
+function gerarBoard() {
+  if (tamanho.value == '') {
+    alert('Board inválido!');
+  } else {
+    deleteBoard();
+    let nLine = nColumn = parseInt(tamanho.value);
+    populandoBoard(nLine, nColumn);
+  }
+}
+
+const btnBoard = document.querySelector('#generate-board');
+btnBoard.addEventListener('click', gerarBoard);
 
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', clearBoard);
