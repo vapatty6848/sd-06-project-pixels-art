@@ -1,10 +1,17 @@
-const colorBlack = document.querySelector('.black');
-const colorRed = document.querySelector('.red');
-const colorBlue = document.querySelector('.blue');
-const colorPurple = document.querySelector('.purple');
+const colorPalette = document.querySelectorAll('.color');
 const btnClear = document.getElementById('clear-board');
 const btnGenerate = document.getElementById('generate-board');
 const boardSize = document.getElementById('board-size');
+const colors = ['red', 'green', 'blue', 'purple', 'brown', 'dimgray', 'cyan', 'orange'];
+
+for (let i = 0; i < document.querySelectorAll('.color').length; i += 1) {
+  if (i === 0) {
+    document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
+  } else {
+    var newColor = Math.ceil((Math.random() * 8) - 1);
+    document.querySelectorAll('.color')[i].style.backgroundColor = colors[newColor];
+  }
+}
 
 function createPixelLine(number) {
   for (let i = 0; i < number; i += 1) {
@@ -13,70 +20,53 @@ function createPixelLine(number) {
     pixelLine.className = 'line';
     document.getElementById('pixel-board').appendChild(pixelLine);
   }
-};
+}
 
 function createPixel(i) {
   const newPixel = document.createElement('div');
   newPixel.className = 'pixel';
   document.querySelectorAll('#pixel-line')[i].appendChild(newPixel);
-};
+}
+
+function pixelEvent() {
+  for (let i = 0; i < document.querySelectorAll('.pixel').length; i += 1) {
+    document.querySelectorAll('.pixel')[i].addEventListener('click', function () {
+      document.querySelectorAll('.pixel')[i].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    });
+  }
+}
 
 function createBoard(number) {
   if (number >= 5 && number <= 50) {
     createPixelLine(number);
     for (let i = 0; i < document.querySelectorAll('#pixel-line').length; i += 1) {
-      for(let i = 0; i < number; i += 1){
-        createPixel(i)
+      for (let j = 0; j < number; j += 1) {
+        createPixel(i);
       }
     }
-    for (let i = 0; i < document.querySelectorAll('.pixel').length; i += 1) {
-      document.querySelectorAll('.pixel')[i].addEventListener('click', function () {
-        document.querySelectorAll('.pixel')[i].style.backgroundColor = document.querySelector('.selected').style.color;
-      });
-    }
+    pixelEvent();
   }
-};
+}
+
+function normalColor() {
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    colorPalette[i].className = 'color';
+  }
+}
 
 createBoard(5);
 
-document.querySelector('.black').className += ' selected';
+colorPalette[0].className += ' selected';
 document.querySelector('.selected').style.color = 'black';
 
-colorBlack.addEventListener('click', function () {
-  colorBlack.className = 'color black';
-  colorRed.className = 'color red';
-  colorBlue.className = 'color blue';
-  colorPurple.className = 'color purple';
-  colorBlack.className += ' selected';
-  document.querySelector('.selected').style.color = 'black';
-});
-
-colorRed.addEventListener('click', function () {
-  colorBlack.className = 'color black';
-  colorRed.className = 'color red';
-  colorBlue.className = 'color blue';
-  colorPurple.className = 'color purple';
-  colorRed.className += ' selected';
-  document.querySelector('.selected').style.color = 'red';
-});
-
-colorBlue.addEventListener('click', function () {
-  colorBlack.className = 'color black';
-  colorRed.className = 'color red';
-  colorBlue.className = 'color blue';
-  colorPurple.className = 'color purple';
-  colorBlue.className += ' selected';
-  document.querySelector('.selected').style.color = 'blue';
-});
-
-colorPurple.addEventListener('click', function () {
-  colorBlack.className = 'color black';
-  colorRed.className = 'color red';
-  colorBlue.className = 'color blue';
-  colorPurple.className = 'color purple';
-  colorPurple.className += ' selected';
-  document.querySelector('.selected').style.color = 'purple';
-});
+for (let i = 0; i < colorPalette.length; i += 1) {
+  colorPalette[i].addEventListener('click', function (event) {
+    normalColor();
+    if (event.target) {
+      colorPalette[i].className = 'color selected';
+    }
+  })
+};
 
 btnClear.addEventListener('click', function () {
   for (let i = 0; i < document.querySelectorAll('.pixel').length; i += 1) {
