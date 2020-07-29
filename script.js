@@ -66,27 +66,15 @@ useColors();
 let colors = ["black", "rgb(214, 40, 40)", "rgb(252, 191, 73)", "rgb(234, 226, 183)"];
 
 function generateColors() {
-    let num = Math.floor(Math.random() * 5) + 1;
 
-    switch (num) {
-        case 1:
-            colors = ["black", "rgb(214, 40, 40)", "rgb(252, 191, 73)", "rgb(234, 226, 183)"];
-            break;
-        case 2:
-            colors = ["black", "rgb(217, 93, 57)", "rgb(241, 136, 5)", "rgb(254, 207, 114)"];
-            break;
-        case 3:
-            colors = ["black", "rgb(155, 41, 21)", "rgb(80, 162, 167)", "rgb(228, 214, 167)"];
-            break;
-        case 4:
-            colors = ["black", "rgb(164, 22, 35)", "rgb(228, 214, 167)", "rgb(145, 132, 80)"];
-            break;
-        case 5:
-            colors = ["black", "rgb(155, 106, 108)", "rgb(176, 147, 152)", "rgb(206, 223, 217)"];
-            break;
+    for (let i = 1; i < 4; i += 1) {
+        let r = Math.floor(Math.random() * 255) + 1;
+        let g = Math.floor(Math.random() * 255) + 1;
+        let b = Math.floor(Math.random() * 255) + 1;
 
+        let rgb = "rgb(" + r + ", " + g + ", " + b + ")";
+        colors[i] = rgb;
     }
-    //console.log(colors);
 }
 generateColors();
 
