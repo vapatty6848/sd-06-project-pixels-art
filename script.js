@@ -1,5 +1,12 @@
 window.onload = function() {
+
     blackColor.classList.add('selected')
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains ('pixel')) {
+            let pixel = event.target
+            pixel.style.backgroundColor = 'black'
+        }
+    }, false);
 }
 
 const blackColor = document.getElementsByClassName('color')[0]
