@@ -37,7 +37,7 @@ window.onload = function() {
     }
     const boardPixel = document.querySelectorAll('.pixel');
     for (let index = 0; index < boardPixel.length; index += 1) {
-        definedColour(boardPixel[index]);
+        definedColour(boardPixel[index])
     }
 
     const clearBoard = document.querySelector('#clear-board');
