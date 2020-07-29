@@ -32,14 +32,14 @@ function clearButton(event){
    //document.getElementById("pixel-board").style.backgroundColor ="white";
    //usar for percorrer os pixels e trocar o background color
    // let index=0 ; index < document.getelementsByClassName("pixel").length; index ++;
-   for(let index =0 ;index <document.getElementsByClassName("pixel").length; index+=1){
-       event.target.style.backgroundColor = "white";
+   for(let index =0 ;index <document.getElementsByClassName('pixel').length; index+=1){
+    document.getElementById('pixel').style.backgroundColor = "white";
    }
 
     //limpar quadro de pixels:
     //document.getElementById("pixel-board").style.backgroundColor = "white";
 }
 
-document.getElementById("clear-bord").addEventListener("click", clearButton);
+document.getElementById("clear-board").addEventListener("click", clearButton);
 document.getElementById("color-palette").addEventListener("click", selectColor);
 document.getElementById("pixel-board").addEventListener("click", paintPixel);
