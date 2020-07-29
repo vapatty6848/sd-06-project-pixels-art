@@ -10,7 +10,7 @@ window.onload = function () {
     clear();
     setBoardButton();
 
-    // função: tamanho do quadro
+    console.log(document.getElementsByClassName('pixel')[0].style.height);
 }
 
 // CRIAR O QUADRO DINAMICAMENTE
@@ -25,6 +25,7 @@ function createBoard(num) {
             td.classList.add('pixel');
             td.style.height = "40px";
             td.style.width = "40px";
+            td.style.border = "1px solid black";
         }
     }
 }
