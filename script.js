@@ -20,7 +20,6 @@ function generateColors() {
   for (let i = 0; i < 5; i++) {
     cores.push(randomColors())
   }
-  createColorPalet(cores);
 }
 
 function createColorPalet(colors) {
