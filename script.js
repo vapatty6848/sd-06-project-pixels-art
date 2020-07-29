@@ -1,9 +1,10 @@
 const colorsPaletteNotBlack = document.querySelectorAll('.not-black');
 const colorsPalette = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
-const firstColor = document.querySelector('.color');
 let selectedColor = document.querySelector('.selected');
 const clearButton = document.querySelector('#clear-board');
+const boardSizeInput = document.querySelector('#board-size');
+const generateButton = document.querySelector('#generate-board');
 
 const colors = ['red', 'green', 'blue'];
 
@@ -13,7 +14,18 @@ const generatePaletteColors = () => {
   });
 };
 
-const generateBoard = (number = 5) => {
+const checkBoardSize = (number) => {
+  switch (true) {
+    case (number < 5):
+      return 5;
+    case (number > 50):
+      return 50;
+    default:
+      return number;
+  }
+};
+
+const generateBoard = (number) => {
   for (let i = 0; i < number; i += 1) {
     const lineDiv = document.createElement('div');
     lineDiv.className = 'line';
@@ -26,46 +38,50 @@ const generateBoard = (number = 5) => {
   }
 };
 
+const killBoard = () => {
+  const pixels = document.querySelectorAll('.pixel');
+  const lines = document.querySelectorAll('.line');
+  pixels.forEach((item) => item.remove(item));
+  lines.forEach((item) => item.remove(item));
+};
+
+generateButton.addEventListener('click', () => {
+  if (boardSizeInput.value && boardSizeInput.value > 0) {
+    let number = boardSizeInput.value;
+    number = checkBoardSize(number);
+    killBoard();
+    generateBoard(number);
+  } else {
+    alert('Board inválido!');
+    killBoard();
+    generateBoard(5);
+  }
+});
+
 const removeClassSelected = () => {
   colorsPalette.forEach((item) => item.classList.remove('selected'));
 };
 
-const setSelectedColorToPixel = () => {
-  const pixels = document.querySelectorAll('.pixel');
-  selectedColor = document.querySelector('.selected');
+pixelBoard.addEventListener('click', (event) => {
+  event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+});
 
+colorsPalette.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    removeClassSelected();
+    item.classList.add('selected');
+    selectedColor = event.target;
+  });
+});
+
+clearButton.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
   pixels.forEach((item) => {
-    item.addEventListener('click', () => {
-      item.style.backgroundColor = selectedColor.style.backgroundColor;
-    });
+    item.style.backgroundColor = 'white';
   });
-};
-
-const getSelectedColor = () => {
-  colorsPalette.forEach((item) => {
-    item.addEventListener('click', () => {
-      removeClassSelected();
-      item.classList.add('selected');
-      setSelectedColorToPixel();
-    });
-  });
-};
-
-const clearBoard = () => {
-  const pixels = document.querySelectorAll('.pixel');
-  clearButton.addEventListener('click', () => {
-    pixels.forEach((item) => {
-      item.style.backgroundColor = 'white';
-    });
-  });
-};
+});
 
 window.onload = () => {
   generatePaletteColors();
-  firstColor.style.backgroundColor = 'black';
-  firstColor.classList.add('selected');
-  generateBoard();
-  getSelectedColor();
-  setSelectedColorToPixel();
-  clearBoard();
+  generateBoard(5);
 };
