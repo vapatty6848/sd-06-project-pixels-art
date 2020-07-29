@@ -1,8 +1,9 @@
-
-body{
-    /* background-image: url('imagens/bg4.jpg'); */
+/* 
+body {
+    background-image: url('imagens/bg4.jpg');
     background-size: 100%;
-}
+} */
+
 .color {
     border: black solid 1px;
     display: inline-block;

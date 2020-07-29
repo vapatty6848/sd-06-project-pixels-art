@@ -51,11 +51,9 @@ window.onload = function(){
     console.log(board)
 
     botao.addEventListener('click', function(){
-        // console.log(board.length);
         for (let index = 0; index < board.length; index++){
             console.log(board[index]);
             board[index].style.backgroundColor = 'white';
-            // board.style.removeProperty("backgroundColor");
         }
     })
 
