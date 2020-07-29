@@ -5,33 +5,20 @@ const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 const sectionTable = document.querySelector('.sectionPB')
 let classSel = 'preto';
-let highBox = 5;
 let sizeBox = 5;
 
-
-
 function createPixelBoard() {
-  if (highBox < 5) {
-    highBox = 5;
-    sizeBox = 5;
-  }
-
-  if (highBox > 50) {
-    highBox = 50;
-    sizeBox = 50;
-  }
-
   let createFather = document.createElement('section')
   pixelBoard.appendChild(createFather);
   createFather.setAttribute('class', 'father')
-  for (let j = 0; j < highBox; j += 1) {
+  for (let j = 0; j < sizeBox; j += 1) {
     let createSection = document.createElement('section');
     createSection.setAttribute('class', 'sectionPB');
     createFather.appendChild(createSection);
   }
 
   const sect = document.getElementsByClassName('sectionPB');
-  for (let l = 0; l < highBox; l++) {
+  for (let l = 0; l < sizeBox; l++) {
     for (let i = 0; i < sizeBox; i += 1) {
       let createDiv = document.createElement('div')
       createDiv.setAttribute('class', 'pixel bgbranco')
@@ -68,15 +55,19 @@ btnClear.addEventListener('click', function () {
 })
 
 btnShow.addEventListener('click', function () {
-  if (inputNum.value === '') {
+  const inputVal = inputNum.value;
+  if (inputVal === '') {
     alert('Board inválido!')
+  } else if(inputVal < 5) {
+    sizeBox = 5; 
+  } else if(inputVal > 50){
+    sizeBox = 50;
   } else {
-    sizeBox = inputNum.value;
-    highBox = inputNum.value;
-    const no = document.querySelector('.father')
-    if (no.parentNode) {
-      no.parentNode.removeChild(no)
-      createPixelBoard();
-    }
+    sizeBox = inputVal;
+  }
+  const no = document.querySelector('.father')
+  if (no.parentNode) {
+    no.parentNode.removeChild(no)
+    createPixelBoard();
   }
 })
