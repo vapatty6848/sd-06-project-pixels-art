@@ -53,8 +53,6 @@ generateButton.addEventListener('click', () => {
     generateBoard(number);
   } else {
     alert('Board inválido!');
-    killBoard();
-    generateBoard(5);
   }
 });
 
