@@ -1,12 +1,3 @@
-#color-palette {
-  height: 10px;
-}
-
-#pixel-board {
-  width: 250px;
-  height: 20px;
-}
-
 .color {
   width: 25px;
   height: 25px;
@@ -14,23 +5,9 @@
   float: left;
   margin: 1px;
 }
-
-.black {
-  background-color: black;
+#color-palette {
+  height: 10px;
 }
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
 .pixel {
   background-color: white;
   width: 40px;
@@ -38,4 +15,20 @@
   border: 1px solid black;
   float: left;
   margin: 1px;
+}
+#pixel-board {
+  width: 250px;
+  height: 20px;
+}
+.black {
+  background-color: black;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
 }

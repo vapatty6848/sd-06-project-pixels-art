@@ -16,7 +16,7 @@ window.onload = function () {
     oldPixelSelected.classList.remove('selected');
     currentPixelSelected.classList.add('selected');
     selectedColor = currentPixelSelected.style.backgroundColor;
-  };
+  }
 // Clicking pixel
   const clickPixel = document.querySelector('#color-palette');
   clickPixel.addEventListener('click', pixelClicked);
@@ -24,7 +24,7 @@ window.onload = function () {
   function colorPixel(event) {
     const pixelSelected = event.target;
     pixelSelected.style.backgroundColor = selectedColor;
-  };
+  }
 // Pixels coloring
   const pixelBoardDiv = document.getElementById('pixel-board');
   pixelBoardDiv.addEventListener('click', colorPixel);
@@ -34,6 +34,6 @@ window.onload = function () {
     const colorPixels = document.querySelectorAll('.pixel');
     for (let index = 0; index < colorPixels.length; index += 1) {
       colorPixels[index].style.backgroundColor = 'white';
-    };
+    }
   });
 };
