@@ -20,6 +20,7 @@ window.onload = function () {
 	}
 	paintingElement();
 	changeSelected();
+	clearBoard();
 	}
 
 	// function to change selected class
@@ -44,6 +45,17 @@ function paintingElement () {
 
 // function to clear all elements at board
 function clearBoard () {
-	
+	let clear = document.querySelector('.clear-board');
+	let elementsAtBoard = document.querySelector('.pixel-board').children;
+	console.log(elementsAtBoard);
+	clear.addEventListener('click', function () {
+		let x = document.querySelectorAll('.pixel');
+		for (index in elementsAtBoard){
+			if (elementsAtBoard[index].className){
+			x[index].style.backgroundColor ='white';
+		  }
+		}
+	});
 }
 
+ 	
