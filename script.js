@@ -1,7 +1,9 @@
 window.onload = function () {
-  createColorPallet(['black', 'red', 'blue', 'green'])
+  createColorPallet(['black', 'red', 'blue', 'green']);
+  pixelsOfBoard(number);
 }
 let selectedColor = 'black';
+let number = 5;
 let pixelBoardDiv = document.querySelector("#pixel-board");
 let btn = document.querySelector('#clear-board');
 let pixel = document.getElementsByClassName('pixel');
@@ -39,3 +41,16 @@ btn.addEventListener("click", function () {
     pixel[i].style.backgroundColor = "white";
   }
 })
+function pixelsOfBoard (number) {
+  let boardPixel = document.getElementById('pixel-board');
+  for (let index = 1; index <= number; index +=1) {
+    let colunm = document.createElement('div');
+    colunm.className = 'pixel-extern';
+    boardPixel.appendChild(colunm);
+    for (let jindex = 1; jindex <= number; jindex +=1) {
+      let line = document.createElement('div');
+      line.className = 'pixel';
+      colunm.appendChild(line);
+    }
+  }
+}
