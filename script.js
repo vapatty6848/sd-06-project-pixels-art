@@ -8,11 +8,13 @@ function createBoard(num) {
             let td = document.createElement('td');
             tr.appendChild(td);
             td.classList.add('pixel');
+            td.style.height = "40px";
+            td.style.width = "40px";
         }
     }
 }
 
-// Apagar quadro
+// APAGA O QUADRO PRA CRIAR UM NOVO DE OUTRO TAMANHO
 function eraseBoard() {
     let wrapper = document.getElementById('pixel-board');
     wrapper.innerHTML = "";
@@ -26,19 +28,18 @@ console.log((numInput).value);
 
 numInput.addEventListener('input', function () {
     numberForBoard = document.getElementById('board-size').value;
-    console.log(numberForBoard)
 });
 
-// Tanto o keydown quanto o Button refazem o quadro
+// -tanto o keydown quanto o Button refazem o quadro
 numInput.addEventListener('keydown', function (e) {
     if (e.code === 'Enter') {
         rebuildBoard();
     }
-});
-
+})
 numButton.addEventListener('click', function () {
     rebuildBoard();
 });
+
 
 function rebuildBoard() {
     // Não deixar colocar valor null ou maior que 50
@@ -56,19 +57,17 @@ function rebuildBoard() {
     eraseBoard();
     createBoard(numberForBoard);
     useColors();
-    useColors2();
 }
 
 createBoard(5);
 useColors();
-useColors2();
 
-// Selecionar e colocar as cores no background dos divs
 
+// CRIA AS CORES ALEATÓRIAS DA PALETA
 let colors = ["black", "rgb(214, 40, 40)", "rgb(252, 191, 73)", "rgb(234, 226, 183)"];
 
 function generateColors() {
-    // Gera cores aleatórias e joga elas na array 'colors'
+    // -gera cores aleatórias e joga elas na array 'colors'
     for (let i = 1; i < 4; i += 1) {
         let r = Math.floor(Math.random() * 255) + 1;
         let g = Math.floor(Math.random() * 255) + 1;
@@ -80,9 +79,7 @@ function generateColors() {
 }
 generateColors();
 
-
-
-
+// pega as cores da array 'colors' e joga nos quatro elementos
 function setColors(one, two, three, four) {
     let box1 = document.getElementById("black");
     let box2 = document.getElementById("red");
@@ -98,7 +95,8 @@ function setColors(one, two, three, four) {
 setColors(colors[0], colors[1], colors[2], colors[3])
 
 
-// Pegar a cor clicada
+
+// PEGA A COR CLICADA E JOGA NA VARIAVEL chosenColor
 let chosenColor = colors[0]; // preto já pré-selecionado
 
 let colorElements = document.getElementsByClassName("color");
@@ -106,8 +104,7 @@ let selectedDiv = colorElements[0];
 colorElements[0].classList.add('selected');
 
 for (let i = 0; i < colorElements.length; i++) {
-    // pegar cada elemento com a id color 
-    // adicionar um eventListener nele
+    // pegar cada elemento com a id color e adicionar um eventListener nele
     colorElements[i].addEventListener("click", function () {
         chosenColor = colorElements[i].style.backgroundColor;
         selectedDiv.classList.remove('selected');
@@ -116,11 +113,12 @@ for (let i = 0; i < colorElements.length; i++) {
     });
 }
 
-// Pintar qualquer pixel com a cor clicada
+// PINTAR QUALQUER PIXEL COM A COR CLICADA
 function useColors() {
     let pixelBoxes = document.getElementsByClassName("pixel");
 
     for (let i = 0; i < pixelBoxes.length; i++) {
+        //pintar clicando com o botão esquerdo
         pixelBoxes[i].addEventListener("mousedown", function () {
             pixelBoxes[i].style.backgroundColor = chosenColor;
         });
@@ -129,15 +127,7 @@ function useColors() {
             pixelBoxes[i].style.backgroundColor = "white";
             event.preventDefault();
         });
-    }
-}
-
-// Funcionalidade de passar o mouse segurado e ir pintando
-// ! depois adiciona a funcionalidade na função anterior e deleta essa !
-function useColors2() {
-    let pixelBoxes = document.getElementsByClassName("pixel");
-
-    for (let i = 0; i < pixelBoxes.length; i++) {
+        //extra pra pintar ou apagar segurando o mouse!!
         pixelBoxes[i].addEventListener("mouseover", function () {
             if (event.buttons === 1) {
                 pixelBoxes[i].style.backgroundColor = chosenColor;
@@ -146,10 +136,11 @@ function useColors2() {
                 event.preventDefault();
             }
         });
-    };
+    }
 }
 
-// Adicionar o botão de limpar
+
+// Botão LIMPAR, pinta o background de todos os pixels de branco
 let limparButton = document.getElementById('clear-board');
 
 limparButton.addEventListener('click', clear);
@@ -162,7 +153,7 @@ function clear() {
     }
 }
 
-// Adicionando funcionalidade de escolher cor
+// ESCOLHER COR DA PALETA AO CLICAR COM O BOTÃO DIREITO
 
 // colorElements = document.getElementsByClassName("color");
 // selectedDiv = colorElements[0];
@@ -185,6 +176,3 @@ for (let i = 0; i < colorElements.length; i += 1) {
 colorWell.addEventListener('change', function () {
     selected2.style.backgroundColor = colorWell.value;
 });
-
-
-
