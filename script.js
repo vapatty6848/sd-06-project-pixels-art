@@ -7,8 +7,8 @@ function enableBTN() {
     const pixels = document.querySelectorAll('.pixel');
     pixels.forEach((pixel) => {
       pixel.style.backgroundColor = 'white';
-    })
-  }
+    });
+  };
 }
 
 // palette colors
@@ -78,29 +78,33 @@ function createTable(tableElm, boardContainer, userInput) {
   tableColoringEnabler();
 }
 
-creationForm.onsubmit = (event) => {
-  event.preventDefault();
-  let userInput = document.getElementById('board-size');
-
+function handleInputSize(userInput) {
   if (userInput.value > 50) {
     userInput.value = 50;
-    userInput = userInput.value;
+    return 50
   } else if (userInput.value < 5 && userInput.value > 0) {
     userInput.value = 5;
-    userInput = userInput.value;
+    return 5
   } else {
-    userInput = userInput.value;
-  }
+    let value = userInput.value;
+    return value
+  };
+}
+
+creationForm.onsubmit = (event) => {
+  event.preventDefault();
+  const userInput = document.getElementById('board-size');
+
+  const inputValue = handleInputSize(userInput)
 
   const tableElm = document.querySelector('.board');
   const boardContainer = document.getElementById('pixel-board');
 
-  if (!userInput) {
+  if (!inputValue) {
     alert('Board inválido!');
   } else {
-    createTable(tableElm, boardContainer, userInput);
-  }
-
+    createTable(tableElm, boardContainer, inputValue);
+  };
 }
 
 // more colors!
@@ -126,10 +130,9 @@ function enableMoreColorsBTN() {
       paintingEnabler();
       currentColorAmount += 1;
     } else {
-      alert("That's enough colors for you ;)")
-    }
-
-  }
+      alert("That's enough colors for you ;)");
+    };
+  };
 }
 
 // check size to display 'current color' or not
@@ -139,15 +142,15 @@ function checkSize() {
 
   if (document.body.clientWidth < 632) {
     selectColorContainer.style.display = 'none';
-  }
+  };
 
-  window.addEventListener('resize', (event) => {
-    let width = document.body.clientWidth;
+  window.addEventListener('resize', () => {
+    const width = document.body.clientWidth;
     if (width < 632) {
       selectColorContainer.style.display = 'none';
     } else {
       selectColorContainer.style.display = 'flex';
-    }
+    };
   });
 }
 
