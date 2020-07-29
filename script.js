@@ -84,12 +84,22 @@ btClean.addEventListener('click', function () {
   }
 });
 
+function checkBoardSize() {
+  if (boardSize < 5) {
+    boardSize = 5;
+  }
+  if (boardSize > 50) {
+    boardSize = 50;
+  }
+
+}
+
 const btGenerateBoard = document.getElementById('generate-board');
 btGenerateBoard.addEventListener('click', function () {
   boardSize = document.getElementById('board-size').value;
-  console.log(boardSize);
   if (boardSize.length !== 0) {
-    console.log(boardSize.length);
+    checkBoardSize();
+    console.log(boardSize);
     document.getElementById('pixel-board').innerHTML = '';
     createNewBoard();
   } else {
