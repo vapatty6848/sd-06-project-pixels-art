@@ -1,8 +1,8 @@
-// 'greenyellow', 'orange', 'violet', 'cyan', 'blueviolet', 'chartreuse', 'chocolate', 'coral', 'gold', 'goldenrod', 'grey', 'black'
 // variaveis
 const colorPalette = document.querySelector('#color-palette');
 const tableColor = document.getElementById('pixel-board');
 const colorSelected = document.getElementsByClassName('color');
+
 // const currentColor = document.querySelector('.selected').style.backgroundColor;
 
 const colors = ['black', 'blue', 'yellow', 'red'];
@@ -42,8 +42,5 @@ colorPalette.addEventListener('click', function (e) {
 });
 
 tableColor.addEventListener('click', function (e) {
-  e.target.style.backgroundColor = document.querySelector(
-    '.selected'
-  ).style.backgroundColor;
-  
+  e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 });
