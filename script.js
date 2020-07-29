@@ -2,11 +2,13 @@ window.onload = function () {
   createColorPallet(['black', 'red', 'blue', 'green']);
   pixelsOfBoard(number);
 }
+
 let selectedColor = 'black';
 let number = 5;
 let pixelBoardDiv = document.querySelector("#pixel-board");
 let btn = document.querySelector('#clear-board');
 let pixel = document.getElementsByClassName('pixel');
+
 function createColorPallet(colors) {
   let colorPalletContainer = document.getElementById("color-palette");
   for (let index in colors) {
@@ -14,6 +16,7 @@ function createColorPallet(colors) {
     colorPalletContainer.appendChild(palletItemDiv);
   }
 }
+
 function createPalletItem(color) {
   let palletItemDiv = document.createElement('div');
   palletItemDiv.style.backgroundColor = color;
@@ -24,6 +27,7 @@ function createPalletItem(color) {
   }
   return palletItemDiv;
 }
+
 function handlePalletItemEvent(event) {
   let oldSelectedDiv = document.querySelector(".selected");
   let currentSelectedDiv = event.target;
@@ -31,16 +35,19 @@ function handlePalletItemEvent(event) {
   currentSelectedDiv.classList.add("selected");
   selectedColor = currentSelectedDiv.style.backgroundColor;
 }
+
 pixelBoardDiv.addEventListener("click", handlePixelClick)
 function handlePixelClick(event) {
   let selectedPixelDiv = event.target;
   selectedPixelDiv.style.backgroundColor = selectedColor;
 }
+
 btn.addEventListener("click", function () {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = "white";
   }
 })
+
 function pixelsOfBoard (number) {
   let boardPixel = document.getElementById('pixel-board');
   for (let index = 1; index <= number; index +=1) {
