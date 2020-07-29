@@ -5,7 +5,7 @@ const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 let classSel = 'black';
 let sizeBox = 5;
-const cores = ['black', 'blue', 'green', 'yellow'];
+const cores = ['black'];
 
 
 function randomColors() {
@@ -17,7 +17,7 @@ function randomColors() {
 }
 
 function generateColors() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) {
     cores.push(randomColors())
   }
 }
