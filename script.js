@@ -3,6 +3,7 @@ const colorsPalette = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
 const firstColor = document.querySelector('.color');
 let selectedColor = document.querySelector('.selected');
+const clearButton = document.querySelector('#clear-board');
 
 const colors = ['red', 'green', 'blue'];
 
@@ -50,6 +51,15 @@ const getSelectedColor = () => {
   });
 };
 
+const clearBoard = () => {
+  const pixels = document.querySelectorAll('.pixel');
+  clearButton.addEventListener('click', () => {
+    pixels.forEach((item) => {
+      item.style.backgroundColor = 'white';
+    });
+  });
+};
+
 window.onload = () => {
   generatePaletteColors();
   firstColor.style.backgroundColor = 'black';
@@ -57,4 +67,5 @@ window.onload = () => {
   generateBoard();
   getSelectedColor();
   setSelectedColorToPixel();
+  clearBoard();
 };
