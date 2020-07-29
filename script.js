@@ -5,22 +5,23 @@ const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 let classSel = 'black';
 let sizeBox = 5;
-const cores = [];
+const cores = ['black', 'blue', 'green', 'yellow'];
 
-// function randomColors() {
 
-//   const cores2 = ['purple', 'gray', 'pink', 'orange']
+function randomColors() {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  
+  return `rgb(${r},${g},${b})`;
+}
 
-//   while (cores.length < 8) {
-//     let randomNum = Math.floor(Math.random() * 4);
-//     let cor = cores2[randomNum];
-//     if (!cores.includes(cor)) {
-//       cores.push(cor)
-//     }
-//   }
-//   createColorPalet(cores)
-// }
-
+function generateColors() {
+  for (let i = 0; i < 5; i++) {
+    cores.push(randomColors())
+  }
+  createColorPalet(cores);
+}
 
 function createColorPalet(colors) {
   for (const index in colors) {
@@ -29,9 +30,9 @@ function createColorPalet(colors) {
   }
 }
 
-function createPalletItem(color) {
+function createPalletItem(cores) {
   const palletItemDiv = document.createElement('div');
-  palletItemDiv.style.backgroundColor = color;
+  palletItemDiv.style.backgroundColor = cores;
   palletItemDiv.classList.add('color');
   palletItemDiv.addEventListener('click', handle)
   if (palletItemDiv.style.backgroundColor === classSel) {
