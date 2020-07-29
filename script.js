@@ -18,6 +18,7 @@ function randomColors() {
       cores.push(cor)
     }
   }
+  createColorPalet(cores)
 }
 
 
