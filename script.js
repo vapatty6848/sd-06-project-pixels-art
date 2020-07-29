@@ -14,7 +14,8 @@ window.onload = function() {
 
   // Assigning class "selected" to black palette
   const blackPalette = document.querySelectorAll(".color")[0];
-  blackPalette.className += " selected"
+  blackPalette.style.backgroundColor = "black"
+  blackPalette.className += " selected";
 
   // 
   function generateRandomColor() {
@@ -43,6 +44,7 @@ window.onload = function() {
     
     const pixel = document.createElement("div");
     pixel.className = "pixel";
+    pixel.onclick = function() {colorPixel(pixel);}
 
     pixelLines[index].appendChild(pixel);
   }
@@ -59,5 +61,40 @@ window.onload = function() {
   const pixelBoardContainer = document.getElementById("pixel-board");
   generatePixelBoard(5,5);
 
+  // Color pixelBoard
+  function changeSelectedClassAndBrushColor(element) {
+    const currentInk = document.querySelector(".selected");
+    currentInk.classList.remove("selected");
+
+    element.className += " selected";
+    changeBrushColor(element);
+  }
+
+  function changeBrushColor(element) {
+    let color = extractColorFromString(element.getAttribute("style"));
+    brush = color;
+  }
+
+  function extractColorFromString(elementStyle) {
+    let color = elementStyle
+    color = color.split(": ");
+    color = color[1];
+    color = color.split(";");
+    color = color[0];
+    return color;
+  }
+
+  const inks = document.querySelectorAll(".color");
+  let brush = "black";
+
+  for (let ink of inks) {
+    ink.addEventListener("click", function() {
+      changeSelectedClassAndBrushColor(this);
+    })
+  }
+
+  function colorPixel(pixel) {
+    pixel.style.backgroundColor = brush;
+  }
 
 }
