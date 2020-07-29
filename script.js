@@ -16,11 +16,32 @@ window.onload = function () {
 			document.querySelector('#pixel-board').appendChild(PixelsElement);
 		}
 	}
-	//function for select black element on window.onload
-	function selectedElement () {
-		let elementSelected = document.querySelector('.color-palette').firstChild;
-		elementSelected.className = 'selected'
+	selectedElement();
+	pegandoCordaPaleta()
+	paintingElement();
 	}
-	selectedElement()
+	
+
+//function for select black element on window.onload
+function selectedElement () {
+	let elementSelected = document.querySelector('.color-palette').firstChild;
+	elementSelected.className = elementSelected.className + ' ' + 'selected';
 }
 
+function paintingElement () {
+	let paint =  document.getElementById('pixel-board');
+	paint.addEventListener('click', function (event){
+	  let produto = event.target;
+		produto.style.backgroundColor = 'orange';
+  });
+}
+
+function pegandoCordaPaleta () {
+	let pegar = document.querySelector('.color-palette');
+	console.log(pegar);
+	pegar.addEventListener('click', function (event){
+		let cor = event.target.style.backgroundColor;
+		console.log(cor);
+	});
+}
+console.log(pegandoCordaPaleta);
