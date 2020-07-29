@@ -23,9 +23,15 @@
 
 #pixel-board {
   border: 1px solid black;
-  height: 250px;
-  margin: 10px;
+  height: 200px;
+  margin: 10px 0 0 10px;
+  padding: 0;
   width: 250px;
+}
+
+.pixel {
+  background-color: white;
+  
 }
 
 #column1 {
@@ -37,30 +43,37 @@
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
+  margin: 0px;
 }
 
 #c1L2 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
+  margin: 0px;
 }
 
 #c1L3 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c1L4 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c1L5 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #column2 {
@@ -73,30 +86,36 @@
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
+  margin: 0px;
 }
 
 #c2L2 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c2L3 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c2L4 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c2L5 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #column3 {
@@ -109,30 +128,35 @@
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c3L2 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c3L3 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c3L4 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c3L5 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #column4 {
@@ -145,17 +169,20 @@
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c4L2 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c4L3 {
   display: inline-block;
   width: 40px;
+  border: 1px solid black;
   height: 40px;
 }
 
@@ -163,11 +190,13 @@
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c4L5 {
   display: inline-block;
   width: 40px;
+  border: 1px solid black;
   height: 40px;
 }
 
@@ -181,11 +210,13 @@
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c5L2 {
   display: inline-block;
   width: 40px;
+  border: 1px solid black;
   height: 40px;
 }
 
@@ -193,16 +224,20 @@
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: 1px solid black;
 }
 
 #c5L4 {
   display: inline-block;
   width: 40px;
+  border: 1px solid black;
   height: 40px;
 }
 
 #c5L5 {
   display: inline-block;
   width: 40px;
+  border: 1px solid black;
   height: 40px;
+  background-color: blue;
 }
