@@ -77,12 +77,21 @@ function deleteBoard() {
 }
 
 function gerarBoard() {
+  let numTamanho = parseInt(tamanho.value);
   if (tamanho.value == '') {
     alert('Board inválido!');
   } else {
     deleteBoard();
-    let nLine = nColumn = parseInt(tamanho.value);
-    populandoBoard(nLine, nColumn);
+    if ((numTamanho >= 5) && (numTamanho <= 50)) {
+      let nLine = nColumn = parseInt(tamanho.value);
+      populandoBoard(nLine, nColumn);
+    } else if (numTamanho < 5) {
+      let nLine = nColumn = 5;
+      populandoBoard(nLine, nColumn);
+    } else if (numTamanho > 50) {
+      let nLine = nColumn = 50;
+      populandoBoard(nLine, nColumn);
+    }
   }
 }
 
