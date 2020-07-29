@@ -16,7 +16,8 @@
 }
 
 #color-palette {
-    margin-left: 0px;
+    margin-left: 50px;
+    margin-bottom: 10px;
 }
 
 .color {
@@ -60,4 +61,13 @@
    border: 1px black solid;
    height: 40px;
    width: 40px;
+}
+
+#clear-board {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 293px;
+    margin-top: 15px;
+    padding-left: 63px;
+    padding-right: 63px;
 }
