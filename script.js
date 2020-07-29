@@ -1,10 +1,11 @@
 window.onload = function() {
   const cores = ['black', 'gray', 'red', 'yellow'];
   const quantidade = 5;
+  const btnLimpar = document.getElementById('clear-board');
   let corSelecionada = 'black';
   criarPaleta(cores);
   criarPixels(quantidade);
-  capturaCor();
+  pegaCor();
 }
 /* ******************************************************** */
 function criarPaleta(cores) {
@@ -14,8 +15,9 @@ function criarPaleta(cores) {
     criarCor.style.backgroundColor = cores[i];
     document.getElementById('color-palette').appendChild(criarCor);
     if ( cores[i] === 'black') {
-      criarCor.classList.add('selected')
+      criarCor.className += ' selected';
     }
+    console.log(criarCor.classList);
   }
 }
 /* ******************************************************** */
@@ -33,11 +35,37 @@ function criarPixels(quantidade) {
     }
   } 
 }
-function capturaCor(event) {
-  let corAntiga = document.querySelector('.selected');
-  let corNova = event.target;
-  corAntiga.classList.remove('selected');
-  corNova.classList.add('selected');
-  corSelecionada = corNova.style.backgroundColor;
-  console.log(corSelecionada);
+/* ******************************************************** */
+function pegaCor() {
+  let cores = document.getElementsByClassName('color');
+  let selecionada = document.querySelector('.selected')
+  console.log(selecionada)
+  for (let i = 0; i < cores.length; i +=1 ){
+    cores[i].addEventListener('click', function() {
+      corSelecionada = event.target.style.backgroundColor;
+      cores[i].className += ' selected'
+      selecionada.classList.remove('selected')
+      selecionada = document.querySelector('.selected');
+      console.log(corSelecionada);
+    });
+  }
+}
+/* ******************************************************** */
+function pintar() {
+  let pintarPixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixel.length; i +=1){
+    pixel[i].addEventListener('click', function() {
+      console.log(corSelecionada)
+      pixel[i].event.target.style.backgroundColor = corSelecionada;
+    });
+  }
+}
+/* ******************************************************** */
+function limparTudo() {
+  btnLimpar.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+});
 }
