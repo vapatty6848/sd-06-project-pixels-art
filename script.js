@@ -44,6 +44,13 @@ window.onload = function(){
         currentSelectedDiv.classList.add('selected');
         
         selectedColor = backgroundColor;
+
+        let botao = document.querySelector('#clear-board')
+        let board = document.querySelectorAll('.pixel')
+        botao.addEventListener('click', function(){
+            console.log(board.event.target);
+            board.style.backgroundColor = 'white';
+        })
     }
 
     for (let i = 0; i < 5; i++){
