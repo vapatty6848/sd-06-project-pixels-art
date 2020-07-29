@@ -127,3 +127,4 @@ window.onload = function() {
 
   columnsInput.value = rowsInput.value;
 }
+
