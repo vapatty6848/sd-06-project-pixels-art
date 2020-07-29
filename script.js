@@ -39,7 +39,7 @@ function deleteAllSelected() {
   document.querySelectorAll('.color').forEach(item => {
     for (let i = 0; i < item.classList.length; i += 1) {
       if (item.classList[i] === 'selected') {
-        item.classList.remove(item.classList[i])
+        item.classList.remove(item.classList[i]);
       }
     }
   });
@@ -61,10 +61,11 @@ document.querySelectorAll('.pixel').forEach(box => {
   })
 });
 
-function boardCleaner() {
+const btClean = document.getElementById('clear-board');
+btClean.addEventListener('click', function () {
   const allBoxes = document.querySelectorAll('.pixel');
   for (let i = 0; i < allBoxes.length; i += 1) {
     allBoxes[i].style.backgroundColor = 'white';
 
   }
-}
+})
