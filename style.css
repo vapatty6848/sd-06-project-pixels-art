@@ -5,9 +5,11 @@
   margin-right: 5px;
   width: 40px;
 }
+
 #pixel-board {
   margin-top: 10px;
 }
+
 .pixel {
   background-color: white;
   border: 1px solid black;

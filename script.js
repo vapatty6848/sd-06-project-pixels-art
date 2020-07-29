@@ -1,46 +1,47 @@
 window.onload = function () {
-  createColorPallet(['black', 'red', 'blue', 'green']);
+  createColorPallet(colors);
   pixelsOfBoard(number);
 }
 
 let selectedColor = 'black';
+let colors = ['black', 'red', 'blue', 'green'];
 let number = 5;
-let pixelBoardDiv = document.querySelector("#pixel-board");
+let pixelBoardDiv = document.querySelector('#pixel-board');
 let btn = document.querySelector('#clear-board');
 let pixel = document.getElementsByClassName('pixel');
 
 function createColorPallet(colors) {
-  let colorPalletContainer = document.getElementById("color-palette");
+  let colorPalletContainer = document.getElementById('color-palette');
   for (let index in colors) {
     let palletItemDiv = createPalletItem(colors[index]);
     colorPalletContainer.appendChild(palletItemDiv);
   }
-}
+};
 
 function createPalletItem(color) {
   let palletItemDiv = document.createElement('div');
   palletItemDiv.style.backgroundColor = color;
-  palletItemDiv.className = "color";
-  palletItemDiv.addEventListener("click", handlePalletItemEvent);
-  if (color === "black") {
-    palletItemDiv.classList.add("selected");
+  palletItemDiv.className = 'color';
+  palletItemDiv.addEventListener('click', handlePalletItemEvent);
+  if (color === 'black') {
+    palletItemDiv.classList.add('selected');
   }
   return palletItemDiv;
-}
+};
 
 function handlePalletItemEvent(event) {
-  let oldSelectedDiv = document.querySelector(".selected");
+  let oldSelectedDiv = document.querySelector('.selected');
   let currentSelectedDiv = event.target;
-  oldSelectedDiv.classList.remove("selected");
-  currentSelectedDiv.classList.add("selected");
+  oldSelectedDiv.classList.remove('selected');
+  currentSelectedDiv.classList.add('selected');
   selectedColor = currentSelectedDiv.style.backgroundColor;
-}
+};
 
-pixelBoardDiv.addEventListener("click", handlePixelClick)
+pixelBoardDiv.addEventListener('click', handlePixelClick)
 function handlePixelClick(event) {
   let selectedPixelDiv = event.target;
   selectedPixelDiv.style.backgroundColor = selectedColor;
-}
+};
 
 btn.addEventListener("click", function () {
   for (let i = 0; i < pixel.length; i += 1) {
@@ -60,4 +61,4 @@ function pixelsOfBoard (number) {
       colunm.appendChild(line);
     }
   }
-}
+};
