@@ -10,20 +10,19 @@
 </head>
 
 <body>
-  <h1 id="title">Paleta de Cores</h1>
-  <main class='paint'>
-
-
+  <section class='content box-palette'>
+    <h1 id="title" class="color-font">Paleta de Cores</h1>
     <div id="color-palette"></div>
-    <div class="wrapp">
-      <h5 id="title">Escolha a quantidade de pixels (n x n)</h5>
+    <div class="wrapp color-font">
+      <h5 id="title">Digite a quantidade de pixels (n x n)</h5>
       <input id="board-size" type="number" min="1">
       <button class="bt bt-size" id="generate-board">VQV</button>
     </div>
     <button class="bt" id="clear-board">Limpar</button>
+  </section>
+  <section class='content-board'>
     <div id="pixel-board"></div>
-
-  </main>
+  </section>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+alert('Bem-vindo(a). Você pode clicar na cor desejada e colorir os quadrados brancos. Você também pode definir um número no campo vazio e clicar em VQV para redefinir o board. A cada atualização são geradas novas cores.');
+
 const colors = ['black'];
 const colorsLength = 4;
 const squarePaletteSize = 50;
@@ -65,6 +67,9 @@ function createBoxes() {
   divIdPixelBoard.style.border = '1px solid black';
   divIdPixelBoard.style.width = `${sideBoardSize}px`;
   divIdPixelBoard.style.height = `${sideBoardSize}px`;
+
+  document.getElementsByClassName('content-board')[0].style.width = `${sideBoardSize}px`;
+  document.getElementsByClassName('content-board')[0].style.margin = '10px auto';
 }
 
 function createNewBoard() {
@@ -86,7 +91,6 @@ function createNewBoard() {
       document.getElementsByClassName('pixel-wrapp')[i].appendChild(createColorClassDiv);
     }
   }
-
   createBoxes();
   selectpalette();
   eventClick();

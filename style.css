@@ -1,13 +1,24 @@
+body {
+  background-color: teal;
+}
+
 .pixel-board {
   border: 1px solid black;
 }
 
-.paint {
-  width: auto;
+.content {
+  border-radius: 10px;
+  margin: auto;
+  padding: 20px;
+  width: 210px;
+}
+
+.box-palette {
+  background-color: whitesmoke;
 }
 
 .bt {
-  background-color: brown;
+  background-color: darkslategrey;
   border: 1px solid black;
   border-radius: 20px;
   color: white;
@@ -22,6 +33,7 @@
 .bt-size {
   float: right;
   margin-left: 20px;
+  margin-right: 0;
   margin-top: 0;
 }
 
@@ -40,5 +52,9 @@ input:focus {
 
 .wrapp {
   margin: 15px 0;
-  width: 280px;
+  width: 210px;
+}
+
+.color-font {
+  color: rgb(0, 73, 73);
 }
