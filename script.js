@@ -6,42 +6,44 @@ window.onload = function () {
 		document.querySelector('.color-palette').appendChild(createdElement);
 		createdElement.style.backgroundColor = paletColors[index];
 		createdElement.className = 'color';
-	}
-	// generating pixels elements
-	let PixelsGenarator = 5;
-	for (let index = 0; index < PixelsGenarator; index +=1) {
-		for (let index2 = 0; index2 <  PixelsGenarator; index2 +=1) {
-			const PixelsElement = document.createElement('div');
-			PixelsElement.className = 'pixel';
-			document.querySelector('#pixel-board').appendChild(PixelsElement);
+
+		if (paletColors[index] == 'black') {
+			createdElement.classList.add('selected')
 		}
 	}
-	selectedElement();
-	pegandoCordaPaleta()
-	paintingElement();
+	// generating pixels elements
+	let PixelsGenarator = 25;
+	for (let index = 0; index < PixelsGenarator; index +=1) {
+		const PixelsElement = document.createElement('div');
+		PixelsElement.className = 'pixel';
+		document.querySelector('#pixel-board').appendChild(PixelsElement);
 	}
-	
+	paintingElement();
+	changeSelected();
+	}
 
-//function for select black element on window.onload
-function selectedElement () {
-	let elementSelected = document.querySelector('.color-palette').firstChild;
-	elementSelected.className = elementSelected.className + ' ' + 'selected';
+	// function to change selected class
+function changeSelected () {
+	let change = document.querySelector('.color-palette');
+	change.addEventListener('click', function (event) {
+		let seletctedItem = document.querySelector('.selected');
+		let newItemSelected = event.target;
+		seletctedItem.classList.remove('selected');
+		newItemSelected.classList.add('selected');
+	});
 }
-
+// function to paint board's elements
 function paintingElement () {
 	let paint =  document.getElementById('pixel-board');
 	paint.addEventListener('click', function (event){
+		let itemToPaint = document.querySelector('.selected');
 	  let produto = event.target;
-		produto.style.backgroundColor = 'orange';
+		produto.style.backgroundColor = itemToPaint.style.backgroundColor;
   });
+};
+
+// function to clear all elements at board
+function clearBoard () {
+	
 }
 
-function pegandoCordaPaleta () {
-	let pegar = document.querySelector('.color-palette');
-	console.log(pegar);
-	pegar.addEventListener('click', function (event){
-		let cor = event.target.style.backgroundColor;
-		console.log(cor);
-	});
-}
-console.log(pegandoCordaPaleta);
