@@ -52,11 +52,12 @@ function handlePalletItemEvent(event) {
     }, false);
 };
 
+let divButton = document.querySelector('.button')
 let buttonClear = document.createElement('button');
 buttonClear.id = 'clear-board'
 let textButton = document.createTextNode('Limpar'); 
 buttonClear.appendChild(textButton)
-selectorPalletColor.appendChild(buttonClear)
+divButton.appendChild(buttonClear)
 
 buttonClear.addEventListener('click', limpaTudo)
 function limpaTudo(){
@@ -64,6 +65,4 @@ function limpaTudo(){
     for( i = 0; i <= clearPixelBoard.length - 1; i ++) {
         clearPixelBoard[i].style.backgroundColor = 'white'
     }
-    
 };
-
