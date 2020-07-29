@@ -11,7 +11,17 @@
   display: inline-block;
   height: 40px;
   line-height: 40px;
-  margin: 0;
-  padding: 0;
   width: 40px;
+}
+
+.container {  
+  left: 400px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+header {
+  color: darkblue;
+  text-shadow: darkcyan 3px 3px 5px;
 }

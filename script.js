@@ -68,7 +68,6 @@ function clearBoard() {
 // Mexendo com o tamanho do board
 const tamanho = document.querySelector('#board-size');
 
-
 function deleteBoard() {
   const node = document.querySelector('#pixel-board');
   while (node.firstChild) {
@@ -77,37 +76,40 @@ function deleteBoard() {
 }
 
 function gerarBoard() {
-  let numTamanho = parseInt(tamanho.value);
-  if (tamanho.value == '') {
+  const numTamanho = parseInt(tamanho.value);
+  if (tamanho.value === '') {
     alert('Board inválido!');
   } else {
     deleteBoard();
     if ((numTamanho >= 5) && (numTamanho <= 50)) {
-      let nLine = nColumn = parseInt(tamanho.value);
+      const nLine = parseInt(tamanho.value);
+      const nColumn = parseInt(tamanho.value);
       populandoBoard(nLine, nColumn);
     } else if (numTamanho < 5) {
-      let nLine = nColumn = 5;
+      const nLine = 5;
+      const nColumn = 5;
       populandoBoard(nLine, nColumn);
     } else if (numTamanho > 50) {
-      let nLine = nColumn = 50;
+      const nLine = 50;
+      const nColumn = 50;
       populandoBoard(nLine, nColumn);
     }
   }
 }
 
-//Gerando cor aleatória
+// Gerando cor aleatória
 function aleatoria(inf, sup) {
-  let possibilitiesNumber = sup - inf;
+  const possibilitiesNumber = sup - inf;
   let aleat = Math.random() * possibilitiesNumber;
   aleat = Math.floor(aleat);
   return parseInt(inf) + aleat;
 }
 
 function corAleatoria() {
-  let hexaArray = ['0' , '1' , '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9' , 'A' , 'B' , 'C' , 'D' , 'E' , 'F'];
+  const hexaArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
   let aleatCor = '#';
   for (let index = 0; index < 6; index += 1) {
-    let posArray = aleatoria(0, hexaArray.length);
+    const posArray = aleatoria(0, hexaArray.length);
     aleatCor += hexaArray[posArray];
   }
   return aleatCor;
