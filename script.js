@@ -70,6 +70,11 @@ botao.addEventListener("click", function(){
         alert("Board inválido!");
     }
     else{
+        if(tamanho.value < 5){
+            sizeNmb = 5;
+        }else if (tamanho.value > 50){
+            sizeNmb = 50;
+        }
        for(let i = 0; i < sizeNmb; i++){
         var line = document.createElement("div");
         line.className = "linha";
