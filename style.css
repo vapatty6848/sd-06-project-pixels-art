@@ -4,13 +4,16 @@ body {
 
 .color {
   border: 1px solid black;
+  display: inline-block;
   height: 60px;
   margin: 3px;
+  margin-bottom: 30px;
   width: 60px;
 }
 
 .color-palette {
-  display: inline-flex;
+  display: table;
+  margin: auto;
 }
 
 .line {
@@ -31,5 +34,11 @@ body {
   height: 210px;
   margin: auto;
   margin-top: 20px;
+  width: fit-content;
+}
+
+.clean {
+  display: table;
+  margin: auto;
   width: fit-content;
 }

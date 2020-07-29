@@ -2,6 +2,7 @@ const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 const colors = ['black', 'red', 'blue', 'green'];
 
+
 function generatePaletteColors() {
   for (let i = 0; i < colors.length; i += 1) {
     const divCollor = document.createElement('div');
@@ -24,6 +25,18 @@ function generatePaletteColors() {
   }
 }
 
+function generateCleanButton() {
+  const button = document.createElement('button');
+  button.id = 'clean-board';
+  button.classList.add('clean');
+  button.innerText = 'Limpar';
+  document.querySelector('.btn').appendChild(button);
+  button.addEventListener('click', () => {
+    const allPixelsFromPixelBoard = document.querySelectorAll('.pixel');
+    allPixelsFromPixelBoard.forEach((item) => item.style.backgroundColor = 'white');
+  });
+}
+
 function generatePixels() {
   for (let i = 0; i < 5; i += 1) {
     const line = document.createElement('div');
@@ -33,13 +46,14 @@ function generatePixels() {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       line.appendChild(pixel);
-      pixel.addEventListener('click', () => 
+      pixel.addEventListener('click', () =>
       event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor);
     }
   }
 }
 
-window.onload = () => {
+window.onload = function () {
   generatePaletteColors();
+  generateCleanButton();
   generatePixels();
 };
