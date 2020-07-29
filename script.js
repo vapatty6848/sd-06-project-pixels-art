@@ -5,21 +5,21 @@ const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 let classSel = 'black';
 let sizeBox = 5;
-const cores = ['black', 'blue', 'yellow', 'green'];
+const cores = [];
 
-function randomColors() {
+// function randomColors() {
 
-  const cores2 = ['purple', 'gray', 'pink', 'orange']
+//   const cores2 = ['purple', 'gray', 'pink', 'orange']
 
-  while (cores.length < 8) {
-    let randomNum = Math.floor(Math.random() * 4);
-    let cor = cores2[randomNum];
-    if (!cores.includes(cor)) {
-      cores.push(cor)
-    }
-  }
-  createColorPalet(cores)
-}
+//   while (cores.length < 8) {
+//     let randomNum = Math.floor(Math.random() * 4);
+//     let cor = cores2[randomNum];
+//     if (!cores.includes(cor)) {
+//       cores.push(cor)
+//     }
+//   }
+//   createColorPalet(cores)
+// }
 
 
 function createColorPalet(colors) {
@@ -31,9 +31,10 @@ function createColorPalet(colors) {
 
 function createPalletItem(color) {
   const palletItemDiv = document.createElement('div');
-  palletItemDiv.classList.add(color);
+  palletItemDiv.style.backgroundColor = color;
   palletItemDiv.classList.add('color');
-  if (palletItemDiv.classList.contains('black')) {
+  palletItemDiv.addEventListener('click', handle)
+  if (palletItemDiv.style.backgroundColor === classSel) {
     palletItemDiv.classList.add('selected');
   }
   return palletItemDiv;
@@ -59,21 +60,22 @@ function createPixelBoard() {
   }
 }
 
-colorPalet.addEventListener('click', function (event) {
-  classSel = event.target.classList[0];
+function handle(event) {
+  classSel = event.target.style.backgroundColor;
+  console.log(event.target.style.backgroundColor);
   document.querySelectorAll('.color').forEach((element) => {
     if (element.classList.contains('selected')) {
       element.classList.remove('selected');
     }
     event.target.classList.add('selected');
   });
-});
+};
 
 pixelBoard.addEventListener('click', function (event) {
   if (event.target.classList.contains('pixel')) {
     event.target.className = '';
     event.target.classList.add('pixel');
-    event.target.classList.add(classSel);
+    event.target.style.backgroundColor = classSel;
     event.target.classList.remove('bgbranco');
   }
 });
@@ -81,7 +83,7 @@ pixelBoard.addEventListener('click', function (event) {
 btnClear.addEventListener('click', function () {
   document.querySelectorAll('.pixel').forEach((element) => {
     if (element.classList.contains('pixel')) {
-      element.className = 'pixel bgbranco';
+      element.style.backgroundColor = 'white';
     }
   });
 });
