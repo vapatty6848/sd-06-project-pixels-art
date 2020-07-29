@@ -1,6 +1,16 @@
-// black de largada onload
+let selectedColor = "black";
+window.onload = function () {
 
-createColorPallet(["black", "purple", "green", "yellow", "red"]);
+let colorArray = ["black", "purple", "green", "yellow"];
+
+createColorPallet(colorArray);
+
+// let colorList = document.querySelector(".colors-list");
+
+// for (let index in colorArray) {
+//      elementLi = document.createElement('li');
+//     elementLi.innerHTML = arrayNumbers[num];
+//     elementUl.appendChild(elementLi);
 
 function createColorPallet(colors) {
     let colorPaletContainer = document.getElementById("color-palette");
@@ -15,6 +25,7 @@ function createPalletItem(color) {
     let palletItemDiv = document.createElement("div");
     palletItemDiv.style.backgroundColor = color;
     palletItemDiv.className = "pallet-item";
+    // paletteItemDiv.classList = "color";
     palletItemDiv.addEventListener("click", handlePalletItemEvent);
 
     if(color === "black") {
@@ -23,39 +34,27 @@ function createPalletItem(color) {
     return palletItemDiv;
 }
 
-function handlePalletItemEvent(event) {
+function handlePalletItemEvent() {
     let oldSelectedDiv = document.querySelector(".selected");
     let currentSelectedDiv = event.target;
 
-    console.log(currentSelectedDiv);
-    let div = event.target;
-    let backgroundColor = div.style.backgroundColor;
-    console.log(backgroundColor);
+    oldSelectedDiv.classList.remove("selected");
+    currentSelectedDiv.classList.add("selected");
+
+    selectedColor = currentSelectedDiv.style.backgroundColor;
 }
 
+    // console.log(currentSelectedDiv);
+    // let div = event.target;
+    // let backgroundColor = div.style.backgroundColor;
+    // console.log(backgroundColor);
 
-// colorSection.addEventListener("click", function(event) {
-// let selectedColorSpan = document.querySelector(".selected-color");
-  
-// let className = event.target.className;
-      
-// if (className) {
-//    selectedColorSpan.innerText = className;
-//    selectedColorSpan.style.color = className;
-// } else {
-//     selectedColorSpan.innerText = "Você não selecionou um quadrado da paleta!";        
-// }      
-// });
-
-// let lineOne = document.getElementById(".line-1");
-
-// lineOne.addEventListener("click",function(event) {
-// let pixel = document.querySelector(".pixel");
-
-// // pixel.style.background-color = event.target.className;
-
-
-// });
+// function addPixelsDivEvents() {
+//     let div = pixelDivs[index];
+//     div.addEventListener("click", function(event){
+//         console.log(event.target.class);
+//     });
+}
 
 
 
