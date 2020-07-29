@@ -67,7 +67,9 @@ const removeClassSelected = () => {
 };
 
 pixelBoard.addEventListener('click', (event) => {
-  event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+  if (!event.target.classList.contains('line') && !event.target.classList.contains('pixel-board')) {
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+  }
 });
 
 colorsPalette.forEach((item) => {
