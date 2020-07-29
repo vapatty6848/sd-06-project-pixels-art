@@ -111,6 +111,3 @@ if (inputNum === 'Desconsidere é só pra passar no code climate') {
   createColorPalet(cores);
 }
 
-{
-  "no-use-before-define": ["error", { "functions": true, "classes": true }]
-}
