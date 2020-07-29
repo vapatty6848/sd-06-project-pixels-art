@@ -39,6 +39,24 @@ function handlePaletItemEvent() {
     selectedColor = currentSelectedDiv.style.backgroundColor;
 }
 
+function handlePixelClick(event) {
+    let selectedPixelDiv = event.target;
+    selectedPixelDiv.style.backgroundColor = selectedColor;
+  }
+
+  let pixelBoardDiv = document.querySelector("#pixel-board");
+  pixelBoardDiv.addEventListener("click", handlePixelClick)
+  
+
+  //Botão que limpa o quadro todo
+  let btn = document.querySelector('#clear-board');
+  let pixel = document.getElementsByClassName('pixel');
+  btn.addEventListener("click", function () {
+    for (let i = 0; i < pixel.length; i += 1) {
+      pixel[i].style.backgroundColor = "white";
+    }
+  })
+
 
 
 
