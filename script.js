@@ -92,6 +92,20 @@ botao.addEventListener("click", function(){
     
 })
 
+pixelBoard2.addEventListener("click", function(event){
+    
+    if(black.classList[2] == "selected"){
+    event.target.style.backgroundColor = "black"
+    }else if(red.classList[2] == "selected"){
+    event.target.style.backgroundColor = "#" +randonC1;
+    }else if(green.classList[2] == "selected"){
+        event.target.style.backgroundColor = "#" +randonC2;
+    }else if(blue.classList[2] == "selected"){
+            event.target.style.backgroundColor = "#" +randonC3;
+    }
+
+})
+
 pixelBoard.addEventListener("click", function(event){
     
     if(black.classList[2] == "selected"){
