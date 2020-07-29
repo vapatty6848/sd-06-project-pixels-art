@@ -48,7 +48,6 @@ window.onload = function(){
 
     let botao = document.querySelector('#clear-board');
     let board = document.getElementsByClassName('pixel');
-    console.log(board)
 
     botao.addEventListener('click', function(){
         for (let index = 0; index < board.length; index++){
