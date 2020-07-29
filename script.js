@@ -19,7 +19,12 @@ window.onload = function() {
 
   // 
   function generateRandomColor() {
-    const randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    const red = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+
+    const randomColor = `rgb(${red},${blue},${green})`;
+
     return randomColor;
   }
 
@@ -51,11 +56,30 @@ window.onload = function() {
   }
 
   function generatePixelBoard(numberOfRows,numberOfColumns) {
+    resetPixelBoard();
+
+    if (numberOfRows < 5) {
+      numberOfRows = 5;
+      numberOfColumns = 5;
+    } 
+    else if (numberOfRows > 50) {
+      numberOfRows = 50;
+      numberOfColumns = 50;
+    }
+
     for (let i = 0; i < numberOfRows; i += 1) {
       createPixelLine();
       for (let j = 0; j < numberOfColumns; j += 1) {
         createPixel(i);
       }
+    }
+  }
+
+  function resetPixelBoard() {
+    const pixelLinesList = document.querySelectorAll(".pixel-line")
+
+    for (let pixelLine of pixelLinesList) {
+      pixelLine.parentElement.removeChild(pixelLine)
     }
   }
 
@@ -126,5 +150,14 @@ window.onload = function() {
   })
 
   columnsInput.value = rowsInput.value;
+
+  const generateButton = document.getElementById("generate-board");
+  generateButton.onclick = function() {
+    if (rowsInput.value == "" || columnsInput.value == "") {
+      alert('Board inválido!');
+    }
+
+    generatePixelBoard(rowsInput.value,columnsInput.value)
+  }
 }
 

@@ -62,8 +62,8 @@ h1::after {
   align-items: center;
 }
 
-.input-container:first-child {
-  margin-right: 24px;
+.input-container {
+  margin-left: 24px;
 }
 
 .pixel-board {
