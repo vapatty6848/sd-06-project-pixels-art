@@ -1,8 +1,16 @@
-const colors = ['black', 'red', 'orange', 'yellow'];
+let colors = ['black'];
+const colorsLength = 4;
 const squarePaletteSize = 50;
 const squareBoardSize = 40;
 const palettesSize = 4;
 var boardSize = 5;
+
+for (let i = 1; i < colorsLength; i += 1) {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  colors.push(`rgb(${r} , ${g} , ${b})`);
+}
 
 for (let i = 0; i < 4; i += 1) {
   const createColorClassDiv = document.createElement('div');
