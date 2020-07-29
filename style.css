@@ -26,11 +26,14 @@ body {
   background: blue;
 }
 
-.pixel {
+.white {
   background: white;
+}
+
+.pixel {
   border: 1px solid black;
-  border-spacing: 0 0;
   border-collapse: separate;
+  border-spacing: 0 0;
   height: 40px;
   width: 40px;
 }
