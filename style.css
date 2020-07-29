@@ -1,47 +1,45 @@
 .color {
   border: black 1px solid;
   display: inline-block;
+  padding: 40px;
 }
-
-.color {padding: 40px;}
 
 .preto {
   background-color: black;
-  
 }
 
 .azul {
   background-color: blue;
-  
+
 }
 
 .verde {
   background-color: green;
-  
+
 }
 
 .amarelo {
   background: yellow;
 }
 
-#pixel-board {
+.pixel-board {
   background-color: white;
   display: block;
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .pixel {
   border: 1px solid black;
-  width: 40px;
-  height: 40px;
   display: inline-block;
-    
+  height: 40px;
+  width: 40px;
 }
 
 .bgbranco {
   background: white;
 }
+
 .sectionPB {
   display: block;
   line-height: 0;
