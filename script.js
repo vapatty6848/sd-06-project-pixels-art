@@ -58,8 +58,20 @@ function setBoardSize() {
   }
 }
 
+function generateRandomColor() {
+  for (const item of document.getElementsByClassName('color')) {
+    if (!item.classList.contains('one')) {
+      item.classList.remove('two', 'three', 'four');
+      let string = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+      console.log(string)
+      item.style.backgroundColor = string;
+    }
+  }
+}
+
 window.onload = function () {
   createPixelBoard(5);
+  generateRandomColor();
   document.getElementById('pixel-board').addEventListener('click', alternativeClickPixel);
   document.getElementById('color-palette').addEventListener('click', alternativeSelectColor);
   document.getElementById('clear-board').addEventListener('click', clearBoard);
