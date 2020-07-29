@@ -18,30 +18,30 @@ function clearBoard() {
   }
 }
 
+function destroyBoard(){
+  let arrayBoard = document.getElementById('pixel-board').children;
+  while (document.getElementById('pixel-board').children.length > 0){
+    let i = 0;
+    document.getElementById('pixel-board').removeChild(arrayBoard[i]);
+    i += 1;
+  }
+}
+
 function setBoardSize() {
   let size = parseInt(document.getElementById('board-size').value);
   if (document.getElementById('board-size').value === '') {
-    alert('Board inválido!')
+    alert('Board inválido!');
   } else if (size < 5 && size >= 0) {
+    destroyBoard();
     size = 5;
-    for (let element of document.getElementsByClassName('pixel')) {
-      element.style.height = `${size}px`;
-      element.style.width = `${size}px`;
-      clearBoard();
-    }
+    createPixelBoard(size);
   } else if (size > 50) {
+    destroyBoard();
     size = 50;
-    for (let element of document.getElementsByClassName('pixel')) {
-      element.style.height = `${size}px`;
-      element.style.width = `${size}px`;
-      clearBoard();
-    }
+    createPixelBoard(size);
   } else {
-    for (let element of document.getElementsByClassName('pixel')) {
-      element.style.height = `${size}px`;
-      element.style.width = `${size}px`;
-      clearBoard();
-    }
+    destroyBoard();
+    createPixelBoard(size);
   }
 }
 
