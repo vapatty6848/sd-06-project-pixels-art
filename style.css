@@ -30,21 +30,22 @@ body {
 }
 
 .line {
-  display: inline-block;
+  display: block;
+  line-height: 0;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
+  display: inline-block;
   height: 40px;
   width: 40px;
 }
 
 .pixel-board {
   display: block;
-  height: 210px;
-  margin: auto;
   margin-top: 20px;
+  height: 210px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
