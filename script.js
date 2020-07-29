@@ -38,11 +38,11 @@ for (let i in pixelBoard) {
 }
 function limpaTudo() {
   const pixels = document.querySelectorAll('.pixel');
-  let seleCor = 'white';
-  for (let i in pixels) {
-    pixels[i].style.background = seleCor;
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
   }
 }
+document.getElementById('clear-board').addEventListener('click', limpaTudo);
 
 
 
