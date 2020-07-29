@@ -17,7 +17,6 @@ function paletteGenerator() {
 
   for (let color = witchColorSet.nextElementSibling; color; color = color.nextElementSibling) {
     const colorToSet = getRandomColor();
-    console.log(colorToSet);
     color.style.backgroundColor = `${colorToSet}`;
   }
 }
