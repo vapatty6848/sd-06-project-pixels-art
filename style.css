@@ -22,6 +22,22 @@
   background: yellow;
 }
 
+.purple {
+  background-color: purple;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.gray{
+  background-color: gray;
+}
+
 .pixel-board {
   background-color: white;
   display: block;

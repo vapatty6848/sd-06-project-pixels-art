@@ -4,9 +4,19 @@ const colorPalet = document.querySelector('#color-palette');
 const btnClear = document.querySelector('#clear-board');
 const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
-let classSel = 'preto';
+let classSel = 'black';
 let sizeBox = 5;
+let cores = ['black','blue', 'yellow','green' ]
 
+function randomColors() {
+  
+  const cores2 = ['purple','gray','pink','orange']
+  for (const key in cores2) {
+    let randomNum = Math.floor((Math.random() * 3) + 1);
+    cores.push(cores2[randomNum])
+  }
+}
+randomColors();
 function createColorPalet(colors) {
   for (const index in colors) {
     let palletItemDiv = createPalletItem(colors[index])
@@ -21,14 +31,8 @@ function createPalletItem(color) {
   if (palletItemDiv.classList.contains('black')) {
     palletItemDiv.classList.add('selected')
   }
-  palletItemDiv.addEventListener('click', handlePalletEvent());
   return palletItemDiv;
 }
-
-function handlePalletEvent() {
-  console.log('certo');
-}
-
 
 function createPixelBoard() {
   const createFather = document.createElement('section');
