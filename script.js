@@ -52,10 +52,25 @@ function setBoardSize() {
   }
   setBlackColor();
 }
-setBlackColor();
+
+function createPixelBoard (param1) {
+  for (let line = 0; line < parseInt(param1); line += 1) {
+    let linha = document.createElement('div');
+    linha.classList.add('tr');
+    document.getElementById('pixel-board').appendChild(linha);
+    for (let column = 0; column < param1; column += 1){
+      let coluna = document.createElement('div');
+      coluna.classList.add('td', 'pixel');
+      document.getElementsByClassName('tr')[line].appendChild(coluna);
+    }
+  }
+}
+
 window.onload = function () {
   document.getElementById('pixel-board').addEventListener('click', clickPixel);
   document.getElementById('color-palette').addEventListener('click', selectColor);
   document.getElementById('clear-board').addEventListener('click', clearBoard);
   document.getElementById('generate-board').addEventListener('click', setBoardSize);
+  createPixelBoard(5);
+  setBlackColor();
 }
