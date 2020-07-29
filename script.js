@@ -82,21 +82,23 @@ clearButton.addEventListener('click', function () {
   }
 });
 
-generateBoardButton.addEventListener('click', function () {
-  const n = generateBoardInput.value;
-  if (n === '') {
-    alert('Board inválido!');
-  } else {
-    for (let iLine = 0; iLine < n; iLine += 1) {
-      const line = document.createElement('div');
-      line.className = 'line';
-      pixelBoard.appendChild(line);
-      for (let iPixel = 0; iPixel < n; iPixel += 1) {
-        const pixel = document.createElement('div');
-        pixel.style.backgroundColor = 'white';
-        pixel.className = 'pixel';
-        line.appendChild(pixel);
-      }
-    }
-  }
-});
+// generateBoardButton.addEventListener('click', function () {
+//   const n = generateBoardInput.value;
+//   if (n === '') {
+//     alert('Board inválido!');
+//   } else {
+//     // pixelBoard.remove(document.getElementsByClassName('pixel'));
+//     // pixelBoard.remove(document.getElementsByClassName('line'));
+//     for (let iLine = 0; iLine < n; iLine += 1) {
+//       const line = document.createElement('div');
+//       line.className = 'line';
+//       pixelBoard.appendChild(line);
+//       for (let iPixel = 0; iPixel < n; iPixel += 1) {
+//         const pixel = document.createElement('div');
+//         pixel.style.backgroundColor = 'white';
+//         pixel.className = 'pixel';
+//         line.appendChild(pixel);
+//       }
+//     }
+//   }
+// });
