@@ -21,6 +21,10 @@
   background-color: steelblue;
 }
 
+.input-board-size {
+  margin-bottom: 25px;
+}
+
 .line {
   display: flex;
 }
