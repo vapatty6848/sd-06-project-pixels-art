@@ -30,7 +30,8 @@ function clearSelected() {
   const colorArray = document.getElementsByClassName('color');
   for (let i = 0; i < colorArray.length; i += 1) {
     const nameOfClass = colorArray[i].className.split(' ');
-    colorArray[i].className = nameOfClass[0] + ' ' + nameOfClass[1];
+    const spaceBetweenClasses = ' ';
+    colorArray[i].className = nameOfClass[0] + spaceBetweenClasses + nameOfClass[1];
   }
 }
 
@@ -86,11 +87,11 @@ generateBoardButton.addEventListener('click', function () {
   if (n === '') {
     alert('Board inválido!');
   } else {
-    for (let iLine = 0; iLine < n; iLine+= 1) {
+    for (let iLine = 0; iLine < n; iLine += 1) {
       const line = document.createElement('div');
       line.className = 'line';
       pixelBoard.appendChild(line);
-      for(let iPixel = 0; iPixel < n; iPixel += 1) {
+      for (let iPixel = 0; iPixel < n; iPixel += 1) {
         const pixel = document.createElement('div');
         pixel.style.backgroundColor = 'white';
         pixel.className = 'pixel';
