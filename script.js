@@ -28,7 +28,7 @@ function createPixelBoard() {
 
 colorPalet.addEventListener('click', function (event) {
   classSel = event.target.classList[1];
-  for (const j of document.querySelectorAll('.color')) {
+  document.querySelectorAll('.color').forEach((j) => {
     if (j.classList.contains('selected')) {
       j.classList.remove('selected');
     }
@@ -46,7 +46,7 @@ pixelBoard.addEventListener('click', function (event) {
 });
 
 btnClear.addEventListener('click', function () {
-  document.querySelectorAll('.pixel').forEach(j => {
+  document.querySelectorAll('.pixel').forEach((j) => {
     if (j.classList.contains('pixel')) {
       j.className = 'pixel bgbranco';
     }
@@ -70,11 +70,3 @@ btnShow.addEventListener('click', function () {
     createPixelBoard();
   }
 });
-
-
-
-// for (const j of document.querySelectorAll('.pixel')) {
-//   if (j.classList.contains('pixel')) {
-//     j.className = 'pixel bgbranco';
-//   }
-// }
