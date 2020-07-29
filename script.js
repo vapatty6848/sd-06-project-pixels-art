@@ -1,47 +1,56 @@
+let selectedColor = "black";
 
-
-
-
-
-/*let selectedColor = "black";
 window.onload = function () {
 
-    createColorPallet(['black', 'blue', 'red', 'green']);
-    let classColor = document.querySelectorAll('.color');
-    let colorSelected = document.querySelector(".selected");
+  createColorPallet(['black', 'blue', 'red', 'green'])
 
-    document.querySelectorAll('.color').forEach(item => {
-        item,addEventListener('click', function() {
-            classColor.add.classList("selected")
-            document.querySelectorAll(".selected").remove.classList("selected")
+  function createColorPallet(colors) {
+    let colorPalletContainer = document.getElementById("color-palette");
 
-        })
-    })
-}
-
-
-
-function createColorPallet(colors) {
-    let colorPalletContainer = document.getElementById('color-palette');
-    for(let index in colors) {
-        let palletItemDiv = createPalletItem(color[index]);
-        colorPalletContainer.appendChild(palletItemDiv)
+    for (let i in colors) {
+      let palletItemDiv = createPalletItem(colors[i]);
+      colorPalletContainer.appendChild(palletItemDiv);
     }
-}
-function createPalletItem(color) {
+  }
+
+  function createPalletItem(color) {
     let palletItemDiv = document.createElement('div');
     palletItemDiv.style.backgroundColor = color;
-    palletItemDiv.className ="pallet-item";
-    palletItemDiv.addEventListener('click', handlePalletItemEvent);
-    if (color === 'black') {
-        palletItemDiv.classList('selected');
+    palletItemDiv.className = "color";
+    palletItemDiv.addEventListener("click", handlePalletItemEvent);
+
+    if (color === "black") {
+      palletItemDiv.classList.add("selected");
     }
     return palletItemDiv;
-}
+  }
 
-function handlePalletItemEvent(event) {
-    let oldSelectedDiv = document.querySelector('.selected');
+  function handlePalletItemEvent(event) {
+    let oldSelectedDiv = document.querySelector(".selected");
     let currentSelectedDiv = event.target;
-    oldSelectedDiv.classList.remove('selected');
-    currentSelectedDiv.classlist.add('selected');
-}*/
+
+    oldSelectedDiv.classList.remove("selected");
+    currentSelectedDiv.classList.add("selected");
+
+    selectedColor = currentSelectedDiv.style.backgroundColor;
+  }
+
+
+  function handlePixelClick(event) {
+    let selectedPixelDiv = event.target;
+    selectedPixelDiv.style.backgroundColor = selectedColor;
+  }
+
+  let pixelBoardDiv = document.querySelector("#pixel-board");
+  pixelBoardDiv.addEventListener("click", handlePixelClick)
+
+
+  let button = document.querySelector('#clear-board');
+  let pixelSize = document.getElementsByClassName('pixel');
+  button.addEventListener("click", function () {
+    for (let i = 0; i < pixelSize.length; i += 1) {
+      pixelSize[i].style.backgroundColor = "white";
+    }
+  })
+
+}    

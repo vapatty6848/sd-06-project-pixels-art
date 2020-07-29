@@ -1,52 +1,57 @@
 body {
-    background-color: rgba(17, 65, 90, 0.411);
+    background-color: rgba(128, 164, 184, 0.411);
     font: normal 18pt arial;
     
     
+}
+h1 { 
+    color: rgb(24, 50, 104);
+    font-size: 60px;
 }
 
 header{
     color: rgb(255, 255, 255);
     text-align: center;
 }
-
-/*section{
-    background-color: whitesmoke;
-    border-radius: 10px;
-    color: black;
-    padding: 15px;
-    width: 500px;
-    margin: auto;
-    box-shadow: 5px 5px 10px rgb(99, 84, 84);
-}*/
-#color-palette {
-    position: relative center;
-    width: 400px;
-    height: 100px;
+section {
+    text-align: center;
+    background-image: url('https://i.pinimg.com/236x/44/1d/3d/441d3da5bd8ef333f9fac9c29b1ab09f--circle-shape-free-stock-image.jpg');
+    background-color: rgba(17, 65, 90, 0.411);
 }
-.container {
-    width: 400px;
-    height: 100px;
-    position: absolute;
-} 
-.paletItem {
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+
+.color {
+    border: 1px black solid;
     height: 40px;
     width: 40px;
-    background-color: white;
+  }
+  
+  #pixel-board{ 
     display: inline-block;
-}
-
-.pixel {
+  }
+  
+  .pallet-item {
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+  }
+  
+  .pixel { 
     display: inline-block;
     border: 1px black solid;
     height: 40px;
     width: 40px;
     background-color: white;
-
-}
+  }
+  
+  #color-palette {
+    display: inline-block;
+    z-index: 3;
+  }
+  
+  .color {
+    display: inline-block;
+  }
 footer{
     color: rgb(255, 255, 255);
     font-style: italic;
