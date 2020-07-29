@@ -1,42 +1,35 @@
 #color-palette {
   height: 10px;
 }
-
 #pixel-board {
   height: 250px;
   width: 250px;
 }
-
 .color {
+  border: 1px solid black; 
+  float: left;
   height: 50px;
   width: 50px;
-  border: 1px solid black;
-  float: left;
 }
-
 .colorBlack {
   background-color: black;
 }
-
 .colorRed {
   background-color: red;
 }
-
 .colorBlue {
   background-color: blue;
 }
-
 .colorGreen {
   background-color: green;
 }
-
 .pixel {
-  height: 40px;
-  width: 40px;
+  background-color: white;
   border: 1px solid black;
   float: left;
+  height: 40px;
   margin: 1px;
-  background-color: white;
+  width: 40px;
 }
 
 
