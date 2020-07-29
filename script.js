@@ -1,42 +1,45 @@
 window.onclick = function() {
-  const selecionaCorPaleta = document.querySelector('.selected');
+
+
+  const palletColorSelector = document.querySelector('.selected');
   if (event.target.className === 'color') {
     event.target.classList.add('selected');
-    selecionaCorPaleta.classList.remove('selected');
+    palletColorSelector.classList.remove('selected');
   }
   if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = selecionaCorPaleta.id;
+    event.target.style.backgroundColor = palletColorSelector.id;
   }
   if (event.target.id === 'clear-board') {
-    const selecionaPixel = document.querySelectorAll('.pixel');
-    for (let i = 0; i < selecionaPixel.length; i += 1) {
-      selecionaPixel[i].style.backgroundColor = 'white';
+    const pixelSelector = document.querySelectorAll('.pixel');
+    for (let i = 0; i < pixelSelector.length; i += 1) {
+      pixelSelector[i].style.backgroundColor = 'white';
     }
   }
-};
+}
+const buttonBlack = document.querySelector('#black');
+buttonBlack.addEventListener('click', function() {
+  const selector = document.querySelector('.selected');
+  selector.classList.remove('selected');
+  buttonBlack.classList.add('selected');
+});
 
-// const bottonBlack = document.querySelector('#black');
-// bottonBlack.addEventListener('click', function() {
+const buttonRed = document.querySelector('#red');
+buttonRed.addEventListener('click', function() {
+  const selector = document.querySelector('.selected');
+  selector.classList.remove('selected');
+  buttonRed.classList.add('selected');
+});
 
-// });
+const buttonBlue = document.querySelector('#blue');
+buttonBlue.addEventListener('click', function() {
+  const selector = document.querySelector('.selected');
+  selector.classList.remove('selected');
+  buttonBlue.classList.add('selected');
+});
 
-// const bottonRed = document.querySelector('#red');
-// bottonRed.addEventListener('click', function() {
-//   const seleciona = document.querySelector('.selected');
-//   seleciona.classList.remove('selected');
-//   bottonRed.classList.add('selected');
-// });
-
-// const bottonBlue = document.querySelector('#blue');
-// bottonBlue.addEventListener('click', function() {
-//   const seleciona = document.querySelector('.selected');
-//   seleciona.classList.remove('selected');
-//   bottonBlue.classList.add('selected');
-// });
-
-// const bottonGreen = document.querySelector('#green');
-// bottonGreen.addEventListener('click', function() {
-//   const seleciona = document.querySelector('.selected');
-//   seleciona.classList.remove('selected');
-//   bottonGreen.classList.add('selected');
-// });
+const buttonGreen = document.querySelector('#green');
+buttonGreen.addEventListener('click', function() {
+  const selector = document.querySelector('.selected');
+  selector.classList.remove('selected');
+  buttonGreen.classList.add('selected');
+});
