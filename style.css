@@ -96,13 +96,15 @@ table {
     border-collapse: collapse;
 }
 
-td.pixel {
+.pixel {
     border: 1px solid black;
-    width: 43px;
-    height: 43px;
+    width: 40px;
+    height: 40px;
     background-color: white;
 }
 
 #table-wrapper {
-    
+    background-color: black;
+    margin: auto;
+    margin-top: 30px;
 }

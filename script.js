@@ -1,3 +1,60 @@
+// CRIAR A TABELA DINAMICAMENTE
+function createBoard(num) {
+    for (coluna = 1; coluna <= num; coluna++) {
+        let wrapper = document.getElementById('pixel-board');
+        let tr = document.createElement('tr');
+        wrapper.appendChild(tr);
+        for (let linha = 1; linha <= num; linha++) {
+            let td = document.createElement('td');
+            tr.appendChild(td);
+            td.classList.add('pixel');
+        }
+    }
+}
+
+// Apagar quadro
+function eraseBoard() {
+    let wrapper = document.getElementById('pixel-board');
+    wrapper.innerHTML = "";
+}
+
+//MUDAR O TAMANHO DO QUADRO
+let numInput = document.getElementById('board-size');
+let numButton = document.getElementById('generate-board');
+let numberForBoard;
+console.log((numInput).value);
+
+numInput.addEventListener('input', function () {
+    numberForBoard = document.getElementById('board-size').value;
+    console.log(numberForBoard)
+});
+
+numInput.addEventListener('keydown', function (e) {
+    if (e.code === 'Enter') {
+        rebuildBoard();
+    }
+});
+
+
+numButton.addEventListener('click', function () {
+    rebuildBoard();
+});
+
+function rebuildBoard() {
+    // Não deixar colocar valor null ou maior que 50
+    if (!numberForBoard || numberForBoard > 50) {
+        window.alert('Board inválido!')
+        return;
+    }
+
+    eraseBoard();
+    createBoard(numberForBoard);
+    useColors();
+}
+
+createBoard(5);
+useColors();
+
 // Selecionar e colocar as cores no background dos divs
 let colors = ["black", "rgb(214, 40, 40)", "rgb(252, 191, 73)", "rgb(234, 226, 183)"];
 
@@ -36,17 +93,19 @@ for (let i = 0; i < colorElements.length; i++) {
 }
 
 // Pintar qualquer pixel com a cor clicada
-let pixelBoxes = document.getElementsByClassName("pixel");
+function useColors() {
+    let pixelBoxes = document.getElementsByClassName("pixel");
 
-for (let i = 0; i < pixelBoxes.length; i++) {
-    pixelBoxes[i].addEventListener("click", function () {
-        pixelBoxes[i].style.backgroundColor = chosenColor;
-    });
-    // extra pra apagar com o botão direito do mouse!!
-    pixelBoxes[i].addEventListener("contextmenu", function () {
-        pixelBoxes[i].style.backgroundColor = "white";
-        event.preventDefault();
-    });
+    for (let i = 0; i < pixelBoxes.length; i++) {
+        pixelBoxes[i].addEventListener("click", function () {
+            pixelBoxes[i].style.backgroundColor = chosenColor;
+        });
+        // extra pra apagar com o botão direito do mouse!!
+        pixelBoxes[i].addEventListener("contextmenu", function () {
+            pixelBoxes[i].style.backgroundColor = "white";
+            event.preventDefault();
+        });
+    }
 }
 
 // Adicionar o botão de limpar
@@ -56,18 +115,10 @@ limparButton.addEventListener('click', clear);
 
 function clear() {
     // Todos os pixelBoxes viram branco de novo.
+    let pixelBoxes = document.getElementsByClassName("pixel");
     for (let i = 0; i < pixelBoxes.length; i++) {
         pixelBoxes[i].style.backgroundColor = 'white';
     }
 }
 
-// BONUS 1 - Mudar tamanho do quadro
-let sizeInput = document.getElementById("board-size");
-let sizeButton = document.getElementById("generate-board");
 
-sizeButton.addEventListener('click', function () {
-    let times = sizeInput.value; // o número que o usuario colocou
-    letboxesArray = [];
-
-
-});
