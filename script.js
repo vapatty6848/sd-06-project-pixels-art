@@ -22,7 +22,7 @@ function setBoardSize() {
   let size = parseInt(document.getElementById('board-size').value);
   if (document.getElementById('board-size').value === '') {
     alert('Board inválido!')
-  } else if (size < 5) {
+  } else if (size < 5 && size >= 1) {
     size = 5;
     for (let element of document.getElementsByClassName('pixel')) {
       element.style.height = `${size}px`;
