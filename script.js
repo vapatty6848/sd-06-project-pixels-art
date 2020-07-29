@@ -35,6 +35,16 @@ window.onload = function() {
             pixel.style.backgroundColor = selectedColour;
         });
     }
+    const boardPixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < boardPixel.length; index += 1) {
+        definedColour(boardPixel[index]);
+    }
 
+    const clearBoard = document.querySelector('#clear-board');
+    clearBoard.addEventListener('click', function() {
+        for (let index = 0; index < boardPixel.length; index += 1) {
+            boardPixel[index].style.backgroundColor = 'white';
+        }
+    });
 
 }
