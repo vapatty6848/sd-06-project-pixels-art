@@ -1,34 +1,41 @@
 .color {
-  width: 25px;
-  height: 25px;
   border: 1px solid black;
   float: left;
+  height: 25px;
   margin: 1px;
+  width: 25px;
 }
-#color-palette {
+
+.color-palette {
   height: 10px;
 }
+
 .pixel {
   background-color: white;
-  width: 40px;
-  height: 40px;
   border: 1px solid black;
   float: left;
+  height: 40px;
   margin: 1px;
+  width: 40px;
 }
-#pixel-board {
-  width: 250px;
+
+.pixel-board {
   height: 20px;
+  width: 250px;
 }
+
 .black {
   background-color: black;
 }
+
 .red {
   background-color: red;
 }
+
 .blue {
   background-color: blue;
 }
+
 .green {
   background-color: green;
 }
