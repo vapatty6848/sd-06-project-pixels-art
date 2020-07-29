@@ -57,11 +57,10 @@ function populandoBoard(nLine, nColumn) {
 }
 
 // Limpando board
-function clearBoard() {
-  const pixelBoard = document.getElementsByClassName('pixel');
-  const cor = 'white';
-  for (let index in pixelBoard) {
-    pixelBoard[index].style.background = cor;
+function clearBoard() { 
+  let pixelBoard = document.querySelectorAll('.pixel');   
+  for (let index = 0; index < pixelBoard.length; index += 1) {    
+    pixelBoard[index].style.background = 'white';
   }
 }
 
