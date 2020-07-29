@@ -58,14 +58,23 @@ function limparTudo() {
   });
 }
 /* ******************************************************** */
+function btnBoardSiza() {
+  let tamanho = document.getElementById('board-size').value;
+  let btnValor = document.querySelector('#generate-board');
+  btnValor.addEventListener('click', function() {
+    console.log(tamanho);
+  });
+}
+/* ******************************************************** */
 window.onload = function () {
   const cores = ['black', 'gray', 'red', 'yellow'];
-  const quantidade = 5;
+  let quantidade = 5;
   let corSelecionada;
   criarPaleta(cores);
   criarPixels(quantidade);
   pegaCor();
   pintar();
   limparTudo();
+  btnBoardSiza();
 };
 /* ******************************************************** */
