@@ -1,9 +1,9 @@
 onload = function() {
   
 // Gerando array com cor randomica
-  let arrayRandomColor = ['rgb(0 , 0 , 0)'];
+  let arrayRandomColor = ['#000'];
   while (arrayRandomColor.length < 4) {
-    let newColor = random_color('rgb');
+    let newColor = random_color('hex');
     arrayRandomColor.push(newColor);
   }
   createColorPallet(arrayRandomColor);
@@ -26,7 +26,7 @@ function createPalletItem(color) {
   palletColorDiv.style.backgroundColor = color;
   palletColorDiv.className = 'color';
   palletColorDiv.addEventListener('click', handlePalletColorEvent);
-    if (color === 'rgb(0, 0, 0)') {
+    if (color === '#000') {
       palletColorDiv.classList.add('selected');
     }
   return palletColorDiv;
