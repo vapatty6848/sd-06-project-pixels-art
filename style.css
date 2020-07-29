@@ -26,7 +26,13 @@
     padding: 0px;    
 }
 .centralizar {
-    width: 100px;
+    width: 165px;
     margin-left: auto;
     margin-right: auto;
+}
+#board-size {
+    width: 30px;
+}
+td {
+   /*  display: inline-block; */
 }
