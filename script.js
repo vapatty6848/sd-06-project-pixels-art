@@ -2,6 +2,8 @@
 const colorPalette = document.querySelector('#color-palette');
 const tableColor = document.getElementById('pixel-board');
 const colorSelected = document.getElementsByClassName('color');
+const buttonClear = document.getElementById('clear-board');
+
 
 // const currentColor = document.querySelector('.selected').style.backgroundColor;
 
@@ -43,3 +45,12 @@ colorPalette.addEventListener('click', function (e) {
 tableColor.addEventListener('click', function (e) {
   e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 });
+
+function clearBoard() {
+  const pixel = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.removeProperty('background-color');
+  }
+}
+
+buttonClear.addEventListener('click', clearBoard);
