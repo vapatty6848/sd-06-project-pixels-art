@@ -8,11 +8,12 @@ let classSel = 'black';
 let sizeBox = 5;
 let cores = ['black','blue', 'yellow','green' ];
 
-function randomColors() {
-  
-  const cores2 = ['purple','gray','pink','orange']
-    let randomNum = Math.floor((Math.random() * 4));
-    cores.push(cores2[randomNum]);
+
+function createColorPalet(colors) {
+  for (const index in colors) {
+    let palletItemDiv = createPalletItem(colors[index])
+    colorPalet.appendChild(palletItemDiv)
+  }
 }
 
 function createPalletItem(color) {
