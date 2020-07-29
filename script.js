@@ -15,18 +15,22 @@ function limpar(){
         all[i].style.backgroundColor = "white";
     }
 }
+
 const botaoLimpar =  document.querySelector("#clear-board");
 botaoLimpar.addEventListener("click", limpar);
 const botaoBorda = document.querySelector("#generate-board");
 botaoBorda.addEventListener("click", function() {
     const caixaTamanho = document.querySelector("#board-size");
+    let tamanho = parseInt(caixaTamanho.value);
     if(caixaTamanho.value === ""){
         alert("Board inválido!");
     }
-    for (let i = 0; i < all.length; i += 1) {
-        all[i].style.width = caixaTamanho.value + "px";
-        all[i].style.height = caixaTamanho.value + "px";
-    }
+    document.querySelector("#pixel-board").remove();
+    let pai = document.createElement("div");
+
+    //document.querySelector
+
+   //for (let i = 0; i < tamanho-5)
     limpar();
 })
 
