@@ -1,29 +1,9 @@
 let changeColor = document.querySelector('.selected').id;
 
-function pixelLineCreator (param) {
-const whereCreate = document.querySelector('#pixel-board');
-  boardSize = param;
-  while (whereCreate.firstChild) {
-    whereCreate.removeChild(whereCreate.firstChild);
-  }
+function generateBoard() {
+  const boardSize = document.querySelector('#board-size').value;
 
-  for (let x = 1; x <= boardSize; x += 1) {
-    const newLine = document.createElement('div');
-    newLine.className = 'pixel-line';
-
-    for (let y = 1; y <= boardSize; y += 1) {
-      const newPixel = document.createElement('div');
-      newPixel.className = 'pixel';
-      newLine.appendChild(newPixel);
-    }
-    whereCreate.appendChild(newLine);
-  }
-}
-
-function generateBoard () {
-  let boardSize = document.querySelector('#board-size').value;
-
-  if (boardSize === "") {
+  if (boardSize === '') {
     alert('Board inválido!');
   } else if (boardSize > 50) {
     pixelLineCreator(50);
@@ -31,6 +11,25 @@ function generateBoard () {
     pixelLineCreator(5);
   } else {
     pixelLineCreator(boardSize);
+  }
+}
+
+function pixelLineCreator(param) {
+  const whereCreate = document.querySelector('#pixel-board');
+  while (whereCreate.firstChild) {
+    whereCreate.removeChild(whereCreate.firstChild);
+  }
+
+  for (let x = 1; x <= param; x += 1) {
+    const newLine = document.createElement('div');
+    newLine.className = 'pixel-line';
+
+    for (let y = 1; y <= param; y += 1) {
+      const newPixel = document.createElement('div');
+      newPixel.className = 'pixel';
+      newLine.appendChild(newPixel);
+    }
+    whereCreate.appendChild(newLine);
   }
 }
 
