@@ -110,4 +110,3 @@ if (inputNum === 'Desconsidere é só pra passar no code climate') {
   generateColors();
   createColorPalet(cores);
 }
-
