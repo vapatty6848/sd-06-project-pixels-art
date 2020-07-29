@@ -30,39 +30,27 @@ function generateInput() {
   input.id = 'board-size';
   input.classList.add('board-size');
   input.type = 'number';
-  input.min = 5;
+  input.min = 1;
   input.max = 50;
   document.querySelector('.btn').appendChild(input);
 }
 
 function generateCustomizedPixelBoard() {
-  const size = document.querySelector('.board-size').valueAsNumber;
-  let pixelBoard = document.querySelector('.pixel-board');
-  pixelBoard.innerHTML = '';
-  for (let i = 0; i < size; i += 1) {
-    const line = document.createElement('div');
-    line.classList.add('line');
-    pixelBoard.appendChild(line);
-    for (let j = 0; j < size; j += 1) {
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      pixel.style.backgroundColor = 'white';
-      line.appendChild(pixel);
-      pixel.addEventListener('click', () => {
-      event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-    });
-    }
+  const size = document.querySelector('.board-size').value;
+  if (size === '') {
+    alert('Board inválido!')
+    return
   }
+  generatePixels(size);
 }
 
 function generateBoardSizeButton() {
   const boardSizeButton = document.createElement('button');
   boardSizeButton.id = 'generate-board';
   boardSizeButton.classList.add('generate-board');
-  boardSizeButton.innerText = 'VQV'
+  boardSizeButton.innerText = 'VQV';
   document.querySelector('.btn').appendChild(boardSizeButton);
   boardSizeButton.addEventListener('click', generateCustomizedPixelBoard);
-
 }
 
 function generateCleanButton() {
@@ -79,19 +67,20 @@ function generateCleanButton() {
   });
 }
 
-function generatePixels() {
-  for (let i = 0; i < 5; i += 1) {
+function generatePixels(size) {
+  pixelBoard.innerHTML = '';
+  for (let i = 0; i < size; i += 1) {
     const line = document.createElement('div');
     line.classList.add('line');
     pixelBoard.appendChild(line);
-    for (let j = 0; j < 5; j += 1) {
+    for (let j = 0; j < size; j += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       pixel.style.backgroundColor = 'white';
       line.appendChild(pixel);
       pixel.addEventListener('click', () => {
-      event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-    });
+        event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+      });
     }
   }
 }
@@ -101,5 +90,5 @@ window.onload = function () {
   generateInput();
   generateBoardSizeButton();
   generateCleanButton();
-  generatePixels();
+  generatePixels(5);
 };
