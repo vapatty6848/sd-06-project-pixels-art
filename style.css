@@ -26,6 +26,7 @@
 
 #pixel-board {
   background-color: white;
+  display: block;
 }
 
 .pixel {
@@ -39,4 +40,7 @@
 
 .bgbranco {
   background: white;
+}
+.sectionPB {
+  display: block;
 }
