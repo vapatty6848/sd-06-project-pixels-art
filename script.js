@@ -2,8 +2,7 @@ window.onload = function () {
   let selectedColor = 'black';
   let palette = document.getElementsByClassName('color');
   let pixelBoard = document.getElementsByClassName('pixel');
-
-  console.log(selectedColor);
+  let clear = document.querySelector('#clear-button');
   
   // captura a cor após o click na paleta de cores
   for (let i = 0; i < palette.length; i += 1) {
@@ -19,10 +18,10 @@ window.onload = function () {
     })
   }
 
-
-  
-
-
-
-
+  // limpa as cores do pixel-board
+  clear.addEventListener('click', function () {
+    for (let i = 0; i < pixelBoard.length; i += 1) { 
+      pixelBoard[i].style.backgroundColor = 'white';
+    }
+  })
 }
