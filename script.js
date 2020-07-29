@@ -6,15 +6,13 @@ const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 let classSel = 'black';
 let sizeBox = 5;
-let cores = ['black','blue', 'yellow','green' ]
+let cores = ['black','blue', 'yellow','green' ];
 
 function randomColors() {
   
   const cores2 = ['purple','gray','pink','orange']
-  for (const key in cores2) {
-    let randomNum = Math.floor((Math.random() * 3) + 1);
-    cores.push(cores2[randomNum])
-  }
+    let randomNum = Math.floor((Math.random() * 4));
+    cores.push(cores2[randomNum]);
 }
 randomColors();
 function createColorPalet(colors) {
