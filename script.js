@@ -22,9 +22,9 @@ function generatePaletteColors() {
     if (divCollor.classList.contains('black')) {
       divCollor.classList.add('selected');
     }
-    divCollor.addEventListener('click', handleSelectedClass)
+    divCollor.addEventListener('click', handleSelectedClass);
   }
-} 
+}
 
 function generatePixels() {
   for (let i = 0; i < 5; i += 1) {
