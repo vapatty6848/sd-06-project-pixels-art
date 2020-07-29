@@ -1,21 +1,15 @@
-window.onload = function() {
-  // let selectedColor = document.querySelector('.selected');
-  
-  let color = document.getElementsByClassName('color');
-  let pixels = document.getElementsByClassName('pixel');
-  
+window.onclick = function() {
+  let selectedColor = document.querySelector('.selected');
 
-  for (let index = 0; index < color.length; index += 1) {
-    color[index].addEventListener('click', function(event) {
-      let selectedColor = document.querySelector('.selected');
-      event.target.classList.add('selected');
-      selectedColor.classList.remove('selected');
-    });
+  if(event.target.className === 'color'){
+    event.target.classList.add('selected');
+    selectedColor.classList.remove('selected');
+    selectedColor = document.querySelector('.selected');
   }
-  for (let pixel = 0; pixel < pixels.length; pixel += 1) {
-    pixels[pixel].addEventListener('click', function(event) {
-      let selectedColor = document.querySelector('.selected');
-      event.target.style.backgroundColor = selectedColor.id;
-    });
+  if(event.target.className === 'pixel'){
+    // Até aqui vai tudo certo!
+    console.log(event.target);
+    // Aqui está o erro!
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
 }
