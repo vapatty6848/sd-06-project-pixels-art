@@ -10,22 +10,31 @@ window.onload = function() {
     }
 
     function blackColour() {
-        divSelected('black', document.getElementById('black'));
+        divSelected('black', document.querySelector('#black'));
     }
-    document.getElementById('black').addEventListener('click', blackColour);
+    document.querySelector('#black').addEventListener('click', blackColour);
 
     function orangeColour() {
-        divSelected('orange', document.getElementById('orange'));
+        divSelected('orange', document.querySelector('#orange'));
     }
     document.getElementById('orange').addEventListener('click', orangeColour);
 
     function purpleColour() {
-        divSelected('purple', document.getElementById('purple'));
+        divSelected('purple', document.querySelector('#purple'));
     }
     document.getElementById('purple').addEventListener('click', purpleColour);
 
     function seagreenColour() {
-        divSelected('seagreen', document.getElementById('seagreen'));
+        divSelected('seagreen', document.querySelector('#seagreen'));
     }
     document.getElementById('seagreen').addEventListener('click', seagreenColour);
+
+
+    function definedColour(pixel) {
+        pixel.addEventListener('click', function() {
+            pixel.style.backgroundColor = selectedColour;
+        });
+    }
+
+
 }
