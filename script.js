@@ -102,7 +102,7 @@ window.onload = function() {
   resetButton.onclick = function() {
     const pixels = document.querySelectorAll(".pixel");
     for (pixel of pixels) {
-      pixel.style.backgroundColor = "white"
+      pixel.style.backgroundColor = "white";
     }
   }
 
