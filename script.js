@@ -64,6 +64,8 @@ blue.addEventListener("click", function(){
 
 
 botao.addEventListener("click", function(){
+    let corpo = document.getElementsByTagName("body")[0];
+    corpo.removeChild(pixelBoard)
     let sizeNmb = parseInt(tamanho.value)
     console.log(sizeNmb)
     if(tamanho.value == ""){
@@ -78,7 +80,7 @@ botao.addEventListener("click", function(){
        for(let i = 0; i < sizeNmb; i++){
         var line = document.createElement("div");
         line.className = "linha";
-        pixelBoard.appendChild(line)
+        pixelBoard2.appendChild(line)
         for(let i = 0; i < sizeNmb; i++){
         var block = document.createElement("div")
         block.className = "pixel";
