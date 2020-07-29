@@ -1,5 +1,7 @@
+let selectedColor = 'black';
+
 window.onload = function() {
-    createColorPalette(['black', 'blue', 'green', 'yellow']);
+  createColorPalette(['black', 'blue', 'green', 'yellow']);
 }
 
 //Create the palette color itens, inside the palette-container
@@ -30,6 +32,25 @@ function handlePaletteItenEvent(event) {
 
     previousSelectedDiv.classList.remove('selected');
     currentSelectedDiv.classList.add('selected');
+
+    selectedColor = currentSelectedDiv.style.backgroundColor
 }
 
+//Change the clicked pixel color inside the board after selecting a color in the palette
+function handlePixelCLick() {
 
+}
+
+let pixelBoard = document.getElementById('pixel-board');
+pixelBoard.addEventListener('click', function(event) {
+  event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+})
+  
+//Clear the content from the pixel board
+let clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', function() {
+  let allPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < allPixel.length; index += 1) {
+    allPixel[index].style.backgroundColor = 'white';
+  }
+})
