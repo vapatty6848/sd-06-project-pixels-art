@@ -1,5 +1,20 @@
 let selectedColor = 'rgb(0 , 0 , 0)';
 
+function generateRandomColor() {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  return randomColor;
+}
+
+function setRandomColors() {
+  const firstElement = document.querySelector('.selected');
+  let nextSibling = firstElement.nextElementSibling;
+  while (nextSibling) {
+    const color = generateRandomColor();
+    nextSibling.style.backgroundColor = `#${color}`;
+    nextSibling = firstElement.nextElementSibling;
+  }
+}
+
 function clearBoard() {
   const allPixels = document.getElementsByClassName('pixel');
   for (let i = 0; i < allPixels.length; i += 1) {
@@ -98,3 +113,8 @@ document.addEventListener('click', function (event) {
     fillBoard('pixel-board');
   }
 });
+
+window.onload = function () {
+  //setRandomColors();
+}
+
