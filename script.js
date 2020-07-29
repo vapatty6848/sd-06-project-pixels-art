@@ -3,7 +3,7 @@ let selectedColor = 'black';
 window.onload = function(){
 
    
-    createColorPallet(['black', 'red', 'blue', 'green']); //aqui adiciono quantas cores quiser
+    createColorPallet(['black', 'PaleVioletRed', 'MediumSlateBlue', 'PaleTurquoise']); //aqui adiciono quantas cores quiser
 
             // aqui ele vai criar a paleta de cores, vai chamar o array e criar uma paleta para cada cor do array, para criar cada pelate ele chama a função createPalletItem, que é específica só para a criação. Então ele cria dentro do container maior, os quadrados menores
 
@@ -59,7 +59,7 @@ window.onload = function(){
     for (let i = 0; i < 5; i++){
         let pixelBoard = document.querySelector('#pixel-board');
         let linha = document.createElement('div');
-        linha.className = 'pixel';
+        linha.className = 'row';
         pixelBoard.appendChild(linha);
         for (let j = 0; j < 5; j++){
             let coluna = document.createElement('div');
