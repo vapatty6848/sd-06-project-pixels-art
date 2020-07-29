@@ -1,0 +1,27 @@
+.color {
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+}
+
+#preto {
+    background-color: black;
+}
+
+#vermelho {
+    background-color: red;
+}
+
+#verde {
+    background-color: green;
+}
+
+#amarelo {
+    background-color: yellow;
+}
+
+#pixel-board {
+    width: 125px;
+    height: 125px;
+    border: 1px solid black;
+}
