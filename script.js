@@ -1,16 +1,20 @@
 let changeColor = document.querySelector('.selected');
-colorCatcher();
 
 function colorCatcher() {
-  changeColor = window.getComputedStyle(changeColor, null).getPropertyValue("background-color");
+  changeColor = window.getComputedStyle(changeColor, null).getPropertyValue('background-color');
   return changeColor;
 }
 
-window.onload = paletteGenerator();
+function getRandomColor() {
+  const color = Math.floor(Math.random() * 16777216).toString(16);
+  return '#000000'.slice(0, -color.length) + color;
+}
+
+colorCatcher();
 
 function paletteGenerator() {
   const witchColorSet = document.querySelector('#color-palette').firstElementChild;
-    
+
   for (let color = witchColorSet.nextElementSibling; color; color = color.nextElementSibling) {
     const colorToSet = getRandomColor();
     console.log(colorToSet);
@@ -18,19 +22,7 @@ function paletteGenerator() {
   }
 }
 
-function generateBoard() {
-  const boardSize = document.querySelector('#board-size').value;
-
-  if (boardSize === '') {
-    alert('Board inválido!');
-  } else if (boardSize > 50) {
-    pixelLineCreator(50);
-  } else if (boardSize < 5) {
-    pixelLineCreator(5);
-  } else {
-    pixelLineCreator(boardSize);
-  }
-}
+window.onload = paletteGenerator();
 
 function pixelLineCreator(param) {
   const whereCreate = document.querySelector('#pixel-board');
@@ -51,6 +43,20 @@ function pixelLineCreator(param) {
   }
 }
 
+function generateBoard() {
+  const boardSize = document.querySelector('#board-size').value;
+
+  if (boardSize === '') {
+    alert('Board inválido!');
+  } else if (boardSize > 50) {
+    pixelLineCreator(50);
+  } else if (boardSize < 5) {
+    pixelLineCreator(5);
+  } else {
+    pixelLineCreator(boardSize);
+  }
+}
+
 const generateButton = document.querySelector('#generate-board');
 
 generateButton.addEventListener('click', generateBoard);
@@ -61,9 +67,8 @@ document.addEventListener('click', function (pointedPixel) {
   if (pointedPixel.classList.contains('color') === true) {
     document.querySelector('.selected').classList.remove('selected');
     pointedPixel.classList.add('selected');
-    changeColor = document.querySelector('.selected')
-    changeColor = window.getComputedStyle(changeColor, null).getPropertyValue("background-color");
-    console.log(changeColor);
+    changeColor = document.querySelector('.selected');
+    changeColor = window.getComputedStyle(changeColor, null).getPropertyValue('background-color');
   } else if (pointedPixel.classList.contains('pixel') === true) {
     pointedPixel.style.backgroundColor = changeColor;
   }
@@ -78,8 +83,3 @@ clearBoard.addEventListener('click', function () {
     }
   }
 });
-
-function getRandomColor() {
-  const color = Math.floor(Math.random() * 16777216).toString(16);
-  return '#000000'.slice(0, -color.length) + color;
-}
