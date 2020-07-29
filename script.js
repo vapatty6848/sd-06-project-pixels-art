@@ -67,8 +67,6 @@ function colorPicker() {
 
             colorWell.style.left = event.clientX;
             colorWell.style.top = event.clientY;
-            console.log(event.clientX);
-            console.log(event.clientY);
             colorWell.click();
             event.preventDefault();
         });
