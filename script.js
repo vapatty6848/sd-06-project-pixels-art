@@ -37,8 +37,18 @@ function createPaletteItens(color) {
     function coloringPixels(event){
              
         event.target.style.backgroundColor = selectedColor;
-        console.log(event.target.style.backgroundColor);
+        
+    }
+
+    function clearBoard(event){
+
+        for(let item of document.getElementsByClassName('pixel')){
+            item.style.backgroundColor = "white";
+
+        }
 
     }
+    document.getElementById('clear-board').addEventListener('click', clearBoard);
     document.getElementById('pixel-board').addEventListener('click', coloringPixels);
+
 }
