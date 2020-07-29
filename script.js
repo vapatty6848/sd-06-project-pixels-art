@@ -14,13 +14,6 @@ function randomColors() {
     let randomNum = Math.floor((Math.random() * 4));
     cores.push(cores2[randomNum]);
 }
-randomColors();
-function createColorPalet(colors) {
-  for (const index in colors) {
-    let palletItemDiv = createPalletItem(colors[index])
-    colorPalet.appendChild(palletItemDiv)
-  }
-}
 
 function createPalletItem(color) {
   let palletItemDiv = document.createElement('div');
