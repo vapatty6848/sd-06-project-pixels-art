@@ -38,7 +38,6 @@ function changeSelected(select) {
 
 colorPalette.addEventListener('click', function (e) {
   changeSelected(e.target);
-  console.log(e.target);
 });
 
 tableColor.addEventListener('click', function (e) {
