@@ -14,21 +14,22 @@ body {
 }
 
 .line {
-  display: block;
+  display: table-row;
   line-height: 0;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
-  display: inline-block;
+  display: table-cell;
   height: 40px;
   width: 40px;
 }
 
 .pixel-board {
-  display: block;
+  display: table;
   height: 210px;
+  margin: auto;
   margin-top: 20px;
-  width: 100%;
+  width: fit-content;
 }

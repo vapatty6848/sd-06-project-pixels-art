@@ -2,6 +2,8 @@ const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 const colors = ['black', 'red', 'blue', 'green'];
 
+
+
 function handleSelectedClass(event) {
   let oldSelectedColor = document.querySelector('.selected');
   const newSelectedColor = event.target;
@@ -39,7 +41,7 @@ function generatePixels() {
   }
 }
 
-window.onload = function () {
+window.onload = () => {
   generatePaletteColors();
   generatePixels();
 };
