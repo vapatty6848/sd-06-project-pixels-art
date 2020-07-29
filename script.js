@@ -25,7 +25,16 @@ window.onload = function () {
     return palletItemDiv;
   }
 
-  
+  function handlePalletItemEvent(event) {
+    let oldSelectedDiv = document.querySelector(".selected");
+    let currentSelectedDiv = event.target;
+
+    oldSelectedDiv.classList.remove("selected");
+    currentSelectedDiv.classList.add("selected");
+
+    selectedColor = currentSelectedDiv.style.backgroundColor;
+  }
+
 
   function handlePixelClick(event) {
     let selectedPixelDiv = event.target;
