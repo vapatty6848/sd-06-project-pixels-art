@@ -11,35 +11,35 @@ window.onload = function () {
     const div = document.createElement('div');
     div.className = 'pixel';
     document.querySelector('#pixel-board').appendChild(div);
-  };
+  }
+  //  Cambiar o elemento que contem a class selected
+  function mudarClass(event) {
+    const corSelecionado = document.querySelector('.selected');
+    const corNovoSelecionado = event.target;
+    corSelecionado.classList.remove('selected');
+    corNovoSelecionado.classList.add('selected');
+  }
+  //  colocar cor na palete
+  const quadrado = document.querySelector('#pixel-board');
+  let color = 'black';
+  colocarCor(color);
+  function colocarCor(color) {
+    quadrado.addEventListener('click', function (event) {
+      event.target.style.backgroundColor = color;
+    });
+  }
   //  Seleccionar cor
   palette.addEventListener('click', function (event) {
     mudarClass(event);
     color = event.target.style.backgroundColor;
     colocarCor(color);
   });
-  //  Cambiar o elemento que contem a class selected
-  function mudarClass (event) {
-    const corSelecionado = document.querySelector('.selected');
-    const corNovoSelecionado = event.target;
-    corSelecionado.classList.remove('selected');
-    corNovoSelecionado.classList.add('selected');
-  };
-//  colocar cor na palete
-  const quadrado = document.querySelector('#pixel-board');
-  let color = 'black';
-  colocarCor(color);
-  function colocarCor (color) {
-    quadrado.addEventListener('click', function (event) {
-      event.target.style.backgroundColor = color;
-    });
-  };
   //  Funcao botao apagar os cored do quadrado
   const botaoLimpar = document.querySelector('#clear-board');
   const pixel = quadrado.children;
   botaoLimpar.addEventListener('click', function () {
     for (let i = 0; i < pixel.length; i += 1) {
-      pixel[i].style.backgroundColor = 'white'
+      pixel[i].style.backgroundColor = 'white';
     }
   });
 };
