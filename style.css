@@ -10,7 +10,7 @@ header{
     text-align: center;
 }
 
-section{
+/*section{
     background-color: whitesmoke;
     border-radius: 10px;
     color: black;
@@ -18,7 +18,44 @@ section{
     width: 500px;
     margin: auto;
     box-shadow: 5px 5px 10px rgb(99, 84, 84);
+}*/
+#color-palette {
+    position: relative center;
+    width: 400px;
+    height: 100px;
 }
+.container {
+    width: 400px;
+    height: 100px;
+    position: absolute;
+} 
+
+#black {
+    position: center;
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+    height: 100px;
+}
+#blue {
+    position: center;
+    background-color: rgb(0, 0, 255);
+    width: 100px;
+    height: 100px;
+   
+}
+#red {
+    position: center;
+    background-color: rgb(255, 0, 0);
+    width: 100px;
+    height: 100px;
+}
+#green {
+    position: center;
+    background-color: rgb(0, 128, 0);
+    width: 100px;
+    height: 100px;
+}
+
 footer{
     color: rgb(255, 255, 255);
     font-style: italic;
