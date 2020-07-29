@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   const cores = ['black', 'gray', 'red', 'yellow'];
   const quantidade = 5;
   const btnLimpar = document.getElementById('clear-board');
@@ -6,12 +6,13 @@ window.onload = function() {
   criarPaleta(cores);
   criarPixels(quantidade);
   pegaCor();
+  btnLimpar.addEventListener('click', limparTudo);
 }
 /* ******************************************************** */
 function criarPaleta(cores) {
   for (let i = 0; i < cores.length; i += 1) {
     let criarCor = document.createElement('div');
-    criarCor.className = 'color'
+    criarCor.className = 'color';
     criarCor.style.backgroundColor = cores[i];
     document.getElementById('color-palette').appendChild(criarCor);
     if ( cores[i] === 'black') {
@@ -33,7 +34,7 @@ function criarPixels(quantidade) {
       criarPixel.style.backgroundColor = 'white';
       document.getElementById(nomeId).appendChild(criarPixel);
     }
-  } 
+  }
 }
 /* ******************************************************** */
 function pegaCor() {
