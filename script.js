@@ -3,6 +3,8 @@ const colorPalette = document.getElementById('color-palette');
 const colors = ['black', 'green', 'red', 'blue'];
 const pixelBoard = document.getElementById('pixel-board');
 const colorSelected = document.getElementsByClassName('color');
+const buttonElement = document.getElementById('clear-board');
+const pixelSelected = document.getElementsByClassName('pixel');
 // Funções e Eventos
 
 for (let i = 0; i < 4; i += 1) {
@@ -28,16 +30,17 @@ window.onload = function () {
 };
 
 function changeSelected(select) {
-  let selected = document.querySelector('.selected');
+  const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
   select.className += ' selected';
 }
 
 for (const palette of colorSelected) {
-  palette.addEventListener('click', function() {
+  palette.addEventListener ('click', function () {
     changeSelected(this);
   });
 }
 
-
-
+buttonElement.addEventListener('click', function () {
+  pixelSelected.style.background = 'white';
+})
