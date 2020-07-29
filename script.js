@@ -2,18 +2,6 @@ const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 const colors = ['black', 'red', 'blue', 'green'];
 
-
-
-function handleSelectedClass(event) {
-  let oldSelectedColor = document.querySelector('.selected');
-  const newSelectedColor = event.target;
-  if (oldSelectedColor !== newSelectedColor) {
-    oldSelectedColor.classList.remove('selected');
-    newSelectedColor.classList.add('selected');
-    oldSelectedColor = document.querySelector('.selected');
-  }
-}
-
 function generatePaletteColors() {
   for (let i = 0; i < colors.length; i += 1) {
     const divCollor = document.createElement('div');
@@ -24,7 +12,15 @@ function generatePaletteColors() {
     if (divCollor.classList.contains('black')) {
       divCollor.classList.add('selected');
     }
-    divCollor.addEventListener('click', handleSelectedClass);
+    divCollor.addEventListener('click', function () {
+      let oldSelectedColor = document.querySelector('.selected');
+      const newSelectedColor = event.target;
+      if (oldSelectedColor !== newSelectedColor) {
+        oldSelectedColor.classList.remove('selected');
+        newSelectedColor.classList.add('selected');
+        oldSelectedColor = document.querySelector('.selected');
+      }
+    });
   }
 }
 
@@ -37,6 +33,8 @@ function generatePixels() {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       line.appendChild(pixel);
+      pixel.addEventListener('click', () => 
+      event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor);
     }
   }
 }
