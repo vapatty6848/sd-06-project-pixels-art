@@ -29,12 +29,12 @@ numInput.addEventListener('input', function () {
     console.log(numberForBoard)
 });
 
+// Tanto o keydown quanto o Button refazem o quadro
 numInput.addEventListener('keydown', function (e) {
     if (e.code === 'Enter') {
         rebuildBoard();
     }
 });
-
 
 numButton.addEventListener('click', function () {
     rebuildBoard();
@@ -42,9 +42,15 @@ numButton.addEventListener('click', function () {
 
 function rebuildBoard() {
     // Não deixar colocar valor null ou maior que 50
-    if (!numberForBoard || numberForBoard > 50) {
+    if (!numberForBoard) {
         window.alert('Board inválido!')
         return;
+    } else if (numberForBoard > 50) {
+        window.alert('O tamanho máximo é 50 x 50');
+        numberForBoard = 50;
+    } else if (numberForBoard < 5) {
+        window.alert('O tamanho mínimo é 5 x 5');
+        numberForBoard = 5;
     }
 
     eraseBoard();
