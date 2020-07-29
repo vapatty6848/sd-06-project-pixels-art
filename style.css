@@ -15,8 +15,8 @@
     margin-bottom: 20px;
 }
 
-#color-palette {
-    display: inline-block;
+#color-palett {
+    margin-left: 0px;
 }
 
 .color {
@@ -25,6 +25,7 @@
     border: 1px solid black;
     float: left;
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 #color1 {
@@ -42,6 +43,14 @@
  
 #color4 {
     background-color: green;
+}
+
+.pallet-item {
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 #pixel-board {
