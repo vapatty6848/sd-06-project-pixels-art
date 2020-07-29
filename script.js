@@ -1,7 +1,7 @@
 function getColor(event) {
   const elemento = event.target;
   colorStoraged = elemento.style.backgroundColor;
-  return  colorStoraged;
+  return colorStoraged;
 }
 
 function setColor(event) {
@@ -93,7 +93,7 @@ function PaletteEvents(paletteElements, colorStoraged) {
 function VqvEvents(vqvButton) {
   const valorInput = document.querySelector('#board-size');
   vqvButton.addEventListener('click', function () {
-    if( valorInput.value !== '') {
+    if (valorInput.value !== '') {
       RemoveCurrentBoard();
       CreateBoard();
     } else {
