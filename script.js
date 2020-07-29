@@ -47,20 +47,22 @@ window.onload = function(){
     }
 
     let botao = document.querySelector('#clear-board');
+    let board = document.getElementsByClassName('pixel');
+    console.log(board)
 
     botao.addEventListener('click', function(){
-        let board = document.getElementsByClassName('pixel');
-        console.log(board.length);
-        for (let index in board){
+        // console.log(board.length);
+        for (let index = 0; index < board.length; index++){
+            console.log(board[index]);
             board[index].style.backgroundColor = 'white';
+            // board.style.removeProperty("backgroundColor");
         }
-       
     })
 
     for (let i = 0; i < 5; i++){
         let pixelBoard = document.querySelector('#pixel-board');
         let linha = document.createElement('div');
-        linha.className = 'row';
+        linha.className = 'pixel';
         pixelBoard.appendChild(linha);
         for (let j = 0; j < 5; j++){
             let coluna = document.createElement('div');
