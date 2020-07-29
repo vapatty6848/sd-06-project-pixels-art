@@ -1,8 +1,8 @@
 .color {
   border: 1px black solid;
-  height: 25px;
+  height: 50px;
   margin: -2px;
-  width: 25px;
+  width: 50px;
 }
 
 #black {
@@ -19,4 +19,190 @@
 
 #blue {
   background-color: blue;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  height: 250px;
+  margin: 10px;
+  width: 250px;
+}
+
+#column1 {
+  height: 40px;
+  /* background-color: blue; */
+}
+
+#c1L1 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c1L2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c1L3 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c1L4 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c1L5 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#column2 {
+  height: 40px;
+  /* background-color: yellow; */
+
+}
+
+#c2L1 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c2L2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c2L3 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c2L4 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c2L5 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#column3 {
+  height: 40px;
+  /* background-color: red; */
+
+}
+
+#c3L1 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c3L2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c3L3 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c3L4 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c3L5 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#column4 {
+  height: 40px;
+  /* background-color: pink; */
+
+}
+
+#c4L1 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c4L2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c4L3 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c4L4 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c4L5 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#column5 {
+  height: 40px;
+  /* background-color: black; */
+
+}
+
+#c5L1 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c5L2 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c5L3 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c5L4 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#c5L5 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
 }
