@@ -1,17 +1,44 @@
 .pixel-board {
   border: 1px solid black;
-  width: 210px;
 }
 
 .paint {
-  width: 250px;
+  width: auto;
 }
 
 .bt {
   background-color: brown;
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 20px;
   color: white;
-  margin: 10px 75px;
-  padding: 10px;
+  margin: 10px 65px;
+  padding: 5px 20px;
+}
+
+.bt:focus-within {
+  outline: 0;
+}
+
+.bt-size {
+  float: right;
+  margin-left: 20px;
+  margin-top: 0;
+}
+
+input {
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 20px;
+  color: darkcyan;
+  padding: 5px;
+  width: 80px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.wrapp {
+  margin: 15px 0;
+  width: 280px;
 }

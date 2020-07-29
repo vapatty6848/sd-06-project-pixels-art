@@ -12,8 +12,15 @@
 <body>
   <h1 id="title">Paleta de Cores</h1>
   <main class='paint'>
+
+
     <div id="color-palette"></div>
-    <button class="bt" id="clear-board" type="submit">Limpar</button>
+    <div class="wrapp">
+      <h5 id="title">Escolha a quantidade de pixels (n x n)</h5>
+      <input id="board-size" type="text" min="0">
+      <button class="bt bt-size" id="generate-board">VQV</button>
+    </div>
+    <button class="bt" id="clear-board">Limpar</button>
     <div id="pixel-board"></div>
 
   </main>
