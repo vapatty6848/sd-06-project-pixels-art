@@ -42,5 +42,8 @@ for (const palette of colorSelected) {
 }
 
 buttonElement.addEventListener('click', function () {
-  pixelSelected.style.background = 'white';
+  for (let r = 0; r < 25; r += 1) {
+    pixelSelected[r].style.background = 'white';
+  }
 })
+
