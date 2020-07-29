@@ -3,16 +3,16 @@
   display: inline-block;
   height: 40px;
   margin-left: 3px;
-  width: 40px;  
+  width: 40px;
 }
 
 .pixel {
   background-color: white;
-  border: 1px solid black;  
+  border: 1px solid black;
   height: 39px;
   display: inline-block;
-  width: 39px;
   margin-left:-5px;
+  width: 39px;  
 }
 
 .paletaBlack {
@@ -36,20 +36,25 @@
   border: 1px solid black;
   display: inline-block;
   height: 40px;
-  margin-left:-1px;
-  margin-top: -1px;  
-  width: 40px;  
+  margin-left: -1px;
+  margin-top: -1px;
+  width: 40px;
 }
 
-.pixelsBoards {  
+.pixelsBoards {
   border: 2px solid black;
-  width: 500px;
   height: 500px;
+  width: 500px;  
 }
-ul{
+
+ul {
   list-style: none;
 }
 
-li{
+li {
   margin-top: -5px;
+}
+
+.selected {
+  background-color: black;
 }
