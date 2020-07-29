@@ -1,7 +1,10 @@
+let slectedColor = "black";
+
 window.onload = function () {
 
 creatColorPallet(["black", "red", "blue", "green"]);
 
+//Pega a paleta de cores e add os itens a paleta
 function creatColorPallet(colors) {
     let colorPaletteContainer = document.querySelector("#color-palette");
 
@@ -11,6 +14,7 @@ function creatColorPallet(colors) {
     }
 }
 
+//Criação dos itens da paleta (divs)
 function creatPalletItem(color) {
     let palletItemDiv = document.createElement("div");
     palletItemDiv.style.backgroundColor = color;
@@ -24,12 +28,15 @@ function creatPalletItem(color) {
     return palletItemDiv;
 }
 
+//Quando clica, add o selected e retira da cor antiga
 function handlePaletItemEvent() {
     let oldSelectedDiv = document.querySelector(".selected");
     let currentSelectedDiv = event.target;
 
     oldSelectedDiv.classList.remove("selected");
     currentSelectedDiv.classList.add("selected");
+
+    selectedColor = currentSelectedDiv.style.backgroundColor;
 }
 
 
