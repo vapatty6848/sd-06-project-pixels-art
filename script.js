@@ -162,4 +162,29 @@ function clear() {
     }
 }
 
+// Adicionando funcionalidade de escolher cor
+
+// colorElements = document.getElementsByClassName("color");
+// selectedDiv = colorElements[0];
+let selected2;
+let colorWell = document.getElementById('colorWell');
+
+for (let i = 0; i < colorElements.length; i += 1) {
+    colorElements[i].addEventListener('contextmenu', function () {
+        selected2 = colorElements[i];
+
+        colorWell.style.left = event.clientX;
+        colorWell.style.top = event.clientY;
+        console.log(event.clientX);
+        console.log(event.clientY);
+        colorWell.click();
+        event.preventDefault();
+    });
+}
+
+colorWell.addEventListener('change', function () {
+    selected2.style.backgroundColor = colorWell.value;
+});
+
+
 
