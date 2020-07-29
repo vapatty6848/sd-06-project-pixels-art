@@ -2,9 +2,8 @@ window.onload = function () {
     generateColors();
     selectedColor();
 
-    rebuildBoard();
-    // createBoard(5);
-    // useColors();
+    createBoard(5);
+    useColors();
 
     colorPicker();
 
@@ -24,9 +23,6 @@ function createBoard(num) {
             let td = document.createElement('td');
             tr.appendChild(td);
             td.classList.add('pixel');
-            td.style.height = "40px";
-            td.style.width = "40px";
-            td.style.border = "1px solid black";
         }
     }
 }
@@ -111,7 +107,6 @@ function selectedColor() {
             colorElements[i].classList.add('selected');
         });
     }
-    return chosenColor;
 }
 
 // PINTAR QUALQUER PIXEL COM A COR CLICADA
@@ -143,7 +138,7 @@ function useColors() {
 
 // TRÊS FUNÇÕES ABAIXO SÂO PARA REFAZER O QUADRO
 
-let numberForBoard = 5;
+let numberForBoard = "";
 
 //MUDAR O TAMANHO DO QUADRO
 function setBoardButton() {
