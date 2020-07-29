@@ -122,7 +122,7 @@ window.onload = function() {
   const columnsInput = document.querySelectorAll("input")[1];
 
   rowsInput.addEventListener("change", function () {
-    validateCanvasSize()
+    validateCanvasSize();
   })
 
   columnsInput.value = rowsInput.value;
