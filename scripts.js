@@ -3,13 +3,15 @@ const btnClear = document.getElementById('clear-board');
 const btnGenerate = document.getElementById('generate-board');
 const boardSize = document.getElementById('board-size');
 const colors = ['red', 'green', 'blue', 'purple', 'brown', 'dimgray', 'cyan', 'orange'];
+const selectedColors = []
 
 for (let i = 0; i < document.querySelectorAll('.color').length; i += 1) {
   if (i === 0) {
     document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
   } else {
-    var newColor = Math.ceil((Math.random() * 8) - 1);
+    var newColor = Math.ceil(Math.random() * (colors.length - 1));
     document.querySelectorAll('.color')[i].style.backgroundColor = colors[newColor];
+    colors.splice(newColor, 1);
   }
 }
 
