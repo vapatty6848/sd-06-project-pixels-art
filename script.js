@@ -1,6 +1,5 @@
+let selectedColor = 'black';
 window.onload = function() {
-  // let colorPallet = document.getElementById('color-palette');
-  // collorPallet.addEventListener('click', )
   createColorPallet(['black', 'red', 'blue', 'green']);
 }
 function createColorPallet(colors) {
@@ -25,8 +24,18 @@ function handlePalletItemEvent(event) {
   let currentSelectedDiv = event.target;
   oldSelectedDiv.classList.remove('selected');
   currentSelectedDiv.classList.add('selected');
+  selectedColor = currentSelectedDiv.style.backgroundColor;
 }
-
+function handlePixelClick() {
+  let selectedPixel = event.target;
+  selectedPixel.style.backgroundColor = selectedColor;
+}
+let pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', handlePixelClick);
+for (let i in pixelBoard) {
+  let pixel;
+  pixel = pixelBoard[i];
+}
 function limpaTudo() {
   const pixels = document.querySelectorAll('.pixel');
   let seleCor = 'white';
