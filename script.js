@@ -25,27 +25,18 @@ window.onload = function () {
     return palletItemDiv;
   }
 
-  function handlePalletItemEvent(event) {
-    let oldSelectedDiv = document.querySelector(".selected");
-    let currentSelectedDiv = event.target;
-
-    oldSelectedDiv.classList.remove("selected");
-    currentSelectedDiv.classList.add("selected");
-
-    selectedColor = currentSelectedDiv.style.backgroundColor;
-  }
-
+  
 
   function handlePixelClick(event) {
     let selectedPixelDiv = event.target;
     selectedPixelDiv.style.backgroundColor = selectedColor;
   }
 
-  //let pixelBoardDiv = document.querySelector("#pixel-board");
+  let pixelBoardDiv = document.querySelector("#pixel-board");
   pixelBoardDiv.addEventListener("click", handlePixelClick)
 
 
-  //let button = document.querySelector('#clear-board');
+  let button = document.querySelector('#clear-board');
   let pixelSize = document.getElementsByClassName('pixel');
   button.addEventListener("click", function () {
     for (let i = 0; i < pixelSize.length; i += 1) {
