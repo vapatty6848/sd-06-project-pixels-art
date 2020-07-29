@@ -2,9 +2,10 @@ window.onload = function () {
     generateColors();
     selectedColor();
 
-    createBoard(5);
+    rebuildBoard();
+    // createBoard(5);
+    // useColors();
 
-    useColors();
     colorPicker();
 
     clear();
@@ -142,7 +143,7 @@ function useColors() {
 
 // TRÊS FUNÇÕES ABAIXO SÂO PARA REFAZER O QUADRO
 
-let numberForBoard = "";
+let numberForBoard = 5;
 
 //MUDAR O TAMANHO DO QUADRO
 function setBoardButton() {
