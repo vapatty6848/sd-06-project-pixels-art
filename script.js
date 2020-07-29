@@ -53,3 +53,10 @@ document.querySelectorAll('.color').forEach(item => {
 })
 
 document.querySelectorAll('.color')[0].className += ' selected';
+
+document.querySelectorAll('.pixel').forEach(box => {
+  box.addEventListener('click', function () {
+    const color = document.querySelector('.selected').style.backgroundColor;
+    box.style.backgroundColor = color;
+  })
+});
