@@ -6,7 +6,7 @@ window.onload = function () {
   document.getElementsByClassName('color')[2].style.backgroundColor = 'blue';
   document.getElementsByClassName('color')[3].style.backgroundColor = 'green';
 
-/* função para disparar o evento e trocar a classe selected para a que for clicada */
+/* função que muda o selecte da class */
   function handlePalletItemEvent() {
     const oldSelectedDiv = document.querySelector('.selected');
     const currentSelectedDiv = event.target;
@@ -21,13 +21,12 @@ window.onload = function () {
   const listen = document.querySelector('#color-palette');
   listen.addEventListener('click', handlePalletItemEvent);
 
-/* colorindo os pixels */
+/* colorindo */
   function handlePixel(event) {
     const selectedPixelDiv = event.target;
     selectedPixelDiv.style.backgroundColor = selectedColor;
   }
 
-/* individualizando os pixels para colorir */
   const pixelBoardDiv = document.getElementById('pixel-board');
   pixelBoardDiv.addEventListener('click', handlePixel);
 
