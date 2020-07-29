@@ -32,8 +32,8 @@ colorPalet.addEventListener('click', function (event) {
     if (j.classList.contains('selected')) {
       j.classList.remove('selected');
     }
-  }
-  event.target.classList.add('selected');
+    event.target.classList.add('selected');
+  });
 });
 
 pixelBoard.addEventListener('click', function (event) {
