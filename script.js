@@ -4,7 +4,7 @@ const colors = ['black', 'green', 'red', 'blue'];
 const pixelBoard = document.getElementById('pixel-board');
 const colorSelected = document.getElementsByClassName('color');
 const buttonElement = document.querySelector('#clear-board');
-const pixelSelected = document.querySelectorAll('.pixel');
+const pixelSelected = document.getElementsByClassName('pixel');
 // Funções e Eventos
 
 for (let i = 0; i < 4; i += 1) {
@@ -35,14 +35,18 @@ function changeSelected(select) {
   select.className += ' selected';
 }
 
-for (const palette of colorSelected) {
-  palette.addEventListener('click', function () {
-    changeSelected(this);
-  });
-}
+colorPalette.addEventListener('click', function (e) {
+  changeSelected(e.target);
+});
+
+
+pixelBoard.addEventListener('click', function(e) {
+  e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+});
 
 buttonElement.addEventListener('click', function () {
   for (let r = 0; r < pixelSelected.length; r += 1) {
     pixelSelected[r].style.background = 'white';
+    console.log(pixelSelected[r]);
   }
 });

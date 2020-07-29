@@ -10,15 +10,20 @@
 .pixel-board {
   border-collapse: collapse;
   display: block;
-  height: 250px;
+  height: 200px;
   text-align: center;
-  width: 250px;
+  width: 210px;
 }
 
 .pixel {
   background-color: white;
   border: 1px black solid;
+  border-spacing: 0;
   display: inline-block;
   height: 40px;
   width: 40px;
+}
+
+.line {
+  height: 40px;
 }
