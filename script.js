@@ -50,6 +50,7 @@ window.onload = function() {
     botaoTamanho.addEventListener("click", function(event) {
         if (tamanho <= 50 && tamanho >= 5) {
             quadroPixel.style.width = tamanho * 42;
+            quadroPixel.style.height = tamanho * 42;
 
         } else {
             alert("Board inválido!");
