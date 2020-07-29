@@ -1,9 +1,12 @@
+
+
+
+
+
+/*let selectedColor = "black";
 window.onload = function () {
 
     createColorPallet(['black', 'blue', 'red', 'green']);
-    let colorBlack = document.getElementById('black');
-    colorBlack.classList.add("selected");
-
     let classColor = document.querySelectorAll('.color');
     let colorSelected = document.querySelector(".selected");
 
@@ -41,4 +44,4 @@ function handlePalletItemEvent(event) {
     let currentSelectedDiv = event.target;
     oldSelectedDiv.classList.remove('selected');
     currentSelectedDiv.classlist.add('selected');
-}
+}*/
