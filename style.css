@@ -9,3 +9,28 @@ body {
   list-style: none;
   width: 40px;
 }
+
+.black {
+  background: black;
+}
+
+.red {
+  background: red;
+}
+
+.green {
+  background: green;
+}
+
+.blue {
+  background: blue;
+}
+
+.pixel {
+  background: white;
+  border: 1px solid black;
+  border-spacing: 0 0;
+  border-collapse: separate;
+  height: 40px;
+  width: 40px;
+}
