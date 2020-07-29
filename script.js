@@ -27,13 +27,14 @@ function generatePaletteColors() {
 
 function generateCleanButton() {
   const button = document.createElement('button');
-  button.id = 'clean-board';
+  button.id = 'clear-board';
   button.classList.add('clean');
   button.innerText = 'Limpar';
   document.querySelector('.btn').appendChild(button);
   button.addEventListener('click', () => {
     const allPixelsFromPixelBoard = document.querySelectorAll('.pixel');
-    allPixelsFromPixelBoard.forEach((item) => item.style.backgroundColor = 'white');
+    allPixelsFromPixelBoard.forEach((item) => {
+      item.style.backgroundColor = 'white'});
   });
 }
 
@@ -46,8 +47,8 @@ function generatePixels() {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       line.appendChild(pixel);
-      pixel.addEventListener('click', () =>
-      event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor);
+      pixel.addEventListener('click', () => {
+      event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor});
     }
   }
 }
