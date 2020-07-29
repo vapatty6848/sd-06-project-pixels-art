@@ -18,6 +18,7 @@ function createPixelBoard() {
 
   if (highBox > 50) {
     highBox = 50;
+    sizeBox = 50;
   }
 
   let createFather = document.createElement('section')
