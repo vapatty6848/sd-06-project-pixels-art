@@ -43,15 +43,19 @@ window.onload = function(){
         oldSelectedDiv.classList.remove('selected');
         currentSelectedDiv.classList.add('selected');
         
-        selectedColor = backgroundColor;
-
-        let botao = document.querySelector('#clear-board')
-        let board = document.querySelectorAll('.pixel')
-        botao.addEventListener('click', function(){
-            console.log(board.event.target);
-            board.style.backgroundColor = 'white';
-        })
+        selectedColor = backgroundColor;     
     }
+
+    let botao = document.querySelector('#clear-board');
+
+    botao.addEventListener('click', function(){
+        let board = document.getElementsByClassName('pixel');
+        console.log(board.length);
+        for (let index in board){
+            board[index].style.backgroundColor = 'white';
+        }
+       
+    })
 
     for (let i = 0; i < 5; i++){
         let pixelBoard = document.querySelector('#pixel-board');
@@ -71,6 +75,5 @@ window.onload = function(){
     
    
 }
-
 
 
