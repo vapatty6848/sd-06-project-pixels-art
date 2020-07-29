@@ -1,11 +1,13 @@
 //load inicial da pagina
 window.onload = desenhandoBlocos();
 
-//Criando os Blocos da Tabela
+//Functions
 function desenhandoBlocos(){
     let bloco = document.getElementById("pixel-board")
     for (let i=0;i<5;i++){
         let linha = document.createElement("div")
+        linha.style.height="40px"
+        linha.style.width="210px"
         bloco.appendChild(linha)
         for (let o=0;o<5;o++){
             let blocoUnico=document.createElement("div")
@@ -19,9 +21,16 @@ function desenhandoBlocos(){
         }
     }
 }
-//variaveis
+function limpaBlocos(){
+    let pixelLimpo = document.getElementsByClassName('pixel')
+    for( let i=0; i< pixelLimpo.length ; i+=1){
+        pixelLimpo[i].style.backgroundColor = 'white';
+    }
+}
+//Variaveis
 let colorIninit = document.querySelector('.selected')
 let corDeDentro = document.getElementById('pixel-board')
+let limpaBloco = document.querySelector('#clear-board');
 
 //Eventos 
 corDeDentro.addEventListener('click',function(event){
@@ -29,4 +38,9 @@ corDeDentro.addEventListener('click',function(event){
         event.target.style.backgroundColor = colorIninit.id;
     }
 })
+limpaBloco.addEventListener('click',limpaBlocos);
+
+
+
+
 
