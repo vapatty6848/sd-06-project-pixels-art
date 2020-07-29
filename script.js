@@ -6,7 +6,6 @@ window.onload = function () {
   createPixelBoard(5);
 
   pixelColoring();
-  
   const pixels = document.querySelectorAll('.pixel');
 
   clearBoard(pixels);
@@ -19,7 +18,7 @@ window.onload = function () {
 
   function clearBoard() {
     const button = document.querySelector('#clear-board');
-    button.addEventListener('click', erasePixels)
+    button.addEventListener('click', erasePixels);
   }
 };
 
