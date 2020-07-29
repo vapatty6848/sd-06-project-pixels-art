@@ -1,31 +1,31 @@
 window.onload = function() {
-    createColorPallet(['black', 'brown', 'blue', 'cyan']);
+    createPaletteColor(['black', 'brown', 'blue', 'cyan']);
     selectedColor = 'black';
   };
   
   // Criação dos itens da paleta (divs)
   function createPalletItem(color) {
-    let palletColorDiv = document.createElement('div');
-    palletColorDiv.style.backgroundColor = color;
-    palletColorDiv.className = 'color';
-    palletColorDiv.addEventListener('click', handlePalletColorEvent);
+    let colorPaletteDiv = document.createElement('div');
+    colorPaletteDiv.style.backgroundColor = color;
+    colorPaletteDiv.className = 'color';
+    colorPaletteDiv.addEventListener('click', handlePaletteColorEvent);
       if (color === 'black') {
-        palletColorDiv.classList.add('selected');
+        colorPaletteDiv.classList.add('selected');
       }
-    return palletColorDiv;
+    return colorPaletteDiv;
   }
   
   // Pega a paleta de cores e add os itens a paleta
-  function createColorPallet(colors) {
-    let colorPalletContainer = document.getElementById('color-palette');
+  function createPaletteColor(colors) {
+    let containerPaletteColor = document.getElementById('color-palette');
     for (let i in colors) {
-      let palletColorDiv = createPalletItem(colors[i]);
-      colorPalletContainer.appendChild(palletColorDiv);
+      let colorPaletteDiv = createPalletItem(colors[i]);
+      containerPaletteColor.appendChild(colorPaletteDiv);
     }
   }
   
   // Quando clica, add o selected e retira da cor antiga
-  function handlePalletColorEvent(event) {
+  function handlePaletteColorEvent(event) {
     let oldSelectedDiv = document.querySelector('.selected');
     let currentSelectedDiv = event.target;
   
@@ -35,14 +35,14 @@ window.onload = function() {
   }
   
   // Criando pixel board pelo usuario
-  let createButton = document.getElementById('generate-board');
-  createButton.addEventListener('click', createPixelBoard);
+  let creatingBtn = document.getElementById('generate-board');
+  creatingBtn.addEventListener('click', createPixelBoard);
   function createPixelBoard() {
-    let sizeBoard = document.getElementById('board-size').value;
-    if (sizeBoard === 0) {
+    let boardSize = document.getElementById('board-size').value;
+    if (boardSize === 0) {
       alert('Board inválido!');
-    } else if (sizeBoard < 5) {
-      sizeBoard = 5;
+    } else if (boardSize < 5) {
+      boardSize = 5;
     }
   }
 
@@ -57,14 +57,16 @@ window.onload = function() {
   
   // Botão reset
   let resetButton = document.getElementById('clear-board');
-  resetButton.addEventListener('click', resetPixelBoard);
-  function resetPixelBoard() {
+  resetButton.addEventListener('click', resetBoard());
+  function resetBoard() {
     const pixels = document.querySelectorAll('.pixel');
     for (let i = 0; i < pixels.length; i += 1) {
       pixels[i].style.backgroundColor = 'white';
     }
 
 }
+
+
   
   
 
