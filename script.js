@@ -7,19 +7,19 @@ window.onload = function () {
   document.getElementsByClassName('color')[3].style.backgroundColor = 'green';
 
 /* função que muda o selecte da class */
-  function handlePalletItemEvent() {
-    const oldSelectedDiv = document.querySelector('.selected');
-    const currentSelectedDiv = event.target;
+  function toChangeSelect() {
+    const oldSelected = document.querySelector('.selected');
+    const newSelected = event.target;
 
-    oldSelectedDiv.classList.remove('selected');
-    currentSelectedDiv.classList.add('selected');
+    oldSelected.classList.remove('selected');
+    newSelected.classList.add('selected');
 
-    selectedColor = currentSelectedDiv.style.backgroundColor;
+    selectedColor = newSelected.style.backgroundColor;
   }
 
 /* clicando */
   const listen = document.querySelector('#color-palette');
-  listen.addEventListener('click', handlePalletItemEvent);
+  listen.addEventListener('click', toChangeSelect);
 
 /* colorindo */
   function handlePixel(event) {
