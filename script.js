@@ -32,7 +32,7 @@ function pegaCor() {
   for (let i = 0; i < cores.length; i += 1) {
     cores[i].addEventListener('click', function () {
       corSelecionada = event.target.style.backgroundColor;
-      cores[i].className += ' selected';
+      cores[i].classList.add('selected');
       selecionada.classList.remove('selected');
       selecionada = document.querySelector('.selected');
     });
