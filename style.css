@@ -1,0 +1,59 @@
+body {
+    background-color: rgba(128, 164, 184, 0.411);
+    font: normal 18pt arial;
+    
+    
+}
+h1 { 
+    color: rgb(24, 50, 104);
+    font-size: 60px;
+}
+
+header{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+section {
+    text-align: center;
+    background-image: url('https://i.pinimg.com/236x/44/1d/3d/441d3da5bd8ef333f9fac9c29b1ab09f--circle-shape-free-stock-image.jpg');
+    background-color: rgba(17, 65, 90, 0.411);
+}
+
+.color {
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+  }
+  
+  #pixel-board{ 
+    display: inline-block;
+  }
+  
+  .pallet-item {
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+  }
+  
+  .pixel { 
+    display: inline-block;
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+  }
+  
+  #color-palette {
+    display: inline-block;
+    z-index: 3;
+  }
+  
+  .color {
+    display: inline-block;
+  }
+footer{
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    text-align: center;
+}
