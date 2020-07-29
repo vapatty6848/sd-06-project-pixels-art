@@ -56,17 +56,19 @@ function rebuildBoard() {
     eraseBoard();
     createBoard(numberForBoard);
     useColors();
+    useColors2();
 }
 
 createBoard(5);
 useColors();
+useColors2();
 
 // Selecionar e colocar as cores no background dos divs
 
 let colors = ["black", "rgb(214, 40, 40)", "rgb(252, 191, 73)", "rgb(234, 226, 183)"];
 
 function generateColors() {
-
+    // Gera cores aleatórias e joga elas na array 'colors'
     for (let i = 1; i < 4; i += 1) {
         let r = Math.floor(Math.random() * 255) + 1;
         let g = Math.floor(Math.random() * 255) + 1;
@@ -119,7 +121,7 @@ function useColors() {
     let pixelBoxes = document.getElementsByClassName("pixel");
 
     for (let i = 0; i < pixelBoxes.length; i++) {
-        pixelBoxes[i].addEventListener("click", function () {
+        pixelBoxes[i].addEventListener("mousedown", function () {
             pixelBoxes[i].style.backgroundColor = chosenColor;
         });
         // extra pra apagar com o botão direito do mouse!!
@@ -128,6 +130,23 @@ function useColors() {
             event.preventDefault();
         });
     }
+}
+
+// Funcionalidade de passar o mouse segurado e ir pintando
+// ! depois adiciona a funcionalidade na função anterior e deleta essa !
+function useColors2() {
+    let pixelBoxes = document.getElementsByClassName("pixel");
+
+    for (let i = 0; i < pixelBoxes.length; i++) {
+        pixelBoxes[i].addEventListener("mouseover", function () {
+            if (event.buttons === 1) {
+                pixelBoxes[i].style.backgroundColor = chosenColor;
+            } else if (event.buttons === 2) {
+                pixelBoxes[i].style.backgroundColor = "white";
+                event.preventDefault();
+            }
+        });
+    };
 }
 
 // Adicionar o botão de limpar
