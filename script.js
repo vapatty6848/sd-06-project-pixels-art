@@ -34,14 +34,18 @@ for (let i = 0; i < boardSize; i += 1) {
     document.getElementsByClassName('pixel-wrapp')[i].appendChild(createColorClassDiv);
   }
 }
-const sideSize = ((palettesSize * squarePaletteSize) + ((palettesSize) * 2));
+
+const sidePaletteSize = ((palettesSize * squarePaletteSize) + ((palettesSize) * 2));
 const divIdColorPalette = document.getElementById('color-palette');
 divIdColorPalette.style.border = '1px solid black';
-divIdColorPalette.style.width = `${sideSize}px`;
+divIdColorPalette.style.width = `${sidePaletteSize}px`;
 divIdColorPalette.style.height = `${squarePaletteSize + 2}px`;
-console.log(divIdColorPalette.style.border);
-console.log(sideSize);
 
+const sideBoardSize = ((boardSize * squareBoardSize) + ((boardSize) * 2));
+const divIdPixelBoard = document.getElementById('pixel-board');
+divIdPixelBoard.style.border = '1px solid black';
+divIdPixelBoard.style.width = `${sideBoardSize}px`;
+divIdPixelBoard.style.height = `${sideBoardSize}px`;
 
 function deleteAllSelected() {
   document.querySelectorAll('.color').forEach(item => {
@@ -75,4 +79,4 @@ btClean.addEventListener('click', function () {
   for (let i = 0; i < allBoxes.length; i += 1) {
     allBoxes[i].style.backgroundColor = 'white';
   }
-})
+});
