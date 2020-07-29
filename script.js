@@ -1,3 +1,5 @@
+let selectedColor = 'black';
+
 window.onload = function () {
   // handles the event to get selected pixel and change div's class
 
@@ -6,6 +8,7 @@ window.onload = function () {
     const currentPixelDiv = event.target;
     lastSelectedDiv.classList.remove('selected');
     currentPixelDiv.classList.add('selected');
+    selectedColor = currentPixelDiv.style.backgroundColor;
   }
 
   // creates the colored div in the color palette
@@ -36,16 +39,9 @@ window.onload = function () {
 };
 // handle event to change div's background color and make the pixel art
 
-document.querySelector('#pixel-board').addEventListener('click', function () {
-  const pixelDiv = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixelDiv.length; i += 1) {
-    let currentDiv = pixelDiv[i];
-    const currentSelectedColor = document.querySelector('.selected').style.backgroundColor;
-    currentDiv.addEventListener('click', function (event) {
-      currentDiv = event.target;
-      currentDiv.style.backgroundColor = currentSelectedColor;
-    });
-  }
+document.querySelector('#pixel-board').addEventListener('click', function (event) {
+  const divPixel = event.target;
+  divPixel.style.backgroundColor = selectedColor;
 });
 
 // add event to clean the board
