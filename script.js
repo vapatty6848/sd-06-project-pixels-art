@@ -2,7 +2,7 @@ window.onload = function () {
   let selectedColor = 'black';
   let palette = document.getElementsByClassName('color');
   let pixelBoard = document.getElementsByClassName('pixel');
-  let clear = document.querySelector('#clear-button');
+  let clear = document.querySelector('#clear-board');
   
   // captura a cor após o click na paleta de cores
   for (let i = 0; i < palette.length; i += 1) {
