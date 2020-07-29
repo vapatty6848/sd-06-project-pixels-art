@@ -2,58 +2,46 @@ const btnLimpar = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
 const btnGenerate = document.querySelector('#generate-board');
 const pixelBoard = document.querySelector('#pixel-board');
+const colorPalette = document.querySelector('#color-palette');
+const pixels = document.querySelectorAll('.pixel');
+const colors = document.querySelectorAll('.color');
 
 let corSelecionada = 'black';
-function criarEventos() {
-  const pixels = document.querySelectorAll('.pixel');
-  for (let pixel = 0; pixel < pixels.length; pixel += 1) {
-    pixels[pixel].addEventListener('click', function () {
-      pixels[pixel].style.backgroundColor = corSelecionada;
-    });
-  }
-}
-criarEventos();
+pixelBoard.addEventListener('click', function (e) {
+  e.target.style.backgroundColor = corSelecionada;
+});
 
-const colors = document.querySelectorAll('.color');
-for (let color = 0; color < colors.length; color += 1) {
-  const cor = colors[color];
-  cor.addEventListener('click', function () {
-    if (!cor.classList.contains('selected')) {
-      for (let i = 0; i < colors.length; i += 1) {
-        colors[i].classList.remove('selected');
-      }
-      cor.className += ' selected';
-      corSelecionada = event.target.style.backgroundColor;
-    }
-  });
-}
+colorPalette.addEventListener('click', function (e) {
+  const selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  e.target.className += ' selected';
+  corSelecionada = event.target.style.backgroundColor;
+});
 
 btnLimpar.addEventListener('click', () => {
-  const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
   }
 });
 
-function gerarPixels(pixels) {
-  if (pixels < 5) {
-    pixels = 5;
-  } else if (pixels > 50) {
-    pixels = 50;
+function gerarPixels(numberPixels) {
+  if (numberPixels < 5) {
+    numberPixels = 5;
+  } else if (numberPixels > 50) {
+    numberPixels = 50;
   }
   const tbody = document.createElement('tbody');
   pixelBoard.appendChild(tbody);
-  for (let i = 0; i < pixels; i += 1) {
+  for (let i = 0; i < numberPixels; i += 1) {
     const tr = document.createElement('tr');
     tr.className = 'linha';
     tbody.appendChild(tr);
-    for (let j = 0; j < pixels; j += 1) {
+    for (let j = 0; j < numberPixels; j += 1) {
       const td = document.createElement('td');
       td.className = 'pixel';
       tr.appendChild(td);
     }
   }
-  criarEventos();
 }
 
 btnGenerate.addEventListener('click', () => {
