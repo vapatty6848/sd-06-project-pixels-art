@@ -16,11 +16,20 @@ function createPaletteItens(color) {
     colorItensDiv.style.backgroundColor = color;
     colorItensDiv.className = 'color';
     colorItensDiv.addEventListener('click', handlePaletteItenEvent);
+
+    if (color === 'black') {
+        colorItensDiv.classList.add('selected');
+    }
+
     return colorItensDiv;
 }
 
-function handlePaletteItenEvent() {
-    console.log("tudo ok!");
+function handlePaletteItenEvent(event) {
+    let previousSelectedDiv = document.querySelector('.selected');
+    let currentSelectedDiv = event.target //div selected
+
+    previousSelectedDiv.classList.remove('selected');
+    currentSelectedDiv.classList.add('selected');
 }
 
 
