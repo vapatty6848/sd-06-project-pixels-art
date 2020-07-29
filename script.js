@@ -3,7 +3,6 @@ const colorPalet = document.querySelector('#color-palette');
 const btnClear = document.querySelector('#clear-board');
 const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
-const sectionTable = document.querySelector('.sectionPB');
 let classSel = 'preto';
 let sizeBox = 5;
 
@@ -21,7 +20,7 @@ function createPixelBoard() {
   for (let l = 0; l < sizeBox; l += 1) {
     for (let i = 0; i < sizeBox; i += 1) {
       const createDiv = document.createElement('div');
-      createDiv.setAttribute('class', 'pixel bgbranco')
+      createDiv.setAttribute('class', 'pixel bgbranco');
       sect[l].appendChild(createDiv);
     }
   }
@@ -47,17 +46,17 @@ pixelBoard.addEventListener('click', function (event) {
 });
 
 btnClear.addEventListener('click', function () {
-  for (const j of document.querySelectorAll('.pixel')) {
+  document.querySelectorAll('.pixel').forEach(j => {
     if (j.classList.contains('pixel')) {
-      j.className = 'pixel bgbranco'
+      j.className = 'pixel bgbranco';
     }
-  }
+  });
 });
 
 btnShow.addEventListener('click', function () {
   const inputVal = inputNum.value;
   if (inputVal === '') {
-    alert('Board inválido!')
+    alert('Board inválido!');
   } else if (inputVal < 5) {
     sizeBox = 5;
   } else if (inputVal > 50) {
@@ -67,7 +66,15 @@ btnShow.addEventListener('click', function () {
   }
   const no = document.querySelector('.father');
   if (no.parentNode) {
-    no.parentNode.removeChild(no)
+    no.parentNode.removeChild(no);
     createPixelBoard();
   }
 });
+
+
+
+// for (const j of document.querySelectorAll('.pixel')) {
+//   if (j.classList.contains('pixel')) {
+//     j.className = 'pixel bgbranco';
+//   }
+// }
