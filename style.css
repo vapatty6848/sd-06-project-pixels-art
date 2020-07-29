@@ -1,0 +1,48 @@
+h1 {
+    margin-left: 10px;
+}
+
+.color {
+    border: solid 1px black;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+#black-palette {
+    margin-left: 20px;
+    background-color: black;
+}
+
+#red-palette {
+    background-color: red;
+    margin-left: 5px;
+}
+
+#green-palette {
+    background-color: green;
+    margin-left: 5px;
+}
+
+#yellow-palette {
+    background-color: yellow;
+    margin-left: 5px;
+}
+
+#pixel-board {
+    display: table;
+    margin: 10px 10px;
+}
+
+.line-pixel {
+    display: table-row;
+}
+
+.pixel {
+    background-color: white;
+    border: black 1px solid;
+    display: table-cell;
+    height: 40px;
+    width: 40px;
+    
+}
