@@ -6,11 +6,17 @@ const clearButton = document.querySelector('#clear-board');
 const boardSizeInput = document.querySelector('#board-size');
 const generateButton = document.querySelector('#generate-board');
 
-const colors = ['red', 'green', 'blue'];
+const randomColorsGenerator = () => {
+  const red = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+
+  return `rgb(${red}, ${green}, ${blue})`;
+};
 
 const generatePaletteColors = () => {
-  colorsPaletteNotBlack.forEach((item, index) => {
-    item.style.backgroundColor = colors[index];
+  colorsPaletteNotBlack.forEach((item) => {
+    item.style.backgroundColor = randomColorsGenerator();
   });
 };
 
