@@ -14,5 +14,18 @@ window.onload = function() {
     }
     document.getElementById('black').addEventListener('click', blackColour);
 
+    function orangeColour() {
+        divSelected('orange', document.getElementById('orange'));
+    }
+    document.getElementById('orange').addEventListener('click', orangeColour);
 
+    function purpleColour() {
+        divSelected('purple', document.getElementById('purple'));
+    }
+    document.getElementById('purple').addEventListener('click', purpleColour);
+
+    function seagreenColour() {
+        divSelected('seagreen', document.getElementById('seagreen'));
+    }
+    document.getElementById('seagreen').addEventListener('click', seagreenColour);
 }
