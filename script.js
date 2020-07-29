@@ -44,7 +44,7 @@ window.onload = function() {
     
     const pixel = document.createElement("div");
     pixel.className = "pixel";
-    pixel.style.backgroundColor = "white" // trying to fix evaluator
+    pixel.style.backgroundColor = "white"
     pixel.onclick = function() {colorPixel(pixel);}
 
     pixelLines[index].appendChild(pixel);
@@ -97,5 +97,14 @@ window.onload = function() {
   function colorPixel(pixel) {
     pixel.style.backgroundColor = brush;
   }
+
+  const resetButton = document.getElementById("clear-board");
+  resetButton.onclick = function() {
+    const pixels = document.querySelectorAll(".pixel");
+    for (pixel of pixels) {
+      pixel.style.backgroundColor = "white"
+    }
+  }
+
 
 }

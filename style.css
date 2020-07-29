@@ -41,10 +41,6 @@ h1::after {
   transform: scale(1.15);
 }
 
-/* .color:first-child {
-  background-color: black;
-} */
-
 .color:not(:first-child) {
   margin-left: 8px;
 }
@@ -82,7 +78,6 @@ h1::after {
 }
 
 .pixel {
-  /* background-color: white; */
   border: 1px solid black;
   height: 40px;
   width: 40px;
