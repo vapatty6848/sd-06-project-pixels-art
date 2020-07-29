@@ -47,3 +47,16 @@
     justify-content: center;
     background-color: white;
 }
+
+.pixel-board {
+    background-color: white;
+    width: 210px;
+}
+
+.clear-board {
+    background-color: black;
+    color: white;
+    height: 25px;
+    margin: 10px;
+    width: 190px;
+}

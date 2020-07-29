@@ -1,5 +1,4 @@
 window.onload = function() {
-
     let selectedColour = 'black';
 
     function divSelected(colour, div) {
@@ -28,7 +27,6 @@ window.onload = function() {
         divSelected('seagreen', document.querySelector('#seagreen'));
     }
     document.getElementById('seagreen').addEventListener('click', seagreenColour);
-
 
     function definedColour(pixel) {
         pixel.addEventListener('click', function() {
