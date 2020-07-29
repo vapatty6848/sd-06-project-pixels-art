@@ -27,9 +27,9 @@
   background-color: white;
   border: 1px solid black;
   width: 40px;
-  height: 40px
-  
+  height: 40px;
+  display: table-cell;
 }
 .pixel-line {
-  display: inline-block;
+  display: table-row;
 }
