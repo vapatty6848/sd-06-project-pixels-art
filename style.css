@@ -16,7 +16,7 @@
 }
 
 .pixel {
-  background: white;
+  background-color: white;
   border: 1px black solid;
   display: inline-block;
   height: 40px;
