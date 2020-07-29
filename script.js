@@ -22,6 +22,12 @@ const botaoBorda = document.querySelector("#generate-board");
 botaoBorda.addEventListener("click", function() {
     const caixaTamanho = document.querySelector("#board-size");
     let tamanho = parseInt(caixaTamanho.value);
+    if (tamanho < 5) {
+        tamanho = 5;
+    }
+    if (tamanho > 50) {
+        tamanho = 50;
+    }
     if(caixaTamanho.value === ""){
         alert("Board inválido!");
     } else {
