@@ -16,5 +16,3 @@ window.onload = function() {
   buildPallet(colors);
 
 }
-
-// function
