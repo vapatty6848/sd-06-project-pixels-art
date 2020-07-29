@@ -52,7 +52,7 @@ document.querySelector('#pixel-board').addEventListener('click', function () {
 
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
-  for (let i = 0; i < document.getElementsByClassName('pixel').length; i += 1) {
-    document.querySelectorAll('.pixel')[i].style.backgroundColor = 'white';
+  for (let i = 0; i < document.querySelectorAll('.pixel').length; i += 1) {
+    document.querySelectorAll('.pixel')[i].style.removeProperty('background-color');
   }
 });
