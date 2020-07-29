@@ -29,33 +29,24 @@ header{
     height: 100px;
     position: absolute;
 } 
-
-#black {
-    position: center;
-    background-color: rgb(0, 0, 0);
-    width: 100px;
-    height: 100px;
-}
-#blue {
-    position: center;
-    background-color: rgb(0, 0, 255);
-    width: 100px;
-    height: 100px;
-   
-}
-#red {
-    position: center;
-    background-color: rgb(255, 0, 0);
-    width: 100px;
-    height: 100px;
-}
-#green {
-    position: center;
-    background-color: rgb(0, 128, 0);
-    width: 100px;
-    height: 100px;
+.paletItem {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    display: inline-block;
 }
 
+.pixel {
+    display: inline-block;
+    border: 1px black solid;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+
+}
 footer{
     color: rgb(255, 255, 255);
     font-style: italic;
