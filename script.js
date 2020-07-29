@@ -4,7 +4,6 @@ const tableColor = document.getElementById('pixel-board');
 const colorSelected = document.getElementsByClassName('color');
 const buttonClear = document.getElementById('clear-board');
 
-
 // const currentColor = document.querySelector('.selected').style.backgroundColor;
 
 const colors = ['black', 'blue', 'yellow', 'red'];
