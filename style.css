@@ -26,7 +26,6 @@
 
 #pixel-board {
   background-color: white;
-  
 }
 
 .pixel {
@@ -34,12 +33,10 @@
   margin: -2px;
   width: 40px;
   height: 40px;
+  display: inline-block
     
 }
 
 .bgbranco {
   background: white;
-}
-.sectionPB{
-    display: inline-block;
 }

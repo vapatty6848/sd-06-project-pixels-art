@@ -4,22 +4,21 @@ const btnClear = document.querySelector('#clear-board');
 let classSel = 'preto';
 
 function createPixelBoard() {
-  
-    for (let j = 0; j < 5; j+=1) {
-      let createSection = document.createElement('section');
-      createSection.setAttribute('class', 'sectionPB');
-      pixelBoard.appendChild(createSection);    
+
+  for (let j = 0; j < 5; j += 1) {
+    let createSection = document.createElement('section');
+    createSection.setAttribute('class', 'sectionPB');
+    pixelBoard.appendChild(createSection);
   }
-  
+
   const sect = document.getElementsByClassName('sectionPB');
-    for (let l = 0; l < 5; l++) {
-        for (let i = 0; i < 5; i += 1) {
-            let createDiv = document.createElement('div')
-            createDiv.setAttribute('class', 'pixel bgbranco')
-            sect[l].appendChild(createDiv);
-          } 
+  for (let l = 0; l < 5; l++) {
+    for (let i = 0; i < 5; i += 1) {
+      let createDiv = document.createElement('div')
+      createDiv.setAttribute('class', 'pixel bgbranco')
+      sect[l].appendChild(createDiv);
     }
-      
+  }
 }
 
 colorPalet.addEventListener('click', function (event) {
@@ -38,10 +37,7 @@ pixelBoard.addEventListener('click', function (event) {
     event.target.classList.add('pixel')
     event.target.classList.add(classSel)
     event.target.classList.remove('bgbranco')
-    //event.target.className = "";
   }
-  //event.target.classList.add('pixel')
-  //event.target.classList.add(classSel)
 })
 
 btnClear.addEventListener('click', function () {
