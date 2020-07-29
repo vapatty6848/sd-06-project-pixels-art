@@ -1,3 +1,4 @@
+
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalet = document.querySelector('#color-palette');
 const btnClear = document.querySelector('#clear-board');
@@ -5,6 +6,29 @@ const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 let classSel = 'preto';
 let sizeBox = 5;
+
+function createColorPalet(colors) {
+  for (const index in colors) {
+    let palletItemDiv = createPalletItem(colors[index])
+    colorPalet.appendChild(palletItemDiv)
+  }
+}
+
+function createPalletItem(color) {
+  let palletItemDiv = document.createElement('div');
+  palletItemDiv.classList.add(color)
+  palletItemDiv.classList.add('color')
+  if (palletItemDiv.classList.contains('black')) {
+    palletItemDiv.classList.add('selected')
+  }
+  palletItemDiv.addEventListener('click', handlePalletEvent());
+  return palletItemDiv;
+}
+
+function handlePalletEvent() {
+  console.log('certo');
+}
+
 
 function createPixelBoard() {
   const createFather = document.createElement('section');
@@ -27,7 +51,7 @@ function createPixelBoard() {
 }
 
 colorPalet.addEventListener('click', function (event) {
-  classSel = event.target.classList[1];
+  classSel = event.target.classList[0];
   document.querySelectorAll('.color').forEach((element) => {
     if (element.classList.contains('selected')) {
       element.classList.remove('selected');
@@ -35,7 +59,6 @@ colorPalet.addEventListener('click', function (event) {
     event.target.classList.add('selected');
   });
 });
-
 
 pixelBoard.addEventListener('click', function (event) {
   if (event.target.classList.contains('pixel')) {
