@@ -74,7 +74,7 @@ function createNewBoard() {
       box.style.backgroundColor = color;
     });
   });
-}
+};
 
 const btClean = document.getElementById('clear-board');
 btClean.addEventListener('click', function () {
@@ -91,15 +91,13 @@ function checkBoardSize() {
   if (boardSize > 50) {
     boardSize = 50;
   }
-
-}
+};
 
 const btGenerateBoard = document.getElementById('generate-board');
 btGenerateBoard.addEventListener('click', function () {
   boardSize = document.getElementById('board-size').value;
   if (boardSize.length !== 0) {
     checkBoardSize();
-    console.log(boardSize);
     document.getElementById('pixel-board').innerHTML = '';
     createNewBoard();
   } else {
