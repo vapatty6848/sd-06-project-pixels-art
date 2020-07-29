@@ -28,13 +28,14 @@ function createPixelBoard() {
 
 colorPalet.addEventListener('click', function (event) {
   classSel = event.target.classList[1];
-  document.querySelectorAll('.color').forEach((j) => {
-    if (j.classList.contains('selected')) {
-      j.classList.remove('selected');
+  document.querySelectorAll('.color').forEach((element) => {
+    if (element.classList.contains('selected')) {
+      element.classList.remove('selected');
     }
-    event.target.classList.add('selected');
+    element.target.classList.add('selected');
   });
 });
+
 
 pixelBoard.addEventListener('click', function (event) {
   if (event.target.classList.contains('pixel')) {
@@ -46,9 +47,9 @@ pixelBoard.addEventListener('click', function (event) {
 });
 
 btnClear.addEventListener('click', function () {
-  document.querySelectorAll('.pixel').forEach((j) => {
-    if (j.classList.contains('pixel')) {
-      j.className = 'pixel bgbranco';
+  document.querySelectorAll('.pixel').forEach((element) => {
+    if (element.classList.contains('pixel')) {
+      element.className = 'pixel bgbranco';
     }
   });
 });
