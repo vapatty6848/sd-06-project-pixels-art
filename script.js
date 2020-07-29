@@ -11,6 +11,9 @@ var randonC1 = Math.floor(Math.random()*16777215).toString(16);
 var randonC2 = Math.floor(Math.random()*16777215).toString(16);
 var randonC3 = Math.floor(Math.random()*16777215).toString(16);
 
+var tamanho = document.querySelector("#board-size");
+var botao = document.querySelector("#generate-board");
+var pixelBoard2 = document.querySelector("#pixel-board-2");
 
 colors[1].style.backgroundColor = "#" +randonC1;
 colors[2].style.backgroundColor = "#" +randonC2;
@@ -60,7 +63,27 @@ blue.addEventListener("click", function(){
 })
 
 
-
+botao.addEventListener("click", function(){
+    let sizeNmb = parseInt(tamanho.value)
+    console.log(sizeNmb)
+    if(tamanho.value == ""){
+        alert("Board inválido!");
+    }
+    else{
+       for(let i = 0; i < sizeNmb; i++){
+        var line = document.createElement("div");
+        line.className = "linha";
+        pixelBoard.appendChild(line)
+        for(let i = 0; i < sizeNmb; i++){
+        var block = document.createElement("div")
+        block.className = "pixel";
+        block.backgroundColor = "white";
+        line.appendChild(block)
+        }
+    } 
+    }
+    
+})
 
 pixelBoard.addEventListener("click", function(event){
     
@@ -81,3 +104,5 @@ clear.addEventListener("click", function(){
         quadrados[i].style.backgroundColor = "white"
     }
 })
+
+
