@@ -6,9 +6,7 @@ const btnClear = document.getElementById('clear-board');
 const btnGenerate = document.getElementById('generate-board');
 const boardSize = document.getElementById('board-size');
 
-createBoard(5);
-
-function createPixelLine (number) {
+function createPixelLine(number) {
   for (let i = 0; i < number; i += 1) {
     const pixelLine = document.createElement('div');
     pixelLine.id = 'pixel-line';
@@ -17,13 +15,13 @@ function createPixelLine (number) {
   }
 };
 
-function createPixel (i) {
+function createPixel(i) {
   const newPixel = document.createElement('div');
   newPixel.className = 'pixel';
   document.querySelectorAll('#pixel-line')[i].appendChild(newPixel);
 };
 
-function createBoard (number) {
+function createBoard(number) {
   if (number >= 5 && number <= 50) {
     createPixelLine(number);
     for (let i = 0; i < document.querySelectorAll('#pixel-line').length; i += 1) {
@@ -38,6 +36,8 @@ function createBoard (number) {
     }
   }
 };
+
+createBoard(5);
 
 document.querySelector('.black').className += ' selected';
 document.querySelector('.selected').style.color = 'black';
@@ -87,8 +87,18 @@ btnClear.addEventListener('click', function () {
 btnGenerate.addEventListener('click', function () {
   if (boardSize.value === '') {
     alert('Board inválido!');
-  } else if (parseInt(boardSize.value) < 5 || parseInt(boardSize.value) > 50) {
-    alert('Número menor que cinco ou maior do que 50!!');
+  } else if (parseInt(boardSize.value) < 5) {
+    document.body.removeChild(document.getElementById('pixel-board'));
+    const board = document.createElement('div');
+    board.id = 'pixel-board';
+    document.body.appendChild(board);
+    createBoard(5);
+  } else if (parseInt(boardSize.value) > 50) {
+    document.body.removeChild(document.getElementById('pixel-board'));
+    const board = document.createElement('div');
+    board.id = 'pixel-board';
+    document.body.appendChild(board);
+    createBoard(50);
   } else {
     document.body.removeChild(document.getElementById('pixel-board'));
     const board = document.createElement('div');
