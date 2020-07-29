@@ -27,14 +27,16 @@
 #pixel-board {
   background-color: white;
   display: block;
+  height: 210px;
+  width: 100%;
+  position: relative;
 }
 
 .pixel {
   border: 1px solid black;
-  margin: -2px;
   width: 40px;
   height: 40px;
-  display: inline-block
+  display: inline-block;
     
 }
 
@@ -43,4 +45,5 @@
 }
 .sectionPB {
   display: block;
+  line-height: 0;
 }
