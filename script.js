@@ -1,7 +1,10 @@
 window.onclick = function () {
-  if (event.target.className === 'color') {
+  const selection = document.querySelector('.selected');
+  	if (event.target.className === 'color') {
     event.target.classList.add('selected');
-    const selection = document.querySelector('.selected');
     selection.classList.remove('selected');
   }
+  if (event.target.className === 'pixel') {
+  	event.target.style.backgroundColor = selection.id;
+}
 };
