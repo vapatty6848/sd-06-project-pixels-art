@@ -21,11 +21,15 @@ button {
   padding: 10px;
 }
 
+#pixel-board {
+  width: fit-content;
+}
+
 .pixel {
   background-color: white;
   border: 1px solid black;
   display: inline-block;
   height: 40px;
-  margin: -2px;
+  margin: -2px 0;
   width: 40px;
 }
