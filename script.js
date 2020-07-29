@@ -16,11 +16,4 @@ window.onload = function () {
         }
         return palletDiv;
     }
-    palletColor(['black', 'red', 'blue', 'green']);
-    function palletColor (colors) {
-        let colorContainer = document.getElementById('color-palette');
-        for (let i in colors) {
-            let colorDiv = createPallet(colors[i]);
-            colorContainer.appendChild(colorDiv);
-        }
 }
