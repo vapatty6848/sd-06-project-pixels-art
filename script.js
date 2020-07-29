@@ -6,6 +6,18 @@ function colorCatcher() {
   return changeColor;
 }
 
+window.onload = paletteGenerator();
+
+function paletteGenerator() {
+  const witchColorSet = document.querySelector('#color-palette').firstElementChild;
+    
+  for (let color = witchColorSet.nextElementSibling; color; color = color.nextElementSibling) {
+    const colorToSet = getRandomColor();
+    console.log(colorToSet);
+    color.style.backgroundColor = `${colorToSet}`;
+  }
+}
+
 function generateBoard() {
   const boardSize = document.querySelector('#board-size').value;
 
