@@ -3,8 +3,8 @@ const colorPalette = document.getElementById('color-palette');
 const colors = ['black', 'green', 'red', 'blue'];
 const pixelBoard = document.getElementById('pixel-board');
 const colorSelected = document.getElementsByClassName('color');
-const buttonElement = document.getElementById('clear-board');
-const pixelSelected = document.getElementsByClassName('pixel');
+const buttonElement = document.querySelector('#clear-board');
+const pixelSelected = document.querySelectorAll('.pixel');
 // Funções e Eventos
 
 for (let i = 0; i < 4; i += 1) {
@@ -42,7 +42,7 @@ for (const palette of colorSelected) {
 }
 
 buttonElement.addEventListener('click', function () {
-  for (let r = 0; r < 25; r += 1) {
+  for (let r = 0; r < pixelSelected.length; r += 1) {
     pixelSelected[r].style.background = 'white';
   }
 });
