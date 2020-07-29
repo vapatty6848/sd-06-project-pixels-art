@@ -1,5 +1,6 @@
 window.onload = function() {
   // let selectedColor = document.querySelector('.selected');
+  
   let color = document.getElementsByClassName('color');
   let pixels = document.getElementsByClassName('pixel');
   
