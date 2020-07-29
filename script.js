@@ -1,6 +1,6 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalet = document.querySelector('#color-palette');
-const teste = document.querySelectorAll('.color');
+const btnClear = document.querySelector('#clear-board');
 let classSel = 'preto';
 
 function createPixelBoard() {
@@ -42,4 +42,12 @@ pixelBoard.addEventListener('click', function (event) {
   }
   //event.target.classList.add('pixel')
   //event.target.classList.add(classSel)
+})
+
+btnClear.addEventListener('click', function () {
+  for (const j of document.querySelectorAll('.pixel')) {
+    if (j.classList.contains('pixel')) {
+      j.className = 'pixel bgbranco'
+    }
+  }
 })
