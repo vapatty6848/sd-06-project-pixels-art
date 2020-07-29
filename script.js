@@ -1,40 +1,63 @@
 window.onload = function () {
-  const blackColor = document.getElementById("black");
-}
+  const mainPalette = document.getElementById('color-palette');
+  const boardGrid = document.getElementById('pixel-board');
+  const btnClear = document.getElementById('clear-button');
+  let presentColor = 'black';
 
-const mainPalette = document.getElementById("color-palette");
+  // Adiciona novas opções de cores;
+  const generateColor = ['black', 'red', 'blue', 'green'];
 
-// Opção para facilitar a adição de novas cores;
-
-// function selectColor(numbersColor) {
-//   for (let index = 0; index < (numbersColor - 1); index += 1) {
-//     const palette = document.getElementById("color-palette");
-//     const color = document.createElement("div");
-//     palette.appendChild(color);
-//     color.className = "color";
-//   }
-// }
-// kindColor(4);
-
-function boxGrid(numberElements) {
-  for (let index = 0; index < (numberElements**2); index += 1) {
-    const grid = document.getElementById("pixel-board");
-    const pixel = document.createElement("div");
-    grid.appendChild(pixel);
-    pixel.className = "pixel";
+  // Adiciona as novas cores a paleta;
+  function generatePalette(colorOptions) {
+    for (let index = 0; index < colorOptions.length; index += 1) {
+      const paletteOptions = createPixelColor(colorOptions[index]);
+      mainPalette.appendChild(paletteOptions);
+    }
   }
+  generatePalette(generateColor);
+
+  // Cria novos pixels de cores para a paleta;
+  function createPixelColor(color) {
+    const palettePixel = document.createElement('div');
+    palettePixel.style.backgroundColor = color;
+    palettePixel.className = 'color';
+    palettePixel.addEventListener('click', selectColor);
+
+    if (color === 'black') {
+      palettePixel.classList.add('selected');
+    }
+    return palettePixel;
+  }
+
+  // Habilita e Desabilita a Cor desejada ao clicar;
+  function selectColor(event) {
+    const selectedColor = document.querySelector('.selected');
+    const currentColor = event.target;
+    selectedColor.classList.remove('selected');
+    currentColor.classList.add('selected');
+    presentColor = currentColor.style.backgroundColor;
+  }
+
+  // Cria o grid de pixel
+  function createGrid(numberElements) {
+    for (let index = 0; index < (numberElements**2); index += 1) {
+      const pixel = document.createElement("div");
+      boardGrid.appendChild(pixel);
+      pixel.className = "pixel";
+    }
+  }
+  createGrid(5);
+
+  // Pinta os pixels da cor selecionada;
+  function printPixel(event) {
+    let selectedPixel = event.target;
+    selectedPixel.style.backgroundColor = presentColor;
+  }
+  boardGrid.addEventListener("click", printPixel);
+
+  // const btnClear = document.querySelector("#clear-board");
+  // btnClear.addEventListener('click', function () {
+  //   alert("funcionando!");
+  // })
+
 }
-boxGrid(5);
-
-function selectColor() {
-  const selectedColor = document.querySelector(".selected");
-  selectedColor.classList.remove("selected");
-  event.target.classList.add("selected");
-}
-
-mainPalette.addEventListener("click", selectColor);
-
-// const btnClear = document.querySelector("#clear-board");
-// btnClear.addEventListener('click', function () {
-//   alert("funcionando!");
-// })
