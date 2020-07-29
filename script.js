@@ -1,7 +1,7 @@
 window.onload = function () {
   createColorPallet(colors);
   pixelsOfBoard(number);
-}
+};
 
 let selectedColor = 'black';
 let colors = ['black', 'red', 'blue', 'green'];
