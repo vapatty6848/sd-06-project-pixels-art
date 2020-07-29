@@ -132,12 +132,12 @@ window.onload = function() {
 
   // Canvas sizes
   function validateCanvasSize() {
-    if (rowsInput.value < 5) {
-      rowsInput.value = 5;
-    }
-    else if (rowsInput.value > 50) {
-      rowsInput.value = 50;
-    }
+    // if (rowsInput.value < 5) {
+    //   rowsInput.value = 5;
+    // }
+    // else if (rowsInput.value > 50) {
+    //   rowsInput.value = 50;
+    // }
 
     columnsInput.value = rowsInput.value;
   }
