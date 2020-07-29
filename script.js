@@ -60,3 +60,11 @@ document.querySelectorAll('.pixel').forEach(box => {
     box.style.backgroundColor = color;
   })
 });
+
+function boardCleaner() {
+  const allBoxes = document.querySelectorAll('.pixel');
+  for (let i = 0; i < allBoxes.length; i += 1) {
+    allBoxes[i].style.backgroundColor = 'white';
+
+  }
+}
