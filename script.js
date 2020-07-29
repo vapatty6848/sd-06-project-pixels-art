@@ -3,11 +3,6 @@ const divPallete = document.getElementById('color-palette');
 const palleteColors = ['black', 'red', 'blue', 'green'];
 let selectedColor = 'black';
 
-window.onload = function() {
-  createPalleteDiv(palleteColors);
-  fillBoardRows();
-}
-
 function fillBoardColumn() {
   for (let column = 0; column < pixelRows.length; column += 1) {
     const pixelColumn = document.createElement('div');
@@ -40,18 +35,32 @@ function createPalleteDiv(colors) {
   }
 }
 
-divPallete.addEventListener('click', selectColorItem);
-
 function selectColorItem(event) {
-  let oldSelectedColor = document.querySelector('.selected');
-  oldSelectedColor.classList.remove('selected')
+  const oldSelectedColor = document.querySelector('.selected');
+  oldSelectedColor.classList.remove('selected');
   selectedColor = event.target.style.backgroundColor;
   event.target.classList.add('selected');
-  console.log(selectedColor);
 }
 
-document.getElementById('pixel-board').addEventListener('click', paintingTheBoard)
+divPallete.addEventListener('click', selectColorItem);
 
 function paintingTheBoard(event) {
   event.target.style.backgroundColor = selectedColor;
 }
+
+function cleanBoardColumn(row) {
+  for (let child = pixelRows[row].firstElementChild; child != null; child = child.nextElementSibling) {
+    child.style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+
+document.getElementById('pixel-board').addEventListener('click', paintingTheBoard);
+
+function cleanBoardRow() {
+  for (let row = 0; row < pixelRows.length; row += 1) {
+    cleanBoardColumn(row);
+  }
+}
+
+createPalleteDiv(palleteColors);
+fillBoardRows();
