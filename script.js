@@ -23,8 +23,22 @@ const thirdColor = document.getElementById('third-color');
 const fourthColor = document.getElementById('fourth-color');
 const pixelBoard = document.getElementById('pixel-board');
 const clearButton = document.getElementById('clear-board');
-const generateBoardInput = document.getElementById('board-size');
-const generateBoardButton = document.getElementById('generate-board');
+// const generateBoardInput = document.getElementById('board-size');
+// const generateBoardButton = document.getElementById('generate-board');
+
+function generateRandomRGBColor() {
+  const r = Math.round(Math.random() * 255);
+  const g = Math.round(Math.random() * 255);
+  const b = Math.round(Math.random() * 255);
+  const randomColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+  return randomColor;
+}
+
+window.onload = function () {
+  secondColor.style.backgroundColor = generateRandomRGBColor();
+  thirdColor.style.backgroundColor = generateRandomRGBColor();
+  fourthColor.style.backgroundColor = generateRandomRGBColor();
+}
 
 function clearSelected() {
   const colorArray = document.getElementsByClassName('color');
