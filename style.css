@@ -1,21 +1,17 @@
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
 .color {
   border: 1px solid black;
   width: 70px;
   height: 70px;
   display: inline-block;
   margin: 5px;
-}
-
-.black {
-  background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
 }
 
 .green {
@@ -34,9 +30,9 @@
   height: 40px;
   width: 40px;
   display: inline-block;
-  margin: 2px
+  margin: 2px;
 }
 
-#pixel-board {
-  margin-top: 10px;
+.red {
+  background-color: red;
 }
