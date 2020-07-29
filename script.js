@@ -59,8 +59,8 @@ function rebuildBoard() {
     useColors();
 }
 
-createBoard(5);
-useColors();
+// createBoard(5);
+// useColors();
 
 
 // CRIA AS CORES ALEATÓRIAS DA PALETA
@@ -176,3 +176,6 @@ for (let i = 0; i < colorElements.length; i += 1) {
 colorWell.addEventListener('change', function () {
     selected2.style.backgroundColor = colorWell.value;
 });
+
+createBoard(5);
+useColors();
