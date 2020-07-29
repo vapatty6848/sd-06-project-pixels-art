@@ -5,8 +5,8 @@ window.onclick = function() {
         selection.classList.remove("selected");
         selection = document.querySelector(".selected");
     }
-    if(event.target.className === "pixel") { 
-        event.target.style.backgroundColor = selection.id;
+    if(event.target.className === "pixel") {
+        event.target.style.backgroundColor = selection.style.backgroundColor;
     }
 }
 const all = document.querySelectorAll(".pixel");
@@ -46,5 +46,18 @@ botaoBorda.addEventListener("click", function() {
         }
     }
 })
-
+function gera_cor(){
+    var hexadecimais = '0123456789ABCDEF';
+    var cor = '#';
+    for (var i = 0; i < 6; i++ ) {
+        cor += hexadecimais[Math.floor(Math.random() * 16)];
+    }
+    return cor;
+}
+for(let i = 1; i < 4; i++) {
+    let divCor = document.createElement("div");
+    divCor.className = "color";
+    divCor.style.backgroundColor = gera_cor();
+    document.querySelector("#color-palette").appendChild(divCor);    
+}
 
