@@ -1,7 +1,7 @@
 window.onload = function () {
   createColorPallet(['black', 'red', 'blue', 'green'])
-  pixelsBoard(5);
 }
+let selectedColor = 'black';
 let pixelBoardDiv = document.querySelector("#pixel-board");
 let btn = document.querySelector('#clear-board');
 let pixel = document.getElementsByClassName('pixel');
@@ -17,7 +17,6 @@ function createPalletItem(color) {
   palletItemDiv.style.backgroundColor = color;
   palletItemDiv.className = "color";
   palletItemDiv.addEventListener("click", handlePalletItemEvent);
-
   if (color === "black") {
     palletItemDiv.classList.add("selected");
   }
@@ -30,11 +29,11 @@ function handlePalletItemEvent(event) {
   currentSelectedDiv.classList.add("selected");
   selectedColor = currentSelectedDiv.style.backgroundColor;
 }
+pixelBoardDiv.addEventListener("click", handlePixelClick)
 function handlePixelClick(event) {
   let selectedPixelDiv = event.target;
   selectedPixelDiv.style.backgroundColor = selectedColor;
 }
-pixelBoardDiv.addEventListener("click", handlePixelClick)
 btn.addEventListener("click", function () {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = "white";
