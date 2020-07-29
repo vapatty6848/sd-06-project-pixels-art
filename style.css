@@ -2,30 +2,30 @@
   background-color: black;
   border: 1px solid black;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 45px;
+  width: 45px;
 }
 
 #red {
   background-color: red;
   border: 1px solid black;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 45px;
+  width: 45px;
 }
 #green {
   background-color: green;
   border: 1px solid black;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 45px;
+  width: 45px;
 }
 #blue {
   background-color: blue;
   border: 1px solid black;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 45px;
+  width: 45px;
 }
 .pixel {
   background-color: white;
@@ -33,4 +33,11 @@
   display: inline-block;
   height: 40px;
   width: 40px;
+  margin: -2px;
+}
+
+h1 {
+  font-family: 'Red Rose', cursive;
+  font-size: 35px;
+  text-decoration: underline;
 }
