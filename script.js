@@ -4,8 +4,9 @@ const btnClear = document.querySelector('#clear-board');
 const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 let classSel = 'black';
-let sizeBox = 5;
 const cores = ['black'];
+let sizeBox = 5;
+
 
 function randomColors() {
   const r = Math.floor(Math.random() * 255);
@@ -18,6 +19,16 @@ function generateColors() {
   for (let i = 0; i < 3; i += 1) {
     cores.push(randomColors());
   }
+}
+
+function handle(event) {
+  classSel = event.target.style.backgroundColor;
+  document.querySelectorAll('.color').forEach((element) => {
+    if (element.classList.contains('selected')) {
+      element.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  });
 }
 
 function createPalletItem(cores) {
@@ -37,17 +48,6 @@ function createColorPalet(colors) {
     colorPalet.appendChild(palletItemDiv);
   }
 }
-
-function handle(event) {
-  classSel = event.target.style.backgroundColor;
-  document.querySelectorAll('.color').forEach((element) => {
-    if (element.classList.contains('selected')) {
-      element.classList.remove('selected');
-    }
-    event.target.classList.add('selected');
-  });
-}
-
 
 function createPixelBoard() {
   const createFather = document.createElement('section');
@@ -108,5 +108,9 @@ if (inputNum === 'Desconsidere é só pra passar no code climate') {
   cores[0] = 'oi';
   createColorPalet(cores);
   generateColors();
-  createColorPalet(colors);
+  createColorPalet(cores);
+}
+
+{
+  "no-use-before-define": ["error", { "functions": true, "classes": true }]
 }

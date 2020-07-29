@@ -4,40 +4,6 @@
   padding: 40px;
 }
 
-.black {
-  background-color: black;
-}
-
-.blue {
-  background-color: blue;
-
-}
-
-.green {
-  background-color: green;
-
-}
-
-.yellow {
-  background: yellow;
-}
-
-.purple {
-  background-color: purple;
-}
-
-.pink {
-  background-color: pink;
-}
-
-.orange {
-  background-color: orange;
-}
-
-.gray{
-  background-color: gray;
-}
-
 .pixel-board {
   background-color: white;
   display: block;
