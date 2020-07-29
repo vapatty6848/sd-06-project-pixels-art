@@ -1,5 +1,12 @@
-window.onload = function() {
-  createColorPallet(['black', 'blue', 'blueviolet', 'pink']);
+onload = function() {
+  
+// Gerando array com cor randomica
+  let arrayRandomColor = ['rgb(0 , 0 , 0)'];
+  while (arrayRandomColor.length < 4) {
+    let newColor = random_color('rgb');
+    arrayRandomColor.push(newColor);
+  }
+  createColorPallet(arrayRandomColor);
   createPixelBoard(5);
   selectedColor = 'black';
 };
@@ -19,7 +26,7 @@ function createPalletItem(color) {
   palletColorDiv.style.backgroundColor = color;
   palletColorDiv.className = 'color';
   palletColorDiv.addEventListener('click', handlePalletColorEvent);
-    if (color === 'black') {
+    if (color === 'rgb(0, 0, 0)') {
       palletColorDiv.classList.add('selected');
     }
   return palletColorDiv;
@@ -95,4 +102,20 @@ function resetPixelBoard() {
   }  
 }
 
+// Gerando cor randomica
+function random_color(format) {
+  var rint = Math.round(0xffffff * Math.random());
+  switch(format) {
+    case 'hex':
+      return ('#0' + rint.toString(16)).replace(/^#0([0-9a-f]{6})$/i, '#$1');
+      break;
 
+    case 'rgb':
+      return 'rgb(' + (rint >> 16) + ',' + (rint >> 8 & 255) + ',' + (rint & 255) + ')';
+      break;
+
+    default:
+      return rint;
+      break;
+    }
+}
