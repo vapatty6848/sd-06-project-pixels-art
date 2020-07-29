@@ -13,22 +13,6 @@ body {
   display: inline-flex;
 }
 
-.black {
-  background-color: black;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
 .line {
   display: block;
   line-height: 0;
@@ -44,8 +28,7 @@ body {
 
 .pixel-board {
   display: block;
-  margin-top: 20px;
   height: 210px;
-  position: relative;
+  margin-top: 20px;
   width: 100%;
 }
