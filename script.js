@@ -40,13 +40,12 @@ colorPalette.addEventListener('click', function (e) {
 });
 
 
-pixelBoard.addEventListener('click', function(e) {
+pixelBoard.addEventListener('click', function (e) {
   e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 });
 
 buttonElement.addEventListener('click', function () {
   for (let r = 0; r < pixelSelected.length; r += 1) {
     pixelSelected[r].style.background = 'white';
-    console.log(pixelSelected[r]);
   }
 });
