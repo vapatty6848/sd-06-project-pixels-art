@@ -29,10 +29,12 @@ function paintPixel(event){
 function clearButton(event){
     // quando acontecer o evento: botão ser clicado-> limpar quadro de pixels:
     //evento: click no botão id ="clear-bord"
-   document.getElementById("pixel-board").style.backgroundColor ="white";
+   //document.getElementById("pixel-board").style.backgroundColor ="white";
    //usar for percorrer os pixels e trocar o background color
-   // let index=0 ; index < document.getelementsByClassName("pixels").length; index ++;
-   
+   // let index=0 ; index < document.getelementsByClassName("pixel").length; index ++;
+   for(let index =0 ;index <document.getElementsByClassName("pixel").length; index+=1){
+       event.target.style.backgroundColor = "white";
+   }
 
     //limpar quadro de pixels:
     //document.getElementById("pixel-board").style.backgroundColor = "white";
