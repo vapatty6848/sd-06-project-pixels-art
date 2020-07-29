@@ -106,5 +106,24 @@ window.onload = function() {
     }
   }
 
+  // Canvas sizes
+  function validateCanvasSize() {
+    if (rowsInput.value < 5) {
+      rowsInput.value = 5;
+    }
+    else if (rowsInput.value > 50) {
+      rowsInput.value = 50;
+    }
 
+    columnsInput.value = rowsInput.value;
+  }
+
+  const rowsInput = document.getElementById("board-size");
+  const columnsInput = document.querySelectorAll("input")[1];
+
+  rowsInput.addEventListener("change", function () {
+    validateCanvasSize()
+  })
+
+  columnsInput.value = rowsInput.value;
 }
