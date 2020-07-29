@@ -2,6 +2,7 @@
 const colorPalette = document.getElementById('color-palette');
 const colors = ['black', 'green', 'red', 'blue'];
 const pixelBoard = document.getElementById('pixel-board');
+const colorSelected = document.getElementsByClassName('color');
 // Funções e Eventos
 
 for (let i = 0; i < 4; i += 1) {
@@ -23,5 +24,20 @@ for (let i = 0; i < 5; i += 1) {
 }
 
 window.onload = function () {
-  document.getElementsByClassName('color')[0].className += ' selected';
+  colorSelected[0].className += ' selected';
+};
+
+function changeSelected(select) {
+  let selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  select.className += ' selected';
 }
+
+for (const palette of colorSelected) {
+  palette.addEventListener('click', function() {
+    changeSelected(this);
+  });
+}
+
+
+
