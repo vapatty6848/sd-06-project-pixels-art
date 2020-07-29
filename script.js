@@ -44,6 +44,7 @@ window.onload = function() {
     
     const pixel = document.createElement("div");
     pixel.className = "pixel";
+    pixel.style.backgroundColor = "white" // trying to fix evaluator
     pixel.onclick = function() {colorPixel(pixel);}
 
     pixelLines[index].appendChild(pixel);
