@@ -1,4 +1,3 @@
 const colorSelected = document.querySelector('selected');
-function getColor (e) {
-
+function getColor(e) {
 }
