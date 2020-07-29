@@ -1,45 +1,44 @@
-function colorBlack(){
-    localStorage.setItem('class', 'selected');
-}
-//req 7- - Ao clicar em uma das cores da paleta, a cor selecionada é que vai ser usada para preencher os pixels no quadro.
+ let selectedColor = "black";
+ 
+window.onload = function() {
+ createColorPalette(['black', 'red', 'blue', 'yellow']);
 
-function selectColor(event){
-    // primeira cor selecionada -> preto, class black selected
-    //escolher cor:
-    //trocar class selected de acordo com o click na paleta de cores -como faz?
-    localStorage.setItem('class', event.target.id);
+ //informar array de cores para criar paleta de cores
+function createColorPalette(colors){
+    let colorPalletContainer = document.getElementById('color-palette');
 
-    //clicar na cor (evento: click, class color)-> selected vai para nova cor localStorage.setItem 
-    
-    
-}
-
-// req 8- - Ao clicar em um pixel dentro do quadro após selecionar uma cor na paleta, o pixel deve ser preenchido com esta cor.
-
-function paintPixel(event){
- //depois de escolher a cor(na paleta) clicar no pixel que sequer colorir-> o pixel assume aquela cor
-  //enquanto não selecionar outra cor permanecer com a mesma
-//pintar pixel depois do click - classe pixel
- event.target.style.backgroundColor = localStorage.getItem('class');
- //chamar função: selectColor para saber qual cor usar
+    for(let index in colors){
+        let palletItemDiv = createPaletteItens(colors[index]);
+        colorPalletContainer.appendChild(palletItemDiv);
+    }
    
 }
+//cria paleta de cores
+function createPaletteItens(color) {
+    let palletItemDiv = document.createElement('div');
+    palletItemDiv.style.backgroundColor = color;
+    palletItemDiv.className = "color";
+    palletItemDiv.addEventListener('click', paletteItemEvent);
 
-//req 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
-function clearButton(event){
-    // quando acontecer o evento: botão ser clicado-> limpar quadro de pixels:
-    //evento: click no botão id ="clear-bord"
-   //document.getElementById("pixel-board").style.backgroundColor ="white";
-   //usar for percorrer os pixels e trocar o background color
-   // let index=0 ; index < document.getelementsByClassName("pixel").length; index ++;
-   for(let index =0 ;index <document.getElementsByClassName('pixel').length; index+=1){
-    document.getElementById('pixel').style.backgroundColor = "white";
+    if(color === "black"){
+        palletItemDiv.classList.add("selected");
+    }
+    
+    return palletItemDiv;
    }
 
-    //limpar quadro de pixels:
-    //document.getElementById("pixel-board").style.backgroundColor = "white";
-}
+   function paletteItemEvent(event){
+    selectedColor = event.target.style.backgroundColor;
+    console.log(selectedColor);
+        
+    }
 
-document.getElementById("clear-board").addEventListener("click", clearButton);
-document.getElementById("color-palette").addEventListener("click", selectColor);
-document.getElementById("pixel-board").addEventListener("click", paintPixel);
+    //função que colore os pixels
+    function coloringPixels(event){
+             
+        event.target.style.backgroundColor = selectedColor;
+        console.log(event.target.style.backgroundColor);
+
+    }
+    document.getElementById('pixel-board').addEventListener('click', coloringPixels);
+}

@@ -6,6 +6,15 @@
 .pixel-board {
   display: table;
 }
+.palette-item {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin: 0px;
+  display: inline-block;
+  
+}
 .pixel {
   background-color: white;
   width: 40px;
