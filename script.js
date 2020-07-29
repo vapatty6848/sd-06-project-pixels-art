@@ -32,7 +32,7 @@ colorPalet.addEventListener('click', function (event) {
     if (element.classList.contains('selected')) {
       element.classList.remove('selected');
     }
-    element.target.classList.add('selected');
+    event.target.classList.add('selected');
   });
 });
 
