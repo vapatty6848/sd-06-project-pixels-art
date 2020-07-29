@@ -1,7 +1,7 @@
 let selectedColor = "black";
 window.onload = function () {
 
-let colorArray = ["black", "purple", "green", "yellow"];
+let colorArray = ["black", "purple", "green", "red"];
 
 createColorPallet(colorArray);
 
@@ -24,9 +24,10 @@ function createColorPallet(colors) {
 function createPalletItem(color) {
     let palletItemDiv = document.createElement("div");
     palletItemDiv.style.backgroundColor = color;
-    palletItemDiv.className = "color";
     palletItemDiv.className = "pallet-item";
+    palletItemDiv.classList.add("color");
     palletItemDiv.addEventListener("click", handlePalletItemEvent);
+    console.log(palletItemDiv);
 
     if(color === "black") {
         palletItemDiv.classList.add("selected");
@@ -54,14 +55,6 @@ function handlePalletItemEvent() {
 //     div.addEventListener("click", function(event){
 //         console.log(event.target.class);
 //     });
-}
-
-
-
-
-
-
-
-        
+}    
     
   
