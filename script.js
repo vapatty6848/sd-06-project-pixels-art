@@ -2,6 +2,7 @@ const sectionPaleta = document.querySelector('#pixel-board');
 const palletColor = document.querySelector('#color-palette');
 const paletaCores = ['black', 'red', 'blue', 'green'];
 let colorBackPixel = paletaCores[0];
+const buttonClear = document.querySelector('#clear-board');
 
 // remove a class selected da Div da paleta e adiciona na clicada atual;
 function changeSelected() {
@@ -9,6 +10,14 @@ function changeSelected() {
   const divSelectedNow = event.target;
   divSelectedBefore.classList.remove('selected');
   divSelectedNow.classList.add('selected');
+}
+
+// insere evento em cada div da paleta de cores
+function palletEvents(palletDivs) {
+  palletDivs.addEventListener('click', function () { // adiciona evento a respectiva div.
+    changeSelected();
+    colorBackPixel = palletDivs.style.backgroundColor;
+  });
 }
 
 // Cria as 4 divs da paleta de cores com seu background e evento.
@@ -26,12 +35,6 @@ function createDivAndColor(color) {
 }
 createDivAndColor(paletaCores);
 
-function palletEvents(palletDivs) {
-  palletDivs.addEventListener('click', function () { // adiciona evento a respectiva div.
-    changeSelected();
-    colorBackPixel = palletDivs.style.backgroundColor;
-  });
-}
 
 // recebe o background color do elemento da paleta e insere na div pixel clicada;
 function changePixelColor() {
@@ -55,3 +58,11 @@ function createLiAndDivPixels() {
   }
 }
 createLiAndDivPixels();
+
+// Limpa Pixels
+buttonClear.addEventListener('click', function () {
+  const divPixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < divPixels.length; i += 1){
+  divPixels[i].style.backgroundColor = 'white';
+  }
+});
