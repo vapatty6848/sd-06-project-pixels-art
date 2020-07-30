@@ -5,7 +5,7 @@ const arrayCollor = ['black', 'red', 'blue', 'yellow'];
 
 for (let index = 0; index < arrayCollor.length; index += 1){
   const createBoxCollor = document.createElement('li');
-  createBoxCollor.className = 'collor';
+  createBoxCollor.className = 'color';
   createBoxCollor.style.backgroundColor = arrayCollor[index];
   paletColor.appendChild(createBoxCollor);
 }
