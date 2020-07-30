@@ -1,4 +1,9 @@
-let color = ['black', 'blue', 'green', 'red'];
+let color = ['black'];
+for(let i = 1; i <= 3; i += 1){
+let randonTest = "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
+color.push(randonTest);
+}
+
 let paletContainer = document.getElementById('color-palette');
 function createPalet(color){
   for (let i = 0; i < color.length; i += 1){
@@ -49,11 +54,14 @@ document.querySelectorAll('.color').forEach(item => {
   })
 })
 
-document.querySelectorAll('.pixel').forEach(item => {
-  item.addEventListener('click', event => {
+function addClickChangeColor(){
+  document.querySelectorAll('.pixel').forEach(item => {
+    item.addEventListener('click', event => {
     item.style.backgroundColor = selectedColor;
   })
 })
+}
+onload = addClickChangeColor();
 
 document.getElementById('clear-board').addEventListener('click', function(){
   document.querySelectorAll('.pixel').forEach(item => {
@@ -74,14 +82,17 @@ document.getElementById('generate-board').addEventListener('click', function(){
     N = 5;
     resetBoard();
     createPixelBoard(N);
+    addClickChangeColor();
   } else if(inputValue > 50){
     N = 50;
     resetBoard();
     createPixelBoard(N);
+    addClickChangeColor();
   } else {
     N = inputValue;
     resetBoard();
     createPixelBoard(N);
+    addClickChangeColor();
   }
 })
 
