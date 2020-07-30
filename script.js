@@ -7,6 +7,7 @@ for (let index = 0; index < arrayCollor.length; index += 1){
   const createBoxCollor = document.createElement('li');
   createBoxCollor.className = 'color';
   createBoxCollor.style.backgroundColor = arrayCollor[index];
+  createBoxCollor.setAttribute('id', arrayCollor[index])
   paletColor.appendChild(createBoxCollor);
 }
 
@@ -21,4 +22,14 @@ for(let i = 0; i < 5; i += 1) {
     createBoxCl.className = 'pixel';
     createBoxLine.appendChild(createBoxCl);
   }
+}
+
+window.onload = function () {
+  const initialColor = document.getElementById('black');
+  initialColor.className += ' selected';
+}
+
+function colorSelect() {
+  const colorselected
+
 }
