@@ -13,9 +13,15 @@
     border-style: outset;
 } */
 
-button{
-    display: inline-block;
-    margin: 2% 0% 2% 11.5%;
+.controls{
+    width: 100%;
+}
+
+.controls-content{
+    position: relative;
+    width: 50%;
+    margin: 2% 2% 2% 2%;
+    
 }
 
 .pixel {

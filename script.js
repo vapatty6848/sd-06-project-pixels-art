@@ -1,13 +1,19 @@
+// otimizar os color setings para não pintar os elementos pais
+
 let pixelBoard = document.querySelector("#pixel-board");
 let colorPalette = document.querySelector("#color-palette");
 let clearBoard = document.querySelector("#clear-board");
+let customBoardButton = document.querySelector("#generate-board");
 
 
 createPaletteColors("black", "red", "blue", "green");
 createPixelBoard();
+
 colorPalette.addEventListener("click", chooseColor);
 pixelBoard.addEventListener("click", setPixelColor);
 clearBoard.addEventListener("click", clearPixelBoard);
+customBoardButton.addEventListener("click", createCustomPixelBoard);
+
 
 colorPalette.firstElementChild.classList.add("selected");
 let currentSelectedColor = document.querySelector(".selected");
@@ -51,5 +57,24 @@ function clearPixelBoard(){
     let pixelArray = document.querySelectorAll(".pixel");
     for (index = 0; index < pixelArray.length; index += 1){
         pixelArray[index].style.backgroundColor = "rgb(255,255,255)";
+    }
+}
+
+function createCustomPixelBoard(){
+    let boardLines = document.querySelectorAll(".board-line");
+    console.log(boardLines);
+    for (index = 0; index < boardLines.length; index += 1){
+        pixelBoard.removeChild(boardLines[index]);
+    }
+
+    let boardSizeInput = document.querySelector("#board-size").value;
+    console.log(boardSizeInput);
+    for (index = 1; index <= boardSizeInput; index += 1){
+        let newLine = document.createElement("div");
+        pixelBoard.appendChild(newLine).className = "board-line";
+        for (internIndex = 1; internIndex <= boardSizeInput; internIndex += 1){
+            let newPixel = document.createElement("div");
+            pixelBoard.lastChild.appendChild(newPixel).className = "pixel"
+        }
     }
 }
