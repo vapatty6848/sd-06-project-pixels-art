@@ -47,10 +47,11 @@ let pixelBoardDiv = document.querySelector("#pixel-board");
 pixelBoardDiv.addEventListener("click", marcarPixelPixel);
 
 //BOTAO LIMPAR **********************
-let clearBoard = document.querySelector("#clear-board");
-let pixelPixel = document.getElementsByClassName("pixel");
-clearBoard.addEventListener("click", function(){
+let clearBoard = document.getElementById("clear-board");
+clearBoard.addEventListener("click", limparPaleta);
+function limparPaleta(){
+  let pixelPixel = document.getElementsByClassName("pixel");
   for (let c = 0; c < pixelPixel.length; c += 1){
-    pixelPixel[c].style.backgroudColor = "white";
-  }
-})
+    pixelPixel[c].style.backgroundColor = "white";
+    }
+}
