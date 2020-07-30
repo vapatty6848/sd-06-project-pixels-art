@@ -45,6 +45,19 @@ function handlePixel(event) {
 }
 
 let pixelBoardDiv= document.querySelector("#pixel-board");
-pixelBoardDiv.addEventListener("click", handlePixel);   
+pixelBoardDiv.addEventListener("click", handlePixel);
+
+
+
+let allPixel = document.getElementsByClassName("pixel");
+
+function clearPixels() {      
+    for (index in allPixel) {
+        allPixel[index].style.backgroundColor = "white";
+    }    
+}
+
+let clearBotton = document.querySelector("#clear-board");
+clearBotton.addEventListener("click", clearPixels);
 
 }  
