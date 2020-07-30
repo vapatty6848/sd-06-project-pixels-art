@@ -5,6 +5,25 @@ const boardSize = document.querySelector('#board-size');
 const generateBtn = document.querySelector('#generate-board');
 const pixel = document.querySelectorAll('.pixel');
 
+function createPixelBoard () {
+  if (boardSize.value < 5) {
+    boardSize.value = 5;
+  } else if (boardSize.value > 50) {
+    boardSize.value = 50;
+  }
+  for (let i = 0; i < boardSize.value; i += 1) {
+    const tableRow = document.createElement('div');
+    tableRow.className = 'tr';
+    pixelTable.appendChild(tableRow);
+    for (let j = 0; j < boardSize.value; j += 1) {
+      const tableCollum = document.createElement('div');
+      tableCollum.className = 'td pixel';
+      tableRow.appendChild(tableCollum);
+    }
+  }
+}
+createPixelBoard();
+
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', function () {
     for (let j = 0; j < colors.length; j += 1) {
@@ -39,14 +58,5 @@ generateBtn.addEventListener('click', function () {
   if (pixel[0] !== null) {
     pixelTable.innerHTML = '';
   }
-  for (let i = 0; i < boardSize.value; i += 1) {
-    const tableRow = document.createElement('div');
-    tableRow.className = 'tr';
-    pixelTable.appendChild(tableRow);
-    for (let j = 0; j < boardSize.value; j += 1) {
-      const tableCollum = document.createElement('div');
-      tableCollum.className = 'td pixel';
-      tableRow.appendChild(tableCollum);
-    }
-  }
+  createPixelBoard();
 });
