@@ -1,5 +1,5 @@
 window.onload = function () {
-    let colorPalette = document.querySelectorAll('color');
+    let colorPalette = document.querySelectorAll('li');
     let colorSelected = document.querySelector('.selected');
     let buttonClear = document.querySelector('#clear-board');
     let allPixel = document.getElementsByTagName('td');
@@ -13,7 +13,7 @@ window.onload = function () {
     }
 
     function printPixel() {
-        this.className = 'pixel ${colorSelected.classList[1]}'
+        this.className = `pixel ${colorSelected.classList[1]}`;
     }
 
     for (let index = 0; index < colorPalette.length; index += 1) {
