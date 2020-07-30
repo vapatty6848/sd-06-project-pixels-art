@@ -74,16 +74,7 @@ clearButton.addEventListener('click', function () {
   }
 });
 
-
-function generateBoard(input) {
-  if (input === '') {
-    alert('Board inválido!');
-  }
-  if (input < 5) {
-    input = 5;
-  } else if (input > 50) {
-    input = 50;
-  }
+function generatePixels(input) {
   for (let iLine = 0; iLine < input; iLine += 1) {
     const divLine = document.createElement('div');
     divLine.className = 'line';
@@ -95,6 +86,18 @@ function generateBoard(input) {
       divLine.appendChild(divPixel);
     }
   }
+}
+
+function generateBoard(input) {
+  if (input === '') {
+    alert('Board inválido!');
+  }
+  if (input < 5) {
+    input = 5;
+  } else if (input > 50) {
+    input = 50;
+  }
+  generatePixels(input);
 }
 
 window.onload = function () {
