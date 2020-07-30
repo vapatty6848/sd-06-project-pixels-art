@@ -9,6 +9,7 @@ body{
 #pixel-board{
   border-style: solid;
   border-radius: 1px;
+  border-width: 1px;
   border-color: black;
 }
 .pixel{
@@ -19,10 +20,12 @@ body{
   border-radius: 1px;
   border-width: 1px;
   border-color: black;
+  background-color: white;
 }
 #color-palette{
   border-style: solid;
   border-radius: 1px;
+  border-width: 1px;
   border-color: black;
 }
 .color{
@@ -39,5 +42,6 @@ button{
   width: 273px;
   border-style: solid;
   border-radius: 1px;
+  border-width: 1px;
   border-color: black;
 }

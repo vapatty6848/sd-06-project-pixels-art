@@ -51,6 +51,6 @@ let clearBoard = document.querySelector("#clear-board");
 let pixelPixel = document.getElementsByClassName("pixel");
 clearBoard.addEventListener("click", function(){
   for (let c = 0; c < pixelPixel.length; c += 1){
-    pixelPixel[c].style.backgroudColor = null;
+    pixelPixel[c].style.backgroudColor = "white";
   }
 })
