@@ -91,15 +91,15 @@ header {
 table {
   margin: auto;
   margin-top: 15px;
-  border-spacing: 0;
-  border-collapse: collapse;
+  //border-spacing: 0;
+  //border-collapse: collapse;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
-  height: 41px;
-  width: 41px;
+  height: 40px;
+  width: 40px;
 }
 
 #table-wrapper {
