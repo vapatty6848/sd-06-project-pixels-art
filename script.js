@@ -1,3 +1,7 @@
+// window.onload = function() {
+//   localStorage.clear;
+//   localStorage.setItem('colorSelected', 'black');
+// }
 function getColor(color) {
   localStorage.setItem('colorSelected', color);
   if (localStorage.getItem('colorSelected') === 'black') {
@@ -42,9 +46,19 @@ btnBlue.addEventListener('click', function () {
 function setColor(pixel, color) {
   pixel.style.backgroundColor = color;
 }
-const pixelSelected = document.getElementsByClassName('pixel');
+let pixelSelected = document.getElementsByClassName('pixel');
 for (let i = 0; i < pixelSelected.length; i += 1) {
   pixelSelected[i].onclick = function () {
     setColor(pixelSelected[i], localStorage.getItem('colorSelected'));
   }
 }
+function clearAll(color) {
+  let pixelsToClean = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixelsToClean.length; i += 1) {
+    pixelsToClean[i].style.backgroundColor = 'white';
+  }
+}
+let btnClearAll = document.getElementById('clear-board');
+btnClearAll.addEventListener('click', function () {
+  clearAll('white');
+});
