@@ -68,6 +68,20 @@ function createPixelsDiv(divClassName) {
   return pixelDiv;
 }
 
+function createPixelsBoardInit(size) {
+  for (let index = 0; index < size; index += 1) {
+    const rowCreateBoard = document.querySelector('#pixel-board');
+    const div = document.createElement('div');
+    const rowClass = `row-board${index}`;
+    div.className = rowClass;
+    rowCreateBoard.appendChild(div);
+    for (let index2 = 0; index2 < size; index2 += 1) {
+      const rowBoard = document.getElementsByClassName(rowClass)[0];
+      rowBoard.appendChild(createPixelsDiv('pixel'));
+    }
+  }
+}
+
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
   let inputCreateBoard = parseInt(document.getElementById('board-size').value, 10);
@@ -82,20 +96,6 @@ function createPixelsBoard() {
   }
   elementCreateBoard.querySelectorAll('*').forEach((n) => n.remove());
   createPixelsBoardInit(inputCreateBoard);
-}
-
-function createPixelsBoardInit(size) {
-  for (let index = 0; index < size; index += 1) {
-    const rowCreateBoard = document.querySelector('#pixel-board');
-    const div = document.createElement('div');
-    let rowClass = `row-board${index}`;
-    div.className = rowClass;
-    rowCreateBoard.appendChild(div);
-    for (let index2 = 0; index2 < size; index2 += 1) {
-      const rowBoard = document.getElementsByClassName(rowClass)[0];
-      rowBoard.appendChild(createPixelsDiv('pixel'));
-    }
-  }
 }
 
 function createBoard() {
