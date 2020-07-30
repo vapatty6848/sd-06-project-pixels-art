@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <h1 id="title">Paleta de Cores</h1>
-    <div id="color-palette">
-        <div class="color" class="selected"></div>
-        <div class="color" id="green"></div>
-        <div class="color" id="red"></div>
-        <div class="color" id="blue"></div>
+    <div id="color-selection">
+        <h1 id="title">Paleta de Cores</h1>
+        <div id="color-palette">
+            <div class="color selected" id="black" onclick = "colorSelect()"></div>
+            <div class="color" id="green" onclick="colorSelect()" ></div>
+            <div class="color" onclick = "colorSelect()" id="red"></div>
+            <div class="color" onclick="colorSelect()" id="blue"></div>
+        </div>
     </div>
-    <h1 id="title2">Quadro de pixels</h1>
-    <div id = "pixel-board">
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
+    </br>
+    <div id="pixel-coloring">
+        <h1 id="title2">Quadro de pixels</h1>
+        <div id="pixel-board">
+            <div class="pixel-lines">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-lines">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-lines">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-lines">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-lines">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
