@@ -6,11 +6,8 @@
 
 .color{
     border-color: black;
-    border-left: 1px;
-    border-right: 1px;
-    border-top: 1px;
-    border-width: 1px;
-    border: solid;
+    border: 1px;
+    border-style: solid;
     width: 40px;
     height: 40px;
 
@@ -21,6 +18,7 @@
     border: 1px 1px 1px 1px;
     border-color: black;
     border: groove;
+
 }
 #black{
     background-color: black;
@@ -34,4 +32,7 @@
 }
 #red{
     background-color: red;
+}
+#centralizar{
+    text-align: center;
 }
