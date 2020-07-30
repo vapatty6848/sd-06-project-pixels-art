@@ -50,6 +50,7 @@ pixelBoardDiv.addEventListener("click", handlePixel);
 
 
 let allPixel = document.getElementsByClassName("pixel");
+let clearBotton = document.querySelector("#clear-board");
 
 function clearPixels() {      
     for (index in allPixel) {
@@ -57,7 +58,6 @@ function clearPixels() {
     }    
 }
 
-let clearBotton = document.querySelector("#clear-board");
 clearBotton.addEventListener("click", clearPixels);
 
 }  
