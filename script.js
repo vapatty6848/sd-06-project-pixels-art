@@ -17,7 +17,10 @@ includeLine = () => {
     let divs = document.querySelectorAll('#pixel-board div');
     let pixels = document.querySelectorAll('.pixel');
 
-    if (inputSizeBoard.value < 5) {
+    if(inputSizeBoard.value === '') {
+        alert('Board inválido!')
+    }
+    else if (inputSizeBoard.value < 5) {
         inputSizeBoard.value = 5
     } else if (inputSizeBoard.value > 50) {
         inputSizeBoard.value = 50
