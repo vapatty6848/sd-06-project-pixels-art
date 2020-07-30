@@ -33,21 +33,20 @@ clearBtn.addEventListener('click', function () {
 });
 
 generateBtn.addEventListener('click', function () {
+  if (boardSize.value === '') {
+    alert('Board inválido!');
+  }
   if (pixel[0] !== null) {
     pixelTable.innerHTML = '';
   }
-  if (boardSize.value != 0) {
-    for (let i = 0; i < boardSize.value; i += 1) {
-      const tableRow = document.createElement('div');
-      tableRow.className = 'tr';
-      pixelTable.appendChild(tableRow);
-      for (let j = 0; j < boardSize.value; j += 1) {
-        const tableCollum = document.createElement('div');
-        tableCollum.className = 'td pixel';
-        tableRow.appendChild(tableCollum);
-      }
+  for (let i = 0; i < boardSize.value; i += 1) {
+    const tableRow = document.createElement('div');
+    tableRow.className = 'tr';
+    pixelTable.appendChild(tableRow);
+    for (let j = 0; j < boardSize.value; j += 1) {
+      const tableCollum = document.createElement('div');
+      tableCollum.className = 'td pixel';
+      tableRow.appendChild(tableCollum);
     }
-  } else {
-    alert('Board inválido!');
   }
 });
