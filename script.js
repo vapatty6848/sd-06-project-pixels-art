@@ -5,16 +5,16 @@ function alternativeClickPixel(event) {
 }
 
 function alternativeSelectColor(event) {
-  for (const item of document.getElementsByClassName('color')) {
-    item.classList.remove('selected');
+  for (let item = 0; item < document.getElementsByClassName('color').length; item += 1) {
+    document.getElementsByClassName('color')[item].classList.remove('selected');
   }
   event.target.classList.add('selected');
   selected = window.getComputedStyle(document.getElementsByClassName('selected')[0], null).getPropertyValue('background-color');
 }
 
 function clearBoard() {
-  for (const element of document.getElementsByClassName('pixel')) {
-    element.style.backgroundColor = 'white';
+  for (let element = 0; element < document.getElementsByClassName('pixel').length; element += 1) {
+    document.getElementsByClassName('pixel')[element].style.backgroundColor = 'white';
   }
 }
 
@@ -27,12 +27,12 @@ function destroyBoard() {
   }
 }
 
-function createPixelBoard (param1) {
-  for (let line = 0; line < parseInt(param1); line += 1) {
+function createPixelBoard(param1) {
+  for (let line = 0; line < parseInt(param1, 10); line += 1) {
     const linha = document.createElement('div');
     linha.classList.add('tr');
     document.getElementById('pixel-board').appendChild(linha);
-    for (let column = 0; column < param1; column += 1){
+    for (let column = 0; column < param1; column += 1) {
       const coluna = document.createElement('div');
       coluna.classList.add('td', 'pixel');
       document.getElementsByClassName('tr')[line].appendChild(coluna);
@@ -41,7 +41,7 @@ function createPixelBoard (param1) {
 }
 
 function setBoardSize() {
-  let size = parseInt(document.getElementById('board-size').value);
+  let size = parseInt(document.getElementById('board-size').value, 10);
   if (document.getElementById('board-size').value === '') {
     alert('Board inválido!');
   } else if (size < 5 && size >= 0) {
@@ -59,12 +59,11 @@ function setBoardSize() {
 }
 
 function generateRandomColor() {
-  for (const item of document.getElementsByClassName('color')) {
-    if (!item.classList.contains('one')) {
-      item.classList.remove('two', 'three', 'four');
-      let string = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
-      console.log(string)
-      item.style.backgroundColor = string;
+  for (let item = 0; item < document.getElementsByClassName('color').length; item += 1) {
+    if (!document.getElementsByClassName('color')[item].classList.contains('one')) {
+      document.getElementsByClassName('color')[item].classList.remove('two', 'three', 'four');
+      const string = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+      document.getElementsByClassName('color')[item].style.backgroundColor = string;
     }
   }
 }
