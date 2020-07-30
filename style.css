@@ -1,4 +1,11 @@
-#color-palette {
+#pixel-board {
+    width: auto;
+    height: auto;
+    display: table;
+    margin-top: 25px;
+}
+
+#color-palette{
     display: flex;
 }
 
@@ -21,19 +28,19 @@
 .color4{
     background-color: green;
 }
-
-#pixel-board {
-    display: flex;
-    flex-wrap: wrap;
+.board-generator {
     margin-top: 25px;
-    width: 210px;
-    height: 210px;
+}
+
+.line {
+    display: table-row;
 }
 
 .pixel {
-    border: 1px solid #000;
     width: 40px;
     height: 40px;
+    border: 1px solid #000;
+    display: table-cell;
 }
 
 .white {
@@ -41,17 +48,5 @@
 }
 
 #clear-board {
-    margin-top: 25px;
-    width: 100px;
-}
-
-.size-controller {
     margin-top: 15px;
 }
-
-.size-controller input {
-    width: 30px;
-}
-
-
-
