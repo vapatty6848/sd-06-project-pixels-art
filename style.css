@@ -1,10 +1,10 @@
-* {
+header , h2 , p , h3 , button , main , table , tr , th , td , input , body , div , section , h1 , form , label {
   margin: 0;
   padding: 0;
 }
 
 /* header */
-header {
+.header {
   align-items: center;
   background-color: dimgray;
   color: white;
@@ -15,7 +15,7 @@ header {
   position: relative;
 }
 
-h2 {
+.tittle {
   margin-bottom: 8px;
 }
 
@@ -29,7 +29,7 @@ h2 {
   margin-right: 12px;
 }
 
-button {
+.btn {
   border: none;
   border-radius: 5px;
   box-shadow: 0 2px grey;
@@ -37,11 +37,15 @@ button {
   cursor: pointer;
   font-size: 12px;
   height: 25px;
-  outline: none;
   padding: 6px;
 }
 
-button:active {
+.btn:focus {
+  border: none;
+  outline: none;
+}
+
+.btn:active {
   box-shadow: none;
   transform: translateY(2px);
 }
@@ -54,9 +58,13 @@ button:active {
 }
 
 @keyframes shine {
+
   0% { background-color: gray; }
+
   25% { background-color: lightblue; }
+
   50% { background-color: hotpink; }
+
   100% { background-color: indigo; }
 }
 
@@ -82,8 +90,8 @@ h1 {
 }
 
 .color {
-  background-color: black;
   border: 1px solid black;
+  border-radius: 100%;
   cursor: pointer;
   height: 25px;
   margin-right: 6px;
@@ -138,6 +146,7 @@ h3 {
 .selected-color {
   background-color: black;
   border: 1px solid black;
+  border-radius: 100%;
   cursor: pointer;
   height: 25px;
   margin-right: 6px;
@@ -152,9 +161,9 @@ h3 {
 
 input[ type = 'number' ]::-webkit-outer-spin-button ,
 input[ type = 'number' ]::-webkit-inner-spin-button {
-  margin: 0;
   -webkit-appearance: none;
   -webkit-moz-appearance: none;
+  margin: 0;
 }
 
 input {
@@ -167,13 +176,13 @@ input {
 }
 
 input:focus {
-  outline: none;
   border-bottom: 1px solid white;
+  outline: none;
 }
 
 @media ( max-width : 480px ) {
 
-  header {
+  .header {
     height: 16vh;
   }
 }

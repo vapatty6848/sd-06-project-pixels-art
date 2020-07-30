@@ -81,21 +81,21 @@ function createTable(tableElm, boardContainer, userInput) {
 function handleInputSize(userInput) {
   if (userInput.value > 50) {
     userInput.value = 50;
-    return 50
+    return 50;
   } else if (userInput.value < 5 && userInput.value > 0) {
     userInput.value = 5;
-    return 5
-  } else {
-    let value = userInput.value;
-    return value
-  };
+    return 5;
+  }
+
+  const value = userInput.value;
+  return value;
 }
 
 creationForm.onsubmit = (event) => {
   event.preventDefault();
   const userInput = document.getElementById('board-size');
 
-  const inputValue = handleInputSize(userInput)
+  const inputValue = handleInputSize(userInput);
 
   const tableElm = document.querySelector('.board');
   const boardContainer = document.getElementById('pixel-board');
@@ -131,7 +131,7 @@ function enableMoreColorsBTN() {
       currentColorAmount += 1;
     } else {
       alert("That's enough colors for you ;)");
-    };
+    }
   };
 }
 
@@ -150,7 +150,7 @@ function checkSize() {
       selectColorContainer.style.display = 'none';
     } else {
       selectColorContainer.style.display = 'flex';
-    };
+    }
   });
 }
 
@@ -161,4 +161,4 @@ window.onload = () => {
   tableColoringEnabler();
   enableMoreColorsBTN();
   checkSize();
-}
+};

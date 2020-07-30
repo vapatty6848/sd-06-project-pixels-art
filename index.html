@@ -9,12 +9,12 @@
 </head>
 <body>
 
-  <header>
-    <h2>Fábio's Pixel Art Project</h2>
+  <header class="header">
+    <h2 class="tittle">Fábio's Pixel Art Project</h2>
     <p>You start with 3 random colors + black!</p>
     <div class="more-colors">
       <p>Feel like you need more?</p>
-      <button id="more-colors">Extra random color!</button>
+      <button class="btn" id="more-colors">Extra random color!</button>
     </div>
     <section class="selected-color-container">
       <h3>Current Color</h3>
@@ -37,10 +37,10 @@
       <form class="user-input">
         <label for="board-size">Escolha o tamanho da tela:</label>
         <input type="number" name="table-sizer" id="board-size" min="1" max="500">
-        <button id="generate-board" type="submit">VQV</button>
+        <button id="generate-board" class="btn" type="submit">VQV</button>
       </form>
 
-      <button id="clear-board" class="clear-btn">Limpar</button>
+      <button id="clear-board" class="btn clear-btn">Limpar</button>
 
 
     <section class="board-container" id="pixel-board">
