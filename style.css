@@ -23,15 +23,3 @@ float: none;
 #color-palette{
     display: flex;
 }
-#black{
-    background: black;
-}
-#green{
-    background: green;
-}
-#red{
-    background: red;
-}
-#blue{
-    background: blue;
-}
