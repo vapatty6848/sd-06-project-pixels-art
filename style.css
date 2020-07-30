@@ -2,17 +2,24 @@
     margin: 0px;
 }
 
+body{
+    background-color: black;
+    margin: 0px;
+}
+
 #main {
     width: 800px;
-    margin-left: 330px;
+    margin-left: 390px;
     border: 2px solid black;
     padding-bottom: 330px;
+    background-color: darkgrey;
 }
 
 #title {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-top: 100px;
 }
 
 #color-palette {
@@ -50,6 +57,7 @@
     display: table;
     border: 1px solid black;
     margin: auto;
+    margin-top: 15px;
 }
 
 #tr {
@@ -68,9 +76,8 @@
     font-size: 15px;
     font-weight: bold;
     margin-left: 293px;
-    margin-top: 15px;
-    padding-left: 63px;
-    padding-right: 63px;
+    padding-left: 80px;
+    padding-right: 80px;
     border: black 1px solid;
     border-radius: 5px;
 }
