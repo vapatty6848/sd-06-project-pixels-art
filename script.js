@@ -11,9 +11,12 @@ function colorSelect() {
     }
 
     function colorSet(){
-       let newPixel = event.target;
-      newPixel.classList.add("paint");
-      let newColor = document.getElementsByClassName("paint")[0];
-      newColor.setAttribute("style", "background: " + currentColor);
-      newPixel.classList.remove("paint");
+        event.target.setAttribute("style", "background: " + currentColor);
     }
+
+    function clearBoard(){
+let allPixels = document.getElementsByClassName("pixel");
+for (i = 0; i < allPixels.length; i+=1){
+    allPixels[i].removeAttribute("style")
+}    
+}
