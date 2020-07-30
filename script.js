@@ -5,6 +5,13 @@ const boardSize = document.querySelector('#board-size');
 const generateBtn = document.querySelector('#generate-board');
 const td = document.querySelectorAll('.td');
 
+function randomColor() {
+  let r = ('0' + (Math.random()*256|0).toString(16)).slice(-2);
+  let g = ('0' + (Math.random()*256|0).toString(16)).slice(-2);
+  let b = ('0' + (Math.random()*256|0).toString(16)).slice(-2);
+  return '#' + r + g + b;
+}
+
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', function () {
     for (let j = 0; j < colors.length; j += 1) {
@@ -56,3 +63,9 @@ generateBtn.addEventListener('click', function () {
     }
   }
 });
+
+window.onload = function () {
+  for (let i = 1; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = randomColor();
+  }
+}
