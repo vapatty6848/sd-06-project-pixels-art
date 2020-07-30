@@ -5,7 +5,9 @@ let colorBackPixel = paletaCores[0];
 const buttonClear = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
 const buttonGenerate = document.querySelector('#generate-board');
-
+const buttonSize = document.querySelector('#generate-size');
+const inputSize = document.querySelector('#enter-size');
+let n = 5;
 
 // remove a class selected da Div da paleta e adiciona na clicada atual;
 function changeSelected() {
@@ -46,13 +48,13 @@ function changePixelColor() {
 }
 
 // cria as tag UL e LI, add LI na lista UL, cria as DIV Pixel e add dentro das LI;
-function createLiAndDivPixels() {
+function createLiAndDivPixels(n) {
   const elementoUl = document.createElement('ul');
   sectionPaleta.appendChild(elementoUl);
-  for (let j = 0; j < 5; j += 1) {
+  for (let j = 0; j < n; j += 1) {
     const elementoLi = document.createElement('li');
     elementoUl.appendChild(elementoLi);
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < n; i += 1) {
       const pixelDiv = document.createElement('div');
       pixelDiv.className = 'pixel';
       elementoLi.appendChild(pixelDiv);
@@ -60,7 +62,7 @@ function createLiAndDivPixels() {
     }
   }
 }
-createLiAndDivPixels();
+createLiAndDivPixels(n);
 
 // Limpa Pixels
 buttonClear.addEventListener('click', function () {
@@ -71,7 +73,7 @@ buttonClear.addEventListener('click', function () {
 });
 
 inputBoard.addEventListener('keyup', function () {
-  if (parseInt(inputBoard.value,10) <= 0) {
+  if (parseInt(inputBoard.value, 10) <= 0) {
     inputBoard.value = '';
     alert('valor invalido');
   }
@@ -80,16 +82,50 @@ inputBoard.addEventListener('keyup', function () {
 // aciona evento no botao VQV e insere o valos as medidas Height e width das Divs Pixel.
 buttonGenerate.addEventListener('click', function () {
   const divsPixels = document.querySelectorAll('.pixel');
-  if (inputBoard.value >= 1 && inputBoard.value < 5) {
-    inputBoard.value = 5;
+  if (inputBoard.value === '') {
+    alert('Board inválido!');
+  } else if (inputBoard.value >= 1 && inputBoard.value < 5) {
     alert('valor padrão minimo é 5');
+    inputBoard.value = 5;
+    sectionPaleta.lastChild.remove();
+    n = inputBoard.value;
+    createLiAndDivPixels(n);
+    alert('alterando tamanho');
   } else if (inputBoard.value > 50) {
+    alert('valor padrão máximo é 50 clique novamente');
     inputBoard.value = 50;
-    alert('valor padrão máximo é 50');
-  }
-  for (let i = 0; i < divsPixels.length; i += 1) {
-    divsPixels[i].style.height = `${inputBoard.value}px`;
-    divsPixels[i].style.width = `${inputBoard.value}px`;
+    sectionPaleta.lastChild.remove();
+    n = inputBoard.value;
+    createLiAndDivPixels(n);
+    alert('alterando tamanho') ;
+  } else {
+    sectionPaleta.lastChild.remove();
+    n = inputBoard.value;
+    createLiAndDivPixels(n);
+    alert('alterando tamanho')
   }
 });
 
+inputSize.addEventListener('keyup', function () {
+  if (parseInt(inputSize.value, 10) <= 0) {
+    inputSize.value = '';
+    alert('valor invalido');
+  }
+});
+
+buttonSize.addEventListener('click', function () {
+  const divsPixels = document.querySelectorAll('.pixel');
+  if (inputSize.value === '') {
+    alert('valor inválido!');
+  } else if (inputSize.value >= 1 && inputSize.value < 10) {
+    alert('valor padrão minimo é 10');
+    inputSize.value = 10;
+  } else if (inputSize.value > 80) {
+    alert('valor padrão máximo é 80');
+    inputSize.value = 80;
+  }
+  for (let i = 0; i < divsPixels.length; i += 1) {
+    divsPixels[i].style.height = `${inputSize.value}px`;
+    divsPixels[i].style.width = `${inputSize.value}px`;
+  }
+});
