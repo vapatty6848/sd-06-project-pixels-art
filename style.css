@@ -16,7 +16,7 @@ table {
 }
 
 td {
-  height: 40px;
+  height: 41px;
   width: 40px;
   border: 1px solid black;
 }
@@ -32,7 +32,7 @@ td {
 }
 
 .color {
-  height: 40px;
+  height: 41px;
   width: 40px;
   margin: 0px 2px;
   float: left;
@@ -40,7 +40,7 @@ td {
 }
 
 .pixel {
-  height: 40px;
+  height: 41px;
   width: 40px;
   cursor: pointer;
   border: 1px solid #000;
