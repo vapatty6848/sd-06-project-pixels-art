@@ -21,8 +21,8 @@ botaoLimpar.addEventListener('click', clearBoard);
 let pixelColorido = document.getElementsByClassName('pixel');
 
 function clearBoard () {
-  selectedPixel.style.backgroundColor = 'white';
-  for (let index in pixelColorido) {
+  //selectedPixel.style.backgroundColor = 'white';
+  for (let index = 0; index < pixelColorido.length; index += 1) {
     pixelColorido[index].style.backgroundColor = 'white';
   }
 }
