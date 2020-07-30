@@ -1,0 +1,37 @@
+#title {
+    color: blue;
+
+}
+
+
+.color{
+    border-color: black;
+    border-left: 1px;
+    border-right: 1px;
+    border-top: 1px;
+    border-width: 1px;
+    border: solid;
+    width: 40px;
+    height: 40px;
+
+}
+.pixel{
+    width: 40px;
+    height: 40px;
+    border: 1px 1px 1px 1px;
+    border-color: black;
+    border: groove;
+}
+#black{
+    background-color: black;
+}
+
+#blue {
+    background-color: blue;
+}
+#yellow{
+    background-color: yellow;
+}
+#red{
+    background-color: red;
+}
