@@ -1,3 +1,7 @@
+const cores = ['black', 'gray', 'red', 'yellow'];
+let quantidade = 5;
+let corSelecionada;
+/* ******************************************************** */
 function criarPaleta(cores) {
   for (let i = 0; i < cores.length; i += 1) {
     const criarCor = document.createElement('div');
@@ -28,10 +32,10 @@ function criarPixels(quantidade) {
 /* ******************************************************** */
 function pegaCor() {
   const corAntiga = document.getElementsByClassName('selected');
-  let cores = document.querySelector('#color-palette');
+  const cores = document.querySelector('#color-palette');
   cores.addEventListener('click', function(event) {
     let corAtual = event.target;
-    for (let i = 0; i < corAntiga.length; i += 1){
+    for (let i = 0; i < corAntiga.length; i += 1) {
       corAntiga[i].classList.remove('selected');
     }
     corAtual.classList.add('selected');
@@ -84,9 +88,6 @@ function limparTudo() {
 // }
 /* ******************************************************** */
 window.onload = function () {
-  const cores = ['black', 'gray', 'red', 'yellow'];
-  let quantidade = 5;
-  let corSelecionada;
   criarPaleta(cores);
   criarPixels(quantidade);
   pegaCor();
