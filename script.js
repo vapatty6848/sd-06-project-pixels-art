@@ -23,7 +23,6 @@ function createBoard(num) {
       let td = document.createElement("td");
       tr.appendChild(td);
       td.classList.add("pixel");
-      td.classList.add("pix");
     }
   }
 }
