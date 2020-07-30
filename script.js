@@ -31,7 +31,9 @@ function pegaCor() {
   let cores = document.querySelector('#color-palette');
   cores.addEventListener('click', function(event) {
     let corAtual = event.target;
-    corAntiga.className = ('color');
+    for (let i = 0; i < corAntiga.length; i += 1){
+      corAntiga[i].classList.remove('selected');
+    }
     corAtual.classList.add('selected');
     corSelecionada = corAtual.style.backgroundColor;
   });
