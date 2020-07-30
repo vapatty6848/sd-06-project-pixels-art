@@ -1,8 +1,8 @@
 window.onload = function () {
-    let colorPalette = document.querySelectorAll('li');
+    const colorPalette = document.querySelectorAll('li');
     let colorSelected = document.querySelector('.selected');
-    let buttonClear = document.querySelector('#clear-board');
-    let allPixel = document.getElementsByTagName('td');
+    const buttonClear = document.querySelector('#clear-board');
+    const allPixel = document.getElementsByTagName('td');
 
     function SelectColor() {
         for (let index = 0; index < colorPalette.length; index += 1) {
@@ -22,8 +22,7 @@ window.onload = function () {
     }
     
     for (let index = 0; index < allPixel.length; index += 1) {
-        allPixel[index].addEventListener('click', printPixel);
-        
+        allPixel[index].addEventListener('click', printPixel);   
     }
 
     buttonClear.addEventListener('click', function () {
