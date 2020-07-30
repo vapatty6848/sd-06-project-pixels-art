@@ -1,52 +1,52 @@
-#color-palette{
-    border: 1px;
-    border-style: double;
-    border-color: black;
-    padding-top: 3px;
-    padding-left: 3px;
-    width: 145px;
+#color-palette {
 }
 
 .color {
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
 }
 
 #color1 {
-    background-color: black;
-    color: black;
+  background-color: black;
+  color: black;
 }
 
 #color2 {
-    background-color: red;
-    color: red;
+  background-color: red;
+  color: red;
 }
 
 #color3 {
-    background-color: blue;
-    color: blue;
+  background-color: blue;
+  color: blue;
 }
 
 #color4 {
-    background-color: green;
-    color: green;
+  background-color: green;
+  color: green;
 }
 
 .pixel {
-    border: 1px;
-    border-color: black;
-    border-style: solid;
-    color: white;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    margin-left: -4px;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  color: white;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  margin-left: -3px;
 }
 
 .lines {
-    display: inline-block;
+  display: inline-block;
+}
+
+#clear-board {
+  height: 35px;
+  width: 110px;
+  margin: 15px 30px 15px 30px;
 }
