@@ -6,7 +6,7 @@ let clearBoard = document.querySelector("#clear-board");
 let customBoardButton = document.querySelector("#generate-board");
 
 
-createPaletteColors("black", "red", "blue", "green");
+createPaletteColors("black", generateRandomColor(), generateRandomColor(), generateRandomColor());
 createPixelBoard();
 
 colorPalette.addEventListener("click", chooseColor);
@@ -85,3 +85,10 @@ function createCustomPixelBoard(){
         }
     }
 }
+
+function generateRandomColor(){
+    return "#" + Math.floor(Math.random()*16777215).toString(16);
+}
+
+var randomColor = generateRandomColor();
+console.log (randomColor);
