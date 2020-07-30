@@ -44,4 +44,56 @@ window.onload = function () {
     selected[0].className = 'color';
     document.querySelector('div').classList.add('selected');
   });
+
+  function createLine(input) {
+    let pixelBoard = document.querySelector('#pixel-board');
+    for (cont = 0; cont < input; cont += 1) {
+      let trDiv = createTrDiv();
+      pixelBoard.appendChild(trDiv);
+      for (cont = 0; cont < input; cont += 1) {
+        let pixelDiv = createPixelDiv();
+        trDiv.appendChild(pixelDiv);
+      }
+    }
+    return pixelBoard
+  }
+
+  function createTrDiv () {
+    let trDiv = document.createElement('div');
+    trDiv.className = 'tr';
+    return trDiv;
+  }
+
+  function createPixelDiv () {
+    let pixelDiv = document.createElement('div');
+    pixelDiv.className = 'pixel';
+    return pixelDiv;
+  }
+
+  let boardButton = document.querySelector('#generate-board');
+  let boardInput = document.querySelector('#board-size');
+
+  boardButton.addEventListener('click', function () {
+    if (boardInput.value <= 5) {
+      function repeat(func, times) {
+        func();
+        times && --times && repeat(func, times);
+      }
+      repeat(function () {createLine(5)}, 5);
+    } else if (boardInput.value >= 50) {
+      function repeat(func, times) {
+        func();
+        times && --times && repeat(func, times);
+      }
+      repeat(function () {createLine(50)}, 50);
+    } else {
+      function repeat(func, times) {
+        func();
+        times && --times && repeat(func, times);
+      }
+      repeat(function () {createLine(boardInput.value)}, boardInput.value);
+    }
+  });
+
+
 };
