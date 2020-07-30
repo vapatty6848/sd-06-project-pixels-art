@@ -83,7 +83,7 @@ function generateBoard(input) {
     input = 5;
   } else if (input > 50) {
     input = 50;
-  } 
+  }
   for (let iLine = 0; iLine < input; iLine += 1) {
     const divLine = document.createElement('div');
     divLine.className = 'line';
