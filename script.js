@@ -70,7 +70,6 @@ function createPixelsDiv(divClassName) {
 
 function createPixelsBoard() {
   const elementCreateBoard = document.querySelector('#pixel-board');
-  const sizeCreateBoard = document.querySelector('.board');
   let inputCreateBoard = parseInt(document.getElementById('board-size').value, 10);
   const inputCreateBoardI = document.getElementById('board-size').value;
   if (inputCreateBoardI === '') {
@@ -81,14 +80,21 @@ function createPixelsBoard() {
   } else if (inputCreateBoard > 50) {
     inputCreateBoard = 50;
   }
-  const px = 'px';
-  const gridPixel = inputCreateBoard * inputCreateBoard;
-  let sizeBoard = inputCreateBoard * 40;
-  sizeBoard += inputCreateBoard + 1;
-  sizeCreateBoard.style.width = sizeBoard + px;
   elementCreateBoard.querySelectorAll('*').forEach((n) => n.remove());
-  for (let index = 0; index < gridPixel; index += 1) {
-    elementCreateBoard.appendChild(createPixelsDiv('pixel'));
+  createPixelsBoardInit(inputCreateBoard);
+}
+
+function createPixelsBoardInit(size) {
+  for (let index = 0; index < size; index += 1) {
+    const rowCreateBoard = document.querySelector('#pixel-board');
+    const div = document.createElement('div');
+    let rowClass = `row-board${index}`;
+    div.className = rowClass;
+    rowCreateBoard.appendChild(div);
+    for (let index2 = 0; index2 < size; index2 += 1) {
+      const rowBoard = document.getElementsByClassName(rowClass)[0];
+      rowBoard.appendChild(createPixelsDiv('pixel'));
+    }
   }
 }
 
@@ -104,7 +110,7 @@ window.onload = function () {
     generateRandomColor(),
     generateRandomColor(),
   ]);
-  createPixelsBoard();
+  createPixelsBoardInit(5);
   clearBoard();
   createBoard();
 };
