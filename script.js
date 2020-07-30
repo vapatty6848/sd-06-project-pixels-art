@@ -1,7 +1,7 @@
 const sectionPaleta = document.querySelector('#pixel-board');
 const palletColor = document.querySelector('#color-palette');
 const paletaCores = ['black', 'red', 'blue', 'green'];
-let colorBackPixel = 'black';
+let colorBackPixel = paletaCores[0];
 const buttonClear = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
 const buttonGenerate = document.querySelector('#generate-board');
@@ -26,18 +26,7 @@ function palletEvents(palletDivs) {
   });
 }
 
-function randomOrder(array) {
-  let p;
-  let number;
-  let temporario;
-  for (p = array.length; p;) {
-    number = Math.random() * p-- | 0;
-    temporario = array[number];
-    array[number] = array[p];
-    array[p] = temporario;
-  }
-}
-randomOrder(paletaCores);
+
 
 // Cria as 4 divs da paleta de cores com seu background e evento.
 function createDivAndColor(color) {
@@ -46,7 +35,7 @@ function createDivAndColor(color) {
     palletDiv.style.backgroundColor = color[i];
     palletDiv.className = 'color';
     palletColor.appendChild(palletDiv);
-    if (color[i] === 'black') {
+    if ( i ===  0) {
       palletDiv.className = 'color selected';
     }
     palletEvents(palletDiv);
@@ -142,7 +131,7 @@ buttonSize.addEventListener('click', function () {
   }
   for (let i = 0; i < divsPixels.length; i += 1) {
     divsPixels[i].style.height = `${inputSize.value}px`;
-    divsPixels[i].style.width = `${inputSize.value}px`;    
+    divsPixels[i].style.width = `${inputSize.value}px`;
   }
   alert('alterando meidadas Heigth e width');
 });
