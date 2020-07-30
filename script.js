@@ -7,10 +7,8 @@ window.onload = function () {
       colorPalette.appendChild(colorDiv);
     }
   };
-  
-  let colors = ['black', 'green', 'blue', 'red'];
 
-  createColorPallet(colors);
+  createColorPallet(generateRandomColors(3));
 
   function createColor(color) {
     let colorDiv = document.createElement('div');
@@ -18,6 +16,25 @@ window.onload = function () {
     colorDiv.style.backgroundColor = color;
     return colorDiv;
   };
+
+  function randomColors() {
+    let randomR = Math.round(Math.random() * 256 );
+    let randomG = Math.round(Math.random() * 256);
+    let randomB = Math.round(Math.random() * 256);
+
+    return 'rgb(' + randomR + ', ' + randomG + ', ' + randomB + ')'
+  }
+
+  function generateRandomColors (input) {
+    let colorArray = ['rgb(0, 0, 0)']
+    for (cont = 0; cont < input; cont += 1) {
+      let newColor = randomColors();
+      colorArray.push(newColor);
+    }
+    return colorArray
+  }
+
+  generateRandomColors(3)
 
   let selected = document.getElementsByClassName('selected');
   document.querySelector('div').classList.add('selected');
