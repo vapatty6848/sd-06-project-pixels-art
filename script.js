@@ -10,13 +10,16 @@ window.onload = function () {
     }
     paletteItem[index].addEventListener("click", changeSelected);
   }
-
-  createPixelBoard();
 }
 
 let table = document.getElementById("pixel-board");
-
 document.querySelector('#generate-board').addEventListener('click', createPixelBoard);
+
+let cbox = document.querySelectorAll(".pixel");
+
+for (let i = 0; i < cbox.length; i += 1) {
+  cbox[i].addEventListener("click", fillPixel);
+}
 
 document.getElementById('clear-board').addEventListener('click', function() {
   let objPixels = document.querySelectorAll('.pixel'); // [0]
