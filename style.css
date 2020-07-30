@@ -98,6 +98,7 @@ table {
 .pixel {
   background-color: white;
   border: 1px solid black;
+  box-sizing: border-box;
   height: 43px;
   width: 43px;
 }
