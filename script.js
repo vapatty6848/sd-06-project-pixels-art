@@ -45,8 +45,9 @@ window.onload = function () {
     document.querySelector('div').classList.add('selected');
   });
 
+  let pixelBoard = document.querySelector('#pixel-board');
+
   function createLine(input) {
-    let pixelBoard = document.querySelector('#pixel-board');
     for (cont = 0; cont < input; cont += 1) {
       let trDiv = createTrDiv();
       pixelBoard.appendChild(trDiv);
@@ -73,24 +74,22 @@ window.onload = function () {
   let boardButton = document.querySelector('#generate-board');
   let boardInput = document.querySelector('#board-size');
 
+  function repeat(func, times) {
+    func();
+    times && --times && repeat(func, times);
+  }
+
+  repeat(function () {createLine(5)}, 5);
+
   boardButton.addEventListener('click', function () {
     if (boardInput.value <= 5 && boardInput.value != '') {
-      function repeat(func, times) {
-        func();
-        times && --times && repeat(func, times);
-      }
+      pixelBoard.innerHTML = '';
       repeat(function () {createLine(5)}, 5);
     } else if (boardInput.value >= 50) {
-      function repeat(func, times) {
-        func();
-        times && --times && repeat(func, times);
-      }
+      pixelBoard.innerHTML = '';
       repeat(function () {createLine(50)}, 50);
     } else if (boardInput.value > 5 && boardInput.value < 50){
-      function repeat(func, times) {
-        func();
-        times && --times && repeat(func, times);
-      }
+      pixelBoard.innerHTML = '';
       repeat(function () {createLine(boardInput.value)}, boardInput.value);
     } else if (boardInput.value == '') {
       (alert('Board inválido!'))
