@@ -4,7 +4,6 @@ window.onload = function () {
       document.getElementById('pixel-board').addEventListener('click', alternativeClickPixel);
       document.getElementById('color-palette').addEventListener('click', alternativeSelectColor);
       document.getElementById('clear-board').addEventListener('click', clearBoard);
-      document.getElementById('generate-board').addEventListener('click', setBoardSize);
       selected = window.getComputedStyle(document.getElementsByClassName('color')[0], null).getPropertyValue('background-color');
     
     
