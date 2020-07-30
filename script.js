@@ -66,12 +66,10 @@ function createCustomPixelBoard(){
         alert("Board inválido!")
     } else{
         let boardLines = document.querySelectorAll(".board-line");
-        console.log(boardLines);
         for (index = 0; index < boardLines.length; index += 1){
             pixelBoard.removeChild(boardLines[index]);
         }
-
-        console.log(boardSizeInput);
+        
         for (index = 1; index <= boardSizeInput; index += 1){
             let newLine = document.createElement("div");
             pixelBoard.appendChild(newLine).className = "board-line";
