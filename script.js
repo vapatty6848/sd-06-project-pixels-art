@@ -71,10 +71,11 @@ window.onload = generateAleatoryColor();
 
 selectedColor = () => {
     let pixels = document.querySelectorAll('.pixel');
-
+    
+    
     for (let index = 0; index < color.length; index++) {
-        color[0].classList.add('selected')
-
+        color[0].style.backgroundColor = "#000"
+        
         color[index].addEventListener('click', function () {
             for (let i = 0; i < color.length; i++) {
                 if (color[i].classList.contains('selected')) {
@@ -86,13 +87,16 @@ selectedColor = () => {
             colorSelect = color[index].style.backgroundColor;
         });
     }
-
+    
+    
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener('click', function () {
+            if(color[0].classList.contains('selected')) {
+                pixels[i].style.backgroundColor = '#000';
+            } else
             pixels[i].style.backgroundColor = colorSelect;
         })
     };
-
 
 
 };
