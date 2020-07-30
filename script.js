@@ -7,6 +7,7 @@ const inputBoard = document.querySelector('#board-size');
 const buttonGenerate = document.querySelector('#generate-board');
 const buttonSize = document.querySelector('#generate-size');
 const inputSize = document.querySelector('#enter-size');
+let n = 5;
 
 
 // remove a class selected da Div da paleta e adiciona na clicada atual;
@@ -26,25 +27,26 @@ function palletEvents(palletDivs) {
 }
 
 function randomOrder(array) {
-  let p, n, tmp;
+  let p;
+  let n;
+  let temporario;
   for (p = array.length; p;) {
     n = Math.random() * p-- | 0;
-    tmp = array[n];
+    temporario = array[n];
     array[n] = array[p];
-    array[p] = tmp;
+    array[p] = temporario;
   }
 }
 randomOrder(paletaCores);
 
 // Cria as 4 divs da paleta de cores com seu background e evento.
-function createDivAndColor(color) {
-  n = 5;
+function createDivAndColor(color) {  
   for (let i = 0; i < color.length; i += 1) {
     const palletDiv = document.createElement('div');
     palletDiv.style.backgroundColor = color[i];
     palletDiv.className = 'color';
     palletColor.appendChild(palletDiv);
-    if (i === 0) {
+    if (color[i] === 'black') {
       palletDiv.className = 'color selected';
     }
     palletEvents(palletDiv);
@@ -60,7 +62,7 @@ function changePixelColor() {
 }
 
 // cria as tag UL e LI, add LI na lista UL, cria as DIV Pixel e add dentro das LI;
-function createLiAndDivPixels(n) {
+function createLiAndDivPixels(n) {  
   const elementoUl = document.createElement('ul');
   sectionPaleta.appendChild(elementoUl);
   for (let j = 0; j < n; j += 1) {
@@ -118,7 +120,7 @@ buttonGenerate.addEventListener('click', function () {
   }
 });
 
-//armazena valor do input para alteração de tamanho dos pixels
+// armazena valor do input para alteração de tamanho dos pixels
 inputSize.addEventListener('keyup', function () {
   if (parseInt(inputSize.value, 10) <= 0) {
     inputSize.value = '';
