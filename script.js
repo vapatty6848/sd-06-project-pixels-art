@@ -3,7 +3,7 @@ const pixelTable = document.querySelector('#pixel-board');
 const clearBtn = document.querySelector('#clear-board');
 const boardSize = document.querySelector('#board-size');
 const generateBtn = document.querySelector('#generate-board');
-const pixel = document.querySelectorAll('.pixel');
+const td = document.querySelectorAll('.td');
 
 function createPixelBoard() {
   if (boardSize.value < 5) {
@@ -22,6 +22,7 @@ function createPixelBoard() {
     }
   }
 }
+createPixelBoard();
 
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', function () {
@@ -45,6 +46,8 @@ pixelTable.addEventListener('click', function (event) {
 });
 
 clearBtn.addEventListener('click', function () {
+  const pixel = document.querySelectorAll('.pixel');
+  console.log(pixel.length)
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
   }
@@ -54,7 +57,7 @@ generateBtn.addEventListener('click', function () {
   if (boardSize.value === '') {
     alert('Board inválido!');
   }
-  if (pixel[0] !== null) {
+  if (td[0] !== null) {
     pixelTable.innerHTML = '';
   }
   createPixelBoard();
