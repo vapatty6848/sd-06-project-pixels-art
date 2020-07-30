@@ -49,7 +49,7 @@ function changeSelected() {
 function createPixelBoard() {
   let boardSize = document.querySelector('#board-size').value;
   
-  if (boardSize.length == 0) {
+  if (boardSize == '') {
     alert('Board inválido!');
     return false;
   }
