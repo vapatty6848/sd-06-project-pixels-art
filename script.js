@@ -62,6 +62,11 @@ function clearPixelBoard(){
 
 function createCustomPixelBoard(){
     let boardSizeInput = document.querySelector("#board-size").value;
+    if (boardSizeInput > 50){
+        boardSizeInput = 50
+    } else if (boardSizeInput < 5){
+        boardSizeInput = 5;
+    }
     if (boardSizeInput == ""){
         alert("Board inválido!")
     } else{
@@ -69,7 +74,7 @@ function createCustomPixelBoard(){
         for (index = 0; index < boardLines.length; index += 1){
             pixelBoard.removeChild(boardLines[index]);
         }
-        
+
         for (index = 1; index <= boardSizeInput; index += 1){
             let newLine = document.createElement("div");
             pixelBoard.appendChild(newLine).className = "board-line";
