@@ -1,6 +1,6 @@
 window.onload = function() {
   localStorage.clear;
-//   localStorage.setItem('colorSelected', 'black');
+  localStorage.setItem('colorSelected', 'black');
 }
 function getColor(color) {
   localStorage.setItem('colorSelected', color);
