@@ -1,13 +1,13 @@
 const sectionPaleta = document.querySelector('#pixel-board');
 const palletColor = document.querySelector('#color-palette');
 const paletaCores = ['black', 'red', 'blue', 'green'];
-let colorBackPixel = paletaCores[0];
+let colorBackPixel = 'black';
 const buttonClear = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
 const buttonGenerate = document.querySelector('#generate-board');
 const buttonSize = document.querySelector('#generate-size');
 const inputSize = document.querySelector('#enter-size');
-let n = 5;
+
 
 // remove a class selected da Div da paleta e adiciona na clicada atual;
 function changeSelected() {
@@ -25,8 +25,20 @@ function palletEvents(palletDivs) {
   });
 }
 
+function randomOrder(array) {
+  let p, n, tmp;
+  for (p = array.length; p;) {
+    n = Math.random() * p-- | 0;
+    tmp = array[n];
+    array[n] = array[p];
+    array[p] = tmp;
+  }
+}
+randomOrder(paletaCores);
+
 // Cria as 4 divs da paleta de cores com seu background e evento.
 function createDivAndColor(color) {
+  n = 5;
   for (let i = 0; i < color.length; i += 1) {
     const palletDiv = document.createElement('div');
     palletDiv.style.backgroundColor = color[i];
@@ -72,6 +84,7 @@ buttonClear.addEventListener('click', function () {
   }
 });
 
+// armazena valor para alterar quantidade das divs pixels
 inputBoard.addEventListener('keyup', function () {
   if (parseInt(inputBoard.value, 10) <= 0) {
     inputBoard.value = '';
@@ -79,9 +92,8 @@ inputBoard.addEventListener('keyup', function () {
   }
 });
 
-// aciona evento no botao VQV e insere o valos as medidas Height e width das Divs Pixel.
+// altera quantidades de divs pixel nas linhas e colunas
 buttonGenerate.addEventListener('click', function () {
-  const divsPixels = document.querySelectorAll('.pixel');
   if (inputBoard.value === '') {
     alert('Board inválido!');
   } else if (inputBoard.value >= 1 && inputBoard.value < 5) {
@@ -97,15 +109,16 @@ buttonGenerate.addEventListener('click', function () {
     sectionPaleta.lastChild.remove();
     n = inputBoard.value;
     createLiAndDivPixels(n);
-    alert('alterando tamanho') ;
+    alert('alterando tamanho');
   } else {
     sectionPaleta.lastChild.remove();
     n = inputBoard.value;
     createLiAndDivPixels(n);
-    alert('alterando tamanho')
+    alert('alterando tamanho');
   }
 });
 
+//armazena valor do input para alteração de tamanho dos pixels
 inputSize.addEventListener('keyup', function () {
   if (parseInt(inputSize.value, 10) <= 0) {
     inputSize.value = '';
@@ -113,6 +126,7 @@ inputSize.addEventListener('keyup', function () {
   }
 });
 
+// aciona evento no botao VQV e insere o valos as medidas Height e width das Divs Pixel.
 buttonSize.addEventListener('click', function () {
   const divsPixels = document.querySelectorAll('.pixel');
   if (inputSize.value === '') {
@@ -127,5 +141,6 @@ buttonSize.addEventListener('click', function () {
   for (let i = 0; i < divsPixels.length; i += 1) {
     divsPixels[i].style.height = `${inputSize.value}px`;
     divsPixels[i].style.width = `${inputSize.value}px`;
+    alert('alterando meidadas Heigth e width');
   }
 });
