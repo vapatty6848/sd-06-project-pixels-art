@@ -1,5 +1,13 @@
 let colorSelected = 'black';
 
+function colorSelection(event) {
+  const chosenColor = event.target;
+  const oldChosenColor = document.querySelector('.selected');
+  oldChosenColor.classList.remove('selected', 'pushed');
+  chosenColor.classList.add('selected', 'pushed');
+  colorSelected = chosenColor.style.backgroundColor;
+}
+
 function createColorSelector(color) {
   const selectorDivElement = document.createElement('div');
   selectorDivElement.className = 'color';
@@ -41,14 +49,6 @@ function createPixelBoard(n) {
   }
 }
 
-function colorSelection(event) {
-  const chosenColor = event.target;
-  const oldChosenColor = document.querySelector('.selected');
-  oldChosenColor.classList.remove('selected', 'pushed');
-  chosenColor.classList.add('selected', 'pushed');
-  colorSelected = chosenColor.style.backgroundColor;
-}
-
 function pixelColoring() {
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('pixel')) {
@@ -71,7 +71,7 @@ function clearBoard() {
 
 window.onload = function () {
   const colorList = ['black', 'red', 'green', 'blue'];
-  
+
   createColorPalette(colorList);
 
   createPixelBoard(5);
