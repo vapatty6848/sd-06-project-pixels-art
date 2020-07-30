@@ -1,7 +1,7 @@
-// window.onload = function() {
-//   localStorage.clear;
+window.onload = function() {
+  localStorage.clear;
 //   localStorage.setItem('colorSelected', 'black');
-// }
+}
 function getColor(color) {
   localStorage.setItem('colorSelected', color);
   if (localStorage.getItem('colorSelected') === 'black') {
@@ -19,7 +19,7 @@ function getColor(color) {
     document.getElementById('pink').classList.remove('selected');
     document.getElementById('red').classList.add('selected');
     document.getElementById('blue').classList.remove('selected');
-  } else {
+  } else if (localStorage.getItem('color-selected' === 'blue')) {
     document.getElementById('black').classList.remove('selected');
     document.getElementById('pink').classList.remove('selected');
     document.getElementById('red').classList.remove('selected');
