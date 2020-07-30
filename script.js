@@ -5,7 +5,7 @@ const boardSize = document.querySelector('#board-size');
 const generateBtn = document.querySelector('#generate-board');
 const pixel = document.querySelectorAll('.pixel');
 
-function createPixelBoard () {
+function createPixelBoard() {
   if (boardSize.value < 5) {
     boardSize.value = 5;
   } else if (boardSize.value > 50) {
@@ -22,7 +22,6 @@ function createPixelBoard () {
     }
   }
 }
-createPixelBoard();
 
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', function () {
