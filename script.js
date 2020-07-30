@@ -5,25 +5,6 @@ const boardSize = document.querySelector('#board-size');
 const generateBtn = document.querySelector('#generate-board');
 const td = document.querySelectorAll('.td');
 
-function createPixelBoard() {
-  if (boardSize.value < 5) {
-    boardSize.value = 5;
-  } else if (boardSize.value > 50) {
-    boardSize.value = 50;
-  }
-  for (let i = 0; i < boardSize.value; i += 1) {
-    const tableRow = document.createElement('div');
-    tableRow.className = 'tr';
-    pixelTable.appendChild(tableRow);
-    for (let j = 0; j < boardSize.value; j += 1) {
-      const tableCollum = document.createElement('div');
-      tableCollum.className = 'td pixel';
-      tableRow.appendChild(tableCollum);
-    }
-  }
-}
-createPixelBoard();
-
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', function () {
     for (let j = 0; j < colors.length; j += 1) {
@@ -47,7 +28,6 @@ pixelTable.addEventListener('click', function (event) {
 
 clearBtn.addEventListener('click', function () {
   const pixel = document.querySelectorAll('.pixel');
-  console.log(pixel.length)
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
   }
@@ -60,5 +40,19 @@ generateBtn.addEventListener('click', function () {
   if (td[0] !== null) {
     pixelTable.innerHTML = '';
   }
-  createPixelBoard();
+  if (boardSize.value < 5) {
+    boardSize.value = 5;
+  } else if (boardSize.value > 50) {
+    boardSize.value = 50;
+  }
+  for (let i = 0; i < boardSize.value; i += 1) {
+    const tableRow = document.createElement('div');
+    tableRow.className = 'tr';
+    pixelTable.appendChild(tableRow);
+    for (let j = 0; j < boardSize.value; j += 1) {
+      const tableCollum = document.createElement('div');
+      tableCollum.className = 'td pixel';
+      tableRow.appendChild(tableCollum);
+    }
+  }
 });
