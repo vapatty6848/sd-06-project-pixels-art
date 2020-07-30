@@ -36,14 +36,18 @@ generateBtn.addEventListener('click', function () {
   if (pixel[0] !== null) {
     pixelTable.innerHTML = '';
   }
-  for (let i = 0; i < boardSize.value; i += 1) {
-    let tableRow = document.createElement('div')
-    tableRow.className = 'tr';
-    pixelTable.appendChild(tableRow);
-    for (let j = 0; j < boardSize.value; j += 1) {
-      let tableCollum = document.createElement('div')
-      tableCollum.className = 'td pixel';
-      tableRow.appendChild(tableCollum);
+  if (boardSize.value != 0) {
+    for (let i = 0; i < boardSize.value; i += 1) {
+      const tableRow = document.createElement('div');
+      tableRow.className = 'tr';
+      pixelTable.appendChild(tableRow);
+      for (let j = 0; j < boardSize.value; j += 1) {
+        const tableCollum = document.createElement('div');
+        tableCollum.className = 'td pixel';
+        tableRow.appendChild(tableCollum);
+      }
     }
+  } else {
+    alert('Board inválido!');
   }
 });
