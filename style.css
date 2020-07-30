@@ -16,16 +16,17 @@
 }
 
 #color-palette {
-    margin-left: 50px;
     margin-bottom: 10px;
+    margin-right: 15px;
+    text-align: center;
 }
 
 .color {
-    border: 1px black solid;
     height: 40px;
     width: 40px;
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 15px;
+    border: 1px solid black;
 }
 
 #color1 {
@@ -70,4 +71,10 @@
     margin-top: 15px;
     padding-left: 63px;
     padding-right: 63px;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+#selected {
+    background-color: black;
 }
