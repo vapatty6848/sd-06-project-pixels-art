@@ -77,17 +77,24 @@ selectedColor = () => {
         color[0].style.backgroundColor = "#000"
         
         color[index].addEventListener('click', function () {
+            
             for (let i = 0; i < color.length; i++) {
                 if (color[i].classList.contains('selected')) {
                     color[i].classList.remove('selected')
                 } else {
-                    color[index].classList.add('selected')
+                    color[index].className = 'color selected'
                 }
             }
+            if(color[index] === color[color.length -1]) {
+                color[index].classList.add("selected")
+            }
+
             colorSelect = color[index].style.backgroundColor;
+            console.log(color[index])
         });
     }
     
+
     
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener('click', function () {
