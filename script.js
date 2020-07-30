@@ -7,7 +7,6 @@ for (let index = 0; index < arrayCollor.length; index += 1){
   const createBoxCollor = document.createElement('li');
   createBoxCollor.className = 'color';
   createBoxCollor.style.backgroundColor = arrayCollor[index];
-  createBoxCollor.setAttribute('id', arrayCollor[index])
   paletColor.appendChild(createBoxCollor);
 }
 
@@ -25,12 +24,16 @@ for(let i = 0; i < 5; i += 1) {
 }
 
 window.onload = function () {
-  const initialColor = document.getElementById('black');
-  initialColor.className += ' selected';
+  const colors = document.getElementsByClassName('color');
+  colors[0].className += ' selected';
 }
 
-function colorSelect() {
-  const colorselected = document.querySelector('.selected');
-  if
-
+function colorSelect(newSelect) {
+  const colorSelected = document.querySelector('.selected');
+  colorSelected.classList.remove('selected');
+  newSelect.className += ' selected';
 }
+
+paletColor.addEventListener('click', function(e) {
+  colorSelect(e.target);
+});
