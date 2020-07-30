@@ -1,30 +1,11 @@
-// window.onload = createPixelBoard();
-
-// function createPixelBoard () {
-//   for (let y = 0; y <= 5; y += 1) {
-//     const pixelBoard = document.getElementById('pixel-board');
-//     for (let x = 0; x < 5; x += 1) {
-//       const pixelSquare = document.createElement('div');
-//       pixelSquare.style.border = '1px solid black';
-//       pixelSquare.style.height = '40px';
-//       pixelSquare.style.width = '40px';
-//       pixelSquare.style.display = 'inline-block';
-//       pixelSquare.className = 'pixel';
-//       if (x !== 5) {
-//         pixelBoard.appendChild(pixelSquare);
-//       }
-//     }
-//   }
-// }
-
 const firstColor = document.getElementById('first-color');
 const secondColor = document.getElementById('second-color');
 const thirdColor = document.getElementById('third-color');
 const fourthColor = document.getElementById('fourth-color');
 const pixelBoard = document.getElementById('pixel-board');
 const clearButton = document.getElementById('clear-board');
-// const generateBoardInput = document.getElementById('board-size');
-// const generateBoardButton = document.getElementById('generate-board');
+const generateBoardInput = document.getElementById('board-size');
+const generateBoardButton = document.getElementById('generate-board');
 
 function generateRandomRGBColor() {
   const r = Math.round(Math.random() * 255);
@@ -36,12 +17,6 @@ function generateRandomRGBColor() {
   const randomColor = rgb + r + comma + g + comma + b + closeBrackets;
   return randomColor;
 }
-
-window.onload = function () {
-  secondColor.style.backgroundColor = generateRandomRGBColor();
-  thirdColor.style.backgroundColor = generateRandomRGBColor();
-  fourthColor.style.backgroundColor = generateRandomRGBColor();
-};
 
 function clearSelected() {
   const colorArray = document.getElementsByClassName('color');
@@ -99,23 +74,35 @@ clearButton.addEventListener('click', function () {
   }
 });
 
-// generateBoardButton.addEventListener('click', function () {
-//   const n = generateBoardInput.value;
-//   if (n === '') {
-//     alert('Board inválido!');
-//   } else {
-//     // pixelBoard.remove(document.getElementsByClassName('pixel'));
-//     // pixelBoard.remove(document.getElementsByClassName('line'));
-//     for (let iLine = 0; iLine < n; iLine += 1) {
-//       const line = document.createElement('div');
-//       line.className = 'line';
-//       pixelBoard.appendChild(line);
-//       for (let iPixel = 0; iPixel < n; iPixel += 1) {
-//         const pixel = document.createElement('div');
-//         pixel.style.backgroundColor = 'white';
-//         pixel.className = 'pixel';
-//         line.appendChild(pixel);
-//       }
-//     }
-//   }
-// });
+function generateBoard(input) {
+  if (input === '') {
+    alert('Board inválido!');
+  } else {
+    for (let iLine = 0; iLine < input; iLine += 1) {
+      const line = document.createElement('div');
+      line.className = 'line';
+      pixelBoard.appendChild(line);
+      for (let iPixel = 0; iPixel < input; iPixel += 1) {
+        const pixel = document.createElement('div');
+        pixel.style.backgroundColor = 'white';
+        pixel.className = 'pixel';
+        line.appendChild(pixel);
+      }
+    }
+  }
+}
+
+window.onload = function () {
+  secondColor.style.backgroundColor = generateRandomRGBColor();
+  thirdColor.style.backgroundColor = generateRandomRGBColor();
+  fourthColor.style.backgroundColor = generateRandomRGBColor();
+  generateBoard(5);
+};
+
+generateBoardButton.addEventListener('click', function () {
+  const lineArray = document.querySelectorAll('.line');
+  for (let i = 0; i < lineArray.length; i += 1) {
+    pixelBoard.removeChild(lineArray[i]);
+  }
+  generateBoard(generateBoardInput.value);
+});
