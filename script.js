@@ -74,20 +74,25 @@ clearButton.addEventListener('click', function () {
   }
 });
 
+
 function generateBoard(input) {
   if (input === '') {
     alert('Board inválido!');
-  } else {
-    for (let iLine = 0; iLine < input; iLine += 1) {
-      const line = document.createElement('div');
-      line.className = 'line';
-      pixelBoard.appendChild(line);
-      for (let iPixel = 0; iPixel < input; iPixel += 1) {
-        const pixel = document.createElement('div');
-        pixel.style.backgroundColor = 'white';
-        pixel.className = 'pixel';
-        line.appendChild(pixel);
-      }
+  }
+  if (input < 5) {
+    input = 5;
+  } else if (input > 50) {
+    input = 50;
+  } 
+  for (let iLine = 0; iLine < input; iLine += 1) {
+    const divLine = document.createElement('div');
+    divLine.className = 'line';
+    pixelBoard.appendChild(divLine);
+    for (let iPixel = 0; iPixel < input; iPixel += 1) {
+      const divPixel = document.createElement('div');
+      divPixel.style.backgroundColor = 'white';
+      divPixel.className = 'pixel';
+      divLine.appendChild(divPixel);
     }
   }
 }
