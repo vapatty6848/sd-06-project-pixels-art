@@ -74,7 +74,7 @@ window.onload = function () {
   let boardInput = document.querySelector('#board-size');
 
   boardButton.addEventListener('click', function () {
-    if (boardInput.value <= 5) {
+    if (boardInput.value <= 5 && boardInput.value != '') {
       function repeat(func, times) {
         func();
         times && --times && repeat(func, times);
@@ -86,14 +86,14 @@ window.onload = function () {
         times && --times && repeat(func, times);
       }
       repeat(function () {createLine(50)}, 50);
-    } else {
+    } else if (boardInput.value > 5 && boardInput.value < 50){
       function repeat(func, times) {
         func();
         times && --times && repeat(func, times);
       }
       repeat(function () {createLine(boardInput.value)}, boardInput.value);
+    } else if (boardInput.value == '') {
+      (alert('Board inválido!'))
     }
   });
-
-
 };
