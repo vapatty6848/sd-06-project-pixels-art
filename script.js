@@ -1,23 +1,16 @@
 let selectedColor = "black";
 window.onload = function () {
 
-let colorArray = ["black", "purple", "green", "red"];
+let colorArray = ["black", "purple", "pink", "yellow"];
 
 createColorPallet(colorArray);
 
-// let colorList = document.querySelector(".colors-list");
-
-// for (let index in colorArray) {
-//      elementLi = document.createElement('li');
-//     elementLi.innerHTML = arrayNumbers[num];
-//     elementUl.appendChild(elementLi);
-
 function createColorPallet(colors) {
-    let colorPaletContainer = document.getElementById("color-palette");
+    let colorPalletContainer = document.getElementById("color-palette");
     
     for (let index in colors) {
         let palletItemDiv = createPalletItem(colors[index]);
-        colorPaletContainer.appendChild(palletItemDiv);
+        colorPalletContainer.appendChild(palletItemDiv);
     }
 }
 
@@ -44,17 +37,14 @@ function handlePalletItemEvent() {
 
     selectedColor = currentSelectedDiv.style.backgroundColor;
 }
+console.log(selectedColor);
 
-    // console.log(currentSelectedDiv);
-    // let div = event.target;
-    // let backgroundColor = div.style.backgroundColor;
-    // console.log(backgroundColor);
+function handlePixel(event) {
+    let selectedPixelDiv = event.target;
+    selectedPixelDiv.style.backgroundColor = selectedColor;
+}
 
-// function addPixelsDivEvents() {
-//     let div = pixelDivs[index];
-//     div.addEventListener("click", function(event){
-//         console.log(event.target.class);
-//     });
-}    
-    
-  
+let pixelBoardDiv= document.querySelector("#pixel-board");
+pixelBoardDiv.addEventListener("click", handlePixel);   
+
+}  
