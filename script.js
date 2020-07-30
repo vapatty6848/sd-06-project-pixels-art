@@ -4,7 +4,7 @@ const btnClear = document.querySelector('#clear-board');
 const btnShow = document.querySelector('#generate-board');
 const inputNum = document.querySelector('#board-size');
 let classSel = 'black';
-const cores = ['black'];
+const cores = [];
 let sizeBox = 5;
 
 
@@ -16,6 +16,7 @@ function randomColors() {
 }
 
 function generateColors() {
+  cores.push('black');
   for (let i = 0; i < 3; i += 1) {
     cores.push(randomColors());
   }
@@ -31,9 +32,9 @@ function handle(event) {
   });
 }
 
-function createPalletItem(cores) {
+function createPalletItem(colorLists) {
   const palletItemDiv = document.createElement('div');
-  palletItemDiv.style.backgroundColor = cores;
+  palletItemDiv.style.backgroundColor = colorLists;
   palletItemDiv.classList.add('color');
   palletItemDiv.addEventListener('click', handle);
   if (palletItemDiv.style.backgroundColor === classSel) {
