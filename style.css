@@ -8,8 +8,8 @@
 
 .pixel {
   background-color: white;
-  border-collapse: collapse;
   border: 1px solid black;
+  border-collapse: collapse;
   height: 40px;
   width: 40px;
 }
