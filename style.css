@@ -162,8 +162,8 @@ main {
 
 .number-input[ type = 'number' ]::-webkit-outer-spin-button
  ,.number-input[ type = 'number' ]::-webkit-inner-spin-button {
+   -webkit-appearance: none;
   margin: 0;
-  -webkit-appearance: none;
   -webkit-moz-appearance: none;
 }
 
