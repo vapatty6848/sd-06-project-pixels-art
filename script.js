@@ -48,14 +48,12 @@ let pixelBoardDiv= document.querySelector("#pixel-board");
 pixelBoardDiv.addEventListener("click", handlePixel);
 
 let clearBotton = document.querySelector("#clear-board");
-let allPixel = document.getElementsByClassName("pixel");
+let allPixel = document.querySelectorAll(".pixel");
 
-function clearPixels() {      
+clearBotton.addEventListener("click", function() {      
     for (index in allPixel) {
         allPixel[index].style.backgroundColor = "white";
     }    
+});
+
 }
-
-clearBotton.addEventListener("click", clearPixels);
-
-}  
