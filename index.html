@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="script.js"></script>
   <title>Project Pixel Art</title>
 </head>
 <body>
@@ -22,11 +21,11 @@
     <label for="board-size">Numero de Pixels (entre 5 e 50): </label>
     <input id="board-size" type="number" min="5" max="50" value="5">
     <button id="generate-board">VQV</button>
-    <div id="pixel-board">
+    <div id="pixel-board" class="board">
       <div class="tr">
         <div class="td pixel"></div>
         <div class="td pixel"></div>
-        <div class="td pixel" ></div>
+        <div class="td pixel"></div>
         <div class="td pixel"></div>
         <div class="td pixel"></div>
       </div>
@@ -60,5 +59,6 @@
       </div>
     </div>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
