@@ -2,7 +2,7 @@ window.onload = function() {
     // ativando função de criação de paletes de cor.
         paleta(['black', 'green','yellow', 'pink']);
         createPixelboard(5,5);
-        
+        createBtn()
     };//termino onloadPage.
     
     // função de criação de palete de cores.
@@ -42,6 +42,31 @@ window.onload = function() {
             let pixelColumn = document.createElement('div');
             pixelColumn.className = 'pixel';
             pixelRow.appendChild(pixelColumn);
-          }
+            pixelColumn.addEventListener('click', function(event) {
+                let first = event.target;
+                let nova = document.querySelector('.selected');
+                first.style.backgroundColor = nova.style.backgroundColor;
+          });
         };
+      };
     };
+    //criando botão para limpar o board.
+    function createBtn() {
+        let btn = document.createElement('button');
+        let btnDiv = document.querySelector('#clear-board');
+        btnDiv.appendChild(btn);
+        btn.className = 'clear-board';
+        btn.textContent = 'Limpe aki!';
+        btn.addEventListener('click',function(){
+            let allPixel = document.querySelectorAll('.pixel');
+            for(let i in allPixel) {
+                if(allPixel[i].style.backgroundColor){
+                    allPixel[i].style.backgroundColor = '';
+                }
+            }
+        });
+    };
+    //
+    
+        
+    
