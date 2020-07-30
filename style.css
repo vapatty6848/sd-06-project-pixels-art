@@ -37,7 +37,21 @@
 }
 
 h1 {
-  font-family: 'Red Rose', cursive;
   font-size: 35px;
   text-decoration: underline;
+}
+
+body {
+  font-family: 'Red Rose', cursive;
+  text-align: center;
+  border: 1px solid black;
+  width: 40%;
+  margin: auto;
+  padding: 10px 0px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
 }
