@@ -28,19 +28,19 @@ function palletEvents(palletDivs) {
 
 function randomOrder(array) {
   let p;
-  let n;
+  let number;
   let temporario;
   for (p = array.length; p;) {
-    n = Math.random() * p-- | 0;
-    temporario = array[n];
-    array[n] = array[p];
+    number = Math.random() * p-- | 0;
+    temporario = array[number];
+    array[number] = array[p];
     array[p] = temporario;
   }
 }
 randomOrder(paletaCores);
 
 // Cria as 4 divs da paleta de cores com seu background e evento.
-function createDivAndColor(color) {  
+function createDivAndColor(color) {
   for (let i = 0; i < color.length; i += 1) {
     const palletDiv = document.createElement('div');
     palletDiv.style.backgroundColor = color[i];
@@ -62,13 +62,13 @@ function changePixelColor() {
 }
 
 // cria as tag UL e LI, add LI na lista UL, cria as DIV Pixel e add dentro das LI;
-function createLiAndDivPixels(n) {  
+function createLiAndDivPixels(list) {
   const elementoUl = document.createElement('ul');
   sectionPaleta.appendChild(elementoUl);
-  for (let j = 0; j < n; j += 1) {
+  for (let j = 0; j < list; j += 1) {
     const elementoLi = document.createElement('li');
     elementoUl.appendChild(elementoLi);
-    for (let i = 0; i < n; i += 1) {
+    for (let i = 0; i < list; i += 1) {
       const pixelDiv = document.createElement('div');
       pixelDiv.className = 'pixel';
       elementoLi.appendChild(pixelDiv);
@@ -142,7 +142,7 @@ buttonSize.addEventListener('click', function () {
   }
   for (let i = 0; i < divsPixels.length; i += 1) {
     divsPixels[i].style.height = `${inputSize.value}px`;
-    divsPixels[i].style.width = `${inputSize.value}px`;
-    alert('alterando meidadas Heigth e width');
+    divsPixels[i].style.width = `${inputSize.value}px`;    
   }
+  alert('alterando meidadas Heigth e width');
 });
