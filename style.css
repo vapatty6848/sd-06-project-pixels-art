@@ -24,9 +24,9 @@ float: none;
     display: flex;
 }
 #clear-board{
-    margin-top: 16px;
+    margin-top: 24px;
     margin-bottom: 8px;
 }
 #title2{
-    margin-top: 0px;
+    margin-top: 8px;
 }
