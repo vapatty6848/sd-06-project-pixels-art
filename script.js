@@ -70,9 +70,8 @@ buttonClear.addEventListener('click', function () {
   }
 });
 
-//inputBoard.setAttribute('value', 2);
 inputBoard.addEventListener('keyup', function () {
-  if (parseInt(inputBoard.value) <= 0) {
+  if (parseInt(inputBoard.value,10) <= 0) {
     inputBoard.value = '';
     alert('valor invalido');
   }
@@ -84,7 +83,7 @@ buttonGenerate.addEventListener('click', function () {
   if (inputBoard.value >= 1 && inputBoard.value < 5) {
     inputBoard.value = 5;
     alert('valor padrão minimo é 5');
-  }else if (inputBoard.value > 50){
+  } else if (inputBoard.value > 50) {
     inputBoard.value = 50;
     alert('valor padrão máximo é 50');
   }
