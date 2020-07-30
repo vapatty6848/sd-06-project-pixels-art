@@ -1,8 +1,29 @@
-.color {
+.collor {
   border: 1px solid black;
   display: inline-block;
   list-style-type: none;
   width: 70px;
   height: 70px;
+
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  border-collapse: collapse;
+
+}
+
+.table {
+  width: 250px;
+  height: 250px;
+
+}
+
+.pixel-line {
+  border-spacing: 0;
+  display: inline-block;
 
 }
