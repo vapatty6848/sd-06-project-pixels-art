@@ -45,6 +45,5 @@ corVerde.addEventListener("click", function(){
     corVerde.classList.add("selected");
 });
 //-------------------------------------------------Eventos de clique Paleta FIM
-botaoLimpa.addEventListener("click",function(){
-  console.log(pixelInBoard);
-})
+
+///----------------------------Função colore Pixel
