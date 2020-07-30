@@ -1,6 +1,6 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
-const colors = ['black',];
+const colors = ['black'];
 
 function generateRandomRGB() {
   const r = Math.ceil(255 * Math.random());
