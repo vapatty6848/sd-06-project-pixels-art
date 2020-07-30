@@ -29,17 +29,39 @@
     border: 1px solid black;
 }
 
+#color1 {
+    margin-left: 245px;
+    background-color: black;
+}
+
+#color2 {
+    background-color: red;
+}
+
+#color3 {
+    background-color: blue;
+}
+ 
+#color4 {
+    background-color: green;
+}
+
 #pixel-board {
-    text-align: center;
+    display: table;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#tr {
+    display: table-row;    
 }
 
 .pixel {
-   display: inline-block;
+   display: table-cell;
    background-color: white;
    border: 1px black solid;
    height: 40px;
    width: 40px;
-   margin-left: 0px;
 }
 
 #clear-board {
@@ -53,3 +75,6 @@
     border-radius: 5px;
 }
 
+#selected {
+    background-color: black;
+}
