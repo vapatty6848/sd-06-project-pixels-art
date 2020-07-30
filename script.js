@@ -5,7 +5,7 @@ function criarPaleta(cores) {
     criarCor.style.backgroundColor = cores[i];
     document.getElementById('color-palette').appendChild(criarCor);
     if (cores[i] === 'black') {
-      criarCor.className += ' selected';
+      criarCor.classList.add('selected');
       corSelecionada = 'black';
     }
   }
@@ -27,17 +27,28 @@ function criarPixels(quantidade) {
 }
 /* ******************************************************** */
 function pegaCor() {
-  const cores = document.getElementsByClassName('color');
-  let selecionada = document.querySelector('.selected');
-  for (let i = 0; i < cores.length; i += 1) {
-    cores[i].addEventListener('click', function () {
-      corSelecionada = event.target.style.backgroundColor;
-      cores[i].classList.add('selected');
-      selecionada.classList.remove('selected');
-      selecionada = document.querySelector('.selected');
-    });
-  }
+  const corAntiga = document.getElementsByClassName('selected');
+  let cores = document.querySelector('#color-palette');
+  cores.addEventListener('click', function(event) {
+    let corAtual = event.target;
+    corAntiga.className = ('color');
+    corAtual.classList.add('selected');
+    corSelecionada = corAtual.style.backgroundColor;
+  });
 }
+/* ******************************************************** */
+// function pegaCor() {
+//   const cores = document.getElementsByClassName('color');
+//   let selecionada = document.querySelector('.selected');
+//   for (let i = 0; i < cores.length; i += 1) {
+//     cores[i].addEventListener('click', function () {
+//       corSelecionada = event.target.style.backgroundColor;
+//       cores[i].classList.add('selected');
+//       selecionada.classList.remove('selected');
+//       selecionada = document.querySelector('.selected');
+//     });
+//   }
+// }
 /* ******************************************************** */
 function pintar() {
   const pintarPixel = document.querySelectorAll('.pixel');
@@ -58,13 +69,17 @@ function limparTudo() {
   });
 }
 /* ******************************************************** */
-function btnBoardSiza() {
-  let tamanho = document.getElementById('board-size').value;
-  let btnValor = document.querySelector('#generate-board');
-  btnValor.addEventListener('click', function() {
-    console.log(tamanho);
-  });
-}
+// function btnBoardSize() {
+//   let pixels = document.querySelectorAll('#pixel');
+//   let tamanho = document.getElementById('board-size');
+//   let btnPixels = document.querySelector('#generate-board');
+//   btnPixels.addEventListener('click', function() {
+//     for (let i = pixels.length; i > 0; i -= 1 ){
+//       document.querySelector('pixel-board').removeChild;
+//     }
+//     criarPixels(tamanho.value);
+//   });
+// }
 /* ******************************************************** */
 window.onload = function () {
   const cores = ['black', 'gray', 'red', 'yellow'];
@@ -75,6 +90,6 @@ window.onload = function () {
   pegaCor();
   pintar();
   limparTudo();
-  btnBoardSiza();
+  //btnBoardSize();
 };
 /* ******************************************************** */
