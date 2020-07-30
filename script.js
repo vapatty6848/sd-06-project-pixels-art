@@ -1,23 +1,21 @@
 // otimizar os color setings para não pintar os elementos pais
-
 let pixelBoard = document.querySelector("#pixel-board");
-let colorPalette = document.querySelector("#color-palette");
-let clearBoard = document.querySelector("#clear-board");
-let customBoardButton = document.querySelector("#generate-board");
+pixelBoard.addEventListener("click", setPixelColor);
 
+let colorPalette = document.querySelector("#color-palette");
+colorPalette.addEventListener("click", chooseColor);
+
+let clearBoard = document.querySelector("#clear-board");
+clearBoard.addEventListener("click", clearPixelBoard);
+
+let customBoardButton = document.querySelector("#generate-board");
+customBoardButton.addEventListener("click", createCustomPixelBoard);
 
 createPaletteColors("black", generateRandomColor(), generateRandomColor(), generateRandomColor());
 createPixelBoard();
 
-colorPalette.addEventListener("click", chooseColor);
-pixelBoard.addEventListener("click", setPixelColor);
-clearBoard.addEventListener("click", clearPixelBoard);
-customBoardButton.addEventListener("click", createCustomPixelBoard);
-
-
 colorPalette.firstElementChild.classList.add("selected");
 let currentSelectedColor = document.querySelector(".selected");
-
 
 
 function createPaletteColors (color1, color2, color3, color4){
