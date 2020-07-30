@@ -30,6 +30,7 @@ window.onload = function () {
 }
 
 function colorSelect() {
-  const colorselected
+  const colorselected = document.querySelector('.selected');
+  if
 
 }
