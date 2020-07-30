@@ -3,6 +3,9 @@ const palletColor = document.querySelector('#color-palette');
 const paletaCores = ['black', 'red', 'blue', 'green'];
 let colorBackPixel = paletaCores[0];
 const buttonClear = document.querySelector('#clear-board');
+const inputBoard = document.querySelector('#board-size');
+const buttonGenerate = document.querySelector('#generate-board');
+
 
 // remove a class selected da Div da paleta e adiciona na clicada atual;
 function changeSelected() {
@@ -62,7 +65,32 @@ createLiAndDivPixels();
 // Limpa Pixels
 buttonClear.addEventListener('click', function () {
   const divPixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < divPixels.length; i += 1){
-  divPixels[i].style.backgroundColor = 'white';
+  for (let i = 0; i < divPixels.length; i += 1) {
+    divPixels[i].style.backgroundColor = 'white';
   }
 });
+
+//inputBoard.setAttribute('value', 2);
+inputBoard.addEventListener('keyup', function () {
+  if (parseInt(inputBoard.value) <= 0) {
+    inputBoard.value = '';
+    alert('valor invalido');
+  }
+});
+
+// aciona evento no botao VQV e insere o valos as medidas Height e width das Divs Pixel.
+buttonGenerate.addEventListener('click', function () {
+  const divsPixels = document.querySelectorAll('.pixel');
+  if (inputBoard.value >= 1 && inputBoard.value < 5) {
+    inputBoard.value = 5;
+    alert('valor padrão minimo é 5');
+  }else if (inputBoard.value > 50){
+    inputBoard.value = 50;
+    alert('valor padrão máximo é 50');
+  }
+  for (let i = 0; i < divsPixels.length; i += 1) {
+    divsPixels[i].style.height = `${inputBoard.value}px`;
+    divsPixels[i].style.width = `${inputBoard.value}px`;
+  }
+});
+
