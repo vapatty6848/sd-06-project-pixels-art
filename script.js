@@ -1,16 +1,29 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
-const colors = ['black', 'red', 'blue', 'green'];
+const colors = ['black',];
 
+function generateRandomRGB() {
+  const r = Math.ceil(255 * Math.random());
+  const g = Math.ceil(255 * Math.random());
+  const b = Math.ceil(255 * Math.random());
+  return (`rgb(${r}, ${g}, ${b})`);
+}
+
+function generateRandomColors() {
+  let i = 1;
+  while (i < 4) {
+    colors.push(generateRandomRGB());
+    i += 1;
+  }
+}
 
 function generatePaletteColors() {
   for (let i = 0; i < colors.length; i += 1) {
     const divCollor = document.createElement('div');
     divCollor.classList.add('color');
-    divCollor.classList.add(colors[i]);
     divCollor.style.backgroundColor = colors[i];
     colorPalette.appendChild(divCollor);
-    if (divCollor.classList.contains('black')) {
+    if (i === 0) {
       divCollor.classList.add('selected');
     }
     divCollor.addEventListener('click', function () {
@@ -94,6 +107,7 @@ function generateCleanButton() {
 }
 
 window.onload = function () {
+  generateRandomColors();
   generatePaletteColors();
   generateInput();
   generateBoardSizeButton();
