@@ -1,12 +1,12 @@
 window.onload = function (){
-  paletaDeCores(["black", "red", "green", "blue"]);     
+  paletaDeCores(["black", "red", "green", "blue"]);
 }
 
 //PALETA DE CORES - PIXELCOLOR*************
 let colorPalette;
 let palletItemDiv;
-function paletaDeCores(colors){ 
-  let colorPalette = document.getElementById("color-palette");
+function paletaDeCores(colors){
+  colorPalette = document.getElementById("color-palette");
   for(let index in colors){
     let palletItemDiv = coresDaPaleta(colors[index]);
     colorPalette.appendChild(palletItemDiv);
@@ -14,7 +14,7 @@ function paletaDeCores(colors){
 }
 let pixelColor;
 function coresDaPaleta(color){
-  let pixelColor = document.createElement("div");
+  pixelColor = document.createElement("div");
   pixelColor.style.backgroundColor = color;
   pixelColor.classList = "color";
   pixelColor.addEventListener("click", selecionarCores);
@@ -27,11 +27,11 @@ let div;
 let backgroudColor;
 let pixelColorSelected;
 let pixelColorNew;
-function selecionarCores(event){ 
-  let div = event.target
-  let backgroudColor = div.style.backgroundColor;
-  let pixelColorSelected = document.querySelector(".selected");
-  let pixelColorNew = event.target;
+function selecionarCores(event){
+  div = event.target
+  backgroudColor = div.style.backgroundColor;
+  pixelColorSelected = document.querySelector(".selected");
+  pixelColorNew = event.target;
   pixelColorSelected.classList.remove("selected");
   pixelColorNew.classList.add("selected");
 }
@@ -40,7 +40,7 @@ let corMarcada = pixelColorNew;
 
 //PALETA LIMPA - PIXELPIXEL*-*************
 function marcarPixelPixel(event){
-  let pixelColorNew = event.target;
+  pixelColorNew = event.target;
   pixelColorNew.style.backgroundColor = corMarcada;
 }
 let pixelBoardDiv = document.querySelector("#pixel-board");
