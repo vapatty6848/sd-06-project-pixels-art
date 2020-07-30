@@ -52,16 +52,13 @@ corDoPixels.addEventListener('click', colorPrint );
 
 // Mudando as cores do quadrado p/ branco 
 
-let pixel = document.querySelectorAll('.pixel');
+let pixel = document.getElementById('pixel-board').querySelectorAll('.pixel');
 let whiteButton = document.getElementById('clear-board');
+console.log(pixel);
 
 whiteButton.addEventListener('click', function() {
-    for(let i= 0; i < pixel.length; i =+ 1) {
-        let coresPixel = pixel[i].className.split(' ');
-        if(coresPixel[1] !== undefined) {
-            
-        }
-
-        }
+    for(let i = 0; i < pixel.length; i += 1) {
+        pixel[i].className = "pixel"
+    } console.log(pixel[0]);
     
 })  
