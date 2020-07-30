@@ -51,7 +51,7 @@ let clearBotton = document.querySelector("#clear-board");
 let allPixel = document.querySelectorAll(".pixel");
 
 clearBotton.addEventListener("click", function() {      
-    for (let index in allPixel) {
+    for (let index =  0; index < allPixel.length; index += 1) {
         allPixel[index].style.backgroundColor = "white";
     }    
 });
