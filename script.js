@@ -25,6 +25,13 @@ let copiadaClasse = ["color", "black", "selected"]
         return copiadaClasse;
 
     } 
+
+
+    let botaoApaga = document.getElementById("clear-board");
+    botaoApaga.addEventListener('click', function() {
+
+    } )
+    
 // Fim da função 
 
 let corDoPixels = document.getElementById('pixel-board');
@@ -40,4 +47,21 @@ corDoPixels.addEventListener('click', colorPrint );
             eventos.target.className = corPixel;
             
         } console.log(corPixel)
+        
     }
+
+// Mudando as cores do quadrado p/ branco 
+
+let pixel = document.querySelectorAll('.pixel');
+let whiteButton = document.getElementById('clear-board');
+
+whiteButton.addEventListener('click', function() {
+    for(let i= 0; i < pixel.length; i =+ 1) {
+        let coresPixel = pixel[i].className.split(' ');
+        if(coresPixel[1] !== undefined) {
+            
+        }
+
+        }
+    
+})  
