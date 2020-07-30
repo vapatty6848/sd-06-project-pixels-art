@@ -1,0 +1,8 @@
+.color-palette-item {
+  border: 1px solid black;
+  display: inline-block;
+  list-style-type: none;
+  width: 70px;
+  height: 70px;
+
+}
