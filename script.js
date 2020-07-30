@@ -104,8 +104,8 @@ creationForm.onsubmit = (event) => {
     alert('Board inválido!');
   } else {
     createTable(tableElm, boardContainer, inputValue);
-  };
-}
+  }
+};
 
 // more colors!
 
@@ -142,7 +142,7 @@ function checkSize() {
 
   if (document.body.clientWidth < 632) {
     selectColorContainer.style.display = 'none';
-  };
+  }
 
   window.addEventListener('resize', () => {
     const width = document.body.clientWidth;
