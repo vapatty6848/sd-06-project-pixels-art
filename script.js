@@ -15,6 +15,7 @@ window.onclick = function () {
   }
 };
 
+// Entendendo outras maneiras de fazer o código
 // const bottonBlack = document.querySelector('#black');
 // bottonBlack.addEventListener('click', function() {
 
