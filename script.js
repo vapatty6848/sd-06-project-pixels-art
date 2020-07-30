@@ -5,7 +5,14 @@ const selected = document.querySelector('.selected');
 let color = window.getComputedStyle(selected).backgroundColor;
 
 for (let i = 0; i < colors.length; i += 1) {
-   colors[i].addEventListener('click', function() {
+   colors[i].addEventListener('click', function(event) {
+       
+       let selectedDiv = event.target;
+       let oldSelectedDiv = document.querySelector('.selected');
+
+       oldSelectedDiv.classList.remove('selected');
+       selectedDiv.classList.add('selected');
+
        const style = window.getComputedStyle(colors[i]).backgroundColor;
        color = style;
    });
