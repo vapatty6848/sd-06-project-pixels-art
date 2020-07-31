@@ -1,28 +1,48 @@
 window.onload = function () {
-	// Altera a cor selecionada
+	// Variáveis das paletas
   let myColor01 = document.getElementById("color01");
-  myColor01.style.backgroundColor = "rgb(0 , 0 , 0)";
-	myColor01.addEventListener("click", function () {
-		chageSelected(myColor01);
-	});	
-
   let myColor02 = document.getElementById("color02");
-  myColor02.style.backgroundColor = "rgb(155 , 50 , 8)";  
-	myColor02.addEventListener("click", function () {
-		chageSelected(myColor02);
-	});
-
   let myColor03 = document.getElementById("color03");
-  myColor03.style.backgroundColor = "rgb(198 , 168 , 108)";  
-	myColor03.addEventListener("click", function () {
-		chageSelected(myColor03);
-	});	
-
   let myColor04 = document.getElementById("color04");
-  myColor04.style.backgroundColor = "rgb(45 , 75 , 139)";
-	myColor04.addEventListener("click", function () {
-		chageSelected(myColor04);
+
+  // Cor preta para paleta 01
+  myColor01.style.backgroundColor = "rgb(0 , 0 , 0)";
+  myColor01.addEventListener("click", function () {
+		chageSelected(myColor01);
   });	
+  
+  // gerar cores aleatórias para outras paletas
+  generateRandomColor(myColor02);
+  generateRandomColor(myColor03);
+  generateRandomColor(myColor04);
+
+  function generateRandomColor(color) {
+		let col1 = Math.floor(Math.random() * (250));
+		let col2 = Math.floor(Math.random() * (250));
+		let col3 = Math.floor(Math.random() * (250));
+    color.style.backgroundColor = "rgb(" + col1 + " , " + col2 + " , " + col3 + ")";  
+    color.addEventListener("click", function () {
+    	chageSelected(color);
+    });
+  }
+  
+  
+  // myColor02.style.backgroundColor = "rgb(155 , 50 , 8)";  
+	// myColor02.addEventListener("click", function () {
+	// 	chageSelected(myColor02);
+	// });
+
+  
+  // myColor03.style.backgroundColor = "rgb(198 , 168 , 108)";  
+	// myColor03.addEventListener("click", function () {
+	// 	chageSelected(myColor03);
+	// });	
+
+  
+  // myColor04.style.backgroundColor = "rgb(45 , 75 , 139)";
+	// myColor04.addEventListener("click", function () {
+	// 	chageSelected(myColor04);
+  // });	
   
   let colorSelected = "rgb(0 , 0 , 0)";
   
