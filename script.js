@@ -2,9 +2,40 @@ window.onload = function () {
   currentColor = "black";
   let itemSel = document.querySelector('#black');
   itemSel.className += ' selected'
+  generatePixelBoard(5);
 }
-// Manipula a paleta de cores
+let pixelBoard = document.querySelector('#pixel-board');
+
 let colorPalette = document.querySelector('#color-palette');
+
+const genetateButton = document.querySelector('#generate-board');
+const boardSize = document.querySelector('#board-size');
+
+function generatePixelBoard (size) {
+  const totalSize = size * size;
+  const borderWidth = (size * 40) + 40;
+  pixelBoard.style.width = `${borderWidth}px`
+  for (let i = 0 ; i < totalSize ; i += 1){
+    const divPixel = document.createElement('div');
+    divPixel.classList.add('pixel');
+    pixelBoard.appendChild(divPixel);
+  }
+}
+genetateButton.addEventListener('click', function(){
+  
+  while (pixelBoard.firstChild){
+    pixelBoard.removeChild(pixelBoard.lastChild);
+  }
+
+  let numBoard = boardSize.value;
+  if (numBoard < 5){
+    numBoard = 5;
+  }else if (numBoard > 50){
+    numBoard = 50;
+  }
+
+  generatePixelBoard(numBoard);
+});
 
 colorPalette.addEventListener('click', function(event) {
   let selectedColor = event.target.id;
@@ -13,12 +44,8 @@ colorPalette.addEventListener('click', function(event) {
   previousDiv.className = 'color'
   selectedDiv.className = 'color selected'
   currentColor = selectedColor;
-  //console.log(previousDiv);
-  //console.log(selectedDiv);
-  //console.log(selectedColor);
 });
 
-let pixelBoard = document.querySelector('#pixel-board');
 
 pixelBoard.addEventListener('click', function(event){
   let selectedPixel = event.target;
