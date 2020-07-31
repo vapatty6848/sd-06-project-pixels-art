@@ -1,7 +1,7 @@
 window.onload = function() {
   addColorPallet(['black', 'red', 'blue', 'green']);
   createBoardRows();
-  //createPixelBoard();
+  addButtonEvent();
 }
 
 // COLOR PALLET AREA
@@ -36,7 +36,7 @@ function handlePalletItemEvent(event) {
   nowSelectedDiv.classList.add('selected')
 }
 
-// PIXEL BOARD
+// PIXEL BOARD AREA
 // Função adicionar rows
 function createBoardRows() {
   let PixelBoardContainer = document.querySelector('#pixel-board');
@@ -61,21 +61,17 @@ function createPixel() {
   return pixelDiv
 }
 
-// Função para criar a rowDiv
-//function createRowDiv() {
-  //let rowDiv = document.createElement('div');
-  //rowDiv.classList.add('board-row');
-  //return rowDiv
-//}
+// BUTTON
 
-// Função adicionar pixels
-//function createPixelBoard() {
-  //let boardRowContainer = document.querySelectorAll('.board-row');
+function addButtonEvent() {
+  let button = document.querySelector('#clear-board');
+  button.addEventListener('click', handleButtonEvent)
+}
 
-  //for (index = 1; index <= 5; index += 1) {
-    //let pixelDiv[index] = createPixel();
-    //boardRowContainer.appendChild(pixelDiv);
-  //}
- 
-//}
-
+function handleButtonEvent() {
+  let pixels = document.querySelectorAll('.pixel');
+  
+  for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].style.backgroundColor= 'white';
+  }
+}
