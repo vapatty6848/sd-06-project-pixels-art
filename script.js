@@ -1,9 +1,9 @@
 let selectedColor = 'black';
 window.onload = function() {
+  let randomColor0 = '#' + ((1<<24)*Math.random()|0).toString(16);
   let randomColor1 = '#' + ((1<<24)*Math.random()|0).toString(16);
   let randomColor2 = '#' + ((1<<24)*Math.random()|0).toString(16);
-  let randomColor3 = '#' + ((1<<24)*Math.random()|0).toString(16);
-  createColorPallet(['black', randomColor1, randomColor2, randomColor3]);
+  createColorPallet(['black', randomColor0, randomColor1, randomColor2]);
 }
 function createColorPallet(colors) {
   
