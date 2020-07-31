@@ -1,7 +1,7 @@
-let selectedColor = 'rgb(0 , 0 , 0)';
+const selectedColor = 'rgb(0 , 0 , 0)';
 
 function generateRandomColor() {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   return randomColor;
 }
 
@@ -32,7 +32,7 @@ function enableColor(newColor) {
 
 function deleteRows() {
   const board = document.getElementById('pixel-board');
-  let rows = board.children;
+  const rows = board.children;
   while (board.firstChild) {
     board.removeChild(board.firstChild);
   }
@@ -44,7 +44,7 @@ function getSizeInput() {
 }
 
 function getBoardDimensions() {
-  const sizeInput = parseInt(getSizeInput());
+  const sizeInput = parseInt(getSizeInput(), 10);
   if (!sizeInput) {
     alert('Board inválido!');
   }
@@ -57,7 +57,6 @@ function getBoardDimensions() {
   } else {
     size = sizeInput;
   }
-  
   // Board is always a square
   const boardDimensions = {
     numberOfPixels: size,
@@ -84,7 +83,7 @@ function mountLine(numberOfPixels) {
 function fillBoard(boardClass) {
   const boardDimensions = getBoardDimensions();
   const board = document.getElementById(boardClass);
-  for (i = 1; i <= boardDimensions.numberOfLines; i += 1) {
+  for (let i = 1; i <= boardDimensions.numberOfLines; i += 1) {
     board.appendChild(mountLine(boardDimensions.numberOfPixels));
   }
 }
@@ -114,5 +113,3 @@ document.addEventListener('click', function (event) {
 });
 
 window.onload = setRandomColors;
-
-
