@@ -44,18 +44,18 @@ display: inline-block;
 margin-top: -4px;
 }
 
-.preto {
+.black {
     background-color: black;
 }
-.vermelho {
+.red {
     background-color: red;
 }
-.azul {
+.blue {
     background-color: blue;
 }
-.verde {
+.green {
     background-color: green;
 }
-.limpaquadro {
+.white {
     background-color: white;
 }
