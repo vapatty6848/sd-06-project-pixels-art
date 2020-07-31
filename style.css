@@ -77,8 +77,8 @@ header h1 {
 }
 
 #pixel-board {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   margin-left: auto;
   margin-right: auto;
   padding: 0px;
@@ -86,21 +86,36 @@ header h1 {
 
 #pixel-board .pixel-line {
   height: 40px;
-  width: 200px;
+  width: 100%;
   margin: 0px;
   padding: 0px;
-  display: flex; 
-  flex-direction: row;            /* default value; can be omitted */
-  flex-wrap: nowrap;              /* default value; can be omitted */
-  justify-content: space-between; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 #pixel-board .pixel {
   background-color: rgb(255 , 255 , 255);
   /* display: inline-block;   */
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border: 1px solid rgb(0 , 0 , 0);
   margin: 0px 0px;
   padding: 0px 0px;
+
+}
+
+footer {
+  text-align: center;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer h2 {
+  width: 400px;
+  font-size: 12px;
+  font-weight: lighter;
+  color: rgb(255 , 255 , 255);
 }
