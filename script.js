@@ -60,7 +60,7 @@ function getBoardDimensions() {
   const boardDimensions = {
     numberOfPixels: size,
     numberOfLines: size,
-  }
+  };
   return boardDimensions;
 }
 
