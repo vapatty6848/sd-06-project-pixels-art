@@ -52,7 +52,9 @@ genetateButton.addEventListener('click', function(){
   while (pixelBoard.firstChild){
     pixelBoard.removeChild(pixelBoard.lastChild);
   }
-  
+  if(boardSize.value == ''){
+    alert("Board inválido!");
+  }
   let numBoard = boardSize.value;
   if (numBoard < 5){
     numBoard = 5;
