@@ -1,6 +1,6 @@
-main {
-  align-content: center;
-  display: block;
+body {
+  background: rgba(125 , 141 , 36 , 0.377);
+  text-align: center;
 }
 
 .color {
@@ -18,8 +18,7 @@ main {
 }
 
 .pixel-board {
-  display: inline-block;
-  height: 220px;
+  margin: auto;
   margin-top: 10px;
   width: 210px;
 }
