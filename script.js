@@ -13,6 +13,7 @@ function setRandomColors() {
     nextSibling.style.backgroundColor = `#${color}`;
     nextSibling = nextSibling.nextElementSibling;
   }
+}
 
 function clearBoard() {
   const allPixels = document.getElementsByClassName('pixel');
