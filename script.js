@@ -1,15 +1,13 @@
-window.onload = function () {
-  currentColor = "black";
-  let itemSel = document.querySelector('#black');
-  itemSel.className += ' selected'
-  generatePixelBoard(5);
-}
+
+
 let pixelBoard = document.querySelector('#pixel-board');
 
 let colorPalette = document.querySelector('#color-palette');
 
 const genetateButton = document.querySelector('#generate-board');
 const boardSize = document.querySelector('#board-size');
+generateColorPalette();
+generatePixelBoard(5);
 
 function generatePixelBoard (size) {
   const totalSize = size * size;
@@ -21,12 +19,40 @@ function generatePixelBoard (size) {
     pixelBoard.appendChild(divPixel);
   }
 }
+
+function generateRandomColor(){
+  const red = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  
+  const generateColor = `rgb(${red}, ${blue}, ${green})`;
+  
+  return generateColor;
+}
+
+function generateColorPalette(){
+  for (let i = 0 ; i < 4 ; i += 1){
+    const divColor = document.createElement('div');
+    divColor.classList.add('color');
+    if (i === 0){
+      divColor.style.backgroundColor = 'black';
+    }else{
+      divColor.style.backgroundColor = generateRandomColor();
+    }
+    divColor.classList.add(`div${i}`);
+    colorPalette.appendChild(divColor);
+  }
+}
+let currentColor = "black";
+let itemSel = document.querySelector('.div0');
+itemSel.classList.add('selected');
+
 genetateButton.addEventListener('click', function(){
   
   while (pixelBoard.firstChild){
     pixelBoard.removeChild(pixelBoard.lastChild);
   }
-
+  
   let numBoard = boardSize.value;
   if (numBoard < 5){
     numBoard = 5;
@@ -38,11 +64,11 @@ genetateButton.addEventListener('click', function(){
 });
 
 colorPalette.addEventListener('click', function(event) {
-  let selectedColor = event.target.id;
-  let selectedDiv = document.getElementById(selectedColor);
-  let previousDiv = document.getElementById(currentColor);
-  previousDiv.className = 'color'
-  selectedDiv.className = 'color selected'
+  let selectedColor = event.target.style.backgroundColor;
+  let selectedDiv = event.target;
+  let previousDiv = document.querySelector('.selected');
+  previousDiv.classList.remove('selected')
+  selectedDiv.classList.add('selected');
   currentColor = selectedColor;
 });
 
