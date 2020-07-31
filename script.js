@@ -66,6 +66,7 @@ generateBtn.addEventListener('click', function () {
 
 window.onload = function () {
   for (let i = 1; i < colors.length; i += 1) {
-    colors[i].style.backgroundColor = '#' + Math.random().toString(16).slice(-6);
+    let random = `#${Math.random().toString(16).slice(-6)}`;
+    colors[i].style.backgroundColor = random;
   }
 };
