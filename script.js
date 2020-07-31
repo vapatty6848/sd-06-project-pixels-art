@@ -63,7 +63,11 @@ function verifyElementsNumbers(numberElements) {
 
 // Cria o grid de pixel
 function createGrid(numberElements) {
-  numberElements = verifyElementsNumbers(numberBoardSize.value);
+  if (numberElements === undefined) {
+    numberElements = 5;
+  } else {
+    numberElements = verifyElementsNumbers(numberBoardSize.value);
+  }
   for (let index = 0; index < (numberElements ** 2); index += 1) {
     const pixel = document.createElement('div');
     boardGrid.appendChild(pixel);
@@ -73,6 +77,7 @@ function createGrid(numberElements) {
   }
 }
 btnGenerateBoard.addEventListener('click', createGrid);
+createGrid();
 
 // Pinta os pixels da cor selecionada;
 function printPixel(event) {
