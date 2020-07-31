@@ -1,4 +1,4 @@
-const selectedColor = 'rgb(0 , 0 , 0)';
+let selectedColor = 'rgb(0 , 0 , 0)';
 
 function generateRandomColor() {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -9,7 +9,7 @@ function setRandomColors() {
   const firstElement = document.querySelector('.selected');
   let nextSibling = firstElement.nextElementSibling;
   while (nextSibling) {
-    let color = generateRandomColor();
+    const color = generateRandomColor();
     nextSibling.style.backgroundColor = `#${color}`;
     nextSibling = nextSibling.nextElementSibling;
   }
@@ -32,7 +32,6 @@ function enableColor(newColor) {
 
 function deleteRows() {
   const board = document.getElementById('pixel-board');
-  const rows = board.children;
   while (board.firstChild) {
     board.removeChild(board.firstChild);
   }
