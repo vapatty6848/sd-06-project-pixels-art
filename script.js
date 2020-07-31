@@ -9,11 +9,10 @@ function setRandomColors() {
   const firstElement = document.querySelector('.selected');
   let nextSibling = firstElement.nextElementSibling;
   while (nextSibling) {
-    const color = generateRandomColor();
+    let color = generateRandomColor();
     nextSibling.style.backgroundColor = `#${color}`;
-    nextSibling = firstElement.nextElementSibling;
+    nextSibling = nextSibling.nextElementSibling;
   }
-}
 
 function clearBoard() {
   const allPixels = document.getElementsByClassName('pixel');
@@ -83,7 +82,6 @@ function mountLine(numberOfPixels) {
 
 function fillBoard(boardClass) {
   const boardDimensions = getBoardDimensions();
-  //const mountedLine = mountLine(boardDimensions.numberOfPixels);
   const board = document.getElementById(boardClass);
   for (i = 1; i <= boardDimensions.numberOfLines; i += 1) {
     board.appendChild(mountLine(boardDimensions.numberOfPixels));
@@ -114,7 +112,6 @@ document.addEventListener('click', function (event) {
   }
 });
 
-window.onload = function () {
-  //setRandomColors();
-}
+window.onload = setRandomColors;
+
 
