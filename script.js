@@ -26,7 +26,26 @@ function palletEvents(palletDivs) {
   });
 }
 
-
+function randomOrder(list) {
+  let number;
+  let numberTemporary;
+  let numberSum = 0;
+  for (let i = list.length - 1; i > 0; i -= 1) {
+    if (i === 0) {
+      list[i] = list[i];
+      break;
+    }
+    number = Math.floor((Math.random() * i) + numberSum);
+    numberSum += 1;
+    if (number === 0) {
+      number = 1;
+    }
+    numberTemporary = list[number];
+    list[number] = list[i];
+    list[i] = numberTemporary;
+  }
+}
+randomOrder(paletaCores);
 
 // Cria as 4 divs da paleta de cores com seu background e evento.
 function createDivAndColor(color) {
@@ -35,7 +54,7 @@ function createDivAndColor(color) {
     palletDiv.style.backgroundColor = color[i];
     palletDiv.className = 'color';
     palletColor.appendChild(palletDiv);
-    if ( i ===  0) {
+    if (i === 0) {
       palletDiv.className = 'color selected';
     }
     palletEvents(palletDiv);
@@ -119,19 +138,26 @@ inputSize.addEventListener('keyup', function () {
 
 // aciona evento no botao VQV e insere o valos as medidas Height e width das Divs Pixel.
 buttonSize.addEventListener('click', function () {
+  let validation = false;
   const divsPixels = document.querySelectorAll('.pixel');
   if (inputSize.value === '') {
     alert('valor inválido!');
   } else if (inputSize.value >= 1 && inputSize.value < 10) {
-    alert('valor padrão minimo é 10');
+    alert('alterando valor padrão minimo é 10');
     inputSize.value = 10;
+    validation = true;
   } else if (inputSize.value > 80) {
-    alert('valor padrão máximo é 80');
+    alert('alterando valor padrão máximo é 80');
     inputSize.value = 80;
+    validation = true;
+  } else {
+    validation = true;
   }
-  for (let i = 0; i < divsPixels.length; i += 1) {
-    divsPixels[i].style.height = `${inputSize.value}px`;
-    divsPixels[i].style.width = `${inputSize.value}px`;
+  if (validation === true) {
+    for (let i = 0; i < divsPixels.length; i += 1) {
+      divsPixels[i].style.height = `${inputSize.value}px`;
+      divsPixels[i].style.width = `${inputSize.value}px`;
+    }
+    alert('alterando meidadas Heigth e width');
   }
-  alert('alterando meidadas Heigth e width');
 });
