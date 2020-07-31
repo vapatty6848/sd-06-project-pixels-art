@@ -77,30 +77,20 @@ btnInput.id = 'generate-board';
 btnInput.className = 'generate-board';
 let input = document.createElement('input');
 input.id = 'board-size';
-input.className = 'board-size';
 input.min = '1';
 sectionContainer.insertBefore(btnInput,divPixelboard);
 sectionContainer.insertBefore(input,divPixelboard);
 // interação de apagar board antigo e carregar novo segundo usuario.
 btnInput.addEventListener('click',function() {
     let value = document.getElementById('board-size').value
-    // limitando o tamanho maximo do board.
-    console.log(value);
-    let pixel = document.querySelectorAll('.pixel')
-    if(value === ''){
-        alert('Board inválido!')
-    } else if(value < '5') {
-        value === '5'
-        for(let i =0; i < pixel.length; i++) {
-            document.querySelector('.tr').remove();
-    }
-    } else if(value > '50') {
-        value === '50'
-        for(let i =0; i < pixel.length; i++) {
-            document.querySelector('.tr').remove();
-    }
-    } 
-        
-    
-    createPixelboard(value,value);
+    checkvalue()
+// limitando o tamanho maximo do board.
+function checkvalue() {
+    if(value < 5) {
+        value = 5
+    }else if(value > 50) {
+        value = 50
+    };
+}
+console.log(value)
 });
