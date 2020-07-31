@@ -1,8 +1,12 @@
 let selectedColor = 'black';
 window.onload = function() {
-  createColorPallet(['black', 'red', 'blue', 'green']);
+  let randomColor = '#' + ((1<<24)*Math.random()|0).toString(16);
+  let randomColor2 = '#' + ((1<<24)*Math.random()|0).toString(16);
+  let randomColor3 = '#' + ((1<<24)*Math.random()|0).toString(16);
+  createColorPallet(['black', randomColor, randomColor2, randomColor3]);
 }
 function createColorPallet(colors) {
+  
   let colorPaletContainer = document.getElementById("color-palette");
   for (let index in colors) {
     let palletItemDiv = createPalletItem(colors[index]);
@@ -10,6 +14,7 @@ function createColorPallet(colors) {
   }
 }
 function createPalletItem(color) {
+  
   let palletItemDiv = document.createElement('div');
   palletItemDiv.style.backgroundColor = color;
   palletItemDiv.className = "color";
@@ -43,6 +48,4 @@ function limpaTudo() {
   }
 }
 document.getElementById('clear-board').addEventListener('click', limpaTudo);
-
-
 

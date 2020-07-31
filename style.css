@@ -2,22 +2,6 @@
   display: flex;
 }
 
-.black {
-    background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
 .clear-board {
 
 }
@@ -47,4 +31,7 @@
   border-color: black;
   border-width: 1px;
   display: inline-block;
+}
+input {
+  
 }
