@@ -10,11 +10,6 @@ body {
   width: 40px;
 }
 
-.board {
-  display: grid;
-  grid-template-columns: repeat(5, 40px);
-}
-
 .pixel {
   background-color: white;
   border: black solid 1px;
