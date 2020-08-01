@@ -26,6 +26,12 @@ window.onload = function() {
 // Cria pixel boarder de a cordo com valor selecionado para tamanho do lado
 function craeatePixelBorder() {
   const side = boardSize.value;
+  if (side < 5) {
+    side = 5;
+  }
+  if (side > 50) {
+    side = 50;
+  }
   while (board.firstChild) {
     board.removeChild(board.firstChild);
   }
