@@ -59,10 +59,17 @@ window.onload = function () {
   })
 
   generateNewBoardButton.addEventListener('click', function () {
-    if (changeSizeInput.value.length === 0) {
+    let pixelQuantity = changeSizeInput.value;
+    if (pixelQuantity === 0) {
       alert('Board inválido!');
     } else {
-      generatePixels(changeSizeInput.value)
+      if (pixelQuantity < 5) {
+        pixelQuantity = 5;
+      } else if (pixelQuantity > 50) {
+        pixelQuantity = 50;
+      }
+
+      generatePixels(pixelQuantity)
     }
   })
 }
