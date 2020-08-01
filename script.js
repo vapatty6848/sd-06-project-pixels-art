@@ -103,3 +103,58 @@ clearButton.addEventListener("click", function() {
     clearColor("white");
 })
 
+
+
+//numberofpixels-button
+
+let number = document.getElementById("board-size");
+
+let n = number.value;
+
+function boardSize(n){
+
+    
+        
+        if ( n > 5 ){
+
+          let addedPixels =  n - 5;
+
+            for (let i=0; i < addedPixels.length; i++) {
+
+                let novoPixel = document.createElement("div");
+                document.getElementsByClassName("coluna").appendChild(novoPixel);
+
+            }
+        }
+
+        else if ( n < 5 ){
+
+            let addedPixels =  5 - n;
+
+            for (let i=0; i < addedPixels.length; i++) {
+
+                let pixelAremover = document.getElementsByClassName("coluna");
+                pixelAremover.removeChild(pixelAremover.lastElementChild);
+
+            }
+
+
+
+        }
+        else if (n == 5){
+        
+        }
+        else {
+            console.log("Board inválido!");
+        }
+
+        
+
+    
+}
+
+let vqvButton = document.getElementById("generate-board");
+vqvButton.addEventListener("click", function() {
+    boardSize(n);
+})
+
