@@ -7,9 +7,15 @@ window.onclick = function() {
     selectedColor = document.querySelector('.selected');
   }
   if(event.target.className === 'pixel'){
-    // Até aqui vai tudo certo!
-    console.log(event.target);
-    // Aqui está o erro!
     event.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
 }
+// Function to clear pixels table
+let buttonClear = document.getElementById('clear-board');
+buttonClear.addEventListener("click", function() {
+  let clearPixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < clearPixels.length; index += 1){
+    clearPixels[index].style.backgroundColor = "white";
+  }
+});
+
