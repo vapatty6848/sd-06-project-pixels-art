@@ -2,13 +2,11 @@ let pixel = document.querySelectorAll('.pixel');
 const clearBoard = document.querySelector('.button');
 const colorPalette = document.querySelector('#color-palette');
 const board = document.querySelector('#pixel-board');
-const boardSize = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 
 
+let boardSize = document.querySelector('#board-size');
 let color = '#000000';
-
-const colorArray = [color];
 
 window.onload = function() {
   for (let index = 0; index < 4; index += 1) {
@@ -21,10 +19,14 @@ window.onload = function() {
     colorPalette.lastChild.style.backgroundColor = color;
   }
   color = '#000000';
+  boardSize.value = 5;
+  createPixelBorder(boardSize.value);
 };
 
+const colorArray = [color];
+
 // Cria pixel boarder de a cordo com valor selecionado para tamanho do lado
-function craeatePixelBorder() {
+function createPixelBorder() {
   let side = boardSize.value;
   if (side === '') {
     alert('Board inválido!');
@@ -39,6 +41,7 @@ function craeatePixelBorder() {
       board.removeChild(board.firstChild);
     }
   }
+
   // Altera a cor do píxel clicado
   function setPixelColor(event) {
     event.target.style.backgroundColor = color;
@@ -78,5 +81,5 @@ function clearPixelbyPixel() {
 }
 
 colorPalette.addEventListener('click', selectColor);
-generateBoard.addEventListener('click', craeatePixelBorder);
+generateBoard.addEventListener('click', createPixelBorder);
 clearBoard.addEventListener('click', clearPixelbyPixel);
