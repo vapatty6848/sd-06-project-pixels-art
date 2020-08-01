@@ -7,11 +7,13 @@
 #color-palette {
     align-content: center;
     text-align: center;
+    display: inline-block;
+    margin: 10px;
 }
 
 .color {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border: 1px solid;
     border-color: black;
     display: inline-block;
@@ -44,11 +46,15 @@
     border-collapse: collapse;
     text-align: center;
     background-color: white;
+    position: absolute;
+    display: block;
+    margin-left: 80px;
 }
 
-.palleteItem {
+.pixel {
     border-color: black;
     border-style: solid;
+    border-width: 1px;
     width: 40px;
     height: 40px;
     display: inline-block;
