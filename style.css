@@ -1,0 +1,11 @@
+* {
+  border: 0;
+}
+
+.color {
+  height: 50px;
+  width:50px;
+  border: black 1px solid;
+  float: left;
+  padding-left: 25px;
+}
