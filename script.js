@@ -60,7 +60,7 @@ window.onload = function () {
 
   generateNewBoardButton.addEventListener('click', function () {
     let pixelQuantity = changeSizeInput.value;
-    if (pixelQuantity === 0) {
+    if (pixelQuantity.length === 0) {
       alert('Board inválido!');
     } else {
       if (pixelQuantity < 5) {
