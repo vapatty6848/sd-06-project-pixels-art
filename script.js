@@ -7,17 +7,39 @@ window.onload = function () {
   const changeSizeInput = document.querySelector('#board-size');
   const generateNewBoardButton = document.querySelector('#generate-board');
 
-  for (let i = 0; i < 25; i++) {
-    const div = document.createElement('div');
-    div.className = 'pixel';
-    pixelBoard.appendChild(div);
+  function generatePixels(quantity) {
+    pixelBoard.innerHTML = [];
+    pixelBoard.style.width = `${quantity * 43}px`;
+    pixelBoard.style.height = `${quantity * 43}px`;
+
+    for (let i = 0; i < quantity * quantity; i++) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      addPaintFunctionToPixel(pixel)
+      pixelBoard.appendChild(pixel);
+    }
   }
+
+  generatePixels(5) 
 
   function addSelectedClass() {
     selectedColor.classList.add(selectedClass);
   }
 
   addSelectedClass();
+
+  function changeBackgroundColorToWhite() {
+    for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
+      const currentPixel = document.querySelectorAll('.pixel')[i];
+      currentPixel.style.backgroundColor = 'white';
+    }
+  }
+
+  function addPaintFunctionToPixel(pixel) {
+      pixel.addEventListener('click', function () {
+        pixel.style.backgroundColor = `${onClickColor}`;
+      })
+  }
 
   for (let i = 0; i < document.querySelectorAll('.color').length; i++) {
     const currentColorOption = document.querySelectorAll('.color')[i];
@@ -32,24 +54,15 @@ window.onload = function () {
     })
   }
 
-  for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
-    const currentPixel = document.querySelectorAll('.pixel')[i];
-
-    currentPixel.addEventListener('click', function () {
-      currentPixel.style.backgroundColor = `${onClickColor}`;
-    })
-  }
-
   clearButton.addEventListener('click', function () {
-    for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
-      const currentPixel = document.querySelectorAll('.pixel')[i];
-      currentPixel.style.backgroundColor = 'white';
-    }
+    changeBackgroundColorToWhite();
   })
 
   generateNewBoardButton.addEventListener('click', function () {
     if (changeSizeInput.value.length === 0) {
       alert('Board inválido!');
+    } else {
+      generatePixels(changeSizeInput.value)
     }
   })
 }
