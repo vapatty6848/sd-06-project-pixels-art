@@ -4,6 +4,8 @@ window.onload = function () {
   const selectedClass = 'selected';
   let onClickColor = window.getComputedStyle(selectedColor, null).getPropertyValue("background-color");
   const clearButton = document.querySelector('button');
+  const changeSizeInput = document.querySelector('board-size');
+  const generateBoardButton = document.querySelector('generate-board');
 
   for (let i = 0; i < 25; i++) {
     const div = document.createElement('div');
@@ -45,3 +47,9 @@ window.onload = function () {
     }
   })
 }
+
+generateBoardButton.addEventListener('click', function () {
+  if (changeSizeInput.length === 0) {
+    alert('Board inválido!');
+  }
+})
