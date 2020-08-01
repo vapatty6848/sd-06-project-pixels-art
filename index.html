@@ -10,51 +10,10 @@
 
 <body>
   <h1 id='title'>Paleta de Cores</h1>
-  <div id='color-palette'>
-    <div class='color bgcolorBlack selected'></div>
-    <div class='color bgcolorGreen'></div>
-    <div class='color bgcolorYellow'></div>
-    <div class='color bgcolorBlue'></div>
-  </div>
+  <div id='color-palette'></div>
   <button id='clear-board' class='button'>Limpar</button>
-
-  <div id='pixel-board' class='board'>
-    <div class='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-    <div class='line'>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-      <div class='pixel'></div>
-    </div>
-  </div>
+  <p>Insira um valor entre 5 e 50 como valor do lado do seu quadro de píxels... <input type='number' id='board-size' min='5' max='50'><button id='generate-board'>VQV</button></p>
+  <div id='pixel-board' class='board'></div>
   <script src='/script.js'></script>
 </body>
 

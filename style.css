@@ -23,20 +23,5 @@
 .color {
   width: 50px;
   height: 50px;
-}
-
-.bgcolorBlack {
-  background-color: black;
-}
-
-.bgcolorBlue {
-  background-color: blue;
-}
-
-.bgcolorGreen {
-  background-color: green;
-}
-
-.bgcolorYellow {
-  background-color: yellow;
+  margin: 10px;
 }
