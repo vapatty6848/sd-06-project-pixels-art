@@ -25,17 +25,20 @@ window.onload = function() {
 
 // Cria pixel boarder de a cordo com valor selecionado para tamanho do lado
 function craeatePixelBorder() {
-  const side = boardSize.value;
-  if (side < 5) {
-    side = 5;
+  let side = boardSize.value;
+  if (side === '') {
+    alert('Board inválido!');
+  } else {
+    if (side < 5) {
+      side = 5;
+    }
+    if (side > 50) {
+      side = 50;
+    }
+    while (board.firstChild) {
+      board.removeChild(board.firstChild);
+    }
   }
-  if (side > 50) {
-    side = 50;
-  }
-  while (board.firstChild) {
-    board.removeChild(board.firstChild);
-  }
-
   // Altera a cor do píxel clicado
   function setPixelColor(event) {
     event.target.style.backgroundColor = color;
