@@ -17,39 +17,51 @@ window.onload=function(){
 
 //se o botao com id x receber onclick, adiciona selected nele e remove selected dos outros elementos.
 
+
 //select color-buttons
 
-function selectColor(color){
+function selectColor(button, color){
 
-    localStorage.setItem("selected-color", color);
+
+    localStorage.setItem("selected-color", color);	
+    let botoes = document.getElementsByClassName("color")  
+    for (i=0; i<botoes.length; i+=1){
+        botoes[i].classList.remove("selected")
+    }
+    button.classList.add("selected")
+
+
+}	
     
-}
 
 //
 
 let blackButton = document.getElementById("black");
 blackButton.addEventListener("click", function(){
-    selectColor("black");
+    selectColor(blackButton,"black");
 })
 
 let yellowButton = document.getElementById("yellow");
 yellowButton.addEventListener("click", function(){
     let yellowButton = document.getElementById("yellow");
-    selectColor(yellowButton.style.backgroundColor);
+    selectColor(yellowButton, yellowButton.style.backgroundColor);
 })
 
 let redButton = document.getElementById("red");
 redButton.addEventListener("click", function(){
     let redButton = document.getElementById("red");
-    selectColor(redButton.style.backgroundColor);
+    selectColor(redButton, redButton.style.backgroundColor);
 })
 
 
 let blueButton = document.getElementById("blue");
 blueButton.addEventListener("click", function(){
     let blueButton = document.getElementById("blue");
-    selectColor(blueButton.style.backgroundColor);
+    selectColor(blueButton, blueButton.style.backgroundColor);
 })
+
+//
+
 
 
 
