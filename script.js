@@ -6,6 +6,7 @@ window.onload = function () {
   const clearButton = document.querySelector('button');
   const changeSizeInput = document.querySelector('#board-size');
   const generateNewBoardButton = document.querySelector('#generate-board');
+  const colorBoxes = document.querySelectorAll('.color');
 
   function generatePixels(quantity) {
     pixelBoard.innerHTML = [];
@@ -20,7 +21,15 @@ window.onload = function () {
     }
   }
 
-  generatePixels(5) 
+  generatePixels(5)
+
+  for (let i = 1; i < colorBoxes.length; i++) {
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+   
+    colorBoxes[i].style.backgroundColor = `rgb(${red} , ${green} , ${blue})`;
+  }
 
   function addSelectedClass() {
     selectedColor.classList.add(selectedClass);
@@ -36,9 +45,9 @@ window.onload = function () {
   }
 
   function addPaintFunctionToPixel(pixel) {
-      pixel.addEventListener('click', function () {
-        pixel.style.backgroundColor = `${onClickColor}`;
-      })
+    pixel.addEventListener('click', function () {
+      pixel.style.backgroundColor = `${onClickColor}`;
+    })
   }
 
   for (let i = 0; i < document.querySelectorAll('.color').length; i++) {
