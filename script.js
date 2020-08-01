@@ -4,8 +4,14 @@ window.onload=function(){
 
     localStorage.clear();
     localStorage.setItem("selected-color", "black");
+    boardSize(5);
+    changeColor("yellow");
+    changeColor("red");
+    changeColor("blue");
 
 }
+
+
 
 //add class selected ao elemento que recebeu clique e remover dos outros elementos
 
@@ -16,34 +22,7 @@ window.onload=function(){
 function selectColor(color){
 
     localStorage.setItem("selected-color", color);
-
-    if(localStorage.getItem("selected-color")=="rgb(113, 222, 226)"){
-        document.getElementById("blue").classList.add("selected")
-        document.getElementById("black").classList.remove("selected")
-        document.getElementById("yellow").classList.remove("selected")
-        document.getElementById("red").classList.remove("selected")
-    }
-
-    else if (localStorage.getItem("selected-color")=="rgb(245, 131, 116)"){
-        document.getElementById("red").classList.add("selected")
-        document.getElementById("black").classList.remove("selected")
-        document.getElementById("yellow").classList.remove("selected")
-        document.getElementById("blue").classList.remove("selected")
-    }
-
-    else if (localStorage.getItem("selected-color")=="rgb(245, 210, 116)"){
-        document.getElementById("yellow").classList.add("selected")
-        document.getElementById("black").classList.remove("selected")
-        document.getElementById("blue").classList.remove("selected")
-        document.getElementById("red").classList.remove("selected")
-    }
-
-    else if (localStorage.getItem("selected-color")=="black"){
-        document.getElementById("black").classList.add("selected")
-        document.getElementById("blue").classList.remove("selected")
-        document.getElementById("yellow").classList.remove("selected")
-        document.getElementById("red").classList.remove("selected")
-    }
+    
 }
 
 //
@@ -55,18 +34,21 @@ blackButton.addEventListener("click", function(){
 
 let yellowButton = document.getElementById("yellow");
 yellowButton.addEventListener("click", function(){
-    selectColor("rgb(245, 210, 116)");
+    let yellowButton = document.getElementById("yellow");
+    selectColor(yellowButton.style.backgroundColor);
 })
 
 let redButton = document.getElementById("red");
 redButton.addEventListener("click", function(){
-    selectColor("rgb(245, 131, 116)");
+    let redButton = document.getElementById("red");
+    selectColor(redButton.style.backgroundColor);
 })
 
 
 let blueButton = document.getElementById("blue");
 blueButton.addEventListener("click", function(){
-    selectColor("rgb(113, 222, 226)");
+    let blueButton = document.getElementById("blue");
+    selectColor(blueButton.style.backgroundColor);
 })
 
 
@@ -78,13 +60,7 @@ function pasteColor(pixel, color){
     pixel.style.backgroundColor = color;
 }
 
-let pixels = document.getElementsByClassName("pixel");
 
-for (let i=0; i < pixels.length; i++) {
-    pixels[i].onclick = function() {
-        pasteColor(pixels[i], localStorage.getItem("selected-color"));
-    }
-}
 
 
 
@@ -107,54 +83,65 @@ clearButton.addEventListener("click", function() {
 
 //numberofpixels-button
 
-let number = document.getElementById("board-size");
 
-let n = number.value;
+
+
 
 function boardSize(n){
 
+
+    const myNode = document.getElementById("pixel-board");
+    myNode.innerHTML = '';
+
     
-        
-        if ( n > 5 ){
 
-          let addedPixels =  n - 5;
+    for (let i=0; i<n; i+=1){
 
-            for (let i=0; i < addedPixels.length; i++) {
+        const novaColuna = document.createElement("div");
 
-                let novoPixel = document.createElement("div");
-                document.getElementsByClassName("coluna").appendChild(novoPixel);
+        novaColuna.classList = "coluna";
 
-            }
-        }
+        for (let j=0; j<n; j+=1){
 
-        else if ( n < 5 ){
+            const novoPixel = document.createElement("div");
 
-            let addedPixels =  5 - n;
+            novoPixel.classList = "pixel"
 
-            for (let i=0; i < addedPixels.length; i++) {
-
-                let pixelAremover = document.getElementsByClassName("coluna");
-                pixelAremover.removeChild(pixelAremover.lastElementChild);
-
+            novoPixel.onclick = function() {
+                pasteColor(novoPixel, localStorage.getItem("selected-color"));
             }
 
-
+            novaColuna.appendChild(novoPixel);
 
         }
-        else if (n == 5){
-        
-        }
-        else {
-            console.log("Board inválido!");
-        }
 
-        
-
+        document.getElementById("pixel-board").appendChild(novaColuna);
+    }
     
 }
 
 let vqvButton = document.getElementById("generate-board");
+
 vqvButton.addEventListener("click", function() {
+    let number = document.getElementById("board-size");
+    let n = number.value;
+
+    if (n>50){
+        n=50
+    }
+    else if (n<5){
+        n=5
+    }
+
     boardSize(n);
 })
+
+//funcao random-color
+
+function changeColor(id){
+
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    document.getElementById(id).style.backgroundColor = "#" + randomColor;
+
+}
 
