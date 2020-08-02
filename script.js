@@ -1,6 +1,11 @@
-window.onload = function() {
-setBlack()
-}
+function setBlack() {
+    const initialColor = document.getElementById('black');
+    initialColor.classList.add('selected');
+  }
+
+window.onload = function () {
+  setBlack();
+};
 
 window.onclick = function () {
   const palleteColor = document.querySelector('.selected');
@@ -12,7 +17,7 @@ window.onclick = function () {
   if (event.target.className === 'pixel') {
     event.target.style.backgroundColor = palleteColor.id;
   }
-}
+};
 
 function clearBoard() {
   const pixelBoard = document.querySelectorAll('.pixel');
@@ -20,9 +25,4 @@ function clearBoard() {
     pixelBoard[i].style.backgroundColor = 'white';
     pixelBoard[i].style.color = 'white';
   }
-}
-
-function setBlack() {
-  const initialColor = document.getElementById('black');
-  initialColor.classList.add('selected');
 }
