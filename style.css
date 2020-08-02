@@ -1,1 +1,18 @@
-//
+#yellow{
+    background-color: yellow;
+}
+#red {
+    background-color: red;
+}
+#green {
+    background-color: green;
+}
+#black {
+    background-color: black;
+}
+
+.color {
+    border: solid 1px black;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
