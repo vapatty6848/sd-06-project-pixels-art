@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paleta de Cores</title>
+    <title>projeto Pixels Art</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <h1 id="title">Paleta de Cores</h1>
+    <header>
+        <h1 id="title">Paleta de Cores</h1>
+    </header>
     <div id="color-palette">
-        <div class="color selected" id=black></div>
-        <div class="color" id=yellow></div>
-        <div class="color" id=red></div>
-        <div class="color" id=green></div>
+        <div class="color selected" id="black"></div>
+        <div class="color" id="red"></div>
+        <div class="color" id="green"></div>
+        <div class="color" id="yellow"></div>
+    </div>
+    <div>
+        <button id="clear-board">Limpar</button>
+        <input type="number" min="0" id="board-size">
+        <button id="generate-board">VQV</button>
     </div>
     <div id="pixel-board">
         <div class="line-pixel">
@@ -50,7 +58,10 @@
             <div class="pixel"></div>
             <div class="pixel"></div>
         </div>
+
     </div>
-     <script src="script.js"></script>
+
+
+
 </body>
-</html>
+</html> 
