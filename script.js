@@ -24,6 +24,13 @@ window.onload = function () {
     return addPixelDiv;
   }
 
+  // generate random color
+
+  function generateRandomColor() {
+    let randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    return randomColor;
+  }
+
   // creates color palette
 
   function createColorPalette(colorArray) {
@@ -35,20 +42,29 @@ window.onload = function () {
     }
   }
 
-  createColorPalette(['black', 'cyan', 'red', 'yellow']);
+  createColorPalette([
+    'black',
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+  ]);
 };
 // handle event to change div's background color and make the pixel art
 
-document.querySelector('#pixel-board').addEventListener('click', function (event) {
-  const divPixel = event.target;
-  divPixel.style.backgroundColor = selectedColor;
-});
+document
+  .querySelector('#pixel-board')
+  .addEventListener('click', function (event) {
+    const divPixel = event.target;
+    divPixel.style.backgroundColor = selectedColor;
+  });
 
 // add event to clean the board
 
 const btnClear = document.querySelector('#clear-board');
 btnClear.addEventListener('click', function () {
   for (let i = 0; i < document.querySelectorAll('.pixel').length; i += 1) {
-    document.querySelectorAll('.pixel')[i].style.removeProperty('background-color');
+    document
+      .querySelectorAll('.pixel')
+      [i].style.removeProperty('background-color');
   }
 });
