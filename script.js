@@ -1,10 +1,11 @@
 function setBlack() {
-    const initialColor = document.getElementById('black');
-    initialColor.classList.add('selected');
-  }
+  const initialColor = document.getElementById('black');
+  initialColor.classList.add('selected');
+}
 
 window.onload = function () {
   setBlack();
+  clearBoard();
 };
 
 window.onclick = function () {
