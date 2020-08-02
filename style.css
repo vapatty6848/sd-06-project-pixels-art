@@ -51,6 +51,10 @@
     margin-left: 80px;
 }
 
+.divLine {
+    height: 41px;
+}
+
 .pixel {
     border-color: black;
     border-style: solid;
