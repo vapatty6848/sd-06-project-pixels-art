@@ -52,4 +52,18 @@ buttonGenerateBoard.addEventListener('click', function() {
     document.getElementById('board-container').appendChild(newPixelBoard);
   }
 });
-
+// Function to load page with ramdom colors
+function randomBackgroundColor() {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+  let backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+  
+  // console.log(backgroundColor);
+  return backgroundColor;
+}
+// Applying function on pallete-pallete color but not at the black one
+let randomColor = document.getElementsByClassName('randomColor');
+for (let i = 0; i < randomColor.length; i += 1) {
+    randomColor[i].style.backgroundColor = randomBackgroundColor();;
+}
