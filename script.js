@@ -9,3 +9,11 @@ window.onclick = function() {
     event.target.style.backgroundColor = palleteColor.id;
   }
 }
+
+function clearBoard() {
+  const pixelBoard = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelBoard.length; i += 1) {
+  pixelBoard[i].style.backgroundColor = 'white';
+  pixelBoard[i].style.color = 'white';
+  }
+}
