@@ -1,11 +1,10 @@
-window.onload = function () {
-  var initialColor = document.getElementById('black')
-  initialColor.classList.add('selected');
+window.onload = function() {
+setBlack()
 }
 
 window.onclick = function () {
-    palleteColor = document.querySelector('.selected');
-    if (event.target.className === 'color') {
+  const palleteColor = document.querySelector('.selected');
+  if (event.target.className === 'color') {
     palleteColor.classList.remove('selected');
     event.target.classList.add('selected');
   }
@@ -16,9 +15,14 @@ window.onclick = function () {
 }
 
 function clearBoard() {
-const pixelBoard = document.querySelectorAll('.pixel');
+  const pixelBoard = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixelBoard.length; i += 1) {
     pixelBoard[i].style.backgroundColor = 'white';
     pixelBoard[i].style.color = 'white';
   }
+}
+
+function setBlack() {
+  const initialColor = document.getElementById('black');
+  initialColor.classList.add('selected');
 }
