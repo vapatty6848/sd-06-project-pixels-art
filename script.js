@@ -81,11 +81,20 @@ function createPixelsBoard(lines, columns) {
         for (let index = 0; index < columns; index++) {
             let divPixels = document.createElement("div");
             divPixels.className = "pixel";
+            divPixels.addEventListener("click", handleClick)
             divLine.appendChild(divPixels);
+
         }
         DivPixelsBoard.appendChild(divLine);
     }
 
+    function handleClick() {
+        let receivePalette = document.querySelector(".selected");
+        let paletteColor = receivePalette.style.backgroundColor;
 
+        event.target.style.backgroundColor = paletteColor;
+
+
+    }
 
 }
