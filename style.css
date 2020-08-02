@@ -4,6 +4,10 @@
     text-align: center;
 }
 
+body {
+    text-align: center;
+}
+
 #color-palette {
     align-content: center;
     text-align: center;
@@ -42,13 +46,12 @@
     margin-top: 2rem;
 }
 
-#pixel-board {
+.pixel-board {
+    margin-top: 1rem;
     border-collapse: collapse;
     text-align: center;
     background-color: white;
-    position: absolute;
     display: block;
-    margin-left: 80px;
 }
 
 .divLine {
@@ -62,9 +65,12 @@
     width: 40px;
     height: 40px;
     display: inline-block;
+    background-color: white;
 }
 
 #clear-board {
-    color: pink;
-    margin: 10px
+    color: black;
+    margin: 10px;
+    display: block;
+    margin: 0 auto;
 }
