@@ -10,22 +10,28 @@
   height: 40px;
 }
 
-#color1 {
+.selected {
+  border: 2px;
+  border-style: dotted;
+  border-color: white;
+}
+
+#black {
   background-color: black;
   color: black;
 }
 
-#color2 {
+#red {
   background-color: red;
   color: red;
 }
 
-#color3 {
+#blue {
   background-color: blue;
   color: blue;
 }
 
-#color4 {
+#green {
   background-color: green;
   color: green;
 }
