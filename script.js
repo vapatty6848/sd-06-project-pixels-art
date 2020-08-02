@@ -17,6 +17,7 @@ window.onload = function() {
 
     createPixelsBoard(5, 5);
 
+    ClearBoard();
 
 
 
@@ -97,4 +98,19 @@ function createPixelsBoard(lines, columns) {
 
     }
 
+}
+
+function ClearBoard() {
+
+    let button = document.querySelector("#clear-board");
+
+
+    button.addEventListener("click", function() {
+        let pixels = document.querySelectorAll(".pixel");
+        console.log(pixels);
+        pixels.forEach(elementP => {
+            elementP.style.backgroundColor = "white";
+        });
+
+    })
 }
