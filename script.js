@@ -1,7 +1,7 @@
 window.onclick = function() {
   let selectedColor = document.querySelector('.selected');
 
-  if(event.target.className === 'color'){
+  if(event.target.className === 'color randomColor'){
     event.target.classList.add('selected');
     selectedColor.classList.remove('selected');
     selectedColor = document.querySelector('.selected');
