@@ -1,5 +1,26 @@
+#black {
+  background-color: black;
+  color: black;
+}
+
+#blue {
+  background-color: blue;
+  color: blue;
+}
+
+#clear-board {
+  height: 35px;
+  width: 110px;
+  margin: 15px 30px;
+}
+
 #color-palette {
   border: 1px;
+}
+
+#green {
+  background-color: green;
+  color: green;
 }
 
 .color {
@@ -17,24 +38,14 @@
   border-color: white;
 }
 
-#black {
-  background-color: black;
-  color: black;
-}
-
 #red {
   background-color: red;
   color: red;
 }
 
-#blue {
-  background-color: blue;
-  color: blue;
-}
-
-#green {
-  background-color: green;
-  color: green;
+#yellow {
+  background-color: yellow;
+  color: yellow;
 }
 
 .pixel {
@@ -50,10 +61,4 @@
 
 .lines {
   display: inline-block;
-}
-
-#clear-board {
-  height: 35px;
-  width: 110px;
-  margin: 15px 30px;
 }
