@@ -1,6 +1,11 @@
+window.onload = function () {
+  var initialColor = document.getElementById('black')
+  initialColor.classList.add('selected');
+}
+
 window.onclick = function () {
-  const palleteColor = document.querySelector('.selected');
-  if (event.target.className === 'color') {
+    palleteColor = document.querySelector('.selected');
+    if (event.target.className === 'color') {
     palleteColor.classList.remove('selected');
     event.target.classList.add('selected');
   }
