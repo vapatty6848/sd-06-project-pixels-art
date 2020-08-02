@@ -5,30 +5,30 @@ window.onload = function () {
     document.getElementById('green').style.backgroundColor = 'green';
     document.getElementById('yellow').style.backgroundColor = 'yellow';
 
-    function selecionaCor () {
-        const oldSelected = document.querySelector('.selected');
-        const currentSelected = event.target;
-        oldSelected.classList.remove('selected');
-        currentSelected.classList.add('selected');
-        selectedColor = currentSelected.style.backgroundColor;
+    function colorChange () {
+        const oldPixelSelected = document.querySelector('.selected');
+        const currentPixelSelected = event.target;
+        oldPixelSelected.classList.remove('selected');
+        currentPixelSelected.classList.add('selected');
+        selectedColor = currentPixelSelected.style.backgroundColor;
     }   
     const colorPalette = document.querySelector('#color-palette');
-    colorPalette.addEventListener('click', selecionaCor);
+    colorPalette.addEventListener('click', colorChange);
 
-    function selecionaQuadrado () {
+    function changeFrame () {
         event.target.style.backgroundColor = selectedColor;
     }
     const pixelFrame = document.querySelector('#pixel-board');
-    pixelFrame.addEventListener('click', selecionaQuadrado);
+    pixelFrame.addEventListener('click', changeFrame);
 
-    function clearQuadrado () {
+    function clearFrame () {
         const pixelFrame = document.getElementsByClassName('pixel');
         for(let i = 0; i < pixelFrame.length; i += 1) {
             pixelFrame[i].style.backgroundColor = 'white';
         }
     }
     const clearBoard = document.getElementById('clear-board');
-    clearBoard.addEventListener('click', clearQuadrado)
+    clearBoard.addEventListener('click', clearFrame)
 
 
 
