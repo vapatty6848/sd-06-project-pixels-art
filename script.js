@@ -23,14 +23,18 @@ greenColor.style.backgroundColor = 'green'
 
 function createBorderPixels() {
     for( i = 1; i <= 5; i ++ ) {
-        for( k = 1; k <= 5; k ++) {
-            let CriaDiv = document.createElement('div');
-            let Board = document.getElementById('pixel-board');
-            CriaDiv.className = 'pixel'
-            Board.appendChild(CriaDiv)
-            Board.appendChild(CriaDiv)
+        let divLinha = document.createElement('div');
+        divLinha.className = 'linha'
+        document.getElementById('pixel-board').appendChild(divLinha)
+        let br = document.createElement('br')
+        document.querySelector('.linha').appendChild(br)
+        for(k = 1; k <= 5; k ++) {
+            let divColuna = document.createElement('div')
+            divColuna.className = 'pixel'
+            document.querySelector('.linha').appendChild(divColuna)
         }
-    }
+    }   
+   
 }
 createBorderPixels();
 
@@ -68,7 +72,9 @@ function limpaTudo(){
 };
 
 document.querySelector('#generate-board').addEventListener('click', boardSiseValidate);
-    
+document.querySelector('#generate-board').addEventListener('click', clearPixelBoard);
+document.querySelector('#generate-board').addEventListener('click', userCreateBoard);
+ 
 function boardSiseValidate() {
     let boardSise = document.querySelector('#board-size').value
     if(boardSise < 5 || boardSise > 50) {
@@ -76,7 +82,27 @@ function boardSiseValidate() {
     }
 };
 
+function clearPixelBoard() {
+    let boardPixel = document.querySelector('#pixel-board')
+    let itemPixel = boardPixel.querySelectorAll('.linha')
+    for(i = 0; i <itemPixel.length; i += 1) {
+        boardPixel.removeChild(itemPixel[i])
+    }
+}   
 
-
-   
-   
+function userCreateBoard() {
+    let boardSize = document.querySelector('#board-size').value;
+    console.log(boardSize)
+    for(i = 1; i <= boardSize; i ++) {
+        let divLinha = document.createElement('div');
+        divLinha.className = 'linha';
+        document.getElementById('pixel-board').appendChild(divLinha);
+        let br = document.createElement('br');
+        document.querySelector('.linha').appendChild(br)
+        for(k = 1; k <= boardSize; k++) {
+            let divColuna = document.createElement('div')
+            divColuna.className = 'pixel'
+            document.querySelector('.linha').appendChild(divColuna)
+        }
+    }
+}
