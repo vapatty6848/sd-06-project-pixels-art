@@ -1,0 +1,44 @@
+h1 {
+  color: darkcyan;
+  font-family: monospace;
+  text-shadow: aquamarine;
+}
+
+.pixel {
+  border: 1px black solid;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+.line {
+  display : table-row;
+  height: 40px;
+  width: 40px;
+}
+
+div {
+  display: inline-block;
+}
+
+.pallet-item {
+  border: 1px black solid;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+.color {
+  border: 1px black solid;
+  height: 40px;
+  width: 40px;
+}
+
+.pixel-board {
+  display: inline-block;
+  line-height: 0;
+}
+
+.color-palette {
+  display: inline-block;
+}
