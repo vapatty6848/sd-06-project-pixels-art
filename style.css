@@ -3,6 +3,10 @@ body {
   padding: 2px;
 }
 
+.input-board-size {
+  margin: 8px;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;

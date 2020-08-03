@@ -16,8 +16,14 @@
     <div id="color-palette"></div>
     <button class="btnclear" id="clear-board">Limpar</button>
   </nav>
+  <div class="input-board-size">
+    <label for="board-size">Insira o tamanho do quadro</label>
+    <input id="board-size" type="number" min="1">
+    <button id="generate-board">VQV</button>
+  </div>
   <div id="pixel-board">
-    <div>
+    <!-- create childs with size defined by user input -->
+    <!-- <div>
       <div class="pixel"></div>
       <div class="pixel"></div>
       <div class="pixel"></div>
@@ -51,7 +57,7 @@
       <div class="pixel"></div>
       <div class="pixel"></div>
       <div class="pixel"></div>
-    </div>
+    </div> -->
   </div>
 
   <script src="script.js"></script>
