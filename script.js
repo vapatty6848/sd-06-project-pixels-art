@@ -66,3 +66,17 @@ function limpaTudo(){
         clearPixelBoard[i].style.backgroundColor = 'white'
     }
 };
+
+document.querySelector('#generate-board').addEventListener('click', boardSiseValidate);
+    
+function boardSiseValidate() {
+    let boardSise = document.querySelector('#board-size').value
+    if(boardSise < 5 || boardSise > 50) {
+        alert('Board inválido!');
+    }
+};
+
+
+
+   
+   
