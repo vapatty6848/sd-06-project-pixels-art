@@ -1,17 +1,6 @@
 window.onload = function () {
   let selectedColor = 'black';
 
-  function createColorPallet(colors) {
-    const colorPalletContainer = document.getElementById('color-palette');
-
-    for (let i in colors) {
-      const palletItemDiv = createPalletItem(colors[i]);
-      colorPalletContainer.appendChild(palletItemDiv);
-    }
-  }
-
-  createColorPallet(['black', 'red', 'blue', 'green']);
-
   function handlePalletItemEvent(event) {
     const oldSelectedDiv = document.querySelector('.selected');
     const currentSelectedDiv = event.target;
@@ -33,6 +22,17 @@ window.onload = function () {
     }
     return palletItemDiv;
   }
+
+  function createColorPallet(colors) {
+    const colorPalletContainer = document.getElementById('color-palette');
+
+    for (const i in colors) {
+      const palletItemDiv = createPalletItem(colors[i]);
+      colorPalletContainer.appendChild(palletItemDiv);
+    }
+  }
+
+  createColorPallet(['black', 'red', 'blue', 'green']);
 
   function handlePixelClick(event) {
     const selectedPixelDiv = event.target;
