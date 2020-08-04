@@ -4,10 +4,10 @@ let corSelecionada = 'black';
 // Função para adição da cor
 function addCor(cor) {
   corSelecionada = cor;
-  const selecionada = 'selecionada';
+  const selecionada = 'selected';
   const sintaxe = '.';
-  const removerCor = document.querySelector('.selecionada');
-  removerCor.classList.remove('selecionada');
+  const removerCor = document.querySelector('.selected');
+  removerCor.classList.remove('selected');
   const adicionarCor = document.querySelector(sintaxe + cor);
   adicionarCor.classList.add(selecionada);
 }
