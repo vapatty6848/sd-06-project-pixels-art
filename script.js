@@ -71,17 +71,9 @@ function limpaTudo(){
     }
 };
 
-document.querySelector('#generate-board').addEventListener('click', boardSiseValidate);
 document.querySelector('#generate-board').addEventListener('click', clearPixelBoard);
 document.querySelector('#generate-board').addEventListener('click', userCreateBoard);
  
-function boardSiseValidate() {
-    let boardSise = document.querySelector('#board-size').value
-    if(boardSise < 5 || boardSise > 50) {
-        alert('Board inválido!');
-    }
-};
-
 function clearPixelBoard() {
     let boardPixel = document.querySelector('#pixel-board')
     let itemPixel = boardPixel.querySelectorAll('.linha')
@@ -92,7 +84,14 @@ function clearPixelBoard() {
 
 function userCreateBoard() {
     let boardSize = document.querySelector('#board-size').value;
-    console.log(boardSize)
+    if(boardSize == '') {
+        alert('Board inválido!');
+    } else if(boardSize < 5) {
+        boardSize = 5;
+    } else if(boardSize > 50) {
+        boardSize = 50
+    }
+    
     for(i = 1; i <= boardSize; i ++) {
         let divLinha = document.createElement('div');
         divLinha.className = 'linha';
