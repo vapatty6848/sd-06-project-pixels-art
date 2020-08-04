@@ -1,26 +1,8 @@
-// variaveis
-const colorPalette = document.querySelector('#color-palette');
-const tableColor = document.getElementById('pixel-board');
-const corSelected = document.getElementsByClassName('color');
-
-
-const colors = ['black', 'blue', 'yellow', 'red'];
-
-// functions
-for (let i = 0; i < colors.length; i += 1) {
-  const createBoxColor = document.createElement('li');
-  createBoxColor.className = 'color';
-  createBoxColor.style.backgroundColor = colors[i];
-  colorPalette.appendChild(createBoxColor);
-}
-window.onload = function () {
-  colorSelected[0].className += ' selected';
-};
-
+// criando tabela pixels
 for (let i = 0; i < 5; i += 1) {
   const createTr = document.createElement('tr');
   createTr.className = 'tabela';
-  tableColor.appendChild(createTr);
+  document.querySelector('.pixel-board').appendChild(createTr);
   for (let index = 0; index < 5; index += 1) {
     const createTd = document.createElement('td');
     createTd.className = 'pixel';
@@ -28,18 +10,26 @@ for (let i = 0; i < 5; i += 1) {
     createTr.appendChild(createTd);
   }
 }
+// função para selecionar a cor
 function changeSelected(select) {
-    const selected = document.querySelector('.selected');
-    selected.classList.remove('selected');
-    select.className += ' selected';
+  const selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  select.className += ' selected';
 }
-
-
-//events
-colorPalette.addEventListener('click', function (e) {
+// Evento para trocar a cor clicada
+document.querySelector('#color-palette').addEventListener('click', function (e) {
   changeSelected(e.target);
 });
-
-tableColor.addEventListener('click', function (e) {
+//Evento para trocar a cor do pixel
+document.querySelector('.pixel-board').addEventListener('click', function (e) {
   e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 });
+//função limpa todos os pixels
+function clearBoard() {
+  const pixel = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.removeProperty('background-color');
+  }
+}
+//Evento do botão de limpa todos os pixels
+document.querySelector('#clear-board').addEventListener('click', clearBoard);
