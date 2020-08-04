@@ -7,11 +7,18 @@ window.onload = function() {
             pixel.style.backgroundColor = 'black'
         }
     }, false);
+   
+    let divColor = document.querySelectorAll('.color')        
+    for(i = 1; i < divColor.length; i += 1) {
+    let randomColor = 'rgb('+ Math.random() * 256 + ',' + Math.random()*256 + ',' + Math.random()*256 + ')';
+    divColor[i].style.backgroundColor = randomColor
+    }
 }
+
 
 const blackColor = document.getElementsByClassName('color')[0]
 blackColor.style.backgroundColor = 'black'
-
+/*
 const blueColor = document.getElementsByClassName('color')[1]
 blueColor.style.backgroundColor = 'blue'
 
@@ -20,6 +27,10 @@ orangeColor.style.backgroundColor = 'orange'
 
 const greenColor = document.getElementsByClassName('color')[3]
 greenColor.style.backgroundColor = 'green'
+
+*/
+ 
+
 
 function createBorderPixels() {
     for( i = 1; i <= 5; i ++ ) {
