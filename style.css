@@ -1,0 +1,30 @@
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTgsKC_2FzsMZj16op8yan5jQUHjWOAZ6-rsA&usqp=CAU');
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+
+}
+
+.color {
+    border: black solid 1px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.clear-board {
+    margin: 10px 0 10px 0;
+    margin: 20px 0 30px 0;
+}
+
+h1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    font-size: 4.5em;
+    margin: 10px;
+}
