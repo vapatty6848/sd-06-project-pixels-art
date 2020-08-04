@@ -1,33 +1,31 @@
-window.onload = function () {
-    const colorPalette = document.querySelectorAll('li');
-    let colorSelected = document.querySelector('.selected');
-    const buttonClear = document.querySelector('#clear-board');
-    const allPixel = document.getElementsByTagName('td');
-
-    function SelectColor() {
-        for (let index = 0; index < colorPalette.length; index += 1) {
-            colorPalette[index].classList.remove('selected');
-        }
-        this.classList.add('selected');
-        colorSelected = document.querySelector('.selected');
-    }
-
-    function printPixel() {
-        this.className = `pixel ${colorSelected.classList[1]}`;
-    }
-
-    for (let index = 0; index < colorPalette.length; index += 1) {
-        allPixel[index].addEventListener('click', SelectColor);
-        
-    }
+    const color = document.querySelectorAll('.color')
+    const td = document.querySelectorAll('td')
     
-    for (let index = 0; index < allPixel.length; index += 1) {
-        allPixel[index].addEventListener('click', printPixel);   
+    for (let i = 0; i < color.length; i += 1){
+        color[i].addEventListener('click', function () {
+            for (let j = 0; j < color.length; j += 1) {
+                if (color[j].classList.contains('selected') === true) {
+                  color[j].classList.remove('selected');
+                }
+              }
+              color[i].classList.add('selected');
+        })
     }
 
-    buttonClear.addEventListener('click', function () {
-        for (let index = 0; index < allPixel.length; index += 1) {
-            allPixel[index].className = 'pixel';            
+    document.querySelector('#pixel-board').addEventListener('click', function (event) {
+        let colo;
+        for (let i = 0; i < color.length; i += 1) {
+            if (color[i].classList.contains('selected') === true) {
+            colo = color[i].style.backgroundColor;
+            }
         }
+        event.target.style.backgroundColor = colo;
     });
-};
+
+    document.querySelector('#clear-board').addEventListener('click', function () {
+        const block = document.querySelectorAll('.pixel');
+        for (let i = 0; i < block.length; i += 1) {
+          block[i].style.backgroundColor = 'white';
+        }
+      }); 
+  

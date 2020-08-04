@@ -5,25 +5,10 @@
     display: inline-block;
 }
 
-#black{
-    background-color: black;
-}
-
-#red{
-    background-color: red;
-}
-
-#blue{
-    background-color: blue;
-}
-
-#yellow{
-    background-color: yellow;
-}
-
-.pixel{
+.td {
     background-color: white;
     border: 1px solid black;
+    display: table-cell;
     height: 40px;
     width: 40px;
-}
+  }
