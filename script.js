@@ -51,10 +51,8 @@ function handlePalletItemEvent(event){
             coluna.id= 'column'
             linha.appendChild(coluna);
             coluna.addEventListener('click', function(event){
-                coluna.style.backgroundColor = selectedColor;
+            coluna.style.backgroundColor = selectedColor;
             })
         }
 }
-    
-   
 }
