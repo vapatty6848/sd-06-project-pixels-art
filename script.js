@@ -59,14 +59,22 @@ window.onload = function () {
   const botaoGenerer = document.querySelector('#generate-board');
   
   botaoGenerer.addEventListener('click', function () {
-    //  Limpa os quadrados
-    let quadrado = document.querySelector('#pixel-board').children;
-    quadradoTr = quadrado.length;
-    for (let i = 0; i < quadradoTr; i += 1){
-      quadrado[0].remove();
-    }
+    //  Verifica si tem valor no input
     let tamanhoQuadro = document.querySelector('#board-size').value;
-    criarQuadrado(tamanhoQuadro)
+    if (tamanhoQuadro == "") {
+      alert('Board inválido!');
+      
+    }
+    else {
+      //  Limpa os quadrados
+      let quadrado = document.querySelector('#pixel-board').children;
+      quadradoTr = quadrado.length;
+      for (let i = 0; i < quadradoTr; i += 1){
+        quadrado[0].remove();
+      }
+      //  Chama funcoe para criar quadrado
+      criarQuadrado(tamanhoQuadro);
+    }
   });
 
 
