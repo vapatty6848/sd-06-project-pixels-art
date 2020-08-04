@@ -1,5 +1,6 @@
     const color = document.querySelectorAll('.color')
     const td = document.querySelectorAll('td')
+    const clear = document.querySelector('#clear-board')
     
     for (let i = 0; i < color.length; i += 1){
         color[i].addEventListener('click', function () {
@@ -22,7 +23,7 @@
         event.target.style.backgroundColor = colo;
     });
 
-    document.querySelector('#clear-board').addEventListener('click', function () {
+    clear.addEventListener('click', function () {
         const block = document.querySelectorAll('.pixel');
         for (let i = 0; i < block.length; i += 1) {
           block[i].style.backgroundColor = 'white';
