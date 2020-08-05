@@ -8,6 +8,6 @@ function setPixelColour(pixel) {
   pixel.style.backgroundColor = penColour;
 }
 
-function myFunction() {
-  document.getElementById('pixel').reset();
-}
+// function myFunction() {
+//   document.getElementById('pixel-board').onreset()
+// }
