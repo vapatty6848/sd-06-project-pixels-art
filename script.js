@@ -8,11 +8,7 @@ window.onload = function () {
   colorsArray[1].style.backgroundColor = 'red';
   colorsArray[2].style.backgroundColor = 'orange';
   colorsArray[3].style.backgroundColor = 'green';
-
-
-  //  Quadrado
   
-
   //  Criacao de quadrado
   //for (let i = 0; i < 25; i += 1) {
   //  const div = document.createElement('div');
@@ -59,11 +55,17 @@ window.onload = function () {
   const botaoGenerer = document.querySelector('#generate-board');
   
   botaoGenerer.addEventListener('click', function () {
-    //  Verifica si tem valor no input
+    //  Verifica si tem valor no input e se e coloca 5 a valores menos 
+    //  que 5, e 50 a vamores maiores que 50
     let tamanhoQuadro = document.querySelector('#board-size').value;
+    if (tamanhoQuadro < 5) {
+      tamanhoQuadro = 5; 
+    }
+    else if (tamanhoQuadro > 50) {
+      tamanhoQuadro = 50;
+    }
     if (tamanhoQuadro == "") {
       alert('Board inválido!');
-      
     }
     else {
       //  Limpa os quadrados
