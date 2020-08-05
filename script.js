@@ -9,8 +9,6 @@ const buttonSize = document.querySelector('#generate-size');
 const inputSize = document.querySelector('#enter-size');
 let n = 5;
 
-
-
 // remove a class selected da Div da paleta e adiciona na clicada atual;
 function changeSelected() {
   const divSelectedBefore = document.querySelector('.selected');
