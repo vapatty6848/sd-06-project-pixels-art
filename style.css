@@ -2,11 +2,15 @@ body {
   padding: 5%;
 }
 
+.board {
+  margin-left: 5px;
+}
+
 button {
   background: '#3d94f6';
-  border: solid '#337fed' 1px;
+  border: 1px solid '#337fed';
   border-radius: 3%;
-  box-shadow: 1px 1px 20px 0px black;
+  box-shadow: 1px 1px 20px 0 black;
   color: black;
   cursor: pointer;
   display: inline-block;
@@ -19,11 +23,27 @@ button {
   text-shadow: 1px 1px 20px black;
 }
 
+.button {
+  margin: 10px;
+}
+
 button:hover {
   background: '#1e62d0';
-  border: solid '#337fed' 1px;
+  border: 1px solid '#337fed';
   border-radius: 10px;
   text-decoration: none;
+}
+
+.pixel,
+.color {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.color {
+  margin: 10px;
+  height: 50px;
+  width: 50px;
 }
 
 .container {
@@ -35,30 +55,10 @@ button:hover {
   width: fit-content;
 }
 
-.board {
-  margin-left: 5px;
-}
-
-.button {
-  margin: 10px;
-}
-
-.pixel,
-.color {
-  border: 1px solid black;
-  display: inline-block;
-}
-
 .pixel {
   background-color: white;
   margin-bottom: -5px;
   margin-left: -5px;
   height: 40px;
   width: 40px;
-}
-
-.color {
-  margin: 10px;
-  height: 50px;
-  width: 50px;
 }
