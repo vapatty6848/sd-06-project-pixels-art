@@ -5,28 +5,14 @@ const board = document.querySelector('#pixel-board');
 const generateBoard = document.querySelector('#generate-board');
 
 
-let boardSize = document.querySelector('#board-size');
+const boardSize = document.querySelector('#board-size');
 let color = '#000000';
-
-window.onload = function() {
-  for (let index = 0; index < 4; index += 1) {
-    if (index !== 0) {
-      colorArray.push(color);
-      color = `#${Math.random().toString(16).slice(-6)}`; // six-number format aka #abc123
-    }
-    colorPalette.appendChild(document.createElement('div'));
-    colorPalette.lastChild.classList.add('color');
-    colorPalette.lastChild.style.backgroundColor = color;
-  }
-  color = '#000000';
-  boardSize.value = 5;
-  createPixelBorder(boardSize.value);
-};
 
 const colorArray = [color];
 
 // Cria pixel boarder de a cordo com valor selecionado para tamanho do lado
 function createPixelBorder() {
+  color = '#000000';
   let side = boardSize.value;
   if (side === '') {
     alert('Board inválido!');
@@ -60,6 +46,21 @@ function createPixelBorder() {
     pixel[i].addEventListener('click', setPixelColor);
   }
 }
+
+window.onload = function() {
+  for (let index = 0; index < 4; index += 1) {
+    if (index !== 0) {
+      colorArray.push(color);
+      color = `#${Math.random().toString(16).slice(-6)}`; // six-number format aka #abc123
+    }
+    colorPalette.appendChild(document.createElement('div'));
+    colorPalette.lastChild.classList.add('color');
+    colorPalette.lastChild.style.backgroundColor = color;
+  }
+  color = '#000000';
+  boardSize.value = 5;
+  createPixelBorder(boardSize.value);
+};
 
 // Seleção de cor a ser utilizada
 function selectColor(event) {
