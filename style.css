@@ -1,0 +1,13 @@
+* {
+  margin: 0px;
+  background-color: rgba(185, 174, 174, 0.904);
+  border: 1px solid red;
+}
+
+.pen {
+  color: white;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  border: 1px solid black;
+}
