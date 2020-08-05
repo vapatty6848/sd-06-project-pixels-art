@@ -1,4 +1,7 @@
 let colorSelected = 'black';
+const boardSizeInput = document.querySelector('#board-size');
+const pixelBoardContainer = document.querySelector('#pixel-board');
+const vqvButton = document.querySelector('#generate-board');
 
 function colorSelection(event) {
   const chosenColor = event.target;
@@ -43,7 +46,6 @@ function createRow(num) {
 }
 
 function createPixelBoard(n) {
-  const pixelBoardContainer = document.querySelector('#pixel-board');
   for (let i = 0; i < n; i += 1) {
     pixelBoardContainer.appendChild(createRow(n));
   }
@@ -69,6 +71,19 @@ function clearBoard() {
   button.addEventListener('click', erasePixels);
 }
 
+function handleVQVClick() {
+  vqvButton.addEventListener('click', function () {
+    pixelBoardContainer.innerHTML = null;
+    if (boardSizeInput.value <= 5) {
+      createPixelBoard(5);
+    } else if (boardSizeInput.value >= 50) {
+      createPixelBoard(50);
+    } else {
+      createPixelBoard(boardSizeInput.value);
+    }
+  });
+}
+
 window.onload = function () {
   const colorList = ['black', 'red', 'green', 'blue'];
 
@@ -79,4 +94,6 @@ window.onload = function () {
   pixelColoring();
 
   clearBoard();
+
+  handleVQVClick();
 };

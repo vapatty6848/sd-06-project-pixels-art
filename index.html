@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="script.js"></script>
   <title>Pix or it didn't happen</title>
 </head>
 <body>
   <header>
     <h1 id="title">Paleta de Cores</h1>
   </header>
+  <section class="size-selection">
+    <label for="board-size">Tamanho do canvas</label>
+    <input id="board-size" type="number" min="0">
+    <button id="generate-board">VQV</button>
+  </section>
   <section id="color-palette" class="palette-container">
   </section>
   <button id="clear-board" class="button">Limpar</button>
   <section id="pixel-board" class="board-container">
   </section>
+  <script src="script.js"></script>
 </body>
 </html>

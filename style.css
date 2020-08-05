@@ -2,12 +2,25 @@ h1 {
   color: blue;
 }
 
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .palette-container {
   display: table-row;
 }
 
 .board-container {
   margin-top: 30px;
+}
+
+.size-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 40px 0;
 }
 
 .color {
