@@ -4,6 +4,10 @@
   border: 1px solid red;
 }
 
+.header {
+  text-align: center;
+}
+
 .pen {
   color: white;
   display: inline-block;
