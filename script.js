@@ -86,12 +86,9 @@ sectionContainer.insertBefore(input,divPixelboard);
 // interação de apagar board antigo e carregar novo segundo usuario.
 btnInput.addEventListener('click',function() {
     let value = document.getElementById('board-size').value
-    let borad = document.getElementsByClassName('tr');
-    console.log(borad);
-   checkvalue();
-
+    
 // limitando o tamanho maximo do board.
- function checkvalue() {
+
     if(value === '') {
         alert('Board inválido!')
     }else if(value > 50) {
@@ -104,8 +101,17 @@ btnInput.addEventListener('click',function() {
         valueColumn = value;
         valueRow = value;
     }
-    document.getElementById('pixel-board').removeChild('tr');
-        createPixelboard(valueRow,valueColumn);
+   
+    let filho = document.getElementsByClassName('tr');
+   
+   for(let i = 0; i < filho.length; i++) {
+       
+        document.getElementsByClassName('pixel-board')[0].removeChild(filho[i]);
     
- };
+   
+    
+   }
+   
+   
+
 });
