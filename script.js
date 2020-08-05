@@ -33,7 +33,7 @@ function randomOrder(list) {
       list[i] = list[i];
       break;
     }
-    number = Math.floor((Math.random() * i) + 1);    
+    number = Math.floor((Math.random() * i) + 1);
     numberTemporary = list[number];
     list[number] = list[i];
     list[i] = numberTemporary;
