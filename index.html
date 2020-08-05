@@ -1,64 +1,65 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Pixels art</title>
 </head>
+
 <body>
-    <header>
-        <h1 id="title">Paleta de Cores</h1>
-    </header>
-    <div id="color-palette"></div>
-    <button id = "clear-board">Limpar</button>
-    <br><br>
-    <div id="pixel-board">
-        <div class="tr">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="tr">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="tr">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="tr">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="tr">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-    </div>
+  <h1 id='title' class='title1'>Paleta de Cores</h1><br><br>
 
-    <script src = "script.js"></script>
-    <script>let div = document.getElementsByClassName("pixel")
-        for(let i =0; i<25;i++){
-            div[i].style.backgroundColor = "white"
+  <div id='color-palette'>
+    <div id='black-palette' class='color selected'></div>
+    <div id='green-palette' class='color'></div>
+    <div id='yellow-palette' class='color'></div>
+    <div id='blue-palette' class='color'></div>
+  </div>
 
-       }</script>
+  <button type='button' id='clear-board'>Limpar</button><br><br>
+
+  <table id='pixel-board' class='pixel_board'>
+    <tr>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+    </tr>
+    <tr>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+    </tr>
+    <tr>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+    </tr>
+    <tr>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+    </tr>
+    <tr>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+        <td class='pixel'></td>
+    </tr>
+  </table>
+
+
 </body>
-</html> 
+
+</html>
