@@ -1,7 +1,7 @@
 const sectionPaleta = document.querySelector('#pixel-board');
 const palletColor = document.querySelector('#color-palette');
 const paletaCores = ['black', 'red', 'blue', 'green', 'yellow', 'pink', 'Brown', 'orange'];
-let colorBackPixel = paletaCores[0];
+let colorFirstPixel = paletaCores[0];
 const buttonClear = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
 const buttonGenerate = document.querySelector('#generate-board');
@@ -21,7 +21,7 @@ function changeSelected() {
 function palletEvents(palletDivs) {
   palletDivs.addEventListener('click', function () { // adiciona evento a respectiva div.
     changeSelected();
-    colorBackPixel = palletDivs.style.backgroundColor;
+    colorFirstPixel = palletDivs.style.backgroundColor;
   });
 }
 
@@ -33,10 +33,7 @@ function randomOrder(list) {
       list[i] = list[i];
       break;
     }
-    number = Math.floor((Math.random() * i));
-    if (number === 0) {
-      number = 1;
-    }
+    number = Math.floor((Math.random() * i) + 1);    
     numberTemporary = list[number];
     list[number] = list[i];
     list[i] = numberTemporary;
@@ -63,7 +60,7 @@ createDivAndColor(paletaCores);
 // recebe o background color do elemento da paleta e insere na div pixel clicada;
 function changePixelColor() {
   const divPixelColor = event.target;
-  divPixelColor.style.backgroundColor = colorBackPixel;
+  divPixelColor.style.backgroundColor = colorFirstPixel;
 }
 
 // cria as tag UL e LI, add LI na lista UL, cria as DIV Pixel e add dentro das LI;
