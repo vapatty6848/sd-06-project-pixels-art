@@ -9,5 +9,5 @@ function setPixelColour(pixel) {
 }
 
 function myFunction() {
-  document.getElementById("myForm").reset();
+  document.getElementById('pixel').reset();
 }
