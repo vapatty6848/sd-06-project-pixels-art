@@ -80,22 +80,22 @@ btnGenerate.addEventListener('click', function () {
   if (boardSize.value === '') {
     alert('Board inválido!');
   } else if (parseInt(boardSize.value) < 5) {
-    document.body.removeChild(document.getElementById('pixel-board'));
+    document.getElementById('header').removeChild(document.getElementById('pixel-board'));
     const board = document.createElement('div');
     board.id = 'pixel-board';
-    document.body.appendChild(board);
+    document.getElementById('header').appendChild(board);
     createBoard(5);
   } else if (parseInt(boardSize.value) > 50) {
-    document.body.removeChild(document.getElementById('pixel-board'));
+    document.getElementById('header').removeChild(document.getElementById('pixel-board'));
     const board = document.createElement('div');
     board.id = 'pixel-board';
-    document.body.appendChild(board);
+    document.getElementById('header').appendChild(board);
     createBoard(50);
   } else {
-    document.body.removeChild(document.getElementById('pixel-board'));
+    document.getElementById('header').removeChild(document.getElementById('pixel-board'));
     const board = document.createElement('div');
     board.id = 'pixel-board';
-    document.body.appendChild(board);
+    document.getElementById('header').appendChild(board);
     createBoard(parseInt(boardSize.value));
   }
 });
