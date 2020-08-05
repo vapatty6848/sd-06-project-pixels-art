@@ -1,6 +1,6 @@
 const sectionPaleta = document.querySelector('#pixel-board');
 const palletColor = document.querySelector('#color-palette');
-const paletaCores = ['black', 'red', 'blue', 'green','yellow','pink','Brown','orange'];
+const paletaCores = ['black', 'red', 'blue', 'green', 'yellow', 'pink', 'Brown', 'orange'];
 let colorBackPixel = paletaCores[0];
 const buttonClear = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
@@ -30,7 +30,7 @@ function palletEvents(palletDivs) {
 function randomOrder(list) {
   let number;
   let numberTemporary;
-    for (let i = list.length - 1; i > 0; i -= 1) {
+  for (let i = list.length - 1; i > 0; i -= 1) {
     if (i === 0) {
       list[i] = list[i];
       break;
