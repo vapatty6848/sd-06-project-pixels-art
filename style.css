@@ -11,20 +11,15 @@
   border: 1px solid black;
   display: inline-block;
   height: 40px;
+  margin-left: -1px;
+  margin-top: -5px;
   width: 40px;
 }
 
 .pixelsBoards {
   border: 2px solid black;
-}
-
-ul {
-  list-style: none;
-  margin-left: -40px;
-}
-
-li {
-  margin-top: -5px;
+  margin-top: 10px;
+  padding-top: 20px;
 }
 
 .selected {

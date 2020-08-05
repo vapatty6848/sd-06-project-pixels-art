@@ -8,6 +8,7 @@ const buttonGenerate = document.querySelector('#generate-board');
 const buttonSize = document.querySelector('#generate-size');
 const inputSize = document.querySelector('#enter-size');
 let n = 5;
+let palletColorAl = paletaCores;
 
 
 // remove a class selected da Div da paleta e adiciona na clicada atual;
@@ -29,20 +30,20 @@ function palletEvents(palletDivs) {
 function randomOrder(list) {
   let number;
   let numberTemporary;
-  let numberSum = 0;
+  let numberSum = 1;
   for (let i = list.length - 1; i > 0; i -= 1) {
     if (i === 0) {
       list[i] = list[i];
       break;
     }
-    number = Math.floor((Math.random() * i) + numberSum);
-    numberSum += 1;
+    number = Math.floor((Math.random() * i) + 1);
+   
     if (number === 0) {
       number = 1;
     }
     numberTemporary = list[number];
-    list[number] = list[i];
-    list[i] = numberTemporary;
+    palletColorAl[number] = list[i];
+    palletColorAl[i] = numberTemporary;
   }
 }
 randomOrder(paletaCores);
@@ -57,10 +58,10 @@ function createDivAndColor(color) {
     if (i === 0) {
       palletDiv.className = 'color selected';
     }
-    palletEvents(palletDiv);
+    palletEvents(palletDiv); // add evento
   }
 }
-createDivAndColor(paletaCores);
+createDivAndColor(palletColorAl);
 
 
 // recebe o background color do elemento da paleta e insere na div pixel clicada;
@@ -71,16 +72,16 @@ function changePixelColor() {
 
 // cria as tag UL e LI, add LI na lista UL, cria as DIV Pixel e add dentro das LI;
 function createLiAndDivPixels(list) {
-  const elementoUl = document.createElement('ul');
-  sectionPaleta.appendChild(elementoUl);
+  const elementoDivPai = document.createElement('div');
+  sectionPaleta.appendChild(elementoDivPai);
   for (let j = 0; j < list; j += 1) {
-    const elementoLi = document.createElement('li');
-    elementoUl.appendChild(elementoLi);
+    const elementoDivfilho = document.createElement('div');
+    elementoDivPai.appendChild(elementoDivfilho);
     for (let i = 0; i < list; i += 1) {
-      const pixelDiv = document.createElement('div');
-      pixelDiv.className = 'pixel';
-      elementoLi.appendChild(pixelDiv);
-      pixelDiv.addEventListener('click', changePixelColor);// cria o respectivo evento das Divs Pixel;
+      const pixelDivFilhoFilho = document.createElement('div');
+      pixelDivFilhoFilho.className = 'pixel';
+      elementoDivfilho.appendChild(pixelDivFilhoFilho);
+      pixelDivFilhoFilho.addEventListener('click', changePixelColor);// cria o respectivo evento das Divs Pixel;
     }
   }
 }
