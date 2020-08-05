@@ -9,9 +9,27 @@
 }
 
 .pen {
-  color: white;
   border: 1px solid black;
+  color: white;
   display: inline-block;
   height: 40px;
   width: 80px;
+}
+
+.art {
+  background-color: black;
+  border: 1px solid black;
+  border-spacing: 1px;
+  display: table;
+}
+
+.row {
+  display: table-row;
+}
+
+.pixel {
+  background-color: white;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
 }
