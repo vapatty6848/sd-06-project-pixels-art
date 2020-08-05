@@ -3,13 +3,6 @@
 
 }
 
-ody {
-    background-color: rgb(165, 165, 141);
-    color: rgb(0, 48, 73);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
   
   .color {
     border: 1px;
@@ -20,9 +13,6 @@ ody {
     width: 52px;
   }
   
-  .title1 {
-    text-align: center;
-  }
   
   .pixel {
     background-color: white;
