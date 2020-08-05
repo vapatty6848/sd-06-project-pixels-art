@@ -1,10 +1,11 @@
 window.onload = function() {
     // ativando função de criação de paletes de cor.
         paleta(['black', 'green','yellow', 'pink']);
-        createPixelboard(5,5);
+        
         createBtn()
-};//termino onloadPage.
-    
+};
+let valueRow = 5;
+let valueColumn = 5;
     // função de criação de palete de cores.
 function paleta(colors) {
     let divContainer = document.getElementById('color-palette');
@@ -50,6 +51,7 @@ function createPixelboard(row, column) {
     };
     };
 };
+createPixelboard(valueRow,valueColumn)
     //criando botão para limpar o board.
 function createBtn() {
     let sectionContainer = document.getElementById('container');
@@ -77,20 +79,33 @@ btnInput.id = 'generate-board';
 btnInput.className = 'generate-board';
 let input = document.createElement('input');
 input.id = 'board-size';
+input.type = 'number';
 input.min = '1';
 sectionContainer.insertBefore(btnInput,divPixelboard);
 sectionContainer.insertBefore(input,divPixelboard);
 // interação de apagar board antigo e carregar novo segundo usuario.
 btnInput.addEventListener('click',function() {
     let value = document.getElementById('board-size').value
-    checkvalue()
+    let borad = document.getElementsByClassName('tr');
+    console.log(borad);
+   checkvalue();
+
 // limitando o tamanho maximo do board.
-function checkvalue() {
-    if(value < 5) {
-        value = 5
+ function checkvalue() {
+    if(value === '') {
+        alert('Board inválido!')
     }else if(value > 50) {
-        value = 50
-    };
-}
-console.log(value)
+        valueColumn = 50;
+        valueRow = 50;
+    }else if(value < 5) {
+        valueColumn = 5;
+        valueRow = 5;
+    }else {
+        valueColumn = value;
+        valueRow = value;
+    }
+    document.getElementById('pixel-board').removeChild('tr');
+        createPixelboard(valueRow,valueColumn);
+    
+ };
 });
