@@ -3,11 +3,11 @@ body {
 }
 
 button {
-  background: #3D94F6;
-  border: solid #337FED 1px;
+  background: '#3d94f6';
+  border: solid '#337fed' 1px;
   border-radius: 3%;
-  box-shadow: 1px 1px 20px 0px #000000;
-  color: #000000;
+  box-shadow: 1px 1px 20px 0px black;
+  color: black;
   cursor: pointer;
   display: inline-block;
   font-family: sans-serif;
@@ -16,12 +16,12 @@ button {
   padding: 5px;
   text-align: center;
   text-decoration: none;
-  text-shadow: 1px 1px 20px #000000;
+  text-shadow: 1px 1px 20px black;
 }
 
 button:hover {
-  background: #1E62D0;
-  border: solid #337FED 1px;
+  background: '#1e62d0';
+  border: solid '#337fed' 1px;
   border-radius: 10px;
   text-decoration: none;
 }

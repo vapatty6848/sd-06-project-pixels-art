@@ -47,7 +47,7 @@ function createPixelBorder() {
   }
 }
 
-window.onload = function() {
+function createColorPalete() {
   for (let index = 0; index < 4; index += 1) {
     if (index !== 0) {
       colorArray.push(color);
@@ -58,9 +58,12 @@ window.onload = function() {
     colorPalette.lastChild.style.backgroundColor = color;
   }
   color = '#000000';
+  colorPalette.firstChild.classList.add('selected');
   boardSize.value = 5;
   createPixelBorder(boardSize.value);
-};
+}
+
+window.onload = createColorPalete;
 
 // Seleção de cor a ser utilizada
 function selectColor(event) {
