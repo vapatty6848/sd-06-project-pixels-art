@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   align-items: center;
   background-color: purple;
@@ -12,7 +17,7 @@ header {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  margin-block-end: 50px;
+  margin-top: 40px;
   padding: 10px;
 }
 
@@ -48,7 +53,7 @@ footer {
   font-weight: 600;
   height: 80px;
   justify-content: center;
-  margin-top: 110px;
+  margin-top: 185px;
   text-align: center;
   width: 100%;
 }

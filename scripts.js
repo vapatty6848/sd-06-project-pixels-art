@@ -3,13 +3,12 @@ const btnClear = document.getElementById('clear-board');
 const btnGenerate = document.getElementById('generate-board');
 const boardSize = document.getElementById('board-size');
 const colors = ['red', 'green', 'blue', 'purple', 'brown', 'dimgray', 'cyan', 'orange'];
-const selectedColors = []
 
 for (let i = 0; i < document.querySelectorAll('.color').length; i += 1) {
   if (i === 0) {
     document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
   } else {
-    var newColor = Math.ceil(Math.random() * (colors.length - 1));
+    let newColor = Math.ceil(Math.random() * (colors.length - 1));
     document.querySelectorAll('.color')[i].style.backgroundColor = colors[newColor];
     colors.splice(newColor, 1);
   }
@@ -67,8 +66,8 @@ for (let i = 0; i < colorPalette.length; i += 1) {
     if (event.target) {
       colorPalette[i].className = 'color selected';
     }
-  })
-};
+  });
+}
 
 btnClear.addEventListener('click', function () {
   for (let i = 0; i < document.querySelectorAll('.pixel').length; i += 1) {
@@ -76,21 +75,29 @@ btnClear.addEventListener('click', function () {
   }
 });
 
+function createBoardFive() {
+  document.getElementById('header').removeChild(document.getElementById('pixel-board'));
+  const board = document.createElement('div');
+  board.id = 'pixel-board';
+  document.getElementById('header').appendChild(board);
+  createBoard(5);
+}
+
+function createBoardFifty() {
+  document.getElementById('header').removeChild(document.getElementById('pixel-board'));
+  const board = document.createElement('div');
+  board.id = 'pixel-board';
+  document.getElementById('header').appendChild(board);
+  createBoard(50);
+}
+
 btnGenerate.addEventListener('click', function () {
   if (boardSize.value === '') {
     alert('Board inválido!');
   } else if (parseInt(boardSize.value) < 5) {
-    document.getElementById('header').removeChild(document.getElementById('pixel-board'));
-    const board = document.createElement('div');
-    board.id = 'pixel-board';
-    document.getElementById('header').appendChild(board);
-    createBoard(5);
+    createBoardFive();
   } else if (parseInt(boardSize.value) > 50) {
-    document.getElementById('header').removeChild(document.getElementById('pixel-board'));
-    const board = document.createElement('div');
-    board.id = 'pixel-board';
-    document.getElementById('header').appendChild(board);
-    createBoard(50);
+    createBoardFifty();
   } else {
     document.getElementById('header').removeChild(document.getElementById('pixel-board'));
     const board = document.createElement('div');
