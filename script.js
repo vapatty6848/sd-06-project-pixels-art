@@ -1,6 +1,6 @@
 const sectionPaleta = document.querySelector('#pixel-board');
 const palletColor = document.querySelector('#color-palette');
-const paletaCores = ['black', 'red', 'blue', 'green'];
+const paletaCores = ['black', 'red', 'blue', 'green','yellow','pink','Brown','orange'];
 let colorBackPixel = paletaCores[0];
 const buttonClear = document.querySelector('#clear-board');
 const inputBoard = document.querySelector('#board-size');
@@ -8,7 +8,7 @@ const buttonGenerate = document.querySelector('#generate-board');
 const buttonSize = document.querySelector('#generate-size');
 const inputSize = document.querySelector('#enter-size');
 let n = 5;
-let palletColorAl = paletaCores;
+
 
 
 // remove a class selected da Div da paleta e adiciona na clicada atual;
@@ -30,27 +30,25 @@ function palletEvents(palletDivs) {
 function randomOrder(list) {
   let number;
   let numberTemporary;
-  let numberSum = 1;
-  for (let i = list.length - 1; i > 0; i -= 1) {
+    for (let i = list.length - 1; i > 0; i -= 1) {
     if (i === 0) {
       list[i] = list[i];
       break;
     }
-    number = Math.floor((Math.random() * i) + 1);
-   
+    number = Math.floor((Math.random() * i));
     if (number === 0) {
       number = 1;
     }
     numberTemporary = list[number];
-    palletColorAl[number] = list[i];
-    palletColorAl[i] = numberTemporary;
+    list[number] = list[i];
+    list[i] = numberTemporary;
   }
 }
 randomOrder(paletaCores);
 
 // Cria as 4 divs da paleta de cores com seu background e evento.
 function createDivAndColor(color) {
-  for (let i = 0; i < color.length; i += 1) {
+  for (let i = 0; i < 4; i += 1) {
     const palletDiv = document.createElement('div');
     palletDiv.style.backgroundColor = color[i];
     palletDiv.className = 'color';
@@ -61,7 +59,7 @@ function createDivAndColor(color) {
     palletEvents(palletDiv); // add evento
   }
 }
-createDivAndColor(palletColorAl);
+createDivAndColor(paletaCores);
 
 
 // recebe o background color do elemento da paleta e insere na div pixel clicada;
