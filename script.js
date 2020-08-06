@@ -140,7 +140,7 @@ vqvButton.addEventListener("click", function() {
     else if (n<5 && n>0){
         n=5
     }
-    else if (n.length=0){
+    else if (n.length===0){
         alert("Board inválido!")
     }
 
