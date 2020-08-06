@@ -1,23 +1,3 @@
-window.onload = function () {
-  let palette = document.getElementsByClassName('color');
-  const clear = document.querySelector('#clear-board');
-  const generateButton = document.querySelector('#generate-board');
-
-  // cria o board inicial 5x5, padrão do exercício
-  generateBoard();
-
-  // botão Limpar
-  clear.addEventListener('click', clearPixelBoard);
-
-  // gera o pixel board após clicar em VQV
-  generateButton.addEventListener('click', generateBoard);
-
-  // captura a cor após o click na paleta de cores
-  for (let i = 0; i < palette.length; i += 1) {
-    palette[i].addEventListener('click', changeColor);
-  }
-}
-
 // função p/ criar as divs c/ a classe pixel
 function createPixelDivs(dim) {
   let pixelBoard = document.querySelector('#pixel-board');
@@ -91,5 +71,25 @@ function changeColor(event) {
   } else {
     document.getElementsByClassName('selected')[0].classList.remove('selected');
     color.classList.add('selected');
+  }
+}
+
+window.onload = function () {
+  let palette = document.getElementsByClassName('color');
+  const clear = document.querySelector('#clear-board');
+  const generateButton = document.querySelector('#generate-board');
+
+  // cria o board inicial 5x5, padrão do exercício
+  generateBoard();
+
+  // botão Limpar
+  clear.addEventListener('click', clearPixelBoard);
+
+  // gera o pixel board após clicar em VQV
+  generateButton.addEventListener('click', generateBoard);
+
+  // adiciona evento que captura a cor após o click na paleta
+  for (let i = 0; i < palette.length; i += 1) {
+    palette[i].addEventListener('click', changeColor);
   }
 }
