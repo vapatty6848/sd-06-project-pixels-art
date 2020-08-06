@@ -1,8 +1,8 @@
 .color , .pixel {
   border: 1px solid black;
+  float: left;
   height: 40px;
   width: 40px;
-  float: left;
 }
 
 .color {
