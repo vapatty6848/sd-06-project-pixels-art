@@ -3,22 +3,22 @@ body {
 }
 
 .color {
+  border: black solid 1px;
+  display: inline-block;
   height: 50px;
   width: 50px;
-  display: inline-block;
-  border: black solid 1px;
 }
 
 .pixel {
-  height: 40px;
-  width: 40px;
+  background-color: white;
   border: solid black 1px;
   display: inline-block;
-  background-color: white;
+  height: 40px;
   vertical-align: top;
+  width: 40px;
 }
 
-#pixel-board {
+.pixel_board {
   margin-left: auto;
   margin-right: auto;
 }

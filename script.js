@@ -1,6 +1,6 @@
 // função p/ criar as divs c/ a classe pixel
 function createPixelDivs(dim) {
-  let pixelBoard = document.querySelector('#pixel-board');
+  const pixelBoard = document.querySelector('#pixel-board');
   let dimensions = dim;
 
   if (dim < 5) {
@@ -10,13 +10,13 @@ function createPixelDivs(dim) {
   }
 
   for (let row = 1; row <= dimensions; row += 1) {
-    let boardRow = document.createElement('div');
+    const boardRow = document.createElement('div');
 
     boardRow.classList.add('pixel-row');
     pixelBoard.appendChild(boardRow);
 
     for (let col = 1; col <= dimensions; col += 1) {
-      let pixel = document.createElement('div');
+      const pixel = document.createElement('div');
 
       pixel.classList.add('pixel');
       boardRow.appendChild(pixel);
@@ -26,14 +26,14 @@ function createPixelDivs(dim) {
 
 // cria o pixel board após clicar no botão VQV
 function generateBoard() {
-  let board = document.getElementById('pixel-board');
+  const board = document.getElementById('pixel-board');
+  const pixelRows = document.getElementsByClassName('pixel-row');
+  const boardDimensions = document.getElementById('board-size').value;
   let pixels = document.getElementsByClassName('pixel');
-  let pixelRows = document.getElementsByClassName('pixel-row');
-  let boardDimensions = document.getElementById('board-size').value;
 
-  if (boardDimensions === "") {
-    alert("Board inválido!");
-    return null;
+  if (boardDimensions === '') {
+    alert('Board inválido!');
+    return;
   }
 
   while (pixels.length > 0) {
@@ -56,7 +56,7 @@ function generateBoard() {
 
 // limpa as cores que estão no pixel board
 function clearPixelBoard() {
-  let pixelBoard = document.getElementsByClassName('pixel');
+  const pixelBoard = document.getElementsByClassName('pixel');
 
   for (let i = 0; i < pixelBoard.length; i += 1) {
     pixelBoard[i].style.backgroundColor = 'white';
@@ -65,18 +65,17 @@ function clearPixelBoard() {
 
 // define a classe da cor clicada como selected
 function changeColor(event) {
-  let color = event.target;
+  const color = event.target;
 
   if (color.classList.contains('selected')) {
-    return null;
-  } else {
+    return;
+  }
     document.getElementsByClassName('selected')[0].classList.remove('selected');
     color.classList.add('selected');
-  }
 }
 
 window.onload = function () {
-  let palette = document.getElementsByClassName('color');
+  const palette = document.getElementsByClassName('color');
   const clear = document.querySelector('#clear-board');
   const generateButton = document.querySelector('#generate-board');
 
@@ -93,4 +92,4 @@ window.onload = function () {
   for (let i = 0; i < palette.length; i += 1) {
     palette[i].addEventListener('click', changeColor);
   }
-}
+};
