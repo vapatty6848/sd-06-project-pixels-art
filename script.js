@@ -14,22 +14,19 @@ function pixelChange(pixel) {
 }
 
 function resetPalleteClass() {
-  document.querySelectorAll('.color').forEach((x) => {
-    x.className = 'color';
-  });
+  document.querySelectorAll('.selected').className = 'color';
 }
 
 function colorPicker(color) {
   brush = `${color.id}`;
   resetPalleteClass();
-  color.className = `color selected`;
+  color.className = 'color selected';
 }
 
 function clearCanvas() {
   CANVAS.forEach((x) => {
     modifyStyle(x, 'backgroundColor', 'white');
-  }
-  );
+  });
 }
 
 modifyStyle(BLACKPALETE, 'backgroundColor', 'black');
