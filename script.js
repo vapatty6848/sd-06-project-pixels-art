@@ -13,7 +13,7 @@ window.onload = function () {
     pixelBoard.style.width = `${quantity * 43}px`;
     pixelBoard.style.height = `${quantity * 43}px`;
 
-    for (let i = 0; i < quantity * quantity; i++) {
+    for (let i = 0; i < quantity * quantity; i += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       addPaintFunctionToPixel(pixel)
@@ -23,7 +23,7 @@ window.onload = function () {
 
   generatePixels(5)
 
-  for (let i = 1; i < colorBoxes.length; i++) {
+  for (let i = 1; i < colorBoxes.length; i += 1) {
     const red = Math.floor(Math.random() * 255);
     const green = Math.floor(Math.random() * 255);
     const blue = Math.floor(Math.random() * 255);
@@ -38,7 +38,7 @@ window.onload = function () {
   addSelectedClass();
 
   function changeBackgroundColorToWhite() {
-    for (let i = 0; i < document.querySelectorAll('.pixel').length; i++) {
+    for (let i = 0; i < document.querySelectorAll('.pixel').length; i += 1) {
       const currentPixel = document.querySelectorAll('.pixel')[i];
       currentPixel.style.backgroundColor = 'white';
     }
@@ -50,7 +50,7 @@ window.onload = function () {
     })
   }
 
-  for (let i = 0; i < document.querySelectorAll('.color').length; i++) {
+  for (let i = 0; i < document.querySelectorAll('.color').length; i += 1) {
     const currentColorOption = document.querySelectorAll('.color')[i];
 
     currentColorOption.addEventListener('click', function (event) {
