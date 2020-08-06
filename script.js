@@ -105,26 +105,31 @@ function boardSize(n){
     const myNode = document.getElementById("pixel-board");
     myNode.innerHTML = '';
 
+    if (n.length==0){
+        alert("Board inválido!");
+    }
     
+    else {
 
-    for (let i=0; i<n; i+=1){
+        for (let i=0; i<n; i+=1){
 
-        const novaColuna = document.createElement("div");
+            const novaColuna = document.createElement("div");
 
-        novaColuna.classList = "coluna";
+            novaColuna.classList = "coluna";
 
-        for (let j=0; j<n; j+=1){
+            for (let j=0; j<n; j+=1){
 
-            const novoPixel = document.createElement("div");
+                const novoPixel = document.createElement("div");
 
-            novoPixel.classList = "pixel"
+                novoPixel.classList = "pixel"
 
-            novoPixel.onclick = function() {
-                pasteColor(novoPixel, localStorage.getItem("selected-color"));
+                novoPixel.onclick = function() {
+                    pasteColor(novoPixel, localStorage.getItem("selected-color"));
+                }
+
+                novaColuna.appendChild(novoPixel);
+
             }
-
-            novaColuna.appendChild(novoPixel);
-
         }
 
         document.getElementById("pixel-board").appendChild(novaColuna);
