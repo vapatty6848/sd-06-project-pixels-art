@@ -1,80 +1,40 @@
-body {
-    text-align: center;
-}
+.colorPalette {
+    width: 100%;
+  }
 
-#black {
+  .color {
+    border: 1px solid black;
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+  }
+
+  .black {
     background-color: black;
-}
+  }
 
-#blue {
-    background-color: blue;
-}
-
-#color-palette {
-    align-content: center;
-    display: inline-block;
-    margin: 10px;
-    text-align: center;    
-}
-
-.color {
-    border: 1px solid;
-    border-color: black;
-    display: inline-block;
-    height: 60px;
-    margin-right: 1rem;
-    width: 60px;    
-}
-
-#clear-board {
-    color: pink;
-    color: black;
-    display: block;
-    margin: 0 auto;
-    margin: 10px;
-}
-
-.divLine {
-    height: 41px;
-}
-
-.FramePixels {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.pixel-board {
-    background-color: white;
-    display: block;
-    border-collapse: collapse;
-    margin-left: 80px;
-    margin-top: 1rem;
-    position: absolute;
-    text-align: center;
-}
-
-
-.pixel {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-color: white;
-}
-
-#red {
+  .red {
     background-color: red;
-}
+  }
 
-#title {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    text-align: center;
-}
+  .blue {
+    background-color: blue;
+  }
 
-#yellow {
-    background-color: yellow;
-}
+  .green {
+    background-color: green;
+  }
+
+  .pixelBoard {
+    padding-top: 10px;
+  }
+  
+  .pixel {
+    background-color: white;
+    border: 1px solid black;
+    display: inline-block;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+  }
