@@ -16,12 +16,12 @@ window.onload = function () {
     for (let i = 0; i < quantity * quantity; i += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
-      addPaintFunctionToPixel(pixel)
+      addPaintFunctionToPixel(pixel);
       pixelBoard.appendChild(pixel);
     }
   }
 
-  generatePixels(5)
+  generatePixels(5);
 
   for (let i = 1; i < colorBoxes.length; i += 1) {
     const red = Math.floor(Math.random() * 255);
@@ -47,7 +47,7 @@ window.onload = function () {
   function addPaintFunctionToPixel(pixel) {
     pixel.addEventListener('click', function () {
       pixel.style.backgroundColor = `${onClickColor}`;
-    })
+    });
   }
 
   for (let i = 0; i < document.querySelectorAll('.color').length; i += 1) {
@@ -60,12 +60,12 @@ window.onload = function () {
       selectedColor.classList.remove(selectedClass);
       selectedColor = currentColorOption;
       addSelectedClass();
-    })
+    });
   }
 
   clearButton.addEventListener('click', function () {
     changeBackgroundColorToWhite();
-  })
+  });
 
   generateNewBoardButton.addEventListener('click', function () {
     let pixelQuantity = changeSizeInput.value;
@@ -80,5 +80,5 @@ window.onload = function () {
 
       generatePixels(pixelQuantity)
     }
-  })
-}
+  });
+};
