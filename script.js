@@ -96,9 +96,6 @@ clearButton.addEventListener("click", function() {
 //numberofpixels-button
 
 
-
-
-
 function boardSize(n){
 
 
@@ -140,10 +137,13 @@ vqvButton.addEventListener("click", function() {
     if (n>50){
         n=50
     }
-    else if (n<5){
+    else if (n<5 && n>0){
         n=5
     }
-    
+    else if (n.length=0){
+        alert("Board inválido!")
+    }
+
     boardSize(n);
 })
 
