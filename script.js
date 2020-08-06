@@ -3,11 +3,6 @@ function createPixelDivs(dim) {
   let pixelBoard = document.querySelector('#pixel-board');
   let dimensions = dim;
 
-  if (dimensions === "") {
-    alert("Board inválido!");
-    return null;
-  }
-
   if (dim < 5) {
     dimensions = 5;
   } else if (dim > 50) {
@@ -34,6 +29,12 @@ function generateBoard() {
   let board = document.getElementById('pixel-board');
   let pixels = document.getElementsByClassName('pixel');
   let pixelRows = document.getElementsByClassName('pixel-row');
+  let boardDimensions = document.getElementById('board-size').value;
+
+  if (boardDimensions === "") {
+    alert("Board inválido!");
+    return null;
+  }
 
   while (pixels.length > 0) {
     board.removeChild(pixelRows[0]);
@@ -43,7 +44,7 @@ function generateBoard() {
     board.removeChild(pixels[0]);
   }
 
-  createPixelDivs(document.getElementById('board-size').value);
+  createPixelDivs(boardDimensions);
   pixels = document.getElementsByClassName('pixel');
 
   for (let i = 0; i < pixels.length; i += 1) {
