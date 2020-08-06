@@ -46,11 +46,13 @@ window.onload = function() {
 
     let botaoTamanho = document.querySelector("#generate-board");
     // ver se tamanho é uma string ou um numero
-    let tamanho = document.querySelector("#board-size").value;
+    let tamanho = document.querySelector("#board-size");
     botaoTamanho.addEventListener("click", function(event) {
-        if (tamanho <= 50 && tamanho >= 5) {
-            quadroPixel.style.width = tamanho * 42;
-            quadroPixel.style.height = tamanho * 42;
+        console.log(tamanho);
+        if (tamanho.value <= 50 && tamanho.value  >= 5) {
+            quadroPixel.style.width = parseInt(tamanho.value) * 42;
+            quadroPixel.style.height = parseInt(tamanho.value)* 42;
+            console.log(parseInt(tamanho.value)* 42);
 
         } else {
             alert("Board inválido!");
