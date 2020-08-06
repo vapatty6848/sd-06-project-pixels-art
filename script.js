@@ -1,5 +1,5 @@
 window.onload = function () {
-  let pixelBoard = document.querySelector('#pixel-board');
+  const pixelBoard = document.querySelector('#pixel-board');
   let selectedColor = document.querySelector('.color');
   const selectedClass = 'selected';
   let onClickColor = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
@@ -7,6 +7,12 @@ window.onload = function () {
   const changeSizeInput = document.querySelector('#board-size');
   const generateNewBoardButton = document.querySelector('#generate-board');
   const colorBoxes = document.querySelectorAll('.color');
+
+  function addPaintFunctionToPixel(pixel) {
+    pixel.addEventListener('click', function () {
+      pixel.style.backgroundColor = `${onClickColor}`;
+    });
+  }
 
   function generatePixels(quantity) {
     pixelBoard.innerHTML = [];
@@ -42,12 +48,6 @@ window.onload = function () {
       const currentPixel = document.querySelectorAll('.pixel')[i];
       currentPixel.style.backgroundColor = 'white';
     }
-  }
-
-  function addPaintFunctionToPixel(pixel) {
-    pixel.addEventListener('click', function () {
-      pixel.style.backgroundColor = `${onClickColor}`;
-    });
   }
 
   for (let i = 0; i < document.querySelectorAll('.color').length; i += 1) {
