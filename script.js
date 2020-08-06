@@ -78,7 +78,7 @@ window.onload = function () {
         pixelQuantity = 50;
       }
 
-      generatePixels(pixelQuantity)
+      generatePixels(pixelQuantity);
     }
   });
 };
