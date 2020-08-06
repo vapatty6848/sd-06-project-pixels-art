@@ -105,9 +105,6 @@ function boardSize(n){
     const myNode = document.getElementById("pixel-board");
     myNode.innerHTML = '';
 
-    if (n.length==0){
-        alert("Board inválido!");
-    }
 
     for (let i=0; i<n; i+=1){
 
@@ -145,6 +142,11 @@ vqvButton.addEventListener("click", function() {
     }
     else if (n<5){
         n=5
+    }
+    else if (n.length==0){
+
+        alert("Board inválido!");
+        
     }
 
     boardSize(n);
