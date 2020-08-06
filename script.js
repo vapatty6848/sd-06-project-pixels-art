@@ -27,7 +27,7 @@ window.onload = function () {
     const red = Math.floor(Math.random() * 255);
     const green = Math.floor(Math.random() * 255);
     const blue = Math.floor(Math.random() * 255);
-   
+
     colorBoxes[i].style.backgroundColor = `rgb(${red} , ${green} , ${blue})`;
   }
 
@@ -54,7 +54,7 @@ window.onload = function () {
     const currentColorOption = document.querySelectorAll('.color')[i];
 
     currentColorOption.addEventListener('click', function (event) {
-      const colorOfClickedOption = window.getComputedStyle(event.target, null).getPropertyValue("background-color");
+      const colorOfClickedOption = window.getComputedStyle(event.target, null).getPropertyValue('background-color');
 
       onClickColor = colorOfClickedOption;
       selectedColor.classList.remove(selectedClass);
