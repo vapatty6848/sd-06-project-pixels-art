@@ -10,52 +10,18 @@
 <body>
   <h1 class="title" id="title">Paleta de Cores</h1>
   <div class="color-picker">
+    <div class="options">
+      <label for="palette-size">Palette Size
+        <input type="number" class="palette-size size-picker" name="palette-size"></label>
+      <label for="canvas-size">Canvas Size
+        <input type="number" class="canvas-size size-picker" name="canvas-size"></label>
+    </div>
     <div class="color-palette" id="color-palette">
-      <div class="color selected" id="black" onclick="colorPicker(this)"></div>
-      <div class="color" id="green" onclick="colorPicker(this)"></div>
-      <div class="color" id="blue" onclick="colorPicker(this)"></div>
-      <div class="color" id="red" onclick="colorPicker(this)"></div>
     </div>
     <div>
       <button class="clear" id="clear-board" onclick="clearCanvas()">Limpar</button>
     </div>
     <div class="pixel-board" id="pixel-board">
-      <div class="row">
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-      </div>
-      <div class="row">
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-      </div>
-      <div class="row">
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-      </div>
-      <div class="row">
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-      </div>
-      <div class="row">
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-        <div class="pixel" id="pixel" onclick="pixelChange(this)"></div>
-      </div>
-    </div>
   </div>
   <script src="script.js"></script>
 </body>
