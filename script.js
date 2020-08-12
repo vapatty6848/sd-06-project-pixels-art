@@ -1,5 +1,5 @@
 const PALETTESIZE = document.querySelector('.palette-size');
-const CANVASSIZE = document.querySelector('.palette-size');
+let canvasSize = 5;
 let canvas = document.querySelectorAll('.pixel');
 let palette = document.querySelectorAll('.color').length;
 let colors = document.querySelectorAll('.color');
@@ -20,15 +20,17 @@ function updateCanvas() {
   canvas = document.querySelectorAll('.pixel');
 }
 
+function updatePalette() {
+  colors = document.querySelectorAll('.color');
+  console.log('palette updated');
+  listenPalette()
+}
+
 function createCanvasRow() {
-  /* const ROW = document.createElement('div');
-  ROW.classList.add('row');
-  document.querySelector('.pixel-board').appendChild(ROW); */
   insertElement('div', 'row', '.pixel-board');
 }
 
 function createCanvasPixel() {
-  /* insertElement('div', 'pixel', '.row'); */
   const ELEMENT = document.createElement('div');
   ELEMENT.classList.add('pixel');
   const ALLPARENTS = document.querySelectorAll('.row');
@@ -40,6 +42,7 @@ function insertPalette() {
   const NEWPALETTE = document.querySelector('.color-palette').lastChild;
   const COLOR = rgbRandomGenerator();
   modifyStyle(NEWPALETTE, `background-color`, COLOR);
+  NEWPALETTE.dataset.color = COLOR;
 }
 
 function insertElement(htmlTag, tagClass, parentClass) {
@@ -56,10 +59,11 @@ function resetPalleteClass() {
   document.querySelectorAll('.selected').className = 'color';
 }
 
-function colorPicker(color) {
-  brush = `${color.id}`;
+function colorPicker(chosenColor) {
+  brush = chosenColor.dataset.color;
   resetPalleteClass();
-  color.className = 'color selected';
+  console.log(brush);
+  chosenColor.classList.add('selected');
 }
 
 function clearCanvas() {
@@ -69,7 +73,6 @@ function clearCanvas() {
 }
 
 function clearPalette() {
-  //document.querySelectorAll('.color')
   while (document.querySelector('.color')) {
     document.querySelector('.color-palette').removeChild(document.querySelector('.color'));
   }
@@ -85,12 +88,14 @@ PALETTESIZE.addEventListener('click', () => {
   for (let index = 0; index < PALETTESIZE.value - palette; index += 1) {
     insertPalette();
   }
+  updatePalette();
 });
 
 if (palette === 0) {
   for (let index = 0; index < 4; index += 1) {
     insertPalette();
   }
+  updatePalette();
 }
 
 if (canvas.length === 0) {
@@ -103,10 +108,12 @@ if (canvas.length === 0) {
   updateCanvas();
 }
 
-colors.forEach((choice) => {
+function listenPalette() {
+  colors.forEach((choice) => {
   choice.addEventListener('click',() =>
   colorPicker(choice))
-});
+  console.log(' event click on color triggered')
+});}
 
 
 canvas.forEach((x) => {
