@@ -88,11 +88,11 @@ form.addEventListener('submit', function (e) {
     // remover a tabela original
     pixelBoard.removeChild(pixelBoard.childNodes[1]);
     // Criar o corpo da nova tabela
-    let tBody = document.createElement('tbody');
+    const tBody = document.createElement('tbody');
     pixelBoard.appendChild(tBody);
     // Criar a nova tabela
-    for(let i = 0; i < nPixels; i += 1){
-      let trCreate = document.createElement('tr');
+    for (let i = 0; i < nPixels; i += 1) {
+      const trCreate = document.createElement('tr');
       tBody.appendChild(trCreate);
       for(let j = 0; j < nPixels; j += 1){
         let tdCreate = document.createElement('td');

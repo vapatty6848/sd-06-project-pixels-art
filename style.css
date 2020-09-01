@@ -1,42 +1,42 @@
-body{
+body {
   height: 768px;
   width: 1366px;
 }
 
-.color{
+.color {
   border: 1px solid black;
   height: 40px;
   width: 40px;
 }
 
-.pixel-board{
+.pixel-board {
   border-collapse: collapse;
 }
 
-.pixel{
+.pixel {
   background-color: white;
   border: 1px solid black;
   height: 41px;
   width: 41px;
 }
 
-.preto{
+.preto {
   background-color: black;
 }
 
-.verde{
+.verde {
   background-color: green;
 }
 
-.vermelho{
+.vermelho {
   background-color: red;
 }
 
-.amarelo{
+.amarelo {
   background-color: yellow;
 }
 
-.clear-board{
+.clear-board {
   height: 40px;
   width: 200px;
 }
