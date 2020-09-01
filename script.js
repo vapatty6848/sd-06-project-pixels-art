@@ -8,64 +8,63 @@ const corAmarelo = document.getElementById('amarelo');
 const form = document.getElementById('generate')
 const campo = document.getElementById('board-size');
 const pixelBoard = document.getElementById('pixel-board');
-//Iniciando o mouse em "Black"
-let novaCor = "black";
+// Iniciando o mouse em "Black"
+let novaCor = 'black';
 
-//gerar cor aleatória
-//link do site usado como base
+// gerar cor aleatória
+// link do site usado como base
 // https://www.it-swarm.dev/pt/javascript/gerador-de-cores-aleatorias/967183954/
-function r() { return Math.floor(Math.random() * 255) }
-let color1 = 'rgb(' + r() + "," + r() + "," + r() + ')';
-let color2 = 'rgb(' + r() + "," + r() + "," + r() + ')';
-let color3 = 'rgb(' + r() + "," + r() + "," + r() + ')';
-corVerde.style.background = color1;
-corVermelho.style.background = color2;
-corAmarelo.style.background = color3;
+// function r() { return Math.floor(Math.random() * 255) };
+// const color1 = 'rgb(' + r() + "," + r() + "," + r() + ')';
+// const color2 = 'rgb(' + r() + "," + r() + "," + r() + ')';
+// const color3 = 'rgb(' + r() + "," + r() + "," + r() + ')';
+// corVerde.style.background = color1;
+// corVermelho.style.background = color2;
+// corAmarelo.style.background = color3;
 
-//Escutando o click, e atribuindo a cor para o mouse
+// Escutando o click, e atribuindo a cor para o mouse
 function colors() {
   corPreto.addEventListener('click', () => {
-    novaCor = "black";
+    novaCor = 'black';
     corPreto.classList.add('selected');
     corVerde.classList.remove('selected');
     corVermelho.classList.remove('selected');
     corAmarelo.classList.remove('selected');
-  })
+  });
   corVerde.addEventListener('click', () => {
-    novaCor = color1;
+    novaCor = 'green';
     corVerde.classList.add('selected');
     corPreto.classList.remove('selected');
     corVermelho.classList.remove('selected');
     corAmarelo.classList.remove('selected');
-  })
+  });
   corVermelho.addEventListener('click', () => {
-    novaCor = color2;
+    novaCor = 'red';
     corVermelho.classList.add('selected');
     corVerde.classList.remove('selected');
     corPreto.classList.remove('selected');
     corAmarelo.classList.remove('selected');
-  })
+  });
   corAmarelo.addEventListener('click', () => {
-    novaCor = color3;
+    novaCor = 'yellow';
     corAmarelo.classList.add('selected');
     corVerde.classList.remove('selected');
     corVermelho.classList.remove('selected');
     corPreto.classList.remove('selected');
-  })
+  });
 
   //escutando o click, e atribuindo a cor para o pixel selecionado
-  document.querySelectorAll('.pixel').forEach(item => {
-    item.addEventListener('click', event => {item.style.background = novaCor;}
-      )
-  })
+  document.querySelectorAll('.pixel').forEach((item) => {
+    item.addEventListener('click', (event) => { item.style.background = novaCor;});
+  });
 
   // botão para limpar as cores
-  document.getElementById("clear-board").addEventListener('click', function(){
-    document.querySelectorAll(".pixel").forEach(item => {
-      item.style.background = "white";
-    })
-    novaCor = "black";
-  })
+  document.getElementById('clear-board').addEventListener('click', function(){
+    document.querySelectorAll('.pixel').forEach((item) => {
+      item.style.background = 'white';
+    });
+   // novaCor = "black";
+  });
 }
 
 form.addEventListener('submit', function(e) {
@@ -103,7 +102,7 @@ form.addEventListener('submit', function(e) {
       }
     }
     // Chamando função de colorir. 
-    //Deve ser chamada novamente pois a tabela foi criada depois da leitura da pagina
+    // Deve ser chamada novamente pois a tabela foi criada depois da leitura da pagina
     colors();
   }
 });

@@ -1,10 +1,12 @@
 body{
-  width: 1366px;
   height: 768px;
+  width: 1366px;
 }
 
 .color{
   border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
 
 .pixel-board{
@@ -12,33 +14,29 @@ body{
 }
 
 .pixel{
-  width: 40px;
-  height: 40px;
   background-color: white;
   border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
 
 .preto{
   background-color: black;
-  width: 40px;
-  height: 40px;
 }
 
 .verde{
-  width: 40px;
-  height: 40px;
+  background-color: green;
 }
 
 .vermelho{
-  width: 40px;
-  height: 40px;
+  background-color: red;
 }
 
 .amarelo{
-  width: 40px;
-  height: 40px;
+  background-color: yellow;
 }
+
 .clear-board{
-  width: 200px;
   height: 40px;
+  width: 200px;
 }
