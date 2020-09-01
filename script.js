@@ -5,7 +5,7 @@ const corPreto = document.getElementById('preto');
 const corVerde = document.getElementById('verde');
 const corVermelho = document.getElementById('vermelho');
 const corAmarelo = document.getElementById('amarelo');
-const form = document.getElementById('generate')
+const form = document.getElementById('generate');
 const campo = document.getElementById('board-size');
 const pixelBoard = document.getElementById('pixel-board');
 // Iniciando o mouse em "Black"
@@ -53,42 +53,41 @@ function colors() {
     corPreto.classList.remove('selected');
   });
 
-  //escutando o click, e atribuindo a cor para o pixel selecionado
+  // escutando o click, e atribuindo a cor para o pixel selecionado
   document.querySelectorAll('.pixel').forEach((item) => {
-    item.addEventListener('click', (event) => { item.style.background = novaCor;});
+    item.addEventListener('click', () => { item.style.background = novaCor; });
   });
 
   // botão para limpar as cores
-  document.getElementById('clear-board').addEventListener('click', function(){
+  document.getElementById('clear-board').addEventListener('click', function () {
     document.querySelectorAll('.pixel').forEach((item) => {
       item.style.background = 'white';
     });
-   // novaCor = "black";
+    // novaCor = "black";
   });
 }
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
   // Comando para a página não recarregar
   e.preventDefault();
 
   // Evitar que o input seja vazio
   boardSize = campo.value;
-  if(boardSize ==''){
-   alert('Board inválido!');
-  }else{
-
+  if (boardSize === '') {
+    alert('Board inválido!');
+  } else {
     // Limitar o input entre 5 e 50
-    if(boardSize < 5){
+    if (boardSize < 5) {
       nPixels = 5;
-    }else if(boardSize > 50){
+    } else if (boardSize > 50) {
       nPixels = 50;
-    }else{
+    } else {
       nPixels = boardSize;
     }
 
     // remover a tabela original
     pixelBoard.removeChild(pixelBoard.childNodes[1]);
-    // Criar o corpo da nova tabela  
+    // Criar o corpo da nova tabela
     let tBody = document.createElement('tbody');
     pixelBoard.appendChild(tBody);
     // Criar a nova tabela
@@ -101,11 +100,11 @@ form.addEventListener('submit', function(e) {
         trCreate.appendChild(tdCreate);
       }
     }
-    // Chamando função de colorir. 
+    // Chamando função de colorir.
     // Deve ser chamada novamente pois a tabela foi criada depois da leitura da pagina
     colors();
   }
 });
 
-// Chamando função de colorir. Iniciando o JS de fato. 
+// Chamando função de colorir. Iniciando o JS de fato.
 colors();
