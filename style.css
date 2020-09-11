@@ -1,45 +1,45 @@
 body {
-    background-color: rgb(43,45,66);
-    font-family: 'Montserrat', sans-serif;
-    margin: 20px;
+  background-color: rgb(43, 45, 66);
+  font-family: Montserrat, sans-serif;
+  margin: 20px;
 }
 
-#title {
-    color: white;
-    font-family: 'Galada', cursive;
+.title {
+  color: white;
+  font-family: Galada, cursive;
 }
 
-#color-palette {
-    width: 290px;
-    height: 75px;
-    background-color: white;
-    border: 1px solid black;
+.color-palette {
+  background-color: white;
+  border: 1px solid black;
+  height: 75px;
+  width: 290px;
 }
 
 .color {
-    border: 1px solid black;
-    width: 60px;
-    height: 60px;
-    margin: 5px;
-    float: left;
+  border: 1px solid black;
+  float: left;
+  height: 60px;
+  margin: 5px;
+  width: 60px;
 }
 
 .pixel-board {
-    background-color: white;
-    border: 1px solid black;
-    width: 210px;
-    height: 210px;
+  background-color: white;
+  border: 1px solid black;
+  height: 210px;
+  width: 210px;
 }
 
 .pixel {
-    background-color: white;
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    float: left;
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  height: 40px;
+  width: 40px;
 }
 
-#clear-board {
-    background-color: white;
-    margin: 10px;
+.clear-board {
+  background-color: white;
+  margin: 10px;
 }
