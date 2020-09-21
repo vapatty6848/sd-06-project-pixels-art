@@ -1,26 +1,60 @@
-window.onload = function () {
-  const colorPalette = document.querySelector('#color-palette');
-  const pixelsBoard = document.getElementById('pixel-board');
-  const clearButton = document.getElementById('clear-board');
+const colorPalette = document.querySelector('#color-palette');
+const pixelsBoard = document.getElementById('pixel-board');
+const clearButton = document.getElementById('clear-board');
+const boardButton = document.getElementById('generate-board');
 
+function changeClass(event) {
+  document.querySelector('.selected').classList.remove('selected');
+  event.target.classList.add('selected');
+}
+colorPalette.addEventListener('click', changeClass);
 
-  function changeClass(event) {
-    document.querySelector('.selected').classList.remove('selected');
-    event.target.classList.add('selected');
+function pixelColoring(event) {
+  const selectedColor = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = selectedColor;
+}
+pixelsBoard.addEventListener('click', pixelColoring);
+
+function clearBoard() {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = '';
   }
-  colorPalette.addEventListener('click', changeClass);
+}
+clearButton.addEventListener('click', clearBoard);
 
-  function pixelColoring(event) {
-    const selectedColor = document.querySelector('.selected').style.backgroundColor;
-    event.target.style.backgroundColor = selectedColor;
-  }
-  pixelsBoard.addEventListener('click', pixelColoring);
-
-  function clearBoard() {
-    const pixels = document.querySelectorAll('.pixel');
-    for (let i = 0; i < pixels.length; i += 1) {
-      pixels[i].style.backgroundColor = '';
+function generatePixels(size) {
+  for (let line = 0; line < size; line += 1) {
+    const createPixelLine = document.createElement('div');
+    createPixelLine.className = 'pixel-line';
+    pixelsBoard.appendChild(createPixelLine);
+    for (let pixel = 0; pixel < size; pixel += 1) {
+      const createNewPixel = document.createElement('div');
+      createNewPixel.className = 'pixel';
+      createPixelLine.appendChild(createNewPixel);
     }
   }
-  clearButton.addEventListener('click', clearBoard);
+}
+
+function verifyAndCreateBoard(size) {
+  if (size === '' || size < 1) {
+    alert('Board inválido!');
+    return generatePixels(5);
+  }
+  if (size < 5) {
+    size = 5;
+  } else if (size > 50) {
+    size = 50;
+  }
+  return generatePixels(size);
+}
+
+boardButton.addEventListener('click', function () {
+  pixelsBoard.innerHTML = '';
+  const boardSizeInput = document.getElementById('board-size');
+  verifyAndCreateBoard(boardSizeInput.value);
+});
+
+window.onload = function () {
+  generatePixels(5);
 };

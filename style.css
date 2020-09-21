@@ -10,7 +10,6 @@ body {
 }
 
 .color-palette {
-  background-color: white;
   border: 1px solid black;
   height: 75px;
   width: 290px;
@@ -25,17 +24,15 @@ body {
 }
 
 .pixel-board {
-  background-color: white;
-  border: 1px solid black;
-  height: 210px;
-  width: 210px;
+  width: fit-content;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
-  float: left;
+  display: inline-block;
   height: 40px;
+  margin: 2px;
   width: 40px;
 }
 
