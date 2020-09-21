@@ -55,6 +55,22 @@ boardButton.addEventListener('click', function () {
   verifyAndCreateBoard(boardSizeInput.value);
 });
 
+function getRandomColor() {
+  const colors = [];
+  for (let i = 0; i < 3; i += 1) {
+    colors.push(Math.floor(Math.random() * 255));
+  }
+  return `rgb(${colors[0]}, ${colors[1]}, ${colors[0]})`;
+}
+
+function changeColorToRandom() {
+  const color = document.getElementsByClassName('color');
+  color[1].style.backgroundColor = getRandomColor();
+  color[2].style.backgroundColor = getRandomColor();
+  color[3].style.backgroundColor = getRandomColor();
+}
+
 window.onload = function () {
   generatePixels(5);
+  changeColorToRandom();
 };
