@@ -24,12 +24,10 @@ function createPixelBorder(side) {
       board.removeChild(board.firstChild);
     }
   }
-
   // Altera a cor do píxel clicado
   function setPixelColor(event) {
     event.target.style.backgroundColor = color;
   }
-
   for (let indexLn = 0; indexLn < side; indexLn += 1) {
     board.appendChild(document.createElement('div'));
     board.lastChild.classList.add('line');
