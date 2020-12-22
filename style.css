@@ -34,8 +34,7 @@ button:hover {
   text-decoration: none;
 }
 
-.pixel, 
-.color {
+.pixel, .color {
   border: 1px solid black;
   display: inline-block;
 }
@@ -59,7 +58,7 @@ button:hover {
   background-color: white;
   margin-bottom: -5px;
   margin-left: -5px;
-  padding: 0px;
+  padding: 0;
   height: 40px;
   width: 40px;
 }
