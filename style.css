@@ -59,6 +59,7 @@ button:hover {
   background-color: white;
   margin-bottom: -5px;
   margin-left: -5px;
-  height: 40px;
-  width: 40px;
+  padding: 0px;
+  height: 38px;
+  width: 38px;
 }
