@@ -74,7 +74,7 @@ function selectColor(event) {
 // Limpa pixel boarder aplcando branco pra cor de fundo de cada pixel
 function clearPixelbyPixel() {
   for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.backgroundColor = '#ffffff';
+    pixel[i].style.backgroundColor = 'white';
   }
 }
 
