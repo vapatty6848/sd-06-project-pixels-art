@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+<header class="header">
+  <h2 class="title"> Pixel Art Project</h2>
+
+  <div class="more-colors">
+    <p>Do you like random color ?</p>
+    <button class="btn" id="more-colors">New Color!</button>
+  </div>
+
+  </section>
+</header>
+
+<main class="container">
+    <section>
+      <h1 id="title">Colors Palette</h1>
+      <div id="color-palette" class="color-palette">
+          <div class="color black selected"></div>
+          <div class="color random"></div>
+          <div class="color random"></div>
+          <div class="color random"></div>
+      </div>
+    </section>
+
+     <section class="input">
+        <form class="user-input">
+          <label for="board-size">Size:</label>
+          <input type="number" name="table-sizer" id="board-size" min="5" max="50" class='number-input'>
+          <button id="generate-board" class="btn" type="submit">VQV</button>
+        </form>
+     </section>
+
+      <button id="clear-board" class="btn clear-btn">Clean</button>
+
+      <section id="pixel-board" class="pixel-board">
+          <table class='board'>
+          <tr >
+            <td class="pixel "></td>
+            <td class="pixel"></td>
+            <td class="pixel"></td>
+            <td class="pixel"></td>
+            <td class="pixel"></td>
+          </tr>
+
+        <tr >
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+
+          <tr >
+            <td class="pixel"></td>
+            <td class="pixel"></td>
+            <td class="pixel"></td>
+            <td class="pixel"></td>
+            <td class="pixel"></td>
+          </tr>
+
+        <tr >
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+
+        <tr >
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+          </table>
+      </section>
+
+</main>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

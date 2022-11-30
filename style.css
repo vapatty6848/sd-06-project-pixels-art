@@ -1,0 +1,135 @@
+body {
+  width: 32rem;
+  height: auto;
+  background-color:  #c0d1c2;
+}
+.btn {
+  border-radius: 5px;
+  box-shadow: 0 2px #8b7e74;
+  color: #121416;
+  cursor: pointer;
+  font-size: 0.8rem;
+  height: 1.5rem;
+  padding: 0.3rem;
+}
+
+.btn:focus {
+  border: none;
+  outline: none;
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.clear-btn {
+  color: #c22760;
+  margin: 1rem;
+}
+
+.color   {
+  border: 1px solid black;
+  border-radius: 100%;
+  float: left;
+  height: 1.5rem;
+  margin: 1px;
+  width: 1.5rem;
+}
+
+.color-palette {
+  height: 0.62rem;;
+}
+
+.header{
+    align-items: center;
+    color: #121416;
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+}
+
+.input {
+  display: inline-block;
+  color: #121416;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  border: none;
+  border-radius: 4px;
+  color: #372948;
+  padding: 0.2rem;
+}
+
+input:focus {
+  border-bottom: 1px solid #fff;
+  outline: none;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  height: 2.7rem;
+  margin: 1px;
+  width: 2.7rem;
+}
+
+.pixel-board {
+  height: 1.25rem;
+  width: 16.6rem;
+}
+
+.title {
+  margin-top: 0.6rem;
+}
+
+.user-input {
+  margin-top: 1rem;
+}
+
+@keyframes shine {
+
+  0% {
+    background-color: #9f8779;
+  }
+
+  25% {
+    background-color: #a7ffe4;
+  }
+
+  50% {
+    background-color: #c530b4;
+  }
+
+  100% {
+    background-color: #5c2e7e;
+  }
+}
+.more-colors {
+  align-items: center;
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.more-colors p {
+  margin-right: 0.9rem;
+}
+
+.more-colors button {
+  animation: shine 2s infinite;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.2rem;
+}
